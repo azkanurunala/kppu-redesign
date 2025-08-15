@@ -17,6 +17,7 @@ import {
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
 import { Menu, ChevronDown, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from './theme-toggle';
 
 const navItems = [
   {
@@ -62,12 +63,12 @@ export function Header() {
   }, []);
 
   const NavMenu = ({ isMobile = false }) => (
-    <nav className={cn("flex items-center", isMobile ? "flex-col space-y-4" : "space-x-2")}>
+    <nav className={cn("flex items-center text-foreground/80", isMobile ? "flex-col space-y-4" : "space-x-2")}>
       {navItems.map((item) => (
         item.subItems ? (
           <DropdownMenu key={item.label}>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="flex items-center gap-1 text-base hover:bg-primary/10">
+              <Button variant="ghost" className="flex items-center gap-1 text-base hover:bg-primary/10 hover:text-foreground">
                 {item.label} <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
@@ -80,7 +81,7 @@ export function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
-          <Button key={item.label} variant="ghost" asChild className="text-base hover:bg-primary/10">
+          <Button key={item.label} variant="ghost" asChild className="text-base hover:bg-primary/10 hover:text-foreground">
             <Link href={item.href}>{item.label}</Link>
           </Button>
         )
@@ -91,20 +92,21 @@ export function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-white/80 shadow-md backdrop-blur-lg" : "bg-transparent"
+      isScrolled ? "bg-background/80 shadow-md backdrop-blur-lg border-b" : "bg-transparent text-white"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo />
+        <Link href="/" className={cn("flex items-center gap-2", isScrolled ? "" : "text-white")}>
+          <Logo isScrolled={isScrolled} />
         </Link>
-        <div className="hidden lg:flex lg:items-center lg:gap-4">
+        <div className="hidden lg:flex lg:items-center lg:gap-2">
           <NavMenu />
         </div>
         <div className="flex items-center gap-2">
+           <ThemeToggle />
           <Button variant="ghost" size="icon" className="lg:hidden">
             <Search className="h-6 w-6" />
           </Button>
-          <Button className="hidden sm:inline-flex bg-primary text-primary-foreground hover:bg-primary/90">Hubungi Kami</Button>
+          <Button className="hidden sm:inline-flex bg-accent text-accent-foreground hover:bg-accent/90">Hubungi Kami</Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">

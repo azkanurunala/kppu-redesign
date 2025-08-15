@@ -77,7 +77,7 @@ export default function Home() {
                     type="search"
                     aria-label="Cari Regulasi"
                     placeholder="Cari regulasi, putusan perkara..."
-                    className="h-14 w-full rounded-full border-2 border-transparent bg-white/90 pl-14 pr-6 text-lg text-primary shadow-lg transition-colors focus:border-accent focus:ring-accent"
+                    className="h-14 w-full rounded-full border-2 border-transparent bg-white/90 pl-14 pr-6 text-lg text-foreground shadow-lg transition-colors focus:border-accent focus:ring-accent"
                   />
                   <Search className="pointer-events-none absolute left-5 top-1/2 h-6 w-6 -translate-y-1/2 text-muted-foreground" />
                 </div>
@@ -89,7 +89,7 @@ export default function Home() {
         <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <FadeIn className="text-center">
-              <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">Akses Informasi Publik</h2>
+              <h2 className="font-headline text-3xl font-bold text-foreground md:text-4xl">Akses Informasi Publik</h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                 Temukan informasi penting mengenai regulasi, putusan perkara, dan publikasi KPPU dengan mudah.
               </p>
@@ -102,7 +102,7 @@ export default function Home() {
                       <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
                         {feature.icon}
                       </div>
-                      <CardTitle className="text-xl text-primary">{feature.title}</CardTitle>
+                      <CardTitle className="text-xl text-card-foreground">{feature.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-grow flex-col">
                       <p className="flex-grow text-muted-foreground">{feature.description}</p>
@@ -117,10 +117,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-white py-16 sm:py-24">
+        <section className="bg-card py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <FadeIn className="text-center">
-              <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">Berita Terkini</h2>
+              <h2 className="font-headline text-3xl font-bold text-foreground md:text-4xl">Berita Terkini</h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                 Ikuti perkembangan dan kegiatan terbaru dari Komisi Pengawas Persaingan Usaha.
               </p>
@@ -128,10 +128,10 @@ export default function Home() {
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {newsItems.map((item, index) => (
                 <FadeIn key={item.title} delay={index * 100}>
-                  <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
+                  <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl bg-background">
                     <Image src={item.image} alt={item.alt} width={600} height={400} className="w-full object-cover aspect-[3/2]" data-ai-hint={item.hint} />
                     <CardHeader>
-                      <CardTitle className="text-lg text-primary">{item.title}</CardTitle>
+                      <CardTitle className="text-lg text-foreground">{item.title}</CardTitle>
                       <CardDescription className="pt-2 text-sm">{item.date}</CardDescription>
                     </CardHeader>
                     <CardContent className="mt-auto">
@@ -147,7 +147,7 @@ export default function Home() {
         <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4 text-center">
             <FadeIn>
-              <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">Punya Pertanyaan atau Laporan?</h2>
+              <h2 className="font-headline text-3xl font-bold text-foreground md:text-4xl">Punya Pertanyaan atau Laporan?</h2>
               <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                 Tim kami siap membantu Anda. Jangan ragu untuk menghubungi kami untuk informasi lebih lanjut atau melaporkan dugaan pelanggaran.
               </p>

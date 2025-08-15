@@ -227,6 +227,9 @@ export default function Home() {
                             <p>KPPU adalah lembaga independen yang bertugas mengawasi pelaksanaan UU No.5/1999 dan UU No.20/2008, terdiri dari Anggota KPPU yang diangkat oleh Presiden Republik Indonesia atas persetujuan Dewan Perwakilan Rakyat.</p>
                             <p>Anggota KPPU terpilih periode kelima melalui Keputusan Presiden Nomor 8/P Tahun 2024 memiliki masa kerja tahun 2024-2029. Kami berkomitmen untuk mensejahterakan rakyat melalui penegakan hukum persaingan usaha dan pengawasan kemitraan UMKM yang sehat di Indonesia.</p>
                         </div>
+                        <div className="mt-8">
+                            <KppuPieChart />
+                        </div>
                     </div>
                     <div className="grid grid-cols-3 gap-5">
                         {commissioners.map((commissioner, index) => (

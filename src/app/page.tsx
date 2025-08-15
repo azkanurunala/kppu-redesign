@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -73,6 +74,30 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="relative h-[450px]">
+                  <Image src="https://placehold.co/1200x450/0f2b5c/ffffff.png" alt="Pengawasan Kemitraan" layout="fill" objectFit="cover" objectPosition="center" data-ai-hint="business meeting handshake" />
+                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                    <div className="text-center text-white p-4 max-w-2xl mx-auto">
+                        <h1 className="text-5xl font-bold">Pengawasan Kemitraan</h1>
+                        <p className="text-xl mt-4">KPPU aktif mengawasi pelaksanaan kemitraan antara usaha besar dengan UMKM untuk mewujudkan persaingan yang sehat.</p>
+                        <Button className="mt-6 bg-primary text-white hover:bg-primary/90">Selengkapnya</Button>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="relative h-[450px]">
+                  <Image src="https://placehold.co/1200x450/1c3d7a/ffffff.png" alt="Lapor Dugaan Pelanggaran" layout="fill" objectFit="cover" objectPosition="center" data-ai-hint="person typing on laptop" />
+                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                    <div className="text-center text-white p-4 max-w-2xl mx-auto">
+                        <h1 className="text-5xl font-bold">Lapor Dugaan Pelanggaran</h1>
+                        <p className="text-xl mt-4">Lihat praktek monopoli atau persaingan usaha tidak sehat? Laporkan kepada kami secara online.</p>
+                        <Button className="mt-6 bg-primary text-white hover:bg-primary/90">Lapor Sekarang</Button>
                     </div>
                   </div>
                 </div>

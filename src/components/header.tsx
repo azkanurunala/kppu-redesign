@@ -22,7 +22,7 @@ const navItems = [
     href: '#',
     subItems: [
       { label: 'VISI DAN MISI', href: '/visi-misi' },
-      { label: 'ANGGOTA', href: '#' },
+      { label: 'ANGGOTA', href: '/anggota' },
       { label: 'TUGAS & WEWENANG', href: '#' },
       { label: 'ORGANISASI', href: '#' },
       { label: 'PEJABAT SEKRETARIAT', href: '#' },

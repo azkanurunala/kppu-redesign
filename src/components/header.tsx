@@ -14,7 +14,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent
 } from './ui/dropdown-menu';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
 import { Menu, ChevronDown, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -113,7 +113,10 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-sm">
-              <div className="p-4 pt-12">
+              <SheetHeader>
+                <SheetTitle>Menu</SheetTitle>
+              </SheetHeader>
+              <div className="p-4 pt-8">
                 <NavMenu isMobile />
                 <Button className="w-full mt-6">Hubungi Kami</Button>
               </div>

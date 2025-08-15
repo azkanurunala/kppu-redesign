@@ -19,38 +19,37 @@ import { ThemeToggle } from './theme-toggle';
 const navItems = [
   {
     label: 'PROFIL',
-    href: '#',
+    href: '/profil',
     subItems: [
-      { label: 'VISI DAN MISI', href: '/visi-misi' },
-      { label: 'ANGGOTA', href: '/anggota' },
-      { label: 'TUGAS & WEWENANG', href: '#' },
-      { label: 'ORGANISASI', href: '#' },
-      { label: 'PEJABAT SEKRETARIAT', href: '#' },
-      { label: 'KINERJA KEUANGAN', href: '#' },
-      { label: 'MITRA KERJA', href: '/mitra-kerja' },
+      { label: 'VISI DAN MISI', href: '/profil/visi-misi' },
+      { label: 'ANGGOTA', href: '/profil/anggota' },
+      { label: 'TUGAS & WEWENANG', href: '/profil/tugas-wewenang' },
+      { label: 'ORGANISASI', href: '/profil/organisasi' },
+      { label: 'PEJABAT SEKRETARIAT', href: '/profil/pejabat-sekretariat' },
+      { label: 'KINERJA KEUANGAN', href: '/profil/kinerja-keuangan' },
+      { label: 'MITRA KERJA', href: '/profil/mitra-kerja' },
       { label: 'PPID', href: '/ppid' },
-      { label: 'LOGO DAN MASKOT', href: '/logo-dan-maskot' },
+      { label: 'LOGO DAN MASKOT', href: '/profil/logo-maskot' },
     ],
   },
   {
     label: 'REGULASI',
     href: '/regulasi',
     subItems: [
-        { label: 'UNDANG-UNDANG', href: '/regulasi' },
-        { label: 'PERATURAN PEMERINTAH', href: '/regulasi' },
-        { label: 'PERATURAN KOMISI', href: '/peraturan-komisi' },
-        { label: 'PERATURAN KETUA KPPU', href: '/peraturan-ketua-kppu' },
-        { label: 'PEDOMAN', href: '/pedoman' },
-        { label: 'PUTUSAN', href: '/putusan' },
+        { label: 'UNDANG-UNDANG & PP', href: '/regulasi/peraturan-perundang-undangan' },
+        { label: 'PERATURAN KOMISI', href: '/regulasi/peraturan-komisi' },
+        { label: 'PERATURAN KETUA KPPU', href: '/regulasi/peraturan-ketua-kppu' },
+        { label: 'PEDOMAN', href: '/regulasi/pedoman' },
+        { label: 'PUTUSAN', href: '/penindakan/perkara-persaingan' },
     ]
   },
   {
     label: 'PENGAWASAN',
     href: '#',
     subItems: [
-        { label: 'KAJIAN KEBIJAKAN', href: '/kajian-kebijakan' },
-        { label: 'ADVOKASI', href: '/advokasi' },
-        { label: 'PENELITIAN', href: '/penelitian' },
+        { label: 'KAJIAN KEBIJAKAN', href: '/pengawasan/kajian-kebijakan' },
+        { label: 'ADVOKASI', href: '/pengawasan/advokasi' },
+        { label: 'PENELITIAN', href: '/pengawasan/penelitian' },
         { label: 'INDEKS PERSAINGAN USAHA', href: '/indeks-persaingan-usaha' },
         { label: 'KPPU MENDENGAR', href: '/kppu-mendengar' },
     ]
@@ -59,35 +58,27 @@ const navItems = [
     label: 'PENINDAKAN',
     href: '#',
     subItems: [
-        { label: 'PENANGANAN PERKARA', href: '#' },
-        { label: 'NOTIFIKASI MERGER', href: '#' },
-        { label: 'PELAPORAN', href: '#' },
+        { label: 'PERKARA PERSAINGAN', href: '/penindakan/perkara-persaingan' },
+        { label: 'PENILAIAN MERGER', href: '/penindakan/penilaian-merger' },
+        { label: 'PENGAWASAN KEMITRAAN', href: '/penindakan/pengawasan-kemitraan' },
     ]
   },
   {
     label: 'PUBLIKASI',
-    href: '#',
+    href: '/publikasi',
     subItems: [
-        { label: 'BERITA', href: '#' },
-        { label: 'SIARAN PERS', href: '/siaran-pers' },
-        { label: 'MAJALAH', href: '#' },
+        { label: 'AKTIVITAS', href: '/publikasi/aktivitas' },
+        { label: 'SIARAN PERS', href: '/publikasi/siaran-pers' },
+        { label: 'LAPORAN TAHUNAN', href: '/publikasi/laporan-tahunan' },
         { label: 'JURNAL', href: '#' },
     ]
   },
   {
     label: 'KANWIL',
-    href: '#',
-    subItems: [
-        { label: 'KANWIL I', href: '#' },
-        { label: 'KANWIL II', href: '#' },
-        { label: 'KANWIL III', href: '#' },
-        { label: 'KANWIL IV', href: '#' },
-        { label: 'KANWIL V', href: '#' },
-        { label: 'KANWIL VI', href: '#' },
-    ]
+    href: '/kanwil',
   },
-  { label: 'E-PROCUREMENT', href: '#' },
-  { label: 'KONTAK', href: '#' },
+  { label: 'E-PROCUREMENT', href: '/e-procurement' },
+  { label: 'KONTAK', href: '/contact' },
 ];
 
 export function Header() {

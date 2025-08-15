@@ -48,7 +48,7 @@ const navItems = [
     label: 'PENGAWASAN',
     href: '#',
     subItems: [
-        { label: 'KAJIAN KEBIJAKAN', href: '#' },
+        { label: 'KAJIAN KEBIJAKAN', href: '/kajian-kebijakan' },
         { label: 'ADVOKASI', href: '#' },
         { label: 'PENELITIAN', href: '#' },
         { label: 'INDEKS PERSAINGAN USAHA', href: '#' },

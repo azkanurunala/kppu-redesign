@@ -49,7 +49,7 @@ const navItems = [
     href: '#',
     subItems: [
         { label: 'KAJIAN KEBIJAKAN', href: '/kajian-kebijakan' },
-        { label: 'ADVOKASI', href: '#' },
+        { label: 'ADVOKASI', href: '/advokasi' },
         { label: 'PENELITIAN', href: '#' },
         { label: 'INDEKS PERSAINGAN USAHA', href: '#' },
         { label: 'KPPU MENDENGAR', href: '#' },
@@ -182,3 +182,5 @@ export function Header() {
     </header>
   );
 }
+
+    

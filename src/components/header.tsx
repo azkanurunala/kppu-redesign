@@ -50,9 +50,9 @@ const navItems = [
     subItems: [
         { label: 'KAJIAN KEBIJAKAN', href: '/kajian-kebijakan' },
         { label: 'ADVOKASI', href: '/advokasi' },
-        { label: 'PENELITIAN', href: '#' },
-        { label: 'INDEKS PERSAINGAN USAHA', href: '#' },
-        { label: 'KPPU MENDENGAR', href: '#' },
+        { label: 'PENELITIAN', href: '/penelitian' },
+        { label: 'INDEKS PERSAINGAN USAHA', href: '/indeks-persaingan-usaha' },
+        { label: 'KPPU MENDENGAR', href: '/kppu-mendengar' },
     ]
   },
     {
@@ -182,5 +182,3 @@ export function Header() {
     </header>
   );
 }
-
-    

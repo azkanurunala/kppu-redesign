@@ -120,10 +120,10 @@ export function Header() {
                     {item.label} <ChevronDown className="h-4 w-4" />
                   </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white dark:bg-primary-dark text-primary-dark dark:text-white border-gray-200 dark:border-gray-700">
+              <DropdownMenuContent className="bg-background border-border">
                 {item.subItems.map((subItem) => (
                   <DropdownMenuItem key={subItem.label} asChild>
-                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/10 dark:hover:!bg-white/10">{subItem.label}</Link>
+                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/10">{subItem.label}</Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -144,7 +144,7 @@ export function Header() {
   return (
     <header className={cn(
       "sticky top-0 z-50 w-full transition-colors duration-300",
-      isScrolled ? "bg-white/80 dark:bg-primary-dark/80 shadow-md backdrop-blur-lg" : "bg-white dark:bg-primary-dark"
+      isScrolled ? "bg-background/80 shadow-md backdrop-blur-lg" : "bg-background"
     )}>
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
@@ -160,11 +160,11 @@ export function Header() {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-primary-dark dark:text-white" />
+                <Menu className="h-6 w-6 text-foreground" />
                 <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-sm bg-white dark:bg-gray-800">
+            <SheetContent side="right" className="w-full max-w-sm bg-background">
                <SheetHeader>
                 <SheetTitle>
                   <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>

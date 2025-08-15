@@ -7,6 +7,7 @@ import { Footer } from '@/components/footer';
 import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, ArrowRight, Search, FileText, Landmark } from 'lucide-react';
 import Link from 'next/link';
 import { HomeCarousel } from '@/components/home-carousel';
+import { KppuPieChart } from '@/components/kppu-pie-chart';
 
 const iconNavItems = [
   { icon: <Scale className="h-8 w-8 text-primary" />, label: "REGULASI", href: "/regulasi" },
@@ -51,7 +52,7 @@ const otherActivityNews = [
 const regionalNews = {
     title: "Perkuat Sinergi, Kantor Wilayah VI KPPU Makassar Temui Gubernur Sulawesi Barat",
     source: "Antaranews.com",
-href: "#",
+    href: "#",
     imgSrc: "https://placehold.co/300x200.png"
 };
 
@@ -59,6 +60,19 @@ const otherRegionalNews = [
     { title: "LIRA Sumut Dukung KPPU Kanwil I Bongkar Dugaan Persekongkolan Tender Rp66 Miliar di Kejari Sumut", source: "Analisadaily.com", href: "#" },
     { title: "Kunjungi Gapoktan di Kabupaten Bandung Barat, Kepala Kanwil III dan Petani Bahas Pemasaran Beras", source: "Tribunnews.com", href: "#" }
 ];
+
+const commissioners = [
+  { name: 'M. Fanshurullah Asa', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Aru Armando', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Dr. Guntur S. Saragih', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Gopprera Panggabean', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Hilman Pujana', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Mohammad Reza', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Rhido Jusmadi', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Ukay Karyadi', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Yudi Hidayat', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+];
+
 
 export default function Home() {
   return (
@@ -192,6 +206,41 @@ export default function Home() {
                             ))}
                         </div>
                         <Button variant="outline">Selengkapnya</Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Commissioners Section */}
+        <section className="py-20 lg:py-28 bg-primary-dark text-white">
+            <div className="container mx-auto px-4">
+                 <div className="text-center mb-16">
+                    <h2 className="text-4xl lg:text-5xl font-bold font-poppins">Jajaran Komisioner KPPU</h2>
+                    <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+                      Diawasi oleh Komisioner yang berdedikasi untuk mewujudkan persaingan usaha yang sehat demi kesejahteraan rakyat Indonesia.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="bg-card/5 border border-white/20 p-8 rounded-lg flex flex-col justify-center text-center items-center lg:col-span-1">
+                        <h3 className="text-3xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
+                        <p className="text-gray-300 leading-relaxed mb-6">Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat.</p>
+                        <KppuPieChart />
+                    </div>
+                    <div className="grid grid-cols-3 gap-5 md:col-span-2">
+                        {commissioners.map((commissioner, index) => (
+                             <div key={index} className="text-center group">
+                                <div className="relative overflow-hidden rounded-xl">
+                                    <Image
+                                        src={commissioner.image}
+                                        alt={commissioner.name}
+                                        width={150}
+                                        height={200}
+                                        className="w-full h-auto object-cover shadow-lg transition-transform duration-300 group-hover:scale-105"
+                                        data-ai-hint={commissioner.hint}
+                                    />
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

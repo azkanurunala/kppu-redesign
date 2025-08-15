@@ -48,6 +48,13 @@ const commissioners = [
   { name: 'Yudi Hidayat', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
 ];
 
+const sliderImages = [
+  { src: "https://kppu.go.id/wp-content/uploads/2025/08/Slider-Banner-HUT-80-RI-15-Ags-2025.png", alt: "HUT 80 RI", hint: "indonesia independence day" },
+  { src: "https://kppu.go.id/wp-content/uploads/2025/07/Slider-Banner-JPU-Vol-5-No-1-Tahun-2025-28-Jul-2025.png", alt: "Jurnal Persaingan Usaha", hint: "journal cover" },
+  { src: "https://kppu.go.id/wp-content/uploads/slider6/slider-banner-juanda-36-6-sep-2024.png", alt: "Webinar Juanda 36", hint: "webinar poster" }
+];
+
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
@@ -56,52 +63,21 @@ export default function Home() {
         <section className="bg-gradient-to-r from-[#0d2a5a] to-[#0152a7] dark:from-[#081c3d] dark:to-[#013e7d]">
           <Carousel className="w-full" opts={{ loop: true }}>
             <CarouselContent>
-              <CarouselItem>
-                <div className="relative h-[450px]">
-                  <Image src="https://placehold.co/1200x450/112444/ffffff.png" alt="Jurnal Persaingan Usaha" layout="fill" objectFit="contain" objectPosition="center" data-ai-hint="journal cover" />
-                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white p-4 max-w-4xl mx-auto">
-                        <div className="grid grid-cols-2 items-center gap-8">
-                             <div>
-                                <p className="text-6xl font-extrabold tracking-wider text-white/90">TERBIT</p>
-                            </div>
-                            <div>
-                               <h1 className="text-4xl font-bold">Jurnal Persaingan Usaha</h1>
-                                <p className="text-2xl mt-1">Volume 5 Nomor 1 Tahun 2025</p>
-                                <div className="mt-4 flex items-center justify-center bg-black/30 rounded-full p-1 max-w-md mx-auto">
-                                    <Input type="text" placeholder="jurnal.kppu.go.id" className="bg-transparent border-none text-white placeholder:text-gray-300 w-full focus:ring-0" />
-                                    <Button className="bg-primary text-white hover:bg-primary/90 rounded-full">Ok</Button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              {sliderImages.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative h-[450px] bg-black">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      layout="fill"
+                      objectFit="contain"
+                      objectPosition="center"
+                      data-ai-hint={image.hint}
+                      unoptimized // Use this if the external host doesn't support optimization
+                    />
                   </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative h-[450px]">
-                  <Image src="https://placehold.co/1200x450/0f2b5c/ffffff.png" alt="Pengawasan Kemitraan" layout="fill" objectFit="cover" objectPosition="center" data-ai-hint="business meeting handshake" />
-                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <div className="text-center text-white p-4 max-w-2xl mx-auto">
-                        <h1 className="text-5xl font-bold">Pengawasan Kemitraan</h1>
-                        <p className="text-xl mt-4">KPPU aktif mengawasi pelaksanaan kemitraan antara usaha besar dengan UMKM untuk mewujudkan persaingan yang sehat.</p>
-                        <Button className="mt-6 bg-primary text-white hover:bg-primary/90">Selengkapnya</Button>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="relative h-[450px]">
-                  <Image src="https://placehold.co/1200x450/1c3d7a/ffffff.png" alt="Lapor Dugaan Pelanggaran" layout="fill" objectFit="cover" objectPosition="center" data-ai-hint="person typing on laptop" />
-                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                    <div className="text-center text-white p-4 max-w-2xl mx-auto">
-                        <h1 className="text-5xl font-bold">Lapor Dugaan Pelanggaran</h1>
-                        <p className="text-xl mt-4">Lihat praktek monopoli atau persaingan usaha tidak sehat? Laporkan kepada kami secara online.</p>
-                        <Button className="mt-6 bg-primary text-white hover:bg-primary/90">Lapor Sekarang</Button>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
+                </CarouselItem>
+              ))}
             </CarouselContent>
             <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/20 hover:bg-black/40 border-none" />
             <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/20 hover:bg-black/40 border-none" />
@@ -222,3 +198,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

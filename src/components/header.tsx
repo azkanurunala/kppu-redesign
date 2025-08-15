@@ -71,7 +71,19 @@ const navItems = [
         { label: 'JURNAL', href: '#' },
     ]
   },
-  { label: 'KANWIL', href: '#' },
+  {
+    label: 'KANWIL',
+    href: '#',
+    subItems: [
+        { label: 'KANWIL I', href: '#' },
+        { label: 'KANWIL II', href: '#' },
+        { label: 'KANWIL III', href: '#' },
+        { label: 'KANWIL IV', href: '#' },
+        { label: 'KANWIL V', href: '#' },
+        { label: 'KANWIL VI', href: '#' },
+        { label: 'KANWIL VII', href: '#' },
+    ]
+  },
   { label: 'E-PROCUREMENT', href: '#' },
   { label: 'KONTAK', href: '#' },
 ];

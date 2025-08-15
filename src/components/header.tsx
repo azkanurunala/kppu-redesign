@@ -40,6 +40,7 @@ const navItems = [
         { label: 'PERATURAN PEMERINTAH', href: '/regulasi' },
         { label: 'PERATURAN KOMISI', href: '/peraturan-komisi' },
         { label: 'PERATURAN KETUA KPPU', href: '/peraturan-ketua-kppu' },
+        { label: 'PEDOMAN', href: '/pedoman' },
         { label: 'PUTUSAN', href: '/putusan' },
     ]
   },

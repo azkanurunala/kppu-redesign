@@ -2,7 +2,7 @@
 
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -23,50 +23,56 @@ const decisions = [
 
 export default function PutusanPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-12 text-center">
+        <section className="bg-primary-dark text-white py-20 text-center">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl lg:text-5xl font-bold font-poppins">Database Putusan KPPU</h1>
-                <p className="mt-2 text-lg text-primary-foreground/80 max-w-2xl mx-auto">Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha.</p>
+                <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Database Putusan KPPU</h1>
+                <p className="mt-4 text-lg text-primary-foreground/80 max-w-3xl mx-auto">
+                  Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha secara transparan dan mudah diakses.
+                </p>
             </div>
         </section>
       
-        <div className="container mx-auto px-4 py-12 lg:py-16">
-            <Card className="mb-8 p-4 bg-card border-none shadow-lg">
+        <div className="container mx-auto px-4 py-16 lg:py-24">
+            <Card className="mb-8 p-6 bg-card border shadow-lg rounded-xl">
                 <div className="flex flex-col md:flex-row items-center gap-4">
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full md:w-auto">
-                        Pencarian Dinamis <ChevronDown className="h-4 w-4 ml-2"/>
-                    </Button>
                     <div className="relative flex-grow w-full">
-                        <Input placeholder="Cari berdasarkan nomor putusan atau kata kunci..." className="pl-10 h-11 text-base" />
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                        <Input placeholder="Cari berdasarkan nomor putusan atau kata kunci..." className="pl-12 h-12 text-base rounded-lg" />
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400" />
                     </div>
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8 text-base rounded-lg w-full md:w-auto">
+                        Cari
+                    </Button>
+                    <Button variant="outline" className="text-base h-12 rounded-lg w-full md:w-auto">
+                        Pencarian Lanjutan <ChevronDown className="h-4 w-4 ml-2"/>
+                    </Button>
                 </div>
             </Card>
             
-            <Card className="overflow-hidden shadow-lg">
+            <Card className="overflow-hidden shadow-lg rounded-xl">
+              <CardContent className="p-0">
                 <Table>
                     <TableHeader>
-                        <TableRow className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">
-                            <TableHead className="w-12 text-black dark:text-white font-bold">No.</TableHead>
-                            <TableHead className="w-48 text-black dark:text-white font-bold">Nomor Putusan</TableHead>
-                            <TableHead className="text-black dark:text-white font-bold">Tentang</TableHead>
-                            <TableHead className="w-48 text-black dark:text-white font-bold">Tanggal Putusan</TableHead>
-                            <TableHead className="w-32 text-center text-black dark:text-white font-bold">Dokumen</TableHead>
+                        <TableRow className="bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                            <TableHead className="w-16 px-6 py-4 text-sm font-semibold text-muted-foreground">No.</TableHead>
+                            <TableHead className="w-56 px-6 py-4 text-sm font-semibold text-muted-foreground">Nomor Putusan</TableHead>
+                            <TableHead className="px-6 py-4 text-sm font-semibold text-muted-foreground">Tentang</TableHead>
+                            <TableHead className="w-48 px-6 py-4 text-sm font-semibold text-muted-foreground">Tanggal Putusan</TableHead>
+                            <TableHead className="w-32 text-center px-6 py-4 text-sm font-semibold text-muted-foreground">Dokumen</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {decisions.map((item) => (
-                            <TableRow key={item.no} className="dark:border-gray-700">
-                                <TableCell className="font-medium">{item.no}</TableCell>
-                                <TableCell className="font-semibold text-primary">{item.decisionNumber}</TableCell>
-                                <TableCell>{item.about}</TableCell>
-                                <TableCell>{item.date}</TableCell>
-                                <TableCell className="text-center">
-                                    <Button variant="ghost" size="icon" className="text-blue-500 hover:text-blue-600 hover:bg-blue-500/10 rounded-full">
+                            <TableRow key={item.no} className="dark:border-gray-700/50">
+                                <TableCell className="px-6 py-5 font-medium">{item.no}</TableCell>
+                                <TableCell className="px-6 py-5 font-semibold text-primary">{item.decisionNumber}</TableCell>
+                                <TableCell className="px-6 py-5 leading-relaxed">{item.about}</TableCell>
+                                <TableCell className="px-6 py-5 text-muted-foreground">{item.date}</TableCell>
+                                <TableCell className="px-6 py-5 text-center">
+                                    <Button variant="ghost" size="icon" className="text-primary hover:text-primary/80 hover:bg-primary/10 rounded-full">
                                         <Download className="h-5 w-5" />
                                     </Button>
                                 </TableCell>
@@ -74,27 +80,29 @@ export default function PutusanPage() {
                         ))}
                     </TableBody>
                 </Table>
-                <div className="flex items-center justify-between p-4 border-t dark:border-gray-700">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Menampilkan 1-10 dari 424 hasil</span>
-                    <div className="flex items-center space-x-1">
-                        <Button variant="outline" size="icon" disabled>
-                            <ChevronsLeft className="h-4 w-4" />
-                        </Button>
-                        <Button variant="outline" size="icon" disabled>
-                            <ChevronLeft className="h-4 w-4" />
-                        </Button>
-                         <Button variant="outline" className="px-4">1</Button>
-                         <Button variant="ghost" className="px-4">2</Button>
-                         <Button variant="ghost" className="px-4">3</Button>
-                        <Button variant="outline" size="icon">
-                            <ChevronRight className="h-4 w-4" />
-                        </Button>
-                        <Button variant="outline" size="icon">
-                            <ChevronsRight className="h-4 w-4" />
-                        </Button>
-                    </div>
-                </div>
+              </CardContent>
             </Card>
+
+            <div className="flex items-center justify-between mt-8">
+                <span className="text-sm text-muted-foreground">Menampilkan 1-10 dari 424 hasil</span>
+                <div className="flex items-center space-x-1">
+                    <Button variant="outline" size="icon" disabled>
+                        <ChevronsLeft className="h-4 w-4" />
+                    </Button>
+                    <Button variant="outline" size="icon" disabled>
+                        <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                      <Button variant="outline" className="px-4">1</Button>
+                      <Button variant="ghost" className="px-4">2</Button>
+                      <Button variant="ghost" className="px-4">3</Button>
+                    <Button variant="outline" size="icon">
+                        <ChevronRight className="h-4 w-4" />
+                    </Button>
+                    <Button variant="outline" size="icon">
+                        <ChevronsRight className="h-4 w-4" />
+                    </Button>
+                </div>
+            </div>
         </div>
       </main>
       

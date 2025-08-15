@@ -81,7 +81,6 @@ const navItems = [
         { label: 'KANWIL IV', href: '#' },
         { label: 'KANWIL V', href: '#' },
         { label: 'KANWIL VI', href: '#' },
-        { label: 'KANWIL VII', href: '#' },
     ]
   },
   { label: 'E-PROCUREMENT', href: '#' },
@@ -94,7 +93,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on mount
@@ -107,44 +106,44 @@ export function Header() {
         isMobile ? "flex-col space-y-2 items-start" : "space-x-1"
     )}>
       {navItems.map((item) => (
-        item.subItems ? (
-          <DropdownMenu key={item.label}>
-            <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className={cn(
-                  "text-sm font-semibold flex items-center gap-1",
-                  isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-                )} asChild>
-                  <Link href={item.href}>
+        <div key={item.label} className="w-full">
+          {item.subItems ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className={cn(
+                    "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
+                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-white"
+                  )}>
                     {item.label} <ChevronDown className="h-4 w-4" />
-                  </Link>
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white dark:bg-primary-dark text-primary-dark dark:text-white">
-              {item.subItems.map((subItem) => (
-                <DropdownMenuItem key={subItem.label} asChild>
-                  <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/20 dark:hover:!bg-white/20">{subItem.label}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        ) : (
-          <Button key={item.label} variant="ghost" asChild className={cn(
-              "text-sm font-semibold",
-              isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-          )}>
-            <Link href={item.href}>{item.label}</Link>
-          </Button>
-        )
+                  </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-white dark:bg-primary-dark text-primary-dark dark:text-white border-gray-200 dark:border-gray-700">
+                {item.subItems.map((subItem) => (
+                  <DropdownMenuItem key={subItem.label} asChild>
+                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/10 dark:hover:!bg-white/10">{subItem.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button variant="ghost" asChild className={cn(
+                "text-sm font-semibold w-full justify-start lg:justify-center",
+                 isMobile ? "text-gray-700 dark:text-gray-300" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-white"
+            )}>
+              <Link href={item.href}>{item.label}</Link>
+            </Button>
+          )}
+        </div>
       ))}
     </nav>
   );
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full transition-shadow duration-300",
-       "bg-white dark:bg-primary-dark shadow-md"
+      "sticky top-0 z-50 w-full transition-all duration-300",
+      isScrolled ? "bg-white/80 dark:bg-primary-dark/80 shadow-md backdrop-blur-lg" : "bg-white dark:bg-primary-dark"
     )}>
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Logo />
         </Link>
@@ -158,7 +157,7 @@ export function Header() {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-primary-dark dark:text-white" />
                 <span className="sr-only">Buka menu</span>
               </Button>
             </SheetTrigger>

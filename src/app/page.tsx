@@ -1,12 +1,10 @@
-
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube, ArrowRight } from 'lucide-react';
+import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube, ArrowRight, Building, Users, BookOpen } from 'lucide-react';
 import { KppuPieChart } from '@/components/kppu-pie-chart';
 import Link from 'next/link';
 
@@ -61,37 +59,38 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="bg-gradient-to-r from-[#0d2a5a] to-[#0152a7] dark:from-[#081c3d] dark:to-[#013e7d]">
+        <section className="bg-primary-dark">
           <Carousel className="w-full" opts={{ loop: true }}>
             <CarouselContent>
               {sliderImages.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="relative h-[450px]">
+                  <div className="relative h-[350px] md:h-[500px] lg:h-[600px]">
                     <Image
                       src={image.src}
                       alt={image.alt}
                       fill
-                      style={{ objectFit: 'contain' }}
+                      className="object-cover"
                       data-ai-hint={image.hint}
                       unoptimized
+                      priority={index === 0}
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/20 hover:bg-black/40 border-none" />
-            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/20 hover:bg-black/40 border-none" />
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/30 hover:bg-black/50 border-none" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/30 hover:bg-black/50 border-none" />
           </Carousel>
         </section>
         
-        <section className="bg-card dark:bg-card shadow-md">
-            <div className="container mx-auto px-4 py-6">
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+        <section className="bg-card dark:bg-card border-b border-border/50">
+            <div className="container mx-auto px-4 py-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
                     {iconNavItems.map(item => (
                       <Link href={item.href} key={item.label}>
-                        <div className="flex flex-col items-center justify-center gap-2 p-3 text-foreground/80 hover:text-primary transition-colors cursor-pointer rounded-lg hover:bg-primary/5">
+                        <div className="flex flex-col items-center justify-center gap-3 p-4 text-foreground/80 hover:text-primary transition-colors cursor-pointer rounded-xl hover:bg-primary/5">
                            {item.icon}
-                           <span className="font-semibold text-xs tracking-wider uppercase">{item.label}</span>
+                           <span className="font-bold text-sm tracking-wide uppercase">{item.label}</span>
                         </div>
                       </Link>
                     ))}
@@ -99,23 +98,26 @@ export default function Home() {
             </div>
         </section>
 
-        <section className="py-20 bg-background">
+        <section className="py-20 lg:py-28 bg-background">
             <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-12 text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
+                <div className="text-center mb-16">
+                    <p className="text-primary font-semibold mb-2">INFO TERKINI</p>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Seputar Persaingan Usaha</h2>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {Object.entries(newsColumns).map(([category, items]) => (
                         <div key={category}>
-                            <h3 className="text-2xl font-bold mb-6 border-b-2 border-primary pb-3 text-primary-dark dark:text-gray-300 font-poppins">{category}</h3>
-                            <div className="space-y-6">
+                            <h3 className="text-2xl font-bold mb-8 border-b-4 border-primary pb-4 text-primary-dark dark:text-gray-200 font-poppins">{category}</h3>
+                            <div className="space-y-8">
                                 {items.map((item, index) => (
-                                    <div key={index} className={index === 0 ? "" : "border-t pt-6"}>
-                                      {index === 0 && item.image && <Image src={item.image} alt={item.title} width={300} height={200} className="rounded-lg w-full mb-4" data-ai-hint={item.hint} />}
-                                      <p className="font-semibold text-lg text-foreground hover:text-primary cursor-pointer">{item.title}</p>
-                                      <p className="text-sm text-muted-foreground mt-2">{item.date}</p>
+                                    <div key={index} className={index === 0 ? "" : "border-t border-border/50 pt-8"}>
+                                      {index === 0 && item.image && <Image src={item.image} alt={item.title} width={300} height={200} className="rounded-lg w-full mb-5 shadow-md" data-ai-hint={item.hint} />}
+                                      <h4 className="font-bold text-xl text-foreground hover:text-primary cursor-pointer transition-colors leading-snug">{item.title}</h4>
+                                      <p className="text-sm text-muted-foreground mt-3">{item.date}</p>
                                     </div>
                                 ))}
-                                <Button variant="outline" size="sm" className="mt-4">
-                                    Selengkapnya <ArrowRight className="h-4 w-4 ml-2" />
+                                <Button variant="outline" size="sm" className="mt-6 rounded-full px-5">
+                                    Lihat Semua <ArrowRight className="h-4 w-4 ml-2" />
                                 </Button>
                             </div>
                         </div>
@@ -124,21 +126,28 @@ export default function Home() {
             </div>
         </section>
 
-        <section className="py-20 bg-primary-dark text-white">
+        <section className="py-20 lg:py-28 bg-primary-dark text-white">
             <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-12 font-poppins">Jajaran Komisioner KPPU</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div className="bg-white/10 p-8 rounded-lg">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl lg:text-5xl font-bold font-poppins">Jajaran Komisioner KPPU</h2>
+                    <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+                        Diawasi oleh Komisioner yang berdedikasi untuk mewujudkan persaingan usaha yang sehat demi kesejahteraan rakyat Indonesia.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <Card className="bg-white/5 border-white/20 p-8 rounded-xl flex flex-col justify-center text-center items-center lg:col-span-1">
                         <h3 className="text-3xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
-                        <p className="text-gray-200 leading-relaxed mb-6">
-                            KPPU diawasi oleh Komisi Pengawas Persaingan Usaha yang bertugas mengawasi pelaksanaan UU No. 5/1999 dan UU No. 20/2008, serta Peraturan Pemerintah dan Peraturan Presiden lainnya. Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat demi kesejahteraan rakyat Indonesia.
+                        <p className="text-gray-300 leading-relaxed mb-6">
+                            Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat.
                         </p>
                         <KppuPieChart />
-                    </div>
-                    <div className="grid grid-cols-3 gap-4">
+                    </Card>
+                    <div className="grid grid-cols-3 gap-5 md:col-span-2">
                         {commissioners.slice(0, 9).map((c, i) => (
-                            <div key={i} className="text-center">
-                                <Image src={c.image} alt={c.name} width={150} height={200} className="rounded-lg mx-auto shadow-lg object-cover" data-ai-hint={c.hint} />
+                            <div key={i} className="text-center group">
+                                <div className="relative overflow-hidden rounded-xl">
+                                    <Image src={c.image} alt={c.name} width={150} height={200} className="w-full h-auto object-cover shadow-lg transition-transform duration-300 group-hover:scale-105" data-ai-hint={c.hint} />
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -146,51 +155,39 @@ export default function Home() {
             </div>
         </section>
         
-        <section className="py-20 bg-background">
+        <section className="py-20 lg:py-28 bg-background">
             <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold text-center mb-12 text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="text-center mb-16">
+                    <p className="text-primary font-semibold mb-2">MEDIA & PUBLIKASI</p>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Galeri Informasi</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <div>
-                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg group">
+                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg group">
                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="KPPU Video Profile" data-ai-hint="office presentation" />
-                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <Youtube className="w-20 h-20 text-red-600 cursor-pointer transition-transform group-hover:scale-110" />
+                            <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-80">
+                                <Youtube className="w-20 h-20 text-red-600 cursor-pointer transition-transform duration-300 group-hover:scale-110" />
                             </div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-6">
-                        <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
-                            <CardContent className="p-0">
-                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Majalah" className="rounded-t-lg w-full" data-ai-hint="magazine cover" />
-                                <div className="p-4">
-                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">MAJALAH</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                         <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
-                             <CardContent className="p-0">
-                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Laporan" className="rounded-t-lg w-full" data-ai-hint="annual report" />
-                                <div className="p-4">
-                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">LAPORAN</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
-                             <CardContent className="p-0">
-                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Kemitraan" className="rounded-t-lg w-full" data-ai-hint="handshake deal" />
-                                 <div className="p-4">
-                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">KEMITRAAN</p>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
-                             <CardContent className="p-0">
-                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Perpustakaan" className="rounded-t-lg w-full" data-ai-hint="library books" />
-                                <div className="p-4">
-                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">PERPUSTAKAAN</p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                    <div className="grid grid-cols-2 gap-8">
+                         {[
+                            { title: "MAJALAH", hint: "magazine cover", icon: BookOpen },
+                            { title: "LAPORAN", hint: "annual report", icon: Gavel },
+                            { title: "KEMITRAAN", hint: "handshake deal", icon: Users },
+                            { title: "PERPUSTAKAAN", hint: "library books", icon: Building },
+                         ].map(({ title, hint, icon: Icon }) => (
+                            <Card key={title} className="hover:shadow-xl transition-shadow bg-card dark:bg-card group rounded-xl overflow-hidden">
+                                <CardContent className="p-0">
+                                    <div className="relative h-32 bg-primary-dark/10 flex items-center justify-center">
+                                       <Icon className="h-12 w-12 text-primary" />
+                                    </div>
+                                    <div className="p-5 text-center">
+                                        <p className="font-bold text-lg font-poppins group-hover:text-primary transition-colors">{title}</p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                         ))}
                     </div>
                 </div>
             </div>

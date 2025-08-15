@@ -3,7 +3,7 @@ import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BarChartComponent } from '@/components/ui/bar-chart';
-import { FileText, Database, ShieldCheck, Calendar, DollarSign, Newspaper, ChevronRight, Youtube, ArrowRight } from 'lucide-react';
+import { FileText, Database, ShieldCheck, Calendar, DollarSign, Newspaper, Youtube, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -66,7 +66,7 @@ export default function PPIDPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {quickAccessItems.map((item, index) => (
-                        <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 bg-background rounded-xl">
+                        <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 bg-background">
                            <CardContent className="p-10 flex flex-col items-center">
                                 <div className="p-6 bg-primary/10 rounded-full mb-6">
                                      <item.icon className="h-12 w-12 text-primary" />
@@ -85,7 +85,7 @@ export default function PPIDPage() {
                      <p className="text-primary font-semibold mb-2">STATISTIK</p>
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Layanan Informasi Publik</h2>
                 </div>
-                <Card className="rounded-xl shadow-lg">
+                <Card className="shadow-lg">
                     <CardContent className="p-8">
                         <div className="h-[450px]">
                             <BarChartComponent />
@@ -123,7 +123,7 @@ export default function PPIDPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {innovationItems.map((item, index) => (
-                        <Card key={index} className="hover:border-primary transition-colors bg-card hover:shadow-xl rounded-xl">
+                        <Card key={index} className="hover:border-primary transition-colors bg-card hover:shadow-xl">
                             <CardHeader>
                                 <CardTitle className="text-primary font-poppins text-xl">{item.title}</CardTitle>
                             </CardHeader>
@@ -143,7 +143,7 @@ export default function PPIDPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
                     <div className="md:col-span-3">
-                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg group">
+                        <div className="relative aspect-video overflow-hidden shadow-lg group">
                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="Video PPID" data-ai-hint="youtube thumbnail" />
                             <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-80">
                                 <Youtube className="w-20 h-20 text-red-600 group-hover:text-red-500 cursor-pointer transition-transform group-hover:scale-110" />
@@ -151,10 +151,10 @@ export default function PPIDPage() {
                         </div>
                     </div>
                      <div className="md:col-span-2 grid grid-cols-2 gap-6">
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 1" className="rounded-xl object-cover w-full h-full shadow-lg" data-ai-hint="man presenting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 2" className="rounded-xl object-cover w-full h-full shadow-lg" data-ai-hint="woman presenting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 3" className="rounded-xl object-cover w-full h-full shadow-lg" data-ai-hint="office meeting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 4" className="rounded-xl object-cover w-full h-full shadow-lg" data-ai-hint="person writing" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 1" className="object-cover w-full h-full shadow-lg" data-ai-hint="man presenting" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 2" className="object-cover w-full h-full shadow-lg" data-ai-hint="woman presenting" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 3" className="object-cover w-full h-full shadow-lg" data-ai-hint="office meeting" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 4" className="object-cover w-full h-full shadow-lg" data-ai-hint="person writing" />
                     </div>
                 </div>
             </div>

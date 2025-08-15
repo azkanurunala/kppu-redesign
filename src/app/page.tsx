@@ -135,7 +135,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <Card className="bg-white/5 border-white/20 p-8 rounded-xl flex flex-col justify-center text-center items-center lg:col-span-1">
+                    <Card className="bg-white/5 border-white/20 p-8 flex flex-col justify-center text-center items-center lg:col-span-1">
                         <h3 className="text-3xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
                         <p className="text-gray-300 leading-relaxed mb-6">
                             Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat.
@@ -163,7 +163,7 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <div>
-                        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg group">
+                        <div className="relative aspect-video overflow-hidden shadow-lg group">
                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="KPPU Video Profile" data-ai-hint="office presentation" />
                             <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-80">
                                 <Youtube className="w-20 h-20 text-red-600 cursor-pointer transition-transform duration-300 group-hover:scale-110" />
@@ -177,7 +177,7 @@ export default function Home() {
                             { title: "KEMITRAAN", hint: "handshake deal", icon: Users },
                             { title: "PERPUSTAKAAN", hint: "library books", icon: Building },
                          ].map(({ title, hint, icon: Icon }) => (
-                            <Card key={title} className="hover:shadow-xl transition-shadow bg-card dark:bg-card group rounded-xl overflow-hidden">
+                            <Card key={title} className="hover:shadow-xl transition-shadow bg-card dark:bg-card group overflow-hidden">
                                 <CardContent className="p-0">
                                     <div className="relative h-32 bg-primary-dark/10 flex items-center justify-center">
                                        <Icon className="h-12 w-12 text-primary" />

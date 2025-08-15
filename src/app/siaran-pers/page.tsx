@@ -45,7 +45,7 @@ export default function SiaranPersPage() {
                     
                     <div className="lg:col-span-3 space-y-8">
                         {pressReleases.map((item, index) => (
-                           <Card key={index} className="transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1.5 border-l-4 border-primary bg-card rounded-xl">
+                           <Card key={index} className="transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1.5 border-l-4 border-primary bg-card">
                                 <CardContent className="p-8">
                                     <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-4 text-sm text-muted-foreground">
                                         <div className="flex items-center gap-2 mb-2 sm:mb-0">
@@ -73,7 +73,7 @@ export default function SiaranPersPage() {
                     </div>
 
                     <aside className="space-y-10 lg:sticky lg:top-28 h-fit">
-                        <Card className="rounded-xl shadow-lg">
+                        <Card className="shadow-lg">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-3 text-xl font-poppins text-primary-dark dark:text-white">
                                     <ListFilter className="h-5 w-5" />
@@ -83,10 +83,10 @@ export default function SiaranPersPage() {
                             <CardContent className="space-y-4">
                                 <div className="relative">
                                     <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                                    <Input placeholder="Cari siaran pers..." className="pl-11 h-11 rounded-lg" />
+                                    <Input placeholder="Cari siaran pers..." className="pl-11 h-11" />
                                 </div>
                                 <Select>
-                                    <SelectTrigger className="h-11 rounded-lg">
+                                    <SelectTrigger className="h-11">
                                         <SelectValue placeholder="Pilih Tahun" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -94,18 +94,18 @@ export default function SiaranPersPage() {
                                     </SelectContent>
                                 </Select>
                                 <Select>
-                                    <SelectTrigger className="h-11 rounded-lg">
+                                    <SelectTrigger className="h-11">
                                         <SelectValue placeholder="Pilih Bulan" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         {["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"].map(month => <SelectItem key={month} value={month.toLowerCase()}>{month}</SelectItem>)}
                                     </SelectContent>
                                 </Select>
-                                <Button className="w-full h-11 rounded-lg">Terapkan Filter</Button>
+                                <Button className="w-full h-11">Terapkan Filter</Button>
                             </CardContent>
                         </Card>
                         
-                        <Card className="rounded-xl shadow-lg">
+                        <Card className="shadow-lg">
                             <CardHeader>
                                 <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white">Arsip Siaran Pers</CardTitle>
                             </CardHeader>

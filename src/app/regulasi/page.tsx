@@ -63,7 +63,7 @@ export default function RegulasiPage() {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                     <div className="lg:col-span-2">
-                        <Card className="rounded-xl shadow-lg">
+                        <Card className="shadow-lg">
                             <CardContent className="p-0">
                                 <Table>
                                     <TableHeader>
@@ -98,7 +98,7 @@ export default function RegulasiPage() {
                         </Card>
                     </div>
                     <aside className="lg:sticky lg:top-28 h-fit">
-                        <Card className="rounded-xl shadow-lg">
+                        <Card className="shadow-lg">
                             <CardHeader>
                                 <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white">Navigasi Cepat</CardTitle>
                             </CardHeader>

@@ -1,7 +1,6 @@
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Calendar, Clock, MapPin, ChevronRight, FileText, Gavel, Newspaper, MessageSquareQuote, Info } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
@@ -78,7 +77,7 @@ export default function JadwalSidangPage() {
                                 </h2>
                                 <div className="space-y-8">
                                     {day.agendas.map((item, itemIndex) => (
-                                        <Card key={itemIndex} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border-l-4 border-primary rounded-xl">
+                                        <Card key={itemIndex} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border-l-4 border-primary">
                                             <CardHeader className="bg-gray-50 dark:bg-gray-800/30 p-6 border-b border-border/50">
                                                 <CardTitle className="text-lg font-semibold text-primary-dark dark:text-gray-200">
                                                     Registrasi Perkara: {item.reg}
@@ -121,7 +120,7 @@ export default function JadwalSidangPage() {
 
                     {/* Sidebar */}
                     <aside className="lg:sticky lg:top-28 h-fit">
-                        <Card className="rounded-xl shadow-lg">
+                        <Card className="shadow-lg">
                             <CardHeader>
                                 <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white">Navigasi Cepat</CardTitle>
                             </CardHeader>

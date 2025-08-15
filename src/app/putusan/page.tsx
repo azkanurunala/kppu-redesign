@@ -37,22 +37,22 @@ export default function PutusanPage() {
         </section>
       
         <div className="container mx-auto px-4 py-16 lg:py-24">
-            <Card className="mb-8 p-6 bg-card border shadow-lg rounded-xl">
+            <Card className="mb-8 p-6 bg-card border shadow-lg">
                 <div className="flex flex-col md:flex-row items-center gap-4">
                     <div className="relative flex-grow w-full">
-                        <Input placeholder="Cari berdasarkan nomor putusan atau kata kunci..." className="pl-12 h-12 text-base rounded-lg" />
+                        <Input placeholder="Cari berdasarkan nomor putusan atau kata kunci..." className="pl-12 h-12 text-base" />
                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400" />
                     </div>
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8 text-base rounded-lg w-full md:w-auto">
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground h-12 px-8 text-base w-full md:w-auto">
                         Cari
                     </Button>
-                    <Button variant="outline" className="text-base h-12 rounded-lg w-full md:w-auto">
+                    <Button variant="outline" className="text-base h-12 w-full md:w-auto">
                         Pencarian Lanjutan <ChevronDown className="h-4 w-4 ml-2"/>
                     </Button>
                 </div>
             </Card>
             
-            <Card className="overflow-hidden shadow-lg rounded-xl">
+            <Card className="overflow-hidden shadow-lg">
               <CardContent className="p-0">
                 <Table>
                     <TableHeader>

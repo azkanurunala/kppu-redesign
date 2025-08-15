@@ -81,7 +81,7 @@ export default function TanyaJawabPage() {
                             ))}
                         </Accordion>
                         
-                        <Card className="mt-20 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary rounded-xl">
+                        <Card className="mt-20 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-3 font-poppins text-2xl text-primary-dark dark:text-white">
                                     <Phone />
@@ -100,7 +100,7 @@ export default function TanyaJawabPage() {
                     </div>
 
                     <aside className="lg:sticky lg:top-28 h-fit">
-                        <Card className="rounded-xl shadow-lg">
+                        <Card className="shadow-lg">
                             <CardHeader>
                                 <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white">Navigasi Cepat</CardTitle>
                             </CardHeader>

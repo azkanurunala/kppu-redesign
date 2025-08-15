@@ -67,10 +67,13 @@ export default {
         'accent-gray-6': 'hsl(var(--accent-gray-6))',
       },
       borderRadius: {
-        lg: '16px',
-        md: '12px',
-        sm: '8px',
-        pill: '9999px',
+        lg: "1rem", // 16px
+        xl: "1.25rem", // 20px
+        "2xl": "1.5rem", // 24px
+        "3xl": "2rem", // 32px
+        full: "9999px",
+        md: "0.75rem", // 12px
+        sm: "0.5rem", // 8px
       },
       keyframes: {
         'accordion-down': {
@@ -98,3 +101,5 @@ export default {
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
+
+    

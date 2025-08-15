@@ -6,6 +6,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, ArrowRight, Search, FileText, Landmark } from 'lucide-react';
 import Link from 'next/link';
+import { HomeCarousel } from '@/components/home-carousel';
 
 const iconNavItems = [
   { icon: <Scale className="h-8 w-8 text-primary" />, label: "REGULASI", href: "/regulasi" },
@@ -69,6 +70,11 @@ export default function Home() {
                     </Button>
                 </div>
             </div>
+        </section>
+        
+        {/* 3D Carousel Section */}
+        <section className="py-12 md:py-20 -mt-16">
+            <HomeCarousel />
         </section>
         
         {/* Quick Access Nav */}
@@ -177,3 +183,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube } from 'lucide-react';
+import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube, ArrowRight } from 'lucide-react';
 import { KppuPieChart } from '@/components/kppu-pie-chart';
 import Link from 'next/link';
 
@@ -85,13 +85,13 @@ export default function Home() {
         </section>
         
         <section className="bg-card dark:bg-card shadow-md">
-            <div className="container mx-auto px-4 py-4">
+            <div className="container mx-auto px-4 py-6">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
                     {iconNavItems.map(item => (
                       <Link href={item.href} key={item.label}>
                         <div className="flex flex-col items-center justify-center gap-2 p-3 text-foreground/80 hover:text-primary transition-colors cursor-pointer rounded-lg hover:bg-primary/5">
                            {item.icon}
-                           <span className="font-semibold text-xs tracking-wider">{item.label}</span>
+                           <span className="font-semibold text-xs tracking-wider uppercase">{item.label}</span>
                         </div>
                       </Link>
                     ))}
@@ -99,23 +99,23 @@ export default function Home() {
             </div>
         </section>
 
-        <section className="py-16 bg-background">
+        <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-10 text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <h2 className="text-4xl font-bold text-center mb-12 text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {Object.entries(newsColumns).map(([category, items]) => (
                         <div key={category}>
-                            <h3 className="text-xl font-bold mb-4 border-b-2 border-primary pb-2 text-primary-dark dark:text-gray-300 font-poppins">{category}</h3>
+                            <h3 className="text-2xl font-bold mb-6 border-b-2 border-primary pb-3 text-primary-dark dark:text-gray-300 font-poppins">{category}</h3>
                             <div className="space-y-6">
                                 {items.map((item, index) => (
                                     <div key={index} className={index === 0 ? "" : "border-t pt-6"}>
                                       {index === 0 && item.image && <Image src={item.image} alt={item.title} width={300} height={200} className="rounded-lg w-full mb-4" data-ai-hint={item.hint} />}
-                                      <p className="font-semibold text-foreground hover:text-primary cursor-pointer">{item.title}</p>
-                                      <p className="text-sm text-muted-foreground mt-1">{item.date}</p>
+                                      <p className="font-semibold text-lg text-foreground hover:text-primary cursor-pointer">{item.title}</p>
+                                      <p className="text-sm text-muted-foreground mt-2">{item.date}</p>
                                     </div>
                                 ))}
-                                <Button variant="outline" size="sm" className="bg-gray-200 text-gray-600 border-gray-300 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
-                                    Selengkapnya
+                                <Button variant="outline" size="sm" className="mt-4">
+                                    Selengkapnya <ArrowRight className="h-4 w-4 ml-2" />
                                 </Button>
                             </div>
                         </div>
@@ -124,12 +124,12 @@ export default function Home() {
             </div>
         </section>
 
-        <section className="py-16 bg-primary-dark text-white">
+        <section className="py-20 bg-primary-dark text-white">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-12 font-poppins">Jajaran Komisioner KPPU</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <h2 className="text-4xl font-bold text-center mb-12 font-poppins">Jajaran Komisioner KPPU</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="bg-white/10 p-8 rounded-lg">
-                        <h3 className="text-2xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
+                        <h3 className="text-3xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
                         <p className="text-gray-200 leading-relaxed mb-6">
                             KPPU diawasi oleh Komisi Pengawas Persaingan Usaha yang bertugas mengawasi pelaksanaan UU No. 5/1999 dan UU No. 20/2008, serta Peraturan Pemerintah dan Peraturan Presiden lainnya. Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat demi kesejahteraan rakyat Indonesia.
                         </p>
@@ -146,48 +146,48 @@ export default function Home() {
             </div>
         </section>
         
-        <section className="py-16 bg-background">
+        <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center mb-10 text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <h2 className="text-4xl font-bold text-center mb-12 text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
-                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg group">
                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="KPPU Video Profile" data-ai-hint="office presentation" />
                             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <Youtube className="w-16 h-16 text-red-600 hover:text-red-500 cursor-pointer transition-transform hover:scale-110" />
+                                <Youtube className="w-20 h-20 text-red-600 cursor-pointer transition-transform group-hover:scale-110" />
                             </div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
-                        <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                    <div className="grid grid-cols-2 gap-6">
+                        <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
                             <CardContent className="p-0">
                                 <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Majalah" className="rounded-t-lg w-full" data-ai-hint="magazine cover" />
                                 <div className="p-4">
-                                    <p className="font-semibold font-poppins">MAJALAH</p>
+                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">MAJALAH</p>
                                 </div>
                             </CardContent>
                         </Card>
-                         <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                         <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
                              <CardContent className="p-0">
                                 <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Laporan" className="rounded-t-lg w-full" data-ai-hint="annual report" />
                                 <div className="p-4">
-                                    <p className="font-semibold font-poppins">LAPORAN</p>
+                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">LAPORAN</p>
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                        <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
                              <CardContent className="p-0">
                                 <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Kemitraan" className="rounded-t-lg w-full" data-ai-hint="handshake deal" />
                                  <div className="p-4">
-                                    <p className="font-semibold font-poppins">KEMITRAAN</p>
+                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">KEMITRAAN</p>
                                 </div>
                             </CardContent>
                         </Card>
-                        <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                        <Card className="hover:shadow-xl transition-shadow bg-card dark:bg-card group">
                              <CardContent className="p-0">
                                 <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Perpustakaan" className="rounded-t-lg w-full" data-ai-hint="library books" />
                                 <div className="p-4">
-                                    <p className="font-semibold font-poppins">PERPUSTAKAAN</p>
+                                    <p className="font-semibold text-lg font-poppins group-hover:text-primary transition-colors">PERPUSTAKAAN</p>
                                 </div>
                             </CardContent>
                         </Card>

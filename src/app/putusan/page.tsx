@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Download, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-react';
+import { Search, Download, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, ChevronDown } from 'lucide-react';
 
 const decisions = [
     { no: 1, decisionNumber: "19/KPPU-M/2024", about: "DUGAAN PELANGGARAN TERKAIT KETERLAMBATAN PEMBERITAHUAN PENGAMBILALIHAN SAHAM EMERALD GRAIN PTY., LTD., (SEKARANG BERNAMA LOUIS DREYFUS COMPANY EMERALD AUSTRALIA PTY., LTD.) OLEH LOUIS DREYFUS COMPANY MELBOURNE HOLDINGS PTY., LTD.", date: "11 Agustus 2025" },
@@ -20,105 +20,84 @@ const decisions = [
     { no: 10, decisionNumber: "15/KPPU-M/2024", about: "DUGAAN PELANGGARAN TERKAIT KETERLAMBATAN PEMBERITAHUAN PENGAMBILALIHAN SAHAM PT MITRA PINASTHIKA MUSTIKA RENT OLEH TRUSTY CARS PTE. LTD.", date: "24 Februari 2025" },
 ];
 
-const CityscapeFooter = () => (
-    <div className="relative h-32 md:h-48 mt-16 overflow-hidden">
-        <div 
-            className="absolute bottom-0 left-0 w-full h-full bg-no-repeat bg-bottom bg-contain"
-            style={{ 
-                backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100%25\' height=\'100%25\' viewBox=\'0 0 1440 192\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,133.3C672,117,768,107,864,112C960,117,1056,139,1152,138.7C1248,139,1344,117,1392,106.7L1440,96L1440,192L1392,192C1344,192,1248,192,1152,192C1056,192,960,192,864,192C768,192,672,192,576,192C480,192,384,192,288,192C192,192,96,192,48,192L0,192Z\' fill=\'%233B82F6\' fill-opacity=\'0.3\'%3E%3C/path%3E%3Cpath d=\'M0,128L40,133.3C80,139,160,149,240,138.7C320,128,400,96,480,90.7C560,85,640,107,720,128C800,149,880,171,960,165.3C1040,160,1120,128,1200,101.3C1280,75,1360,53,1400,42.7L1440,32L1440,192L1400,192C1360,192,1280,192,1200,192C1120,192,1040,192,960,192C880,192,800,192,720,192C640,192,560,192,480,192C400,192,320,192,240,192C160,192,80,192,40,192L0,192Z\' fill=\'%23112444\' fill-opacity=\'0.7\'%3E%3C/path%3E%3C/svg%3E")',
-                backgroundSize: '200% 100%',
-                animation: 'wave-animation 15s linear infinite',
-            }}
-        />
-        <style jsx>{`
-            @keyframes wave-animation {
-                0% { background-position: 0% 0; }
-                100% { background-position: -200% 0; }
-            }
-        `}</style>
-    </div>
-);
-
-
 export default function PutusanPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-gray-50 text-gray-800">
+    <div className="flex min-h-screen flex-col bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       <Header />
-
-      <section className="bg-primary-dark text-white py-6 shadow-md">
-            <div className="container mx-auto px-4">
-                <h1 className="text-3xl font-bold font-poppins">DATABASE PUTUSAN KPPU</h1>
-            </div>
-      </section>
       
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <h2 className="text-2xl font-semibold mb-6 text-primary-dark">DAFTAR PUTUSAN KPPU</h2>
-        
-        <Card className="mb-8">
-            <div className="p-4 flex items-center gap-4">
-                <Button className="bg-primary-dark hover:bg-primary-dark/90">Pencarian Dinamis</Button>
-                <div className="relative flex-grow">
-                    <Input placeholder="pencarian cepat" className="pl-10" />
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                </div>
+      <main className="flex-1">
+        <section className="bg-primary-dark text-white py-12 text-center">
+            <div className="container mx-auto px-4">
+                <h1 className="text-4xl lg:text-5xl font-bold font-poppins">Database Putusan KPPU</h1>
+                <p className="mt-2 text-lg text-primary-foreground/80 max-w-2xl mx-auto">Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha.</p>
             </div>
-        </Card>
-        
-        <Card>
-            <Table>
-                <TableHeader>
-                    <TableRow className="bg-primary-dark hover:bg-primary-dark">
-                        <TableHead className="w-12"></TableHead>
-                        <TableHead className="w-12 text-white font-bold">No.</TableHead>
-                        <TableHead className="w-48 text-white font-bold">Nomor Putusan</TableHead>
-                        <TableHead className="text-white font-bold">Tentang</TableHead>
-                        <TableHead className="w-48 text-white font-bold">Tanggal Putusan</TableHead>
-                        <TableHead className="w-32 text-center text-white font-bold">File Download</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {decisions.map((item) => (
-                        <TableRow key={item.no}>
-                            <TableCell>
-                                <Button variant="ghost" size="icon">
-                                    <Search className="h-5 w-5 text-primary" />
-                                </Button>
-                            </TableCell>
-                            <TableCell>{item.no}</TableCell>
-                            <TableCell>{item.decisionNumber}</TableCell>
-                            <TableCell>{item.about}</TableCell>
-                            <TableCell>{item.date}</TableCell>
-                            <TableCell className="text-center">
-                                <Button variant="ghost" size="icon" className="text-blue-500 hover:text-blue-600">
-                                    <Download className="h-6 w-6" />
-                                </Button>
-                            </TableCell>
+        </section>
+      
+        <div className="container mx-auto px-4 py-12 lg:py-16">
+            <Card className="mb-8 p-4 bg-card border-none shadow-lg">
+                <div className="flex flex-col md:flex-row items-center gap-4">
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full md:w-auto">
+                        Pencarian Dinamis <ChevronDown className="h-4 w-4 ml-2"/>
+                    </Button>
+                    <div className="relative flex-grow w-full">
+                        <Input placeholder="Cari berdasarkan nomor putusan atau kata kunci..." className="pl-10 h-11 text-base" />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    </div>
+                </div>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+                <Table>
+                    <TableHeader>
+                        <TableRow className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800">
+                            <TableHead className="w-12 text-black dark:text-white font-bold">No.</TableHead>
+                            <TableHead className="w-48 text-black dark:text-white font-bold">Nomor Putusan</TableHead>
+                            <TableHead className="text-black dark:text-white font-bold">Tentang</TableHead>
+                            <TableHead className="w-48 text-black dark:text-white font-bold">Tanggal Putusan</TableHead>
+                            <TableHead className="w-32 text-center text-black dark:text-white font-bold">Dokumen</TableHead>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-            <div className="flex items-center justify-between p-4 border-t">
-                <span className="text-sm text-gray-600">1 sampai 10 dari 424</span>
-                <div className="flex items-center space-x-2">
-                    <Button variant="outline" size="icon" disabled>
-                        <ChevronsLeft className="h-4 w-4" />
-                    </Button>
-                    <Button variant="outline" size="icon" disabled>
-                        <ChevronLeft className="h-4 w-4" />
-                    </Button>
-                    <Button variant="outline" size="icon">
-                        <ChevronRight className="h-4 w-4" />
-                    </Button>
-                    <Button variant="outline" size="icon">
-                        <ChevronsRight className="h-4 w-4" />
-                    </Button>
+                    </TableHeader>
+                    <TableBody>
+                        {decisions.map((item) => (
+                            <TableRow key={item.no} className="dark:border-gray-700">
+                                <TableCell className="font-medium">{item.no}</TableCell>
+                                <TableCell className="font-semibold text-primary">{item.decisionNumber}</TableCell>
+                                <TableCell>{item.about}</TableCell>
+                                <TableCell>{item.date}</TableCell>
+                                <TableCell className="text-center">
+                                    <Button variant="ghost" size="icon" className="text-blue-500 hover:text-blue-600 hover:bg-blue-500/10 rounded-full">
+                                        <Download className="h-5 w-5" />
+                                    </Button>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+                <div className="flex items-center justify-between p-4 border-t dark:border-gray-700">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">Menampilkan 1-10 dari 424 hasil</span>
+                    <div className="flex items-center space-x-1">
+                        <Button variant="outline" size="icon" disabled>
+                            <ChevronsLeft className="h-4 w-4" />
+                        </Button>
+                        <Button variant="outline" size="icon" disabled>
+                            <ChevronLeft className="h-4 w-4" />
+                        </Button>
+                         <Button variant="outline" className="px-4">1</Button>
+                         <Button variant="ghost" className="px-4">2</Button>
+                         <Button variant="ghost" className="px-4">3</Button>
+                        <Button variant="outline" size="icon">
+                            <ChevronRight className="h-4 w-4" />
+                        </Button>
+                        <Button variant="outline" size="icon">
+                            <ChevronsRight className="h-4 w-4" />
+                        </Button>
+                    </div>
                 </div>
-            </div>
-        </Card>
+            </Card>
+        </div>
       </main>
       
-      <CityscapeFooter />
+      <Footer />
     </div>
   );
 }
-

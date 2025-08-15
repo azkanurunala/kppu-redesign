@@ -34,8 +34,7 @@ export default function PPIDPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative bg-primary-dark text-white py-20 md:py-32 overflow-hidden">
+        <section className="relative bg-primary-dark text-white py-20 md:py-28 overflow-hidden">
             <div className="absolute inset-0">
                 <Image 
                     src="https://placehold.co/1920x600.png" 
@@ -48,31 +47,30 @@ export default function PPIDPage() {
             </div>
             <div className="container mx-auto px-4 relative">
                 <div className="max-w-3xl">
-                    <p className="text-lg font-semibold text-primary-foreground/80 tracking-widest">PPID KPPU</p>
-                    <h1 className="text-4xl md:text-6xl font-bold font-poppins mt-2">Daftar Informasi Publik</h1>
-                    <p className="mt-4 text-lg text-primary-foreground/90 max-w-xl">
+                    <p className="text-lg font-semibold text-primary-foreground/80 tracking-widest uppercase">PPID KPPU</p>
+                    <h1 className="text-4xl md:text-6xl font-bold font-poppins mt-2">Informasi Publik</h1>
+                    <p className="mt-6 text-lg text-primary-foreground/90 max-w-xl leading-relaxed">
                         Akses informasi publik yang transparan dan akuntabel sesuai dengan amanat Undang-Undang Keterbukaan Informasi Publik.
                     </p>
-                    <Button size="lg" className="mt-8 bg-gold text-primary-dark font-bold hover:bg-gold/90">
+                    <Button size="lg" className="mt-8 bg-gold text-primary-dark font-bold hover:bg-gold/90 text-base">
                         Mulai Jelajahi <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                 </div>
             </div>
         </section>
 
-        {/* Quick Access Section */}
-        <section className="py-16 bg-card">
+        <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                     <h2 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white">Pejabat Pengelola Informasi dan Dokumentasi</h2>
-                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Akses cepat ke layanan utama Pejabat Pengelola Informasi dan Dokumentasi (PPID) KPPU.</p>
+                     <h2 className="text-4xl font-bold font-poppins text-primary-dark dark:text-white">Layanan Utama PPID</h2>
+                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">Akses cepat ke layanan utama Pejabat Pengelola Informasi dan Dokumentasi (PPID) KPPU.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {quickAccessItems.map((item, index) => (
-                        <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-transform duration-300">
+                        <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 bg-background">
                            <CardContent className="p-8 flex flex-col items-center">
-                                <div className="p-4 bg-primary/10 rounded-full mb-4">
-                                     <item.icon className="h-10 w-10 text-primary" />
+                                <div className="p-5 bg-primary/10 rounded-full mb-5">
+                                     <item.icon className="h-12 w-12 text-primary" />
                                 </div>
                                 <h3 className="text-xl font-semibold font-poppins text-primary-dark dark:text-white">{item.label}</h3>
                            </CardContent>
@@ -82,15 +80,14 @@ export default function PPIDPage() {
             </div>
         </section>
 
-        {/* Statistics Section */}
-        <section className="py-16 bg-background">
+        <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
                  <div className="text-center mb-12">
-                     <h2 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white">Statistik Permohonan Informasi Publik</h2>
+                     <h2 className="text-4xl font-bold font-poppins text-primary-dark dark:text-white">Statistik Layanan Informasi</h2>
                 </div>
                 <Card>
                     <CardContent className="p-6">
-                        <div className="h-[350px]">
+                        <div className="h-[400px]">
                             <BarChartComponent />
                         </div>
                     </CardContent>
@@ -98,14 +95,16 @@ export default function PPIDPage() {
             </div>
         </section>
 
-         {/* Publications Section */}
-        <section className="py-16 bg-card">
+         <section className="py-20 bg-card">
             <div className="container mx-auto px-4">
+                 <div className="text-center mb-12">
+                     <h2 className="text-4xl font-bold font-poppins text-primary-dark dark:text-white">Publikasi & Dokumen</h2>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     {publicationItems.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center p-6 bg-background rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                           <div className="p-3 bg-gold/10 rounded-full mb-4">
-                                <item.icon className="h-8 w-8 text-gold" />
+                        <div key={index} className="flex flex-col items-center p-8 bg-background rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                           <div className="p-4 bg-gold/10 rounded-full mb-5">
+                                <item.icon className="h-10 w-10 text-gold" />
                            </div>
                            <h3 className="text-lg font-semibold font-poppins text-primary-dark dark:text-white">{item.title}</h3>
                         </div>
@@ -114,16 +113,15 @@ export default function PPIDPage() {
             </div>
         </section>
 
-        {/* Innovations Section */}
-        <section className="py-16 bg-background">
+        <section className="py-20 bg-background">
             <div className="container mx-auto px-4">
                  <div className="text-center mb-12">
-                     <h2 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white">Inovasi KPPU</h2>
-                     <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Berbagai inovasi digital untuk meningkatkan kualitas layanan dan transparansi.</p>
+                     <h2 className="text-4xl font-bold font-poppins text-primary-dark dark:text-white">Inovasi Digital KPPU</h2>
+                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">Berbagai inovasi digital untuk meningkatkan kualitas layanan dan transparansi.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {innovationItems.map((item, index) => (
-                        <Card key={index} className="hover:border-primary transition-colors">
+                        <Card key={index} className="hover:border-primary transition-colors bg-card hover:shadow-xl">
                             <CardHeader>
                                 <CardTitle className="text-primary font-poppins text-xl">{item.title}</CardTitle>
                             </CardHeader>
@@ -136,18 +134,17 @@ export default function PPIDPage() {
             </div>
         </section>
 
-        {/* Media Section */}
-        <section className="py-16 bg-primary-dark text-white">
+        <section className="py-20 bg-primary-dark text-white">
             <div className="container mx-auto px-4">
                  <div className="text-center mb-12">
-                     <h2 className="text-3xl font-bold font-poppins">Galeri & Media</h2>
+                     <h2 className="text-4xl font-bold font-poppins">Galeri & Media</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                     <div className="md:col-span-3">
                         <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg group">
                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="Video PPID" data-ai-hint="youtube thumbnail" />
                             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <Youtube className="w-16 h-16 text-red-600 group-hover:text-red-500 cursor-pointer transition-transform group-hover:scale-110" />
+                                <Youtube className="w-20 h-20 text-red-600 group-hover:text-red-500 cursor-pointer transition-transform group-hover:scale-110" />
                             </div>
                         </div>
                     </div>
@@ -160,7 +157,6 @@ export default function PPIDPage() {
                 </div>
             </div>
         </section>
-
       </main>
       <Footer />
     </div>

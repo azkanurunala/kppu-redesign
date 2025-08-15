@@ -111,7 +111,7 @@ export function Header() {
           <DropdownMenu key={item.label}>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className={cn(
-                  "text-xs font-bold tracking-wider flex items-center gap-1",
+                  "text-sm font-semibold flex items-center gap-1",
                   isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
                 )} asChild>
                   <Link href={item.href}>
@@ -122,14 +122,14 @@ export function Header() {
             <DropdownMenuContent className="bg-white dark:bg-primary-dark text-primary-dark dark:text-white">
               {item.subItems.map((subItem) => (
                 <DropdownMenuItem key={subItem.label} asChild>
-                  <Link href={subItem.href} className="text-xs font-semibold hover:!bg-primary/20 dark:hover:!bg-white/20">{subItem.label}</Link>
+                  <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/20 dark:hover:!bg-white/20">{subItem.label}</Link>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
         ) : (
           <Button key={item.label} variant="ghost" asChild className={cn(
-              "text-xs font-bold tracking-wider",
+              "text-sm font-semibold",
               isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
           )}>
             <Link href={item.href}>{item.label}</Link>
@@ -144,7 +144,7 @@ export function Header() {
       "sticky top-0 z-50 w-full transition-shadow duration-300",
        "bg-white dark:bg-primary-dark shadow-md"
     )}>
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Logo />
         </Link>
@@ -153,7 +153,7 @@ export function Header() {
           <NavMenu />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">

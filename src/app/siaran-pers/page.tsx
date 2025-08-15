@@ -28,30 +28,26 @@ export default function SiaranPersPage() {
     <div className="flex min-h-screen flex-col bg-gray-50 dark:bg-gray-900 text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-8 shadow-inner">
-            <div 
-              className="container mx-auto px-4 bg-center bg-no-repeat"
-              style={{ backgroundImage: "url('/wayang-pattern.svg')", backgroundSize: 'cover' }}
-            >
-                <h1 className="text-4xl font-bold font-poppins">Siaran Pers</h1>
-                <div className="text-sm mt-1 flex items-center">
+        <section className="bg-primary-dark text-white py-12">
+            <div className="container mx-auto px-4">
+                <h1 className="text-4xl lg:text-5xl font-bold font-poppins">Siaran Pers</h1>
+                <div className="text-sm mt-2 flex items-center space-x-2">
                     <a href="/" className="hover:underline">Beranda</a>
-                    <ChevronRight className="inline-block h-4 w-4 mx-1" />
+                    <ChevronRight className="h-4 w-4" />
                     <span>Siaran Pers</span>
                 </div>
             </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-16 lg:py-20">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
                     
-                    {/* Press Release List */}
-                    <div className="lg:col-span-3 space-y-6">
+                    <div className="lg:col-span-3 space-y-8">
                         {pressReleases.map((item, index) => (
-                           <Card key={index} className="transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 border-l-4 border-primary">
+                           <Card key={index} className="transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 border-l-4 border-primary bg-card">
                                 <CardContent className="p-6">
-                                    <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-3 text-sm text-muted-foreground">
+                                    <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-4 text-sm text-muted-foreground">
                                         <div className="flex items-center gap-2 mb-2 sm:mb-0">
                                             <FileText className="h-4 w-4" />
                                             <span>No: {item.no}</span>
@@ -61,7 +57,7 @@ export default function SiaranPersPage() {
                                             <span>{item.date}</span>
                                         </div>
                                     </div>
-                                    <h3 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-4 hover:text-primary cursor-pointer">
+                                    <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-5 hover:text-primary cursor-pointer transition-colors">
                                         {item.title}
                                     </h3>
                                     <Button>
@@ -76,11 +72,10 @@ export default function SiaranPersPage() {
                         </div>
                     </div>
 
-                    {/* Sidebar */}
                     <aside className="space-y-8">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="flex items-center gap-2 text-lg font-poppins">
+                                <CardTitle className="flex items-center gap-3 text-xl font-poppins">
                                     <ListFilter className="h-5 w-5" />
                                     Pencarian & Filter
                                 </CardTitle>
@@ -112,14 +107,14 @@ export default function SiaranPersPage() {
                         
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-lg font-poppins">Arsip Siaran Pers</CardTitle>
+                                <CardTitle className="text-xl font-poppins">Arsip Siaran Pers</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="space-y-2">
+                                <ul className="space-y-3">
                                     {archiveYears.map(year => (
                                         <li key={year}>
-                                            <a href="#" className="flex justify-between items-center text-foreground/80 hover:text-primary hover:underline">
-                                                <span>Arsip {year}</span>
+                                            <a href="#" className="flex justify-between items-center text-foreground/80 hover:text-primary transition-colors">
+                                                <span className="font-medium">Arsip {year}</span>
                                                 <ChevronRight className="h-4 w-4" />
                                             </a>
                                         </li>

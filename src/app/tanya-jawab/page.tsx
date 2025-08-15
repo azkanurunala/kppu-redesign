@@ -8,8 +8,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ChevronRight, FileText, Gavel, Newspaper, MessageSquareQuestion, Info, Search, Phone } from 'lucide-react';
+import { ChevronRight, FileText, Gavel, Newspaper, MessageSquareQuote, Info, Search, Phone } from 'lucide-react';
 import React from 'react';
+import { Button } from '@/components/ui/button';
 
 const faqData = [
   {
@@ -39,7 +40,7 @@ const sidebarNavItems = [
   { icon: Gavel, label: "PUTUSAN", href: "/putusan" },
   { icon: Newspaper, label: "JADWAL SIDANG", href: "/jadwal-sidang" },
   { icon: FileText, label: "SIARAN PERS", href: "/siaran-pers" },
-  { icon: MessageSquareQuestion, label: "TANYA JAWAB", href: "/tanya-jawab" },
+  { icon: MessageSquareQuote, label: "TANYA JAWAB", href: "/tanya-jawab" },
   { icon: Info, label: "PPID", href: "/ppid" },
 ];
 
@@ -48,67 +49,63 @@ export default function TanyaJawabPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-8 shadow-inner">
-            <div 
-              className="container mx-auto px-4 bg-center bg-no-repeat"
-              style={{ backgroundImage: "url('/wayang-pattern.svg')", backgroundSize: 'cover' }}
-            >
-                <h1 className="text-4xl font-bold font-poppins">Tanya Jawab</h1>
-                <div className="text-sm mt-1 flex items-center">
+        <section className="bg-primary-dark text-white py-12">
+            <div className="container mx-auto px-4">
+                <h1 className="text-4xl lg:text-5xl font-bold font-poppins">Tanya Jawab</h1>
+                <div className="text-sm mt-2 flex items-center space-x-2">
                     <a href="/" className="hover:underline">Beranda</a>
-                    <ChevronRight className="inline-block h-4 w-4 mx-1" />
+                    <ChevronRight className="h-4 w-4" />
                     <span>Tanya Jawab</span>
                 </div>
             </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-16 lg:py-20">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <div className="lg:col-span-2">
-                        <h2 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-6">Frequently Asked Questions (FAQ)</h2>
+                        <h2 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Frequently Asked Questions (FAQ)</h2>
                         <Accordion type="single" collapsible className="w-full space-y-4">
                             {faqData.map((item, index) => (
-                                <AccordionItem key={index} value={`item-${index}`} className="border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-card">
-                                    <AccordionTrigger className="p-6 text-left font-semibold text-lg hover:no-underline">
+                                <AccordionItem key={index} value={`item-${index}`} className="border-b-2">
+                                    <AccordionTrigger className="p-4 text-left font-semibold text-xl hover:no-underline text-primary-dark dark:text-white">
                                         {item.question}
                                     </AccordionTrigger>
-                                    <AccordionContent className="p-6 pt-0 text-muted-foreground">
+                                    <AccordionContent className="p-4 pt-0 text-muted-foreground text-base leading-relaxed">
                                         {item.answer}
                                     </AccordionContent>
                                 </AccordionItem>
                             ))}
                         </Accordion>
                         
-                        <Card className="mt-12 bg-blue-50 dark:bg-blue-900/20 border-primary/50">
+                        <Card className="mt-16 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-primary">
                             <CardHeader>
-                                <CardTitle className="flex items-center gap-3 font-poppins text-primary-dark dark:text-white">
+                                <CardTitle className="flex items-center gap-3 font-poppins text-2xl text-primary-dark dark:text-white">
                                     <Phone />
                                     Tidak Menemukan Jawaban?
                                  </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-muted-foreground mb-4">
+                                <p className="text-muted-foreground mb-6 text-base">
                                     Jika Anda tidak menemukan jawaban atas pertanyaan Anda, jangan ragu untuk menghubungi kami secara langsung. Tim kami siap membantu Anda.
                                 </p>
-                                <button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 rounded-md font-semibold">
-                                    Hubungi Kami
-                                </button>
+                                <Button size="lg">
+                                    Hubungi Kami <ChevronRight className="w-4 h-4 ml-2" />
+                                </Button>
                             </CardContent>
                         </Card>
                     </div>
 
-                    {/* Sidebar */}
                     <aside>
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-lg font-poppins">Navigasi Cepat</CardTitle>
+                                <CardTitle className="text-xl font-poppins">Navigasi Cepat</CardTitle>
                             </CardHeader>
                             <CardContent className="p-0">
                                 <nav className="flex flex-col">
                                 {sidebarNavItems.map((item, index) => (
-                                    <a key={index} href={item.href} className={`flex items-center p-4 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-medium ${index !== sidebarNavItems.length - 1 ? 'border-b' : ''} ${item.label === 'TANYA JAWAB' ? 'bg-primary/10 text-primary' : ''}`}>
-                                        <item.icon className="h-5 w-5 mr-4" />
+                                    <a key={index} href={item.href} className={`flex items-center p-4 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-medium text-sm ${index !== sidebarNavItems.length - 1 ? 'border-b' : ''} ${item.label === 'TANYA JAWAB' ? 'bg-primary/10 text-primary' : ''}`}>
+                                        <item.icon className="h-5 w-5 text-primary mr-4" />
                                         <span>{item.label}</span>
                                         <ChevronRight className="h-4 w-4 ml-auto text-muted-foreground" />
                                     </a>

@@ -41,9 +41,36 @@ const navItems = [
         { label: 'PUTUSAN', href: '#' },
     ]
   },
-  { label: 'PENANGANAN', href: '#' },
-  { label: 'PENCEGAHAN', href: '#' },
-  { label: 'PUBLIKASI', href: '#' },
+  {
+    label: 'PENGAWASAN',
+    href: '#',
+    subItems: [
+        { label: 'KAJIAN KEBIJAKAN', href: '#' },
+        { label: 'ADVOKASI', href: '#' },
+        { label: 'PENELITIAN', href: '#' },
+        { label: 'INDEKS PERSAINGAN USAHA', href: '#' },
+        { label: 'KPPU MENDENGAR', href: '#' },
+    ]
+  },
+    {
+    label: 'PENINDAKAN',
+    href: '#',
+    subItems: [
+        { label: 'PENANGANAN PERKARA', href: '#' },
+        { label: 'NOTIFIKASI MERGER', href: '#' },
+        { label: 'PELAPORAN', href: '#' },
+    ]
+  },
+  {
+    label: 'PUBLIKASI',
+    href: '#',
+    subItems: [
+        { label: 'BERITA', href: '#' },
+        { label: 'SIARAN PERS', href: '#' },
+        { label: 'MAJALAH', href: '#' },
+        { label: 'JURNAL', href: '#' },
+    ]
+  },
   { label: 'KANWIL', href: '#' },
   { label: 'E-PROCUREMENT', href: '#' },
   { label: 'KONTAK', href: '#' },

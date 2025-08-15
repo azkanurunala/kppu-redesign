@@ -30,7 +30,8 @@ export default {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
-          dark: 'hsl(var(--primary-dark))',
+          '600': 'hsl(var(--primary-600))',
+          dark: 'hsl(var(--primary))', 
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -57,11 +58,19 @@ export default {
           foreground: 'hsl(var(--card-foreground))',
         },
         gold: 'hsl(var(--gold))',
+        success: 'hsl(var(--success))',
+        warning: 'hsl(var(--warning))',
+        error: 'hsl(var(--error))',
+        info: 'hsl(var(--info))',
+        'accent-gray-1': 'hsl(var(--accent-gray-1))',
+        'accent-gray-2': 'hsl(var(--accent-gray-2))',
+        'accent-gray-6': 'hsl(var(--accent-gray-6))',
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        lg: '16px',
+        md: '12px',
+        sm: '8px',
+        pill: '9999px',
       },
       keyframes: {
         'accordion-down': {

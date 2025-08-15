@@ -1,3 +1,4 @@
+
 import { Logo } from './logo';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -7,19 +8,42 @@ import Link from 'next/link';
 const footerLinkColumns = [
   {
     title: "PROFIL",
-    links: ["TENTANG KPPU", "SEJARAH", "PROFIL KOMISIONER", "STRUKTUR ORGANISASI", "KANTOR WILAYAH", "LINK K/L"],
+    links: [
+        { label: "TENTANG KPPU", href: "#" },
+        { label: "VISI & MISI", href: "/visi-misi" },
+        { label: "ANGGOTA", href: "/anggota" },
+        { label: "STRUKTUR ORGANISASI", href: "#" },
+        { label: "MITRA KERJA", href: "/mitra-kerja" },
+        { label: "KANTOR WILAYAH", href: "#" },
+    ],
   },
   {
     title: "REGULASI",
-    links: ["UNDANG-UNDANG", "PERATURAN PEMERINTAH", "PERATURAN KOMISI", "PUTUSAN"],
+    links: [
+        { label: "UNDANG-UNDANG", href: "/regulasi" },
+        { label: "PERATURAN PEMERINTAH", href: "/regulasi" },
+        { label: "PERATURAN KOMISI", href: "/regulasi" },
+        { label: "PUTUSAN", href: "/putusan" },
+    ],
   },
   {
-    title: "PENANGANAN",
-    links: ["PENANGANAN PERKARA", "NOTIFIKASI MERGER", "PELAPORAN", "PERKARA INKRACHT"],
+    title: "PUBLIKASI",
+    links: [
+        { label: "SIARAN PERS", href: "/siaran-pers" },
+        { label: "BERITA", href: "#" },
+        { label: "JURNAL", href: "#" },
+        { label: "GALERI", href: "#" },
+    ],
   },
   {
-    title: "PENCEGAHAN",
-    links: ["KAJIAN & SARAN", "ADVOKASI", "KEMITRAAN", "KEPATUHAN"],
+    title: "INFORMASI",
+    links: [
+        { label: "JADWAL SIDANG", href: "/jadwal-sidang" },
+        { label: "TANYA JAWAB", href: "/tanya-jawab" },
+        { label: "PPID", href: "/ppid" },
+        { label: "E-PROCUREMENT", href: "#" },
+        { label: "KONTAK", href: "#" },
+    ],
   },
 ];
 
@@ -35,7 +59,7 @@ export function Footer() {
   return (
     <footer className="bg-[#181F2A] text-gray-300">
       <div className="container mx-auto px-4 pt-16 pb-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-4">
                 <div className="mb-6">
                     <Logo isFooter={true} />
@@ -54,20 +78,22 @@ export function Footer() {
                 </div>
             </div>
 
-            {footerLinkColumns.map(({ title, links }) => (
-                <div key={title} className="lg:col-span-2">
-                    <h3 className="font-bold text-white tracking-wider text-base font-poppins">{title}</h3>
-                    <ul className="mt-6 space-y-3">
-                        {links.map((link) => (
-                            <li key={link}>
-                                <Link href="#">
-                                    <div className="text-sm text-gray-400 transition-colors hover:text-white hover:underline">{link}</div>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+             <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                {footerLinkColumns.map(({ title, links }) => (
+                    <div key={title}>
+                        <h3 className="font-bold text-white tracking-wider text-base font-poppins">{title}</h3>
+                        <ul className="mt-6 space-y-3">
+                            {links.map((link) => (
+                                <li key={link.label}>
+                                    <Link href={link.href}>
+                                        <div className="text-sm text-gray-400 transition-colors hover:text-white hover:underline">{link.label}</div>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
         </div>
         
         <div className="mt-16 pt-8 border-t border-gray-700/50 text-center text-sm text-gray-500">

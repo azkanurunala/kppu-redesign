@@ -8,14 +8,15 @@ import { Footer } from '@/components/footer';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube } from 'lucide-react';
 import { KppuPieChart } from '@/components/kppu-pie-chart';
+import Link from 'next/link';
 
 const iconNavItems = [
-  { icon: <Scale className="h-8 w-8 text-primary" />, label: "REGULASI" },
-  { icon: <Gavel className="h-8 w-8 text-primary" />, label: "PUTUSAN" },
-  { icon: <Newspaper className="h-8 w-8 text-primary" />, label: "JADWAL SIDANG" },
-  { icon: <Library className="h-8 w-8 text-primary" />, label: "SIARAN PERS" },
-  { icon: <HelpCircle className="h-8 w-8 text-primary" />, label: "TANYA JAWAB" },
-  { icon: <Info className="h-8 w-8 text-primary" />, label: "PPID" },
+  { icon: <Scale className="h-8 w-8 text-primary" />, label: "REGULASI", href: "/regulasi" },
+  { icon: <Gavel className="h-8 w-8 text-primary" />, label: "PUTUSAN", href: "/putusan" },
+  { icon: <Newspaper className="h-8 w-8 text-primary" />, label: "JADWAL SIDANG", href: "/jadwal-sidang" },
+  { icon: <Library className="h-8 w-8 text-primary" />, label: "SIARAN PERS", href: "/siaran-pers" },
+  { icon: <HelpCircle className="h-8 w-8 text-primary" />, label: "TANYA JAWAB", href: "/tanya-jawab" },
+  { icon: <Info className="h-8 w-8 text-primary" />, label: "PPID", href: "/ppid" },
 ];
 
 const newsColumns = {
@@ -87,10 +88,12 @@ export default function Home() {
             <div className="container mx-auto px-4 py-4">
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
                     {iconNavItems.map(item => (
-                        <div key={item.label} className="flex flex-col items-center justify-center gap-2 p-3 text-foreground/80 hover:text-primary transition-colors cursor-pointer rounded-lg hover:bg-primary/5">
+                      <Link href={item.href} key={item.label}>
+                        <div className="flex flex-col items-center justify-center gap-2 p-3 text-foreground/80 hover:text-primary transition-colors cursor-pointer rounded-lg hover:bg-primary/5">
                            {item.icon}
                            <span className="font-semibold text-xs tracking-wider">{item.label}</span>
                         </div>
+                      </Link>
                     ))}
                 </div>
             </div>

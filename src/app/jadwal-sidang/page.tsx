@@ -44,9 +44,9 @@ const sidebarNavItems = [
   { icon: FileText, label: "REGULASI", href: "/regulasi" },
   { icon: Gavel, label: "PUTUSAN", href: "/putusan" },
   { icon: Newspaper, label: "JADWAL SIDANG", href: "/jadwal-sidang" },
-  { icon: FileText, label: "SIARAN PERS", href: "#" },
-  { icon: MessageSquareQuestion, label: "TANYA JAWAB", href: "#" },
-  { icon: Info, label: "PPID", href: "#" },
+  { icon: FileText, label: "SIARAN PERS", href: "/siaran-pers" },
+  { icon: MessageSquareQuestion, label: "TANYA JAWAB", href: "/tanya-jawab" },
+  { icon: Info, label: "PPID", href: "/ppid" },
 ];
 
 
@@ -132,7 +132,7 @@ export default function JadwalSidangPage() {
                             <CardContent className="p-0">
                                 <nav className="flex flex-col">
                                 {sidebarNavItems.map((item, index) => (
-                                    <a key={index} href={item.href} className={`flex items-center p-4 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-medium ${index !== sidebarNavItems.length - 1 ? 'border-b' : ''}`}>
+                                    <a key={index} href={item.href} className={`flex items-center p-4 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-medium ${index !== sidebarNavItems.length - 1 ? 'border-b' : ''} ${item.label === 'JADWAL SIDANG' ? 'bg-primary/10 text-primary' : ''}`}>
                                         <item.icon className="h-5 w-5 text-primary mr-4" />
                                         <span>{item.label}</span>
                                         <ChevronRight className="h-4 w-4 ml-auto text-muted-foreground" />

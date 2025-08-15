@@ -27,18 +27,18 @@ const navItems = [
       { label: 'PEJABAT SEKRETARIAT', href: '#' },
       { label: 'KINERJA KEUANGAN', href: '#' },
       { label: 'MITRA KERJA', href: '#' },
-      { label: 'PPID', href: '#' },
+      { label: 'PPID', href: '/ppid' },
       { label: 'LOGO DAN MASKOT', href: '#' },
     ],
   },
   {
     label: 'REGULASI',
-    href: '#',
+    href: '/regulasi',
     subItems: [
-        { label: 'UNDANG-UNDANG', href: '#' },
-        { label: 'PERATURAN PEMERINTAH', href: '#' },
-        { label: 'PERATURAN KOMISI', href: '#' },
-        { label: 'PUTUSAN', href: '#' },
+        { label: 'UNDANG-UNDANG', href: '/regulasi' },
+        { label: 'PERATURAN PEMERINTAH', href: '/regulasi' },
+        { label: 'PERATURAN KOMISI', href: '/regulasi' },
+        { label: 'PUTUSAN', href: '/putusan' },
     ]
   },
   {
@@ -66,7 +66,7 @@ const navItems = [
     href: '#',
     subItems: [
         { label: 'BERITA', href: '#' },
-        { label: 'SIARAN PERS', href: '#' },
+        { label: 'SIARAN PERS', href: '/siaran-pers' },
         { label: 'MAJALAH', href: '#' },
         { label: 'JURNAL', href: '#' },
     ]
@@ -110,12 +110,14 @@ export function Header() {
         item.subItems ? (
           <DropdownMenu key={item.label}>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className={cn(
+                <Button variant="ghost" className={cn(
                   "text-xs font-bold tracking-wider flex items-center gap-1",
                   isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-              )}>
-                {item.label} <ChevronDown className="h-4 w-4" />
-              </Button>
+                )} asChild>
+                  <Link href={item.href}>
+                    {item.label} <ChevronDown className="h-4 w-4" />
+                  </Link>
+                </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-white dark:bg-primary-dark text-primary-dark dark:text-white">
               {item.subItems.map((subItem) => (

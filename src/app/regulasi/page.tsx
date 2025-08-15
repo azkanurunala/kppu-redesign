@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Download, ChevronRight, Scale, Gavel, Newspaper, MessageSquareQuestion, Info, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import React from 'react';
 
 const regulations = [
     {
@@ -32,12 +33,12 @@ const regulations = [
 ];
 
 const sidebarNavItems = [
-  { icon: FileText, label: "REGULASI" },
-  { icon: Gavel, label: "PUTUSAN" },
-  { icon: Newspaper, label: "JADWAL SIDANG" },
-  { icon: FileText, label: "SIARAN PERS" },
-  { icon: MessageSquareQuestion, label: "TANYA JAWAB" },
-  { icon: Info, label: "PPID" },
+  { icon: FileText, label: "REGULASI", href: "/regulasi" },
+  { icon: Gavel, label: "PUTUSAN", href: "/putusan" },
+  { icon: Newspaper, label: "JADWAL SIDANG", href: "/jadwal-sidang" },
+  { icon: FileText, label: "SIARAN PERS", href: "/siaran-pers" },
+  { icon: MessageSquareQuestion, label: "TANYA JAWAB", href: "/tanya-jawab" },
+  { icon: Info, label: "PPID", href: "/ppid" },
 ];
 
 
@@ -50,8 +51,8 @@ export default function RegulasiPage() {
         <section className="bg-primary-dark text-white py-8">
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold font-poppins">Peraturan Perundang-Undangan</h1>
-                <div className="text-sm mt-1">
-                    <span>Beranda</span>
+                <div className="text-sm mt-1 flex items-center">
+                    <a href="/" className="hover:underline">Beranda</a>
                     <ChevronRight className="inline-block h-4 w-4 mx-1" />
                     <span>Peraturan Perundang-Undangan</span>
                 </div>
@@ -96,18 +97,24 @@ export default function RegulasiPage() {
                             </CardContent>
                         </Card>
                     </div>
-                    <div>
+                    <aside>
                         <Card>
-                            <CardContent className="p-6 space-y-4">
+                            <CardHeader>
+                                <CardTitle className="text-lg font-poppins">Navigasi Cepat</CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <nav className="flex flex-col">
                                 {sidebarNavItems.map((item, index) => (
-                                    <div key={index} className={`flex items-center p-3 rounded-lg cursor-pointer hover:bg-primary/10 transition-colors ${index !== sidebarNavItems.length - 1 ? 'border-b' : ''}`}>
-                                        <item.icon className="h-6 w-6 text-primary mr-4" />
-                                        <span className="font-semibold text-foreground/80">{item.label}</span>
-                                    </div>
+                                    <a key={index} href={item.href} className={`flex items-center p-4 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-medium ${index !== sidebarNavItems.length - 1 ? 'border-b' : ''} ${item.label === 'REGULASI' ? 'bg-primary/10 text-primary' : ''}`}>
+                                        <item.icon className="h-5 w-5 text-primary mr-4" />
+                                        <span>{item.label}</span>
+                                        <ChevronRight className="h-4 w-4 ml-auto text-muted-foreground" />
+                                    </a>
                                 ))}
+                                </nav>
                             </CardContent>
                         </Card>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>

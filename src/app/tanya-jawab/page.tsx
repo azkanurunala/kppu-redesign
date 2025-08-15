@@ -40,7 +40,7 @@ const sidebarNavItems = [
   { icon: Newspaper, label: "JADWAL SIDANG", href: "/jadwal-sidang" },
   { icon: FileText, label: "SIARAN PERS", href: "/siaran-pers" },
   { icon: MessageSquareQuestion, label: "TANYA JAWAB", href: "/tanya-jawab" },
-  { icon: Info, label: "PPID", href: "#" },
+  { icon: Info, label: "PPID", href: "/ppid" },
 ];
 
 export default function TanyaJawabPage() {

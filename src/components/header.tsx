@@ -4,14 +4,43 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Logo } from './logo';
 import { Button } from './ui/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
-import { Menu } from 'lucide-react';
+import { Menu, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from './theme-toggle';
 
 const navItems = [
-  { label: 'PROFIL', href: '#' },
-  { label: 'REGULASI', href: '#' },
+  {
+    label: 'PROFIL',
+    href: '#',
+    subItems: [
+      { label: 'VISI DAN MISI', href: '#' },
+      { label: 'ANGGOTA', href: '#' },
+      { label: 'TUGAS & WEWENANG', href: '#' },
+      { label: 'ORGANISASI', href: '#' },
+      { label: 'PEJABAT SEKRETARIAT', href: '#' },
+      { label: 'KINERJA KEUANGAN', href: '#' },
+      { label: 'MITRA KERJA', href: '#' },
+      { label: 'PPID', href: '#' },
+      { label: 'LOGO DAN MASKOT', href: '#' },
+    ],
+  },
+  {
+    label: 'REGULASI',
+    href: '#',
+    subItems: [
+        { label: 'UNDANG-UNDANG', href: '#' },
+        { label: 'PERATURAN PEMERINTAH', href: '#' },
+        { label: 'PERATURAN KOMISI', href: '#' },
+        { label: 'PUTUSAN', href: '#' },
+    ]
+  },
   { label: 'PENANGANAN', href: '#' },
   { label: 'PENCEGAHAN', href: '#' },
   { label: 'PUBLIKASI', href: '#' },
@@ -39,12 +68,32 @@ export function Header() {
         isMobile ? "flex-col space-y-2 items-start" : "space-x-1"
     )}>
       {navItems.map((item) => (
-        <Button key={item.label} variant="ghost" asChild className={cn(
-            "text-xs font-bold tracking-wider",
-            isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-        )}>
-          <Link href={item.href}>{item.label}</Link>
-        </Button>
+        item.subItems ? (
+          <DropdownMenu key={item.label}>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className={cn(
+                  "text-xs font-bold tracking-wider flex items-center gap-1",
+                  isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              )}>
+                {item.label} <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white dark:bg-primary-dark text-primary-dark dark:text-white">
+              {item.subItems.map((subItem) => (
+                <DropdownMenuItem key={subItem.label} asChild>
+                  <Link href={subItem.href} className="text-xs font-semibold hover:!bg-primary/20 dark:hover:!bg-white/20">{subItem.label}</Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <Button key={item.label} variant="ghost" asChild className={cn(
+              "text-xs font-bold tracking-wider",
+              isMobile ? "text-gray-700 dark:text-gray-300 w-full justify-start" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+          )}>
+            <Link href={item.href}>{item.label}</Link>
+          </Button>
+        )
       ))}
     </nav>
   );

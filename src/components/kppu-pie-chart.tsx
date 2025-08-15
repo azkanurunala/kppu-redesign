@@ -4,7 +4,7 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
 const pieData = [
-    { name: 'PN 2018-2023', value: 69, color: '#3b82f6' },
+    { name: 'PN 2018-2023', value: 69, color: '#0D3666' },
     { name: 'MA 2018-2023', value: 94, color: '#10b981' },
     { name: 'Denda 2018-2023', value: 72, color: '#f97316' },
 ];

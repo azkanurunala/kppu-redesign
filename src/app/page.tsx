@@ -6,7 +6,7 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube } from 'lucide-react';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { KppuPieChart } from '@/components/kppu-pie-chart';
 
 const iconNavItems = [
   { icon: <Scale className="h-8 w-8 text-primary" />, label: "REGULASI" },
@@ -45,12 +45,6 @@ const commissioners = [
   { name: 'Rhido Jusmadi', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
   { name: 'Ukay Karyadi', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
   { name: 'Yudi Hidayat', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
-];
-
-const pieData = [
-    { name: 'Laporan', value: 69, color: '#3b82f6' },
-    { name: 'Penelitian', value: 94, color: '#10b981' },
-    { name: 'Perkara', value: 72, color: '#f97316' },
 ];
 
 export default function Home() {
@@ -136,23 +130,7 @@ export default function Home() {
                         <p className="text-gray-200 leading-relaxed mb-6">
                             KPPU diawasi oleh Komisi Pengawas Persaingan Usaha yang bertugas mengawasi pelaksanaan UU No. 5/1999 dan UU No. 20/2008, serta Peraturan Pemerintah dan Peraturan Presiden lainnya. Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat demi kesejahteraan rakyat Indonesia.
                         </p>
-                         <div className="flex justify-around text-center">
-                            {pieData.map((entry, index) => (
-                                <div key={index} className="flex flex-col items-center">
-                                    <div className="w-24 h-24">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <PieChart>
-                                                <Pie data={[{value: entry.value}, {value: 100-entry.value}]} dataKey="value" cx="50%" cy="50%" innerRadius={30} outerRadius={40} startAngle={90} endAngle={450} stroke="none">
-                                                     <Cell fill={entry.color} />
-                                                     <Cell fill="rgba(255, 255, 255, 0.2)" />
-                                                </Pie>
-                                            </PieChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                    <p className="mt-2 text-lg font-bold">{entry.value}%</p>
-                                </div>
-                            ))}
-                        </div>
+                        <KppuPieChart />
                     </div>
                     <div className="grid grid-cols-3 gap-4">
                         {commissioners.slice(0, 9).map((c, i) => (

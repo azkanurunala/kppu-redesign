@@ -65,15 +65,14 @@ export default function Home() {
             <CarouselContent>
               {sliderImages.map((image, index) => (
                 <CarouselItem key={index}>
-                  <div className="relative h-[450px] bg-black">
+                  <div className="relative h-[450px]">
                     <Image
                       src={image.src}
                       alt={image.alt}
-                      layout="fill"
-                      objectFit="contain"
-                      objectPosition="center"
+                      fill
+                      style={{ objectFit: 'contain' }}
                       data-ai-hint={image.hint}
-                      unoptimized // Use this if the external host doesn't support optimization
+                      unoptimized
                     />
                   </div>
                 </CarouselItem>
@@ -198,5 +197,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

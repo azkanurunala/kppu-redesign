@@ -38,7 +38,7 @@ const navItems = [
     subItems: [
         { label: 'UNDANG-UNDANG', href: '/regulasi' },
         { label: 'PERATURAN PEMERINTAH', href: '/regulasi' },
-        { label: 'PERATURAN KOMISI', href: '/regulasi' },
+        { label: 'PERATURAN KOMISI', href: '/peraturan-komisi' },
         { label: 'PUTUSAN', href: '/putusan' },
     ]
   },
@@ -127,7 +127,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <Button variant="ghost" asChild className={cn(
+             <Button variant="ghost" asChild className={cn(
                 "text-sm font-semibold w-full justify-start lg:justify-center",
                  isMobile ? "text-gray-700 dark:text-gray-300" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-white"
             )}>

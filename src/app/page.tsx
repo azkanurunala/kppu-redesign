@@ -87,9 +87,11 @@ export default function Home() {
             </div>
         </section>
         
-        {/* 3D Carousel Section */}
-        <section className="py-12 md:py-20 -mt-16">
+        {/* Carousel Section */}
+        <section className="py-12 md:py-16 -mt-16 md:-mt-24 relative z-10">
+          <div className="container mx-auto px-4">
             <HomeCarousel />
+          </div>
         </section>
         
         {/* Quick Access Nav */}

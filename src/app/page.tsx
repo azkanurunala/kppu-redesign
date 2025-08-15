@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, ArrowRight, Search, FileText, Landmark } from 'lucide-react';
+import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, ArrowRight, Search, FileText, Landmark, Youtube } from 'lucide-react';
 import Link from 'next/link';
 import { HomeCarousel } from '@/components/home-carousel';
 import { KppuPieChart } from '@/components/kppu-pie-chart';
@@ -221,12 +221,12 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div className="bg-card/5 border border-white/20 p-8 rounded-lg flex flex-col justify-center text-center items-center lg:col-span-1">
+                    <div className="bg-card/10 dark:bg-card/5 border border-white/20 p-8 rounded-lg flex flex-col justify-center text-center items-center lg:col-span-1">
                         <h3 className="text-3xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
                         <p className="text-gray-300 leading-relaxed mb-6">Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat.</p>
                         <KppuPieChart />
                     </div>
-                    <div className="grid grid-cols-3 gap-5 md:col-span-2">
+                    <div className="grid grid-cols-3 gap-5 lg:col-span-2">
                         {commissioners.map((commissioner, index) => (
                              <div key={index} className="text-center group">
                                 <div className="relative overflow-hidden rounded-xl">
@@ -245,15 +245,51 @@ export default function Home() {
                 </div>
             </div>
         </section>
+
+        {/* Media & Publikasi Section */}
+        <section className="py-20 lg:py-24 bg-background">
+             <div className="container mx-auto px-4">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
+                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Akses berbagai materi publikasi dan media dari KPPU.</p>
+                </div>
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                    {/* Left Column: Video */}
+                    <Card className="p-4 shadow-lg rounded-xl overflow-hidden group">
+                        <div className="relative aspect-video">
+                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="Video Company Profile KPPU" className="rounded-lg" data-ai-hint="people discussing document"/>
+                             <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer transition-opacity opacity-0 group-hover:opacity-100">
+                                <Youtube className="w-20 h-20 text-red-600 group-hover:text-red-500 transition-transform group-hover:scale-110" />
+                            </div>
+                        </div>
+                    </Card>
+                    {/* Right Column: Grid */}
+                    <div className="grid grid-cols-2 gap-6">
+                        <Card className="p-3 shadow-lg rounded-xl overflow-hidden">
+                             <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="JDIH KPPU" className="rounded-md w-full" data-ai-hint="law database mobile"/>
+                        </Card>
+                         <Card className="p-3 shadow-lg rounded-xl overflow-hidden">
+                             <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Majalah Kompetisi" className="rounded-md w-full" data-ai-hint="magazine covers display"/>
+                        </Card>
+                         <Card className="p-3 shadow-lg rounded-xl overflow-hidden">
+                             <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Buku KPPU" className="rounded-md w-full" data-ai-hint="stack of books"/>
+                        </Card>
+                         <Card className="p-3 shadow-lg rounded-xl overflow-hidden">
+                             <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Perpustakaan KPPU" className="rounded-md w-full" data-ai-hint="library books promotion"/>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         {/* Document Finder Section */}
-        <section className="py-20 lg:py-24 bg-background">
+        <section className="py-20 lg:py-24 bg-card">
              <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pencari Dokumen</h2>
                     <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Akses cepat ke database peraturan, putusan, dan pedoman KPPU.</p>
                 </div>
-                <Card className="max-w-4xl mx-auto p-8 shadow-lg rounded-xl">
+                <Card className="max-w-4xl mx-auto p-8 shadow-lg rounded-xl bg-background">
                     <div className="flex flex-col md:flex-row items-center gap-4">
                         <div className="relative flex-grow w-full">
                             <input placeholder="Ketik nomor atau kata kunci peraturan..." className="w-full h-14 pl-12 pr-4 rounded-lg border border-input text-lg" />
@@ -268,7 +304,7 @@ export default function Home() {
         </section>
 
         {/* Region Grid Section */}
-        <section className="py-20 lg:py-24 bg-card">
+        <section className="py-20 lg:py-24 bg-background">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div className="">

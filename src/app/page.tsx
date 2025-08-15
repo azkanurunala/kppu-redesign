@@ -88,7 +88,7 @@ export default function Home() {
         </section>
         
         {/* Carousel Section */}
-        <section className="py-12 md:py-16 -mt-16 md:-mt-24 relative z-10">
+        <section className="py-12 md:py-16 -mt-16 md:-mt-24 lg:-mt-[100px] relative z-10">
           <div className="container mx-auto px-4">
             <HomeCarousel />
           </div>

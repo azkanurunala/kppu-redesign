@@ -24,25 +24,40 @@ const quickStats = [
     { value: "7", label: "Kantor Wilayah" }
 ];
 
-const spotlightNews = [
-    {
-        category: "Siaran Pers",
-        title: "KPPU Putus Perkara Kemitraan Jasa Angkutan Semen di Sumatra",
-        date: "14 Agustus 2025",
-        href: "/publikasi/siaran-pers/2025-08-14-kppu-putus-perkara-kemitraan-jasa-angkutan-semen"
-    },
-    {
-        category: "Putusan",
-        title: "Perkara No. 19/KPPU-M/2024: Dugaan Keterlambatan Notifikasi Akuisisi Saham Emerald Grain Pty. Ltd.",
-        date: "11 Agustus 2025",
-        href: "/penindakan/perkara-persaingan/19-KPPU-M-2024"
-    },
-    {
-        category: "Kegiatan",
-        title: "KPPU Hadiri Tasyakuran Ulang Tahun INDEF dan Bahas Ekonomi Digital",
-        date: "10 Agustus 2025",
-        href: "/publikasi/aktivitas/kppu-hadiri-tasyakuran-indef"
-    }
+const mainNews = {
+    title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras",
+    source: "JawaPos.com",
+    href: "#",
+    imgSrc: "https://placehold.co/300x200.png"
+};
+
+const otherMainNews = [
+    { title: "Pertama dalam Sejarah: 97 Pelaku Usaha Menjadi Terlapor dalam Sidang Dugaan Kartel Pinjol", source: "Hukumonline.com", href: "#" },
+    { title: "Sidang Perkara terkait Dugaan Hambatan Usaha PT Laboratorium Medio Pratama Masuk ke Tahap Pemeriksaan Lanjutan", source: "Kontan.co.id", href: "#" }
+];
+
+const activityNews = {
+    title: "KPPU Hadiri Tasyakuran Ulang Tahun INDEF",
+    source: "Infopublik.id",
+    href: "#",
+    imgSrc: "https://placehold.co/300x200.png"
+};
+
+const otherActivityNews = [
+    { title: "KPPU Terima Kunjungan PETRONAS Bahas Implementasi Program Kemitraan", source: "Republika.co.id", href: "#" },
+    { title: "Program Kepatuhan Persaingan Usaha PT PU Indonesia Disetujui KPPU", source: "Sindonews.com", href: "#" }
+];
+
+const regionalNews = {
+    title: "Perkuat Sinergi, Kantor Wilayah VI KPPU Makassar Temui Gubernur Sulawesi Barat",
+    source: "Antaranews.com",
+href: "#",
+    imgSrc: "https://placehold.co/300x200.png"
+};
+
+const otherRegionalNews = [
+    { title: "LIRA Sumut Dukung KPPU Kanwil I Bongkar Dugaan Persekongkolan Tender Rp66 Miliar di Kejari Sumut", source: "Analisadaily.com", href: "#" },
+    { title: "Kunjungi Gapoktan di Kabupaten Bandung Barat, Kepala Kanwil III dan Petani Bahas Pemasaran Beras", source: "Tribunnews.com", href: "#" }
 ];
 
 export default function Home() {
@@ -112,27 +127,70 @@ export default function Home() {
             <div className="container mx-auto px-4">
                  <div className="text-center mb-16">
                     <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
-                    <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Ikuti perkembangan terbaru dari siaran pers, putusan, hingga kegiatan KPPU.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {spotlightNews.map((news, index) => (
-                        <Card key={index} className="flex flex-col group hover:shadow-xl transition-shadow duration-300 rounded-xl overflow-hidden">
-                            <CardHeader>
-                                <p className="text-sm font-semibold text-primary uppercase tracking-wide">{news.category}</p>
-                                <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white group-hover:text-primary transition-colors">
-                                    <Link href={news.href}>{news.title}</Link>
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow flex items-end">
-                                 <p className="text-sm text-muted-foreground">{news.date}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-                <div className="text-center mt-16">
-                    <Button size="lg" variant="outline" asChild>
-                       <Link href="/publikasi/aktivitas">Lihat Semua Info <ArrowRight className="w-4 h-4 ml-2" /></Link>
-                    </Button>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    {/* Kolom Berita Utama */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl font-bold text-primary-dark dark:text-white font-poppins border-b-2 border-primary pb-2">BERITA UTAMA</h3>
+                        <div className="space-y-4">
+                            <div className="bg-muted rounded-lg overflow-hidden">
+                                <Image src={mainNews.imgSrc} alt={mainNews.title} width={300} height={200} className="w-full h-auto" data-ai-hint="news commodity rice"/>
+                            </div>
+                            <h4 className="text-lg font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={mainNews.href}>{mainNews.title}</Link></h4>
+                            <p className="text-sm text-muted-foreground">{mainNews.source}</p>
+                        </div>
+                        <div className="space-y-5 pt-4 border-t border-border/50">
+                            {otherMainNews.map((news, index) => (
+                                <div key={index}>
+                                    <h5 className="font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={news.href}>{news.title}</Link></h5>
+                                    <p className="text-sm text-muted-foreground mt-1">{news.source}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <Button variant="outline">Selengkapnya</Button>
+                    </div>
+
+                    {/* Kolom Kegiatan */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl font-bold text-primary-dark dark:text-white font-poppins border-b-2 border-primary pb-2">KEGIATAN</h3>
+                         <div className="space-y-4">
+                            <div className="bg-muted rounded-lg overflow-hidden">
+                                <Image src={activityNews.imgSrc} alt={activityNews.title} width={300} height={200} className="w-full h-auto" data-ai-hint="conference presentation"/>
+                            </div>
+                            <h4 className="text-lg font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={activityNews.href}>{activityNews.title}</Link></h4>
+                            <p className="text-sm text-muted-foreground">{activityNews.source}</p>
+                        </div>
+                        <div className="space-y-5 pt-4 border-t border-border/50">
+                            {otherActivityNews.map((news, index) => (
+                                <div key={index}>
+                                    <h5 className="font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={news.href}>{news.title}</Link></h5>
+                                    <p className="text-sm text-muted-foreground mt-1">{news.source}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <Button variant="outline">Selengkapnya</Button>
+                    </div>
+
+                    {/* Kolom Info Wilayah */}
+                    <div className="space-y-6">
+                        <h3 className="text-xl font-bold text-primary-dark dark:text-white font-poppins border-b-2 border-primary pb-2">INFO WILAYAH</h3>
+                         <div className="space-y-4">
+                            <div className="bg-muted rounded-lg overflow-hidden">
+                                <Image src={regionalNews.imgSrc} alt={regionalNews.title} width={300} height={200} className="w-full h-auto" data-ai-hint="government meeting handshake"/>
+                            </div>
+                            <h4 className="text-lg font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={regionalNews.href}>{regionalNews.title}</Link></h4>
+                            <p className="text-sm text-muted-foreground">{regionalNews.source}</p>
+                        </div>
+                        <div className="space-y-5 pt-4 border-t border-border/50">
+                            {otherRegionalNews.map((news, index) => (
+                                <div key={index}>
+                                    <h5 className="font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={news.href}>{news.title}</Link></h5>
+                                    <p className="text-sm text-muted-foreground mt-1">{news.source}</p>
+                                </div>
+                            ))}
+                        </div>
+                        <Button variant="outline">Selengkapnya</Button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -183,5 +241,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

@@ -1,161 +1,218 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { BookOpen, Gavel, Newspaper, Search, ArrowRight } from 'lucide-react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { FadeIn } from '@/components/fade-in';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Gavel, HelpCircle, Info, Library, Newspaper, Scale, Youtube } from 'lucide-react';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+
+const iconNavItems = [
+  { icon: <Scale className="h-8 w-8 text-primary" />, label: "REGULASI" },
+  { icon: <Gavel className="h-8 w-8 text-primary" />, label: "PUTUSAN" },
+  { icon: <Newspaper className="h-8 w-8 text-primary" />, label: "JADWAL SIDANG" },
+  { icon: <Library className="h-8 w-8 text-primary" />, label: "SIARAN PERS" },
+  { icon: <HelpCircle className="h-8 w-8 text-primary" />, label: "TANYA JAWAB" },
+  { icon: <Info className="h-8 w-8 text-primary" />, label: "PPID" },
+];
+
+const newsColumns = {
+  "BERITA UTAMA": [
+    { image: "https://placehold.co/300x200.png", hint: "building exterior", title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras", date: "JawaPos.com" },
+    { title: "Pertama dalam Sejarah: 97 Pelaku Usaha Menjadi Terlapor dalam Sidang Dugaan Kartel Pinjol", date: "Hukumonline.com" },
+    { title: "Sidang Perkara terkait Dugaan Hambatan Usaha PT Laboratorium Medio Pratama Masuk ke Tahap Pemeriksaan Lanjutan", date: "Kontan.co.id" },
+  ],
+  "KEGIATAN": [
+    { image: "https://placehold.co/300x200.png", hint: "group photo award", title: "KPPU Hadiri Tasyakuran Ulang Tahun INDEF", date: "infopublik.id" },
+    { title: "KPPU Terima Kunjungan PETRONAS Bahas Implementasi Program Kemitraan", date: "Republika.co.id" },
+    { title: "Program Kepatuhan Persaingan Usaha PT PU Indonesia Disetujui KPPU", date: "Sindonews.com" },
+  ],
+  "INFO WILAYAH": [
+    { image: "https://placehold.co/300x200.png", hint: "men handshake official", title: "Perkuat Sinergi, Kantor Wilayah VI KPPU Makassar Temui Gubernur Sulawesi Barat", date: "Antaranews.com" },
+    { title: "LIRA Sumut Dukung KPPU Kanwil I Bongkar Dugaan Persekongkolan Tender Rp66 Miliar di Kejari Sumut", date: "Analisadaily.com" },
+    { title: "Kunjungi Gapoktan di Kabupaten Bandung Barat, Kepala Kanwil III dan Petani Bahas Pemasaran Beras", date: "Tribunnews.com" },
+  ],
+};
+
+const commissioners = [
+  { name: 'M. Fanshurullah Asa', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Aru Armando', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Dr. Guntur S. Saragih', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Gopprera Panggabean', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Hilman Pujana', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Mohammad Reza', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Rhido Jusmadi', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Ukay Karyadi', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+  { name: 'Yudi Hidayat', image: 'https://placehold.co/150x200.png', hint: 'portrait man suit' },
+];
+
+const pieData = [
+    { name: 'Laporan', value: 69, color: '#3b82f6' },
+    { name: 'Penelitian', value: 94, color: '#10b981' },
+    { name: 'Perkara', value: 72, color: '#f97316' },
+];
 
 export default function Home() {
-  const features = [
-    {
-      icon: <BookOpen className="h-8 w-8 text-primary" />,
-      title: 'Peraturan & Regulasi',
-      description: 'Jelajahi semua undang-undang, peraturan pemerintah, dan peraturan komisi yang berlaku.',
-      linkText: 'Cari Regulasi',
-    },
-    {
-      icon: <Gavel className="h-8 w-8 text-primary" />,
-      title: 'Putusan Perkara',
-      description: 'Akses database putusan perkara yang telah dikeluarkan oleh KPPU secara transparan.',
-      linkText: 'Lihat Putusan',
-    },
-    {
-      icon: <Newspaper className="h-8 w-8 text-primary" />,
-      title: 'Publikasi & Berita',
-      description: 'Dapatkan berita terbaru, siaran pers, dan hasil penelitian dari KPPU.',
-      linkText: 'Baca Publikasi',
-    },
-  ];
-
-  const newsItems = [
-    {
-      image: 'https://placehold.co/600x400.png',
-      alt: 'Business meeting',
-      hint: 'business meeting',
-      title: 'KPPU Denda 3 Perusahaan Terkait Tender Pengadaan',
-      date: '18 Juli 2024',
-    },
-    {
-      image: 'https://placehold.co/600x400.png',
-      alt: 'Market analysis chart',
-      hint: 'market analysis',
-      title: 'Analisis Dampak Merger di Sektor Telekomunikasi',
-      date: '15 Juli 2024',
-    },
-    {
-      image: 'https://placehold.co/600x400.png',
-      alt: 'Person speaking at a conference',
-      hint: 'conference speaker',
-      title: 'KPPU Gelar Sosialisasi UU Persaingan Usaha di Makassar',
-      date: '12 Juli 2024',
-    },
-  ];
-
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <section
-          className="relative flex h-[80vh] min-h-[600px] w-full items-center justify-center bg-cover bg-center bg-no-repeat py-20 text-white"
-          style={{ backgroundImage: "url('https://placehold.co/1920x1080.png')" }}
-          data-ai-hint="justice abstract building"
-        >
-          <div className="absolute inset-0 bg-primary/80 backdrop-blur-sm" />
-          <div className="container relative z-10 mx-auto px-4">
-            <FadeIn className="flex flex-col items-center space-y-6 text-center">
-              <h1 className="font-headline text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
-                Keadilan dan Kepastian Usaha
-              </h1>
-              <p className="max-w-3xl text-lg text-primary-foreground/80 md:text-xl">
-                Mewujudkan persaingan usaha yang sehat untuk pertumbuhan ekonomi Indonesia yang inklusif dan berkelanjutan.
-              </p>
-              <div className="w-full max-w-lg lg:max-w-xl pt-4">
-                <div className="relative">
-                  <Input
-                    type="search"
-                    aria-label="Cari Regulasi"
-                    placeholder="Cari regulasi, putusan perkara..."
-                    className="h-14 w-full rounded-full border-2 border-transparent bg-white/90 pl-14 pr-6 text-lg text-foreground shadow-lg transition-colors focus:border-accent focus:ring-accent"
-                  />
-                  <Search className="pointer-events-none absolute left-5 top-1/2 h-6 w-6 -translate-y-1/2 text-muted-foreground" />
+        <section className="bg-gradient-to-r from-[#0d2a5a] to-[#0152a7] dark:from-[#081c3d] dark:to-[#013e7d]">
+          <Carousel className="w-full" opts={{ loop: true }}>
+            <CarouselContent>
+              <CarouselItem>
+                <div className="relative h-[450px]">
+                  <Image src="https://placehold.co/1200x450/112444/ffffff.png" alt="Jurnal Persaingan Usaha" layout="fill" objectFit="contain" objectPosition="center" data-ai-hint="journal cover" />
+                   <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white p-4 max-w-4xl mx-auto">
+                        <div className="grid grid-cols-2 items-center gap-8">
+                             <div>
+                                <p className="text-6xl font-extrabold tracking-wider text-white/90">TERBIT</p>
+                            </div>
+                            <div>
+                               <h1 className="text-4xl font-bold">Jurnal Persaingan Usaha</h1>
+                                <p className="text-2xl mt-1">Volume 5 Nomor 1 Tahun 2025</p>
+                                <div className="mt-4 flex items-center justify-center bg-black/30 rounded-full p-1 max-w-md mx-auto">
+                                    <Input type="text" placeholder="jurnal.kppu.go.id" className="bg-transparent border-none text-white placeholder:text-gray-300 w-full focus:ring-0" />
+                                    <Button className="bg-primary text-white hover:bg-primary/90 rounded-full">Ok</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </FadeIn>
-          </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/20 hover:bg-black/40 border-none" />
+            <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white bg-black/20 hover:bg-black/40 border-none" />
+          </Carousel>
         </section>
-
-        <section className="py-16 sm:py-24">
-          <div className="container mx-auto px-4">
-            <FadeIn className="text-center">
-              <h2 className="font-headline text-3xl font-bold text-foreground md:text-4xl">Akses Informasi Publik</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Temukan informasi penting mengenai regulasi, putusan perkara, dan publikasi KPPU dengan mudah.
-              </p>
-            </FadeIn>
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {features.map((feature, index) => (
-                <FadeIn key={feature.title} delay={index * 100}>
-                  <Card className="flex h-full flex-col text-center transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl">
-                    <CardHeader className="items-center">
-                      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary">
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="text-xl text-card-foreground">{feature.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex flex-grow flex-col">
-                      <p className="flex-grow text-muted-foreground">{feature.description}</p>
-                      <Button variant="link" className="mt-4 self-center px-0 text-accent hover:text-accent/80">
-                        {feature.linkText} <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </FadeIn>
-              ))}
+        
+        <section className="bg-card dark:bg-card shadow-md">
+            <div className="container mx-auto px-4 py-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+                    {iconNavItems.map(item => (
+                        <div key={item.label} className="flex flex-col items-center justify-center gap-2 p-3 text-foreground/80 hover:text-primary transition-colors cursor-pointer rounded-lg hover:bg-primary/5">
+                           {item.icon}
+                           <span className="font-semibold text-xs tracking-wider">{item.label}</span>
+                        </div>
+                    ))}
+                </div>
             </div>
-          </div>
         </section>
 
-        <section className="bg-card py-16 sm:py-24">
-          <div className="container mx-auto px-4">
-            <FadeIn className="text-center">
-              <h2 className="font-headline text-3xl font-bold text-foreground md:text-4xl">Berita Terkini</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Ikuti perkembangan dan kegiatan terbaru dari Komisi Pengawas Persaingan Usaha.
-              </p>
-            </FadeIn>
-            <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {newsItems.map((item, index) => (
-                <FadeIn key={item.title} delay={index * 100}>
-                  <Card className="flex h-full flex-col overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl bg-background">
-                    <Image src={item.image} alt={item.alt} width={600} height={400} className="w-full object-cover aspect-[3/2]" data-ai-hint={item.hint} />
-                    <CardHeader>
-                      <CardTitle className="text-lg text-foreground">{item.title}</CardTitle>
-                      <CardDescription className="pt-2 text-sm">{item.date}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="mt-auto">
-                      <Button variant="outline">Baca Selengkapnya</Button>
-                    </CardContent>
-                  </Card>
-                </FadeIn>
-              ))}
+        <section className="py-16 bg-background">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold text-center mb-10 text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {Object.entries(newsColumns).map(([category, items]) => (
+                        <div key={category}>
+                            <h3 className="text-xl font-bold mb-4 border-b-2 border-primary pb-2 text-primary-dark dark:text-gray-300 font-poppins">{category}</h3>
+                            <div className="space-y-6">
+                                {items.map((item, index) => (
+                                    <div key={index} className={index === 0 ? "" : "border-t pt-6"}>
+                                      {index === 0 && item.image && <Image src={item.image} alt={item.title} width={300} height={200} className="rounded-lg w-full mb-4" data-ai-hint={item.hint} />}
+                                      <p className="font-semibold text-foreground hover:text-primary cursor-pointer">{item.title}</p>
+                                      <p className="text-sm text-muted-foreground mt-1">{item.date}</p>
+                                    </div>
+                                ))}
+                                <Button variant="outline" size="sm" className="bg-gray-200 text-gray-600 border-gray-300 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                                    Selengkapnya
+                                </Button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-          </div>
         </section>
 
-        <section className="py-16 sm:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <FadeIn>
-              <h2 className="font-headline text-3xl font-bold text-foreground md:text-4xl">Punya Pertanyaan atau Laporan?</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-                Tim kami siap membantu Anda. Jangan ragu untuk menghubungi kami untuk informasi lebih lanjut atau melaporkan dugaan pelanggaran.
-              </p>
-              <Button size="lg" className="mt-8 bg-accent px-8 py-6 text-base font-semibold text-accent-foreground shadow-lg transition-transform hover:scale-105 hover:bg-accent/90">
-                Hubungi Kami
-              </Button>
-            </FadeIn>
-          </div>
+        <section className="py-16 bg-primary-dark text-white">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold text-center mb-12 font-poppins">Jajaran Komisioner KPPU</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div className="bg-white/10 p-8 rounded-lg">
+                        <h3 className="text-2xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
+                        <p className="text-gray-200 leading-relaxed mb-6">
+                            KPPU diawasi oleh Komisi Pengawas Persaingan Usaha yang bertugas mengawasi pelaksanaan UU No. 5/1999 dan UU No. 20/2008, serta Peraturan Pemerintah dan Peraturan Presiden lainnya. Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat demi kesejahteraan rakyat Indonesia.
+                        </p>
+                         <div className="flex justify-around text-center">
+                            {pieData.map((entry, index) => (
+                                <div key={index} className="flex flex-col items-center">
+                                    <div className="w-24 h-24">
+                                        <ResponsiveContainer width="100%" height="100%">
+                                            <PieChart>
+                                                <Pie data={[{value: entry.value}, {value: 100-entry.value}]} dataKey="value" cx="50%" cy="50%" innerRadius={30} outerRadius={40} startAngle={90} endAngle={450} stroke="none">
+                                                     <Cell fill={entry.color} />
+                                                     <Cell fill="rgba(255, 255, 255, 0.2)" />
+                                                </Pie>
+                                            </PieChart>
+                                        </ResponsiveContainer>
+                                    </div>
+                                    <p className="mt-2 text-lg font-bold">{entry.value}%</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4">
+                        {commissioners.slice(0, 9).map((c, i) => (
+                            <div key={i} className="text-center">
+                                <Image src={c.image} alt={c.name} width={150} height={200} className="rounded-lg mx-auto shadow-lg object-cover" data-ai-hint={c.hint} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section className="py-16 bg-background">
+            <div className="container mx-auto px-4">
+                <h2 className="text-3xl font-bold text-center mb-10 text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                            <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="KPPU Video Profile" data-ai-hint="office presentation" />
+                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <Youtube className="w-16 h-16 text-red-600 hover:text-red-500 cursor-pointer transition-transform hover:scale-110" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                            <CardContent className="p-0">
+                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Majalah" className="rounded-t-lg w-full" data-ai-hint="magazine cover" />
+                                <div className="p-4">
+                                    <p className="font-semibold font-poppins">MAJALAH</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                         <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                             <CardContent className="p-0">
+                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Laporan" className="rounded-t-lg w-full" data-ai-hint="annual report" />
+                                <div className="p-4">
+                                    <p className="font-semibold font-poppins">LAPORAN</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                             <CardContent className="p-0">
+                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Kemitraan" className="rounded-t-lg w-full" data-ai-hint="handshake deal" />
+                                 <div className="p-4">
+                                    <p className="font-semibold font-poppins">KEMITRAAN</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                        <Card className="hover:shadow-lg transition-shadow bg-card dark:bg-card">
+                             <CardContent className="p-0">
+                                <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Perpustakaan" className="rounded-t-lg w-full" data-ai-hint="library books" />
+                                <div className="p-4">
+                                    <p className="font-semibold font-poppins">PERPUSTAKAAN</p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+            </div>
         </section>
       </main>
       <Footer />

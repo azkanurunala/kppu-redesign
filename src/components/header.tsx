@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -20,7 +21,7 @@ const navItems = [
     label: 'PROFIL',
     href: '#',
     subItems: [
-      { label: 'VISI DAN MISI', href: '#' },
+      { label: 'VISI DAN MISI', href: '/visi-misi' },
       { label: 'ANGGOTA', href: '#' },
       { label: 'TUGAS & WEWENANG', href: '#' },
       { label: 'ORGANISASI', href: '#' },

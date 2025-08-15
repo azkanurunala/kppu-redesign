@@ -1,3 +1,8 @@
+
+'use client';
+
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,7 +10,6 @@ import { Button } from '@/components/ui/button';
 import { BarChartComponent } from '@/components/ui/bar-chart';
 import { FileText, Database, ShieldCheck, Calendar, DollarSign, Newspaper, Youtube, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const quickAccessItems = [
   { icon: FileText, label: "Permohonan Informasi" },
@@ -26,50 +30,74 @@ const innovationItems = [
     { title: "DATABASE PUTUSAN KPPU", description: "Putusan" },
     { title: "PERPUS", description: "Perpustakaan Persaingan Usaha" },
     { title: "SPAN LAPOR!", description: "Layanan Aspirasi dan Pengaduan Online Rakyat" },
-]
+];
+
+const sectionVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut"
+        }
+    }
+};
 
 export default function PPIDPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section className="relative bg-primary-dark text-white py-24 md:py-32 overflow-hidden">
+        <motion.section
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative bg-primary-dark text-white py-32 md:py-40 overflow-hidden"
+        >
             <div className="absolute inset-0">
-                <Image 
-                    src="https://placehold.co/1920x600.png" 
-                    alt="Informasi Publik" 
-                    fill 
+                <Image
+                    src="https://placehold.co/1920x600.png"
+                    alt="Informasi Publik"
+                    fill
                     className="object-cover opacity-10"
                     data-ai-hint="business presentation"
+                    priority
                 />
                  <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/80 to-transparent"></div>
             </div>
             <div className="container mx-auto px-4 relative">
                 <div className="max-w-3xl">
                     <p className="text-lg font-semibold text-primary-foreground/80 tracking-widest uppercase">PPID KPPU</p>
-                    <h1 className="text-4xl md:text-6xl font-bold font-poppins mt-3">Keterbukaan Informasi Publik</h1>
-                    <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
-                        Akses informasi publik yang transparan dan akuntabel sesuai dengan amanat Undang-Undang Keterbukaan Informasi Publik.
+                    <h1 className="text-5xl md:text-7xl font-bold font-poppins mt-4">Keterbukaan Informasi Publik</h1>
+                    <p className="mt-6 text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
+                        Akses informasi publik yang transparan dan akuntabel sesuai dengan amanat Undang-Undang.
                     </p>
                     <Button size="lg" className="mt-10 bg-gold text-primary-dark font-bold hover:bg-gold/90 text-base rounded-full px-8">
                         Mulai Jelajahi <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        <section className="py-20 lg:py-28 bg-card">
+        <motion.section 
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="py-24 lg:py-32 bg-card"
+        >
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
+                <div className="text-center mb-20">
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Layanan Utama PPID</h2>
-                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">Akses cepat ke layanan utama Pejabat Pengelola Informasi dan Dokumentasi (PPID) KPPU.</p>
+                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg leading-relaxed">Akses cepat ke layanan utama Pejabat Pengelola Informasi dan Dokumentasi (PPID) KPPU.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     {quickAccessItems.map((item, index) => (
-                        <Card key={index} className="hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 bg-background">
+                        <Card key={index} className="hover:shadow-2xl hover:-translate-y-2 transition-transform duration-300 bg-background rounded-2xl">
                            <CardContent className="p-10 flex flex-col items-center">
-                                <div className="p-6 bg-primary/10 rounded-full mb-6">
-                                     <item.icon className="h-12 w-12 text-primary" />
+                                <div className="p-6 bg-primary/10 rounded-full mb-8">
+                                     <item.icon className="h-14 w-14 text-primary" />
                                 </div>
                                 <h3 className="text-xl font-bold font-poppins text-primary-dark dark:text-white">{item.label}</h3>
                            </CardContent>
@@ -77,15 +105,21 @@ export default function PPIDPage() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        <section className="py-20 lg:py-28 bg-background">
+        <motion.section 
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="py-24 lg:py-32 bg-background"
+        >
             <div className="container mx-auto px-4">
-                 <div className="text-center mb-16">
-                     <p className="text-primary font-semibold mb-2">STATISTIK</p>
+                 <div className="text-center mb-20">
+                     <p className="text-primary font-semibold mb-2 uppercase tracking-widest">Statistik</p>
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Layanan Informasi Publik</h2>
                 </div>
-                <Card className="shadow-lg">
+                <Card className="shadow-2xl rounded-2xl">
                     <CardContent className="p-8">
                         <div className="h-[450px]">
                             <BarChartComponent />
@@ -93,17 +127,23 @@ export default function PPIDPage() {
                     </CardContent>
                 </Card>
             </div>
-        </section>
+        </motion.section>
 
-         <section className="py-20 lg:py-28 bg-card">
+         <motion.section 
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="py-24 lg:py-32 bg-card"
+        >
             <div className="container mx-auto px-4">
-                 <div className="text-center mb-16">
-                    <p className="text-primary font-semibold mb-2">PUBLIKASI</p>
+                 <div className="text-center mb-20">
+                    <p className="text-primary font-semibold mb-2 uppercase tracking-widest">Publikasi</p>
                     <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Publikasi & Dokumen</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     {publicationItems.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center p-8 bg-background rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div key={index} className="flex flex-col items-center p-8 bg-background rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                            <div className="p-5 bg-gold/10 rounded-full mb-6">
                                 <item.icon className="h-10 w-10 text-gold" />
                            </div>
@@ -112,18 +152,24 @@ export default function PPIDPage() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        <section className="py-20 lg:py-28 bg-background">
+        <motion.section 
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="py-24 lg:py-32 bg-background"
+        >
             <div className="container mx-auto px-4">
-                 <div className="text-center mb-16">
-                    <p className="text-primary font-semibold mb-2">INOVASI</p>
+                 <div className="text-center mb-20">
+                    <p className="text-primary font-semibold mb-2 uppercase tracking-widest">Inovasi</p>
                     <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Inovasi Digital KPPU</h2>
-                     <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">Berbagai inovasi digital untuk meningkatkan kualitas layanan dan transparansi.</p>
+                     <p className="text-muted-foreground mt-4 max-w-3xl mx-auto text-lg leading-relaxed">Berbagai inovasi digital untuk meningkatkan kualitas layanan dan transparansi.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {innovationItems.map((item, index) => (
-                        <Card key={index} className="hover:border-primary transition-colors bg-card hover:shadow-xl">
+                        <Card key={index} className="hover:border-primary transition-colors bg-card hover:shadow-xl rounded-2xl">
                             <CardHeader>
                                 <CardTitle className="text-primary font-poppins text-xl">{item.title}</CardTitle>
                             </CardHeader>
@@ -134,16 +180,22 @@ export default function PPIDPage() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
 
-        <section className="py-20 lg:py-28 bg-primary-dark text-white">
+        <motion.section 
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="py-24 lg:py-32 bg-primary-dark text-white"
+        >
             <div className="container mx-auto px-4">
-                 <div className="text-center mb-16">
+                 <div className="text-center mb-20">
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins">Galeri & Media</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
                     <div className="md:col-span-3">
-                        <div className="relative aspect-video overflow-hidden shadow-lg group">
+                        <div className="relative aspect-video overflow-hidden shadow-lg group rounded-2xl">
                             <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="Video PPID" data-ai-hint="youtube thumbnail" />
                             <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-80">
                                 <Youtube className="w-20 h-20 text-red-600 group-hover:text-red-500 cursor-pointer transition-transform group-hover:scale-110" />
@@ -151,14 +203,14 @@ export default function PPIDPage() {
                         </div>
                     </div>
                      <div className="md:col-span-2 grid grid-cols-2 gap-6">
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 1" className="object-cover w-full h-full shadow-lg" data-ai-hint="man presenting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 2" className="object-cover w-full h-full shadow-lg" data-ai-hint="woman presenting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 3" className="object-cover w-full h-full shadow-lg" data-ai-hint="office meeting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 4" className="object-cover w-full h-full shadow-lg" data-ai-hint="person writing" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 1" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="man presenting" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 2" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="woman presenting" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 3" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="office meeting" />
+                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 4" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="person writing" />
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </div>

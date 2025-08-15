@@ -220,13 +220,15 @@ export default function Home() {
                       Diawasi oleh Komisioner yang berdedikasi untuk mewujudkan persaingan usaha yang sehat demi kesejahteraan rakyat Indonesia.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div className="bg-card/10 dark:bg-card/5 border border-white/20 p-8 rounded-lg flex flex-col justify-center text-center items-center lg:col-span-1">
-                        <h3 className="text-3xl font-bold mb-4 font-poppins">Salam Kenal!</h3>
-                        <p className="text-gray-300 leading-relaxed mb-6">Kami berkomitmen untuk mewujudkan ekonomi pasar yang wajar, efisien, dan sehat.</p>
-                        <KppuPieChart />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="bg-primary-dark/40 dark:bg-card/5 border border-white/20 p-10 rounded-2xl flex flex-col justify-center">
+                        <h3 className="text-4xl font-bold mb-6 font-poppins">Salam Kenal!</h3>
+                        <div className="space-y-4 text-gray-300 leading-relaxed">
+                            <p>KPPU adalah lembaga independen yang bertugas mengawasi pelaksanaan UU No.5/1999 dan UU No.20/2008, terdiri dari Anggota KPPU yang diangkat oleh Presiden Republik Indonesia atas persetujuan Dewan Perwakilan Rakyat.</p>
+                            <p>Anggota KPPU terpilih periode kelima melalui Keputusan Presiden Nomor 8/P Tahun 2024 memiliki masa kerja tahun 2024-2029. Kami berkomitmen untuk mensejahterakan rakyat melalui penegakan hukum persaingan usaha dan pengawasan kemitraan UMKM yang sehat di Indonesia.</p>
+                        </div>
                     </div>
-                    <div className="grid grid-cols-3 gap-5 lg:col-span-2">
+                    <div className="grid grid-cols-3 gap-5">
                         {commissioners.map((commissioner, index) => (
                              <div key={index} className="text-center group">
                                 <div className="relative overflow-hidden rounded-xl">

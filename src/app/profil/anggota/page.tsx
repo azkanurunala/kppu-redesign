@@ -63,29 +63,34 @@ export default function AnggotaPage() {
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
             <main className="flex-1">
-                <motion.section
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                <section
                     className="relative py-32 lg:py-40 text-white bg-primary-dark"
                 >
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
                     <div className="container mx-auto px-4 relative text-center">
-                        <h1 className="text-5xl md:text-7xl font-bold font-poppins">Anggota Komisi</h1>
-                        <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                        <motion.h1
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="text-4xl md:text-5xl lg:text-7xl font-bold font-poppins">Anggota Komisi</motion.h1>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Mengenal para Anggota Komisi Pengawas Persaingan Usaha yang berdedikasi.
-                        </p>
+                        </motion.p>
                     </div>
-                </motion.section>
+                </section>
 
                 <section className="py-24 lg:py-32">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Periode 2023-2028</h2>
-                            <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
+                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
                         </div>
                         <motion.div 
-                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10"
+                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -104,11 +109,10 @@ export default function AnggotaPage() {
                                                     className="group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                                     data-ai-hint={commissioner.hint}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                                            </div>
-                                            <div className="absolute bottom-0 left-0 p-6 text-white text-left">
-                                                <h3 className="text-2xl font-bold font-poppins">{commissioner.name}</h3>
-                                                <p className="text-lg text-gray-300">{commissioner.title}</p>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white text-left">
+                                                    <h3 className="text-2xl font-bold font-poppins">{commissioner.name}</h3>
+                                                    <p className="text-lg text-gray-300">{commissioner.title}</p>
+                                                </div>
                                             </div>
                                         </CardContent>
                                     </Card>
@@ -122,7 +126,7 @@ export default function AnggotaPage() {
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Arsip</h2>
-                            <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
+                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                             <div>
@@ -173,7 +177,7 @@ export default function AnggotaPage() {
                             >
                                 <Users className="h-16 w-16 text-primary mx-auto mb-6" />
                                 <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Integritas dan Profesionalisme</h2>
-                                <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Kode Etik Komisi</p>
+                                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Kode Etik Komisi</p>
                                 <p className="text-lg text-muted-foreground leading-relaxed mb-10">
                                     Sebagai landasan dalam menjalankan tugas, setiap anggota Komisi berpegang teguh pada Kode Etik Perilaku Komisioner yang menjunjung tinggi nilai-nilai integritas, objektivitas, dan profesionalisme.
                                 </p>

@@ -53,7 +53,7 @@ export function HomeCarousel() {
       <CarouselContent>
         {carouselItems.map((item, index) => (
           <CarouselItem key={index}>
-            <div className="relative aspect-[13/6] overflow-hidden sm:rounded-2xl">
+            <div className="relative aspect-[13/6] w-full overflow-hidden md:rounded-2xl">
               <Image
                 src={item.imgSrc}
                 alt={item.alt}
@@ -66,8 +66,8 @@ export function HomeCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 bg-black/30 hover:bg-black/50 border-none text-white" />
-      <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 bg-black/30 hover:bg-black/50 border-none text-white" />
+      <CarouselPrevious className="absolute left-3 top-1/2 -translate-y-1/2 z-10 h-8 w-8 bg-black/30 hover:bg-black/50 border-none text-white md:left-6 md:h-10 md:w-10" />
+      <CarouselNext className="absolute right-3 top-1/2 -translate-y-1/2 z-10 h-8 w-8 bg-black/30 hover:bg-black/50 border-none text-white md:right-6 md:h-10 md:w-10" />
     </Carousel>
   )
 }

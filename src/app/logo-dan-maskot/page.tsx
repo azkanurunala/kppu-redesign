@@ -38,20 +38,21 @@ export default function LogoMaskotPage() {
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
             <main className="flex-1">
-                <motion.section
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                <section
                     className="relative py-32 lg:py-40 text-white bg-primary-dark"
                 >
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-                    <div className="container mx-auto px-4 relative text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="container mx-auto px-4 relative text-center">
                         <h1 className="text-5xl md:text-7xl font-bold font-poppins">Logo & Maskot</h1>
                         <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Identitas visual yang merepresentasikan semangat dan nilai-nilai KPPU.
                         </p>
-                    </div>
-                </motion.section>
+                    </motion.div>
+                </section>
 
                 <section className="py-24 lg:py-32">
                     <div className="container mx-auto px-4">

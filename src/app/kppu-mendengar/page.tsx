@@ -25,21 +25,22 @@ export default function KppuMendengarPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <motion.section
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <section
           className="bg-primary-dark text-white py-20"
         >
-          <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="container mx-auto px-4">
             <h1 className="text-4xl lg:text-6xl font-bold font-poppins">KPPU Mendengar</h1>
              <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                 <Link href="/" className="hover:underline">Beranda</Link>
                 <ChevronRight className="h-4 w-4" />
                 <span>KPPU Mendengar</span>
             </div>
-          </div>
-        </motion.section>
+          </motion.div>
+        </section>
 
         <section className="py-20 lg:py-24">
           <div className="container mx-auto px-4">

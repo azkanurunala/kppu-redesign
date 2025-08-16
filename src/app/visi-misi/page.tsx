@@ -41,38 +41,40 @@ export default function VisiMisiPage() {
             <Header />
             <main className="flex-1">
                 {/* Hero Section */}
-                <motion.section
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                <section
                     className="relative py-32 lg:py-48 text-center bg-gradient-to-br from-primary-dark via-background to-background"
                 >
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-                    <div className="container mx-auto px-4 relative">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="container mx-auto px-4 relative">
                         <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white">Visi & Misi</h1>
                         <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Membentuk fondasi persaingan usaha yang sehat untuk Indonesia Maju.
                         </p>
-                    </div>
-                </motion.section>
+                    </motion.div>
+                </section>
 
                 {/* Visi Section */}
-                <motion.section 
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.8 }}
+                <section 
                     className="py-24 lg:py-32"
                 >
-                    <div className="container mx-auto px-4">
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                        transition={{ duration: 0.8 }}
+                        className="container mx-auto px-4">
                         <div className="text-center max-w-4xl mx-auto">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">VISI KPPU</h2>
                             <p className="text-4xl lg:text-6xl font-semibold text-primary-dark dark:text-white leading-tight font-poppins">
                                 "Terwujudnya <span className="text-primary">persaingan usaha yang sehat</span> untuk kesejahteraan rakyat"
                             </p>
                         </div>
-                    </div>
-                </motion.section>
+                    </motion.div>
+                </section>
 
                 {/* Misi Section */}
                 <section className="py-24 lg:py-32 bg-card">

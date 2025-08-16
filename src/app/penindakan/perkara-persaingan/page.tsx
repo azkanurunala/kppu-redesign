@@ -55,32 +55,34 @@ export default function PutusanPage() {
             
             <Card className="overflow-hidden shadow-lg">
               <CardContent className="p-0">
-                <Table>
-                    <TableHeader>
-                        <TableRow className="bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                            <TableHead className="w-16 px-6 py-4 text-sm font-semibold text-muted-foreground">No.</TableHead>
-                            <TableHead className="w-56 px-6 py-4 text-sm font-semibold text-muted-foreground">Nomor Putusan</TableHead>
-                            <TableHead className="px-6 py-4 text-sm font-semibold text-muted-foreground">Tentang</TableHead>
-                            <TableHead className="w-48 px-6 py-4 text-sm font-semibold text-muted-foreground">Tanggal Putusan</TableHead>
-                            <TableHead className="w-32 text-center px-6 py-4 text-sm font-semibold text-muted-foreground">Dokumen</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {decisions.map((item) => (
-                            <TableRow key={item.no} className="dark:border-gray-700/50">
-                                <TableCell className="px-6 py-5 font-medium">{item.no}</TableCell>
-                                <TableCell className="px-6 py-5 font-semibold text-primary">{item.decisionNumber}</TableCell>
-                                <TableCell className="px-6 py-5 leading-relaxed">{item.about}</TableCell>
-                                <TableCell className="px-6 py-5 text-muted-foreground">{item.date}</TableCell>
-                                <TableCell className="px-6 py-5 text-center">
-                                    <Button variant="ghost" size="icon" className="text-primary hover:text-primary/80 hover:bg-primary/10 rounded-full">
-                                        <Download className="h-5 w-5" />
-                                    </Button>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
+                <div className="overflow-x-auto">
+                  <Table>
+                      <TableHeader>
+                          <TableRow className="bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+                              <TableHead className="w-16 px-6 py-4 text-sm font-semibold text-muted-foreground">No.</TableHead>
+                              <TableHead className="w-56 px-6 py-4 text-sm font-semibold text-muted-foreground">Nomor Putusan</TableHead>
+                              <TableHead className="px-6 py-4 text-sm font-semibold text-muted-foreground">Tentang</TableHead>
+                              <TableHead className="w-48 px-6 py-4 text-sm font-semibold text-muted-foreground">Tanggal Putusan</TableHead>
+                              <TableHead className="w-32 text-center px-6 py-4 text-sm font-semibold text-muted-foreground">Dokumen</TableHead>
+                          </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                          {decisions.map((item) => (
+                              <TableRow key={item.no} className="dark:border-gray-700/50">
+                                  <TableCell className="px-6 py-5 font-medium">{item.no}</TableCell>
+                                  <TableCell className="px-6 py-5 font-semibold text-primary">{item.decisionNumber}</TableCell>
+                                  <TableCell className="px-6 py-5 leading-relaxed">{item.about}</TableCell>
+                                  <TableCell className="px-6 py-5 text-muted-foreground">{item.date}</TableCell>
+                                  <TableCell className="px-6 py-5 text-center">
+                                      <Button variant="ghost" size="icon" className="text-primary hover:text-primary/80 hover:bg-primary/10 rounded-full">
+                                          <Download className="h-5 w-5" />
+                                      </Button>
+                                  </TableCell>
+                              </TableRow>
+                          ))}
+                      </TableBody>
+                  </Table>
+                </div>
               </CardContent>
             </Card>
 

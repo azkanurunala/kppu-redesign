@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -65,35 +66,37 @@ export default function RegulasiPage() {
                     <div className="lg:col-span-2">
                         <Card className="shadow-lg">
                             <CardContent className="p-0">
-                                <Table>
-                                    <TableHeader>
-                                        <TableRow className="border-b-0">
-                                            <TableHead className="w-[60px] p-6 font-semibold">No.</TableHead>
-                                            <TableHead className="p-6 font-semibold">Judul</TableHead>
-                                            <TableHead className="text-right w-[100px] p-6 font-semibold">Tautan</TableHead>
-                                        </TableRow>
-                                    </TableHeader>
-                                    <TableBody>
-                                        {regulations.map(reg => (
-                                            <React.Fragment key={reg.category}>
-                                                <TableRow className="bg-gray-100 dark:bg-gray-800/30">
-                                                    <TableCell colSpan={3} className="p-6 font-bold text-xl text-primary-dark dark:text-white font-poppins">{reg.category}</TableCell>
-                                                </TableRow>
-                                                {reg.items.map((item, index) => (
-                                                    <TableRow key={index} className="dark:border-gray-700/50">
-                                                        <TableCell className="font-medium px-6 py-5">{counter++}</TableCell>
-                                                        <TableCell className="px-6 py-5 leading-relaxed">{item}</TableCell>
-                                                        <TableCell className="text-right px-6 py-5">
-                                                            <Button variant="ghost" size="icon" className="text-primary hover:text-primary/80 hover:bg-primary/10 rounded-full">
-                                                                <Download className="h-5 w-5" />
-                                                            </Button>
-                                                        </TableCell>
+                                <div className="overflow-x-auto">
+                                    <Table>
+                                        <TableHeader>
+                                            <TableRow className="border-b-0">
+                                                <TableHead className="w-[60px] p-6 font-semibold">No.</TableHead>
+                                                <TableHead className="p-6 font-semibold">Judul</TableHead>
+                                                <TableHead className="text-right w-[100px] p-6 font-semibold">Tautan</TableHead>
+                                            </TableRow>
+                                        </TableHeader>
+                                        <TableBody>
+                                            {regulations.map(reg => (
+                                                <React.Fragment key={reg.category}>
+                                                    <TableRow className="bg-gray-100 dark:bg-gray-800/30">
+                                                        <TableCell colSpan={3} className="p-6 font-bold text-xl text-primary-dark dark:text-white font-poppins">{reg.category}</TableCell>
                                                     </TableRow>
-                                                ))}
-                                            </React.Fragment>
-                                        ))}
-                                    </TableBody>
-                                </Table>
+                                                    {reg.items.map((item, index) => (
+                                                        <TableRow key={index} className="dark:border-gray-700/50">
+                                                            <TableCell className="font-medium px-6 py-5">{counter++}</TableCell>
+                                                            <TableCell className="px-6 py-5 leading-relaxed">{item}</TableCell>
+                                                            <TableCell className="text-right px-6 py-5">
+                                                                <Button variant="ghost" size="icon" className="text-primary hover:text-primary/80 hover:bg-primary/10 rounded-full">
+                                                                    <Download className="h-5 w-5" />
+                                                                </Button>
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    ))}
+                                                </React.Fragment>
+                                            ))}
+                                        </TableBody>
+                                    </Table>
+                                </div>
                             </CardContent>
                         </Card>
                     </div>

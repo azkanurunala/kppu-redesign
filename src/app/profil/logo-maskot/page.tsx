@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Download, Eye, Palette, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -38,20 +38,21 @@ export default function LogoMaskotPage() {
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
             <main className="flex-1">
-                <motion.section
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative py-32 lg:py-40 text-white bg-primary-dark"
+                <section
+                    className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 text-white bg-primary-dark"
                 >
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-                    <div className="container mx-auto px-4 relative text-center">
-                        <h1 className="text-5xl md:text-7xl font-bold font-poppins">Logo & Maskot</h1>
-                        <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="container mx-auto px-4 relative text-center">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins">Logo & Maskot</h1>
+                        <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Identitas visual yang merepresentasikan semangat dan nilai-nilai KPPU.
                         </p>
-                    </div>
-                </motion.section>
+                    </motion.div>
+                </section>
 
                 <section className="py-24 lg:py-32">
                     <div className="container mx-auto px-4">
@@ -78,8 +79,8 @@ export default function LogoMaskotPage() {
                                 <Image
                                     src="https://kppu.go.id/wp-content/uploads/2019/09/cropped-LOGO-KPPU-1.png"
                                     alt="Logo KPPU"
-                                    width={300}
-                                    height={300}
+                                    width={350}
+                                    height={350}
                                     data-ai-hint="official logo"
                                 />
                             </div>
@@ -89,39 +90,45 @@ export default function LogoMaskotPage() {
 
                 <section className="py-24 lg:py-32 bg-card">
                     <div className="container mx-auto px-4">
-                        <div className="text-center mb-20">
+                        <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Panduan Penggunaan</h2>
                             <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Konsistensi Visual</p>
                         </div>
                         <motion.div
-                            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+                            className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto"
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.2 }}
                         >
                             <motion.div variants={itemVariants}>
-                                <Card className="text-center p-8 bg-background shadow-lg rounded-2xl h-full">
+                                <Card className="text-center p-10 bg-background shadow-lg rounded-2xl h-full border-0">
                                     <CardContent className="p-0">
-                                        <Eye className="h-12 w-12 text-primary mx-auto mb-6" />
+                                        <div className="bg-primary/10 rounded-full p-4 inline-block mb-6">
+                                            <Eye className="h-10 w-10 text-primary" />
+                                        </div>
                                         <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Ruang Kosong</h3>
                                         <p className="text-muted-foreground">Pastikan ada ruang kosong yang cukup di sekitar logo untuk menjaga visibilitas dan integritasnya.</p>
                                     </CardContent>
                                 </Card>
                             </motion.div>
                              <motion.div variants={itemVariants}>
-                                <Card className="text-center p-8 bg-background shadow-lg rounded-2xl h-full">
+                                <Card className="text-center p-10 bg-background shadow-lg rounded-2xl h-full border-0">
                                     <CardContent className="p-0">
-                                        <Scale className="h-12 w-12 text-primary mx-auto mb-6" />
+                                        <div className="bg-primary/10 rounded-full p-4 inline-block mb-6">
+                                            <Scale className="h-10 w-10 text-primary" />
+                                        </div>
                                         <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Ukuran Minimum</h3>
                                         <p className="text-muted-foreground">Jangan gunakan logo dalam ukuran yang terlalu kecil sehingga sulit dikenali atau dibaca.</p>
                                     </CardContent>
                                 </Card>
                             </motion.div>
                              <motion.div variants={itemVariants}>
-                                <Card className="text-center p-8 bg-background shadow-lg rounded-2xl h-full">
+                                <Card className="text-center p-10 bg-background shadow-lg rounded-2xl h-full border-0">
                                     <CardContent className="p-0">
-                                        <Palette className="h-12 w-12 text-primary mx-auto mb-6" />
+                                        <div className="bg-primary/10 rounded-full p-4 inline-block mb-6">
+                                            <Palette className="h-10 w-10 text-primary" />
+                                        </div>
                                         <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Warna</h3>
                                         <p className="text-muted-foreground">Gunakan varian warna logo yang telah disediakan. Jangan mengubah atau memodifikasi warna standar logo.</p>
                                     </CardContent>
@@ -144,8 +151,9 @@ export default function LogoMaskotPage() {
                                 <Image
                                     src="https://placehold.co/500x500.png"
                                     alt="Maskot KPPU"
-                                    width={400}
-                                    height={400}
+                                    width={450}
+                                    height={450}
+                                    className="object-contain"
                                     data-ai-hint="eagle mascot cartoon"
                                 />
                             </div>
@@ -165,4 +173,3 @@ export default function LogoMaskotPage() {
         </div>
     );
 }
-

@@ -64,7 +64,7 @@ export default function AnggotaPage() {
             <Header />
             <main className="flex-1">
                 <section
-                    className="relative py-32 lg:py-40 text-white bg-primary-dark"
+                    className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 text-white bg-primary-dark"
                 >
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
                     <div className="container mx-auto px-4 relative text-center">
@@ -72,12 +72,12 @@ export default function AnggotaPage() {
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-5xl lg:text-7xl font-bold font-poppins">Anggota Komisi</motion.h1>
+                            className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins">Anggota Komisi</motion.h1>
                         <motion.p 
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                            className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Mengenal para Anggota Komisi Pengawas Persaingan Usaha yang berdedikasi.
                         </motion.p>
                     </div>
@@ -85,12 +85,12 @@ export default function AnggotaPage() {
 
                 <section className="py-24 lg:py-32">
                     <div className="container mx-auto px-4">
-                        <div className="text-center mb-20">
+                        <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Periode 2023-2028</h2>
-                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
+                            <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
                         </div>
                         <motion.div 
-                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
+                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10"
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -98,7 +98,7 @@ export default function AnggotaPage() {
                         >
                             {commissioners.map((commissioner) => (
                                 <motion.div key={commissioner.name} variants={itemVariants}>
-                                    <Card className="text-center overflow-hidden group border-0 shadow-2xl rounded-2xl">
+                                    <Card className="text-center overflow-hidden group border-0 shadow-lg rounded-2xl bg-card">
                                         <CardContent className="p-0">
                                             <div className="relative aspect-[4/5] w-full">
                                                 <Image
@@ -109,7 +109,7 @@ export default function AnggotaPage() {
                                                     className="group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                                     data-ai-hint={commissioner.hint}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6 text-white text-left">
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6 text-white">
                                                     <h3 className="text-2xl font-bold font-poppins">{commissioner.name}</h3>
                                                     <p className="text-lg text-gray-300">{commissioner.title}</p>
                                                 </div>
@@ -124,20 +124,20 @@ export default function AnggotaPage() {
                 
                 <section className="py-24 lg:py-32 bg-card">
                     <div className="container mx-auto px-4">
-                        <div className="text-center mb-20">
+                        <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Arsip</h2>
-                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
+                            <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                             <div>
-                                <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Anggota Komisi dari Masa ke Masa</h3>
+                                <h3 className="text-2xl lg:text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Anggota Komisi dari Masa ke Masa</h3>
                                 <Accordion type="single" collapsible className="w-full space-y-4">
                                     {pastMembers.map((item, index) => (
-                                        <AccordionItem key={index} value={`item-${index}`} className="bg-background rounded-lg shadow-md px-2">
-                                            <AccordionTrigger className="p-4 text-left font-bold text-lg hover:no-underline text-primary-dark dark:text-white">
+                                        <AccordionItem key={index} value={`item-${index}`} className="bg-background rounded-lg shadow-sm px-2 border-transparent">
+                                            <AccordionTrigger className="p-6 text-left font-bold text-lg hover:no-underline text-primary-dark dark:text-white">
                                                 Periode {item.period}
                                             </AccordionTrigger>
-                                            <AccordionContent className="p-4 pt-0 text-muted-foreground">
+                                            <AccordionContent className="px-6 pb-6 pt-0 text-muted-foreground">
                                                 <ul className="list-disc list-inside space-y-2">
                                                    {item.members.map(member => <li key={member}>{member}</li>)}
                                                 </ul>
@@ -147,8 +147,8 @@ export default function AnggotaPage() {
                                 </Accordion>
                             </div>
                             <div>
-                                 <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Ketua & Wakil Ketua dari Masa ke Masa</h3>
-                                 <Card className="bg-background shadow-md">
+                                 <h3 className="text-2xl lg:text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Ketua & Wakil Ketua Terdahulu</h3>
+                                 <Card className="bg-background shadow-sm">
                                      <CardContent className="p-6">
                                          <ul className="space-y-6">
                                             {pastLeaders.map((item, index) => (
@@ -175,9 +175,13 @@ export default function AnggotaPage() {
                                 viewport={{ once: true, amount: 0.5 }}
                                 transition={{ duration: 0.6 }}
                             >
-                                <Users className="h-16 w-16 text-primary mx-auto mb-6" />
+                                <div className="flex justify-center mb-8">
+                                    <div className="bg-primary/10 p-4 rounded-full">
+                                        <Users className="h-12 w-12 text-primary" />
+                                    </div>
+                                </div>
                                 <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Integritas dan Profesionalisme</h2>
-                                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Kode Etik Komisi</p>
+                                <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Kode Etik Komisi</p>
                                 <p className="text-lg text-muted-foreground leading-relaxed mb-10">
                                     Sebagai landasan dalam menjalankan tugas, setiap anggota Komisi berpegang teguh pada Kode Etik Perilaku Komisioner yang menjunjung tinggi nilai-nilai integritas, objektivitas, dan profesionalisme.
                                 </p>

@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BarChartComponent } from '@/components/ui/bar-chart';
-import { TrendingUp, FileText, Microscope, Users, ArrowRight } from 'lucide-react';
+import { TrendingUp, FileText, Microscope, Users, ArrowRight, ChevronRight, Gavel, Newspaper, MessageSquareQuote, Info, Scale } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -29,102 +29,140 @@ const ipuBenefits = [
   }
 ];
 
+const sidebarNavItems = [
+  { icon: FileText, label: "REGULASI", href: "/regulasi" },
+  { icon: Gavel, label: "PUTUSAN", href: "/penindakan/perkara-persaingan" },
+  { icon: Newspaper, label: "JADWAL SIDANG", href: "/jadwal-sidang" },
+  { icon: FileText, label: "SIARAN PERS", href: "/publikasi/siaran-pers" },
+  { icon: MessageSquareQuote, label: "TANYA JAWAB", href: "/tanya-jawab" },
+  { icon: Info, label: "PPID", href: "/ppid" },
+];
+
 export default function IndeksPersainganUsahaPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section
-          className="relative bg-primary-dark text-white py-32 md:py-40 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="container mx-auto px-4 relative text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold font-poppins">Indeks Persaingan Usaha</h1>
-            <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              Mengukur dinamika dan tingkat persaingan usaha di Indonesia untuk mendorong pertumbuhan ekonomi yang sehat.
-            </p>
-          </motion.div>
-        </section>
-
-        <section
-          className="py-24 lg:py-32"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="lg:pr-12">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">TENTANG IPU</h2>
-                <p className="text-3xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-8">Apa Itu Indeks Persaingan Usaha?</p>
-                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                  <p>Indeks Persaingan Usaha (IPU) adalah suatu indikator untuk mengukur tingkat persaingan usaha di suatu negara atau daerah. IPU disusun berdasarkan tiga dimensi utama: struktur pasar, perilaku pelaku usaha, dan kinerja pasar.</p>
-                  <p>Skor IPU yang tinggi menunjukkan tingkat persaingan yang lebih sehat, yang pada akhirnya diharapkan dapat mendorong efisiensi, inovasi, dan kesejahteraan masyarakat.</p>
-                </div>
-                 <Button size="lg" className="mt-10 rounded-full px-8 text-base">
-                    Pelajari Metodologi
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </div>
-              <div className="bg-card p-8 rounded-3xl shadow-2xl flex items-center justify-center">
-                 <div className="text-center">
-                    <p className="text-muted-foreground font-semibold">SKOR IPU NASIONAL 2023</p>
-                    <p className="text-8xl font-bold text-primary font-poppins my-4">4.92</p>
-                    <p className="font-semibold text-2xl text-primary-dark dark:text-white">Kategori "Tinggi"</p>
-                 </div>
-              </div>
-            </div>
-          </motion.div>
-        </section>
-
-        <section className="py-24 lg:py-32 bg-card">
+        <section className="bg-primary-dark text-white py-20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-20">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">TREN INDEKS</h2>
-              <p className="text-3xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Perkembangan Skor IPU Nasional</p>
+            <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Indeks Persaingan Usaha</h1>
+            <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+              <Link href="/" className="hover:underline">Beranda</Link>
+              <ChevronRight className="h-4 w-4" />
+              <span>Indeks Persaingan Usaha</span>
             </div>
-            <Card className="shadow-2xl rounded-2xl bg-background">
-                <CardContent className="p-8">
-                    <div className="h-[450px]">
-                        <BarChartComponent />
-                    </div>
-                </CardContent>
-            </Card>
           </div>
         </section>
 
-        <section className="py-24 lg:py-32">
+        <section className="py-20 lg:py-24">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-20">
-                    <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Manfaat</h2>
-                    <p className="text-3xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Kegunaan Indeks Persaingan Usaha</p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    {ipuBenefits.map((item, index) => (
-                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                    <div className="lg:col-span-2 space-y-16">
+                        
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <Card className="text-center p-8 bg-card shadow-lg rounded-2xl h-full border-0">
-                                <CardContent className="p-0">
-                                    <div className="mx-auto mb-6 flex items-center justify-center h-20 w-20 rounded-full bg-primary/10">
-                                        {item.icon}
+                            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Tentang Indeks Persaingan Usaha (IPU)</h2>
+                            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                                <p>Indeks Persaingan Usaha (IPU) adalah suatu indikator untuk mengukur tingkat persaingan usaha di suatu negara atau daerah. IPU disusun berdasarkan tiga dimensi utama: struktur pasar, perilaku pelaku usaha, dan kinerja pasar.</p>
+                                <p>Skor IPU yang tinggi menunjukkan tingkat persaingan yang lebih sehat, yang pada akhirnya diharapkan dapat mendorong efisiensi, inovasi, dan kesejahteraan masyarakat.</p>
+                            </div>
+                            <Button size="lg" variant="outline" className="mt-8">
+                                Pelajari Metodologi
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </Button>
+                        </motion.div>
+
+                        <motion.div
+                             initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-8 text-center">Skor IPU Nasional 2023</h2>
+                            <Card className="bg-card p-8 rounded-3xl shadow-2xl flex items-center justify-center max-w-sm mx-auto">
+                                <div className="text-center">
+                                    <Scale className="w-16 h-16 text-primary mx-auto mb-4" />
+                                    <p className="text-8xl font-bold text-primary font-poppins my-2">4.92</p>
+                                    <p className="font-semibold text-2xl text-primary-dark dark:text-white">Kategori "Tinggi"</p>
+                                </div>
+                            </Card>
+                        </motion.div>
+
+                        <motion.div
+                             initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                             <div className="text-center mb-12">
+                                <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins">Perkembangan Skor IPU Nasional</h2>
+                            </div>
+                            <Card className="shadow-xl rounded-2xl">
+                                <CardContent className="p-8">
+                                    <div className="h-[450px]">
+                                        <BarChartComponent />
                                     </div>
-                                    <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">{item.title}</h3>
-                                    <p className="text-muted-foreground">{item.description}</p>
                                 </CardContent>
                             </Card>
                         </motion.div>
-                    ))}
+                        
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="text-center mb-12">
+                                <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins">Manfaat Indeks Persaingan Usaha</h2>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                {ipuBenefits.map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, amount: 0.5 }}
+                                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    >
+                                        <Card className="text-center p-8 bg-card shadow-lg rounded-2xl h-full border-0">
+                                            <CardContent className="p-0">
+                                                <div className="mx-auto mb-6 flex items-center justify-center h-20 w-20 rounded-full bg-primary/10">
+                                                    {item.icon}
+                                                </div>
+                                                <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">{item.title}</h3>
+                                                <p className="text-muted-foreground">{item.description}</p>
+                                            </CardContent>
+                                        </Card>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    <aside className="lg:sticky lg:top-28 h-fit">
+                        <Card className="shadow-lg">
+                            <CardHeader>
+                                <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white">Navigasi Cepat</CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-0">
+                                <nav className="flex flex-col">
+                                {sidebarNavItems.map((item, index) => (
+                                    <Link key={index} href={item.href}>
+                                      <div className={`flex items-center p-5 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-semibold ${index !== sidebarNavItems.length - 1 ? 'border-b border-border/50' : ''}`}>
+                                          <item.icon className="h-5 w-5 text-primary mr-4" />
+                                          <span>{item.label}</span>
+                                          <ChevronRight className="h-5 w-5 ml-auto text-muted-foreground" />
+                                      </div>
+                                    </Link>
+                                ))}
+                                </nav>
+                            </CardContent>
+                        </Card>
+                    </aside>
                 </div>
             </div>
         </section>

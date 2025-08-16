@@ -83,7 +83,7 @@ export default function Home() {
         <section className="relative bg-primary-dark text-white py-32 md:py-48 text-center overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-dark to-black opacity-20"></div>
             <div className="container mx-auto px-4 relative">
-                <h1 className="text-4xl md:text-6xl font-bold font-poppins leading-tight">Mewujudkan Persaingan Usaha yang Sehat</h1>
+                <h1 className="text-3xl md:text-6xl font-bold font-poppins leading-tight">Mewujudkan Persaingan Usaha yang Sehat</h1>
                 <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
                     Jelajahi database putusan, peraturan terbaru, dan jadwal sidang untuk mendukung ekosistem bisnis yang adil dan transparan di Indonesia.
                 </p>
@@ -103,7 +103,7 @@ export default function Home() {
         
         {/* Carousel Section */}
         <section className="py-12 md:py-16 -mt-16 md:-mt-24 lg:-mt-[100px] relative z-10">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-0 md:px-4">
             <HomeCarousel />
           </div>
         </section>
@@ -142,7 +142,7 @@ export default function Home() {
         <section className="py-20 lg:py-24 bg-card">
             <div className="container mx-auto px-4">
                  <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Kolom Berita Utama */}
@@ -215,14 +215,14 @@ export default function Home() {
         <section className="py-20 lg:py-28 bg-primary-dark text-white">
             <div className="container mx-auto px-4">
                  <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold font-poppins">Jajaran Komisioner KPPU</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold font-poppins">Jajaran Komisioner KPPU</h2>
                     <p className="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
                       Diawasi oleh Komisioner yang berdedikasi untuk mewujudkan persaingan usaha yang sehat demi kesejahteraan rakyat Indonesia.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div className="bg-primary-dark/40 dark:bg-card/5 border border-white/20 p-10 rounded-2xl flex flex-col justify-center">
-                        <h3 className="text-4xl font-bold mb-6 font-poppins">Salam Kenal!</h3>
+                        <h3 className="text-3xl md:text-4xl font-bold mb-6 font-poppins">Salam Kenal!</h3>
                         <div className="space-y-4 text-gray-300 leading-relaxed">
                             <p>KPPU adalah lembaga independen yang bertugas mengawasi pelaksanaan UU No.5/1999 dan UU No.20/2008, terdiri dari Anggota KPPU yang diangkat oleh Presiden Republik Indonesia atas persetujuan Dewan Perwakilan Rakyat.</p>
                             <p>Anggota KPPU terpilih periode kelima melalui Keputusan Presiden Nomor 8/P Tahun 2024 memiliki masa kerja tahun 2024-2029. Kami berkomitmen untuk mensejahterakan rakyat melalui penegakan hukum persaingan usaha dan pengawasan kemitraan UMKM yang sehat di Indonesia.</p>
@@ -255,7 +255,7 @@ export default function Home() {
         <section className="py-20 lg:py-24 bg-background">
              <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
                     <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Akses berbagai materi publikasi dan media dari KPPU.</p>
                 </div>
                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -291,7 +291,7 @@ export default function Home() {
         <section className="py-20 lg:py-24 bg-card">
              <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pencari Dokumen</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pencari Dokumen</h2>
                     <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Akses cepat ke database peraturan, putusan, dan pedoman KPPU.</p>
                 </div>
                 <Card className="max-w-4xl mx-auto p-8 shadow-lg rounded-xl bg-background">
@@ -313,7 +313,7 @@ export default function Home() {
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div className="">
-                        <h2 className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Kantor Wilayah</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Kantor Wilayah</h2>
                         <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                             KPPU hadir di 7 (tujuh) wilayah kerja yang tersebar di seluruh Indonesia untuk mendekatkan layanan dan pengawasan persaingan usaha kepada masyarakat dan pelaku usaha di daerah.
                         </p>

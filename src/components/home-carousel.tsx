@@ -15,22 +15,22 @@ import {
 
 const carouselItems = [
     {
-        imgSrc: "https://placehold.co/1200x500.png",
+        imgSrc: "https://placehold.co/1300x600.png",
         imgHint: "modern office building",
         alt: "Gedung KPPU"
     },
     {
-        imgSrc: "https://placehold.co/1200x500.png",
+        imgSrc: "https://placehold.co/1300x600.png",
         imgHint: "meeting discussion presentation",
         alt: "Rapat Komisi"
     },
     {
-        imgSrc: "https://placehold.co/1200x500.png",
+        imgSrc: "https://placehold.co/1300x600.png",
         imgHint: "courtroom judge gavel",
         alt: "Sidang Perkara"
     },
     {
-        imgSrc: "https://placehold.co/1200x500.png",
+        imgSrc: "https://placehold.co/1300x600.png",
         imgHint: "press conference media",
         alt: "Konferensi Pers"
     },
@@ -53,7 +53,7 @@ export function HomeCarousel() {
       <CarouselContent>
         {carouselItems.map((item, index) => (
           <CarouselItem key={index}>
-            <div className="relative aspect-[24/10] md:aspect-[24/8] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[13/6] overflow-hidden rounded-2xl">
               <Image
                 src={item.imgSrc}
                 alt={item.alt}

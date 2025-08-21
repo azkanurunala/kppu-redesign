@@ -3,7 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Logo } from './logo';
+import { LogoImage } from './logo';
 import { Button } from './ui/button';
 import {
   DropdownMenu,
@@ -108,7 +108,7 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className={cn(
                     "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
-                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-gold"
+                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#B8860B]"
                   )}>
                     {item.label} <ChevronDown className="h-4 w-4" />
                   </Button>
@@ -138,11 +138,11 @@ export function Header() {
     <>
       <header className={cn(
         "sticky top-0 z-50 w-full transition-colors duration-300",
-        isScrolled ? "bg-[#0D1D36]/95 shadow-md backdrop-blur-lg" : "bg-[#0D1D36]"
+        isScrolled ? "bg-[#0D1D36] shadow-md backdrop-blur-lg" : "bg-[#0D1D36]"
       )}>
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <Logo />
+            <LogoImage />
           </Link>
           
           <div className="hidden lg:flex flex-1 items-center justify-end">
@@ -166,7 +166,7 @@ export function Header() {
                  <SheetHeader>
                   <SheetTitle>
                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Logo />
+                      <LogoImage />
                     </Link>
                   </SheetTitle>
                 </SheetHeader>

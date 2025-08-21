@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 
 import { Header } from '@/components/header';
@@ -29,8 +29,11 @@ export default function PutusanPage() {
       <Header />
       
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-20 text-center">
-            <div className="container mx-auto">
+        <section className="bg-primary-dark text-white py-20 text-center relative overflow-hidden">
+            <div className="absolute inset-0">
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+            </div>
+            <div className="container mx-auto relative z-10">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Database Putusan KPPU</h1>
                 <p className="mt-4 text-lg text-primary-foreground/80 max-w-3xl mx-auto">
                   Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha secara transparan dan mudah diakses.
@@ -115,3 +118,4 @@ export default function PutusanPage() {
     </div>
   );
 }
+

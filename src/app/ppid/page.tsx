@@ -59,11 +59,11 @@ export default function PPIDPage() {
         >
             <div className="absolute inset-0 bg-black">
                 <Image
-                    src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600"
+                    src="/images/bg/map-bw.png"
                     alt="Informasi Publik"
                     fill
                     className="object-cover opacity-20"
-                    data-ai-hint="business presentation"
+                    data-ai-hint="indonesia map background"
                     priority
                 />
                  <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/80 to-transparent"></div>
@@ -80,7 +80,7 @@ export default function PPIDPage() {
                     <p className="mt-6 text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
                         Akses informasi publik yang transparan dan akuntabel sesuai dengan amanat Undang-Undang.
                     </p>
-                    <Button size="lg" className="mt-10 bg-gold text-primary-dark font-bold hover:bg-gold/90 text-base rounded-full px-8">
+                    <Button size="lg" className="mt-10 bg-[#B8860B] text-primary-dark font-bold hover:bg-[#B8860B]/90 text-base rounded-full px-8">
                         Mulai Jelajahi <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                 </motion.div>
@@ -169,8 +169,8 @@ export default function PPIDPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     {publicationItems.map((item, index) => (
                         <div key={index} className="flex flex-col items-center p-8 bg-background rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-                           <div className="p-5 bg-gold/10 rounded-full mb-6">
-                                <item.icon className="h-10 w-10 text-gold" />
+                           <div className="p-5 bg-[#B8860B]/10 rounded-full mb-6">
+                                <item.icon className="h-10 w-10 text-[#B8860B]" />
                            </div>
                            <h3 className="text-xl font-bold font-poppins text-primary-dark dark:text-white">{item.title}</h3>
                         </div>

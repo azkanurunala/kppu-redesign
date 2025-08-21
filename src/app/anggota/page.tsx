@@ -14,15 +14,15 @@ import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
 import { usePathname } from 'next/navigation';
 
 const commissioners = [
-  { name: 'M. Fanshurullah Asa', title: 'Ketua', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Aru Armando', title: 'Wakil Ketua', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Dr. Guntur S. Saragih', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Gopprera Panggabean', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Hilman Pujana', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Mohammad Reza', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Rhido Jusmadi', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Ukay Karyadi', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
-  { name: 'Yudi Hidayat', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'M. Fanshurullah Asa', title: 'Ketua', image: '/images/people/mfa.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Aru Armando', title: 'Wakil Ketua', image: '/images/people/aa.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Moh. Noor Rifiq', title: 'Anggota', image: '/images/people/mnr.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Gopprera Panggabean', title: 'Anggota', image: '/images/people/gp.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Hilman Pujana', title: 'Anggota', image: '/images/people/hp.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Mohammad Reza', title: 'Anggota', image: '/images/people/mr.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Rhido Jusmadi', title: 'Anggota', image: '/images/people/rj.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Eugenia Mardanugraha', title: 'Anggota', image: '/images/people/em.png', hint: 'portrait commissioner formal suit' },
+  { name: 'Budi Jaya Santoso', title: 'Anggota', image: '/images/people/bjs.png', hint: 'portrait commissioner formal suit' },
 ];
 
 const pastMembers = [
@@ -72,7 +72,7 @@ export default function AnggotaPage() {
                     className="relative py-32 lg:py-40 text-white bg-primary-dark overflow-hidden"
                 >
                     <div className="absolute inset-0">
-                        <Image src="/images/kppu-building.jpeg" alt="Gedung KPPU" fill className="opacity-5 object-cover" data-ai-hint="modern office building kppu" />
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full opacity-10 object-cover" data-ai-hint="indonesia map background" />
                     </div>
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
                     <div className="absolute inset-0 bg-primary-dark/60"></div>
@@ -109,7 +109,7 @@ export default function AnggotaPage() {
                                 <motion.div key={commissioner.name} variants={itemVariants}>
                                     <Card className="text-center overflow-hidden group border-0 shadow-2xl rounded-2xl">
                                         <CardContent className="p-0">
-                                            <div className="relative aspect-[4/5] w-full">
+                                            <div className="relative aspect-square w-full">
                                                 <Image
                                                     src={commissioner.image}
                                                     alt={`Potret ${commissioner.name}`}

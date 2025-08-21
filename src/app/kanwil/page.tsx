@@ -97,7 +97,7 @@ export default function KanwilPage() {
             <main className="flex-1">
                 <section className="relative py-32 lg:py-48 text-white bg-primary-dark">
                     <div className="absolute inset-0 bg-black">
-                        <Image src="/images/map.jpg" alt="Peta Indonesia" fill className="object-cover opacity-10" data-ai-hint="indonesia map globe southeast asia" />
+                        <Image src="/images/bg/map-bw.png" alt="Peta Indonesia" fill className="object-cover opacity-10" data-ai-hint="indonesia map background" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
                     </div>
                     <div className="container mx-auto relative text-center">
@@ -120,7 +120,7 @@ export default function KanwilPage() {
                     {/* Background Image */}
                     <div className="absolute inset-0 opacity-5">
                         <Image
-                            src="/images/map.jpg"
+                            src="/images/bg/map.png"
                             alt="Peta Indonesia Background"
                             fill
                             className="object-cover"

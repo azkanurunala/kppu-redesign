@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import { Header } from '@/components/header';
@@ -55,8 +55,8 @@ export default function TugasWewenangPage() {
             {/* Background Image */}
             <div className="absolute inset-0 opacity-10">
                 <Image 
-                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.png?auto=compress&cs=tinysrgb&w=1920&h=1080"
-                    alt="Business Law Background"
+                    src="/images/bg/map-bw.png"
+                    alt="Peta Indonesia Background"
                     fill
                     className="object-cover"
                     data-ai-hint="business law legal documents"
@@ -138,3 +138,4 @@ export default function TugasWewenangPage() {
     </div>
   );
 }
+

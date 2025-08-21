@@ -312,20 +312,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
-            <div className="relative py-24 md:py-32 text-center text-white bg-primary-dark">
-                <Image src="https://placehold.co/1200x400.png" alt="Call to Action" layout="fill" objectFit="cover" className="opacity-20" data-ai-hint="discussion meeting" />
-                <div className="relative z-10 container mx-auto px-4">
-                    <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
-                    <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4">Sinergi untuk Ekonomi Maju</h2>
-                    <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
-                    <Button size="lg" variant="secondary" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
-                         Laporkan Sekarang <ArrowRight className="w-5 h-5 ml-2"/>
-                    </Button>
-                </div>
-            </div>
-        </section>
-
       </main>
       <Footer />
     </div>

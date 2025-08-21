@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { ArrowRight, Youtube, Search, Handshake, Scale, FileText, Landmark, Megaphone, GaugeCircle } from 'lucide-react';
+import { ArrowRight, Youtube, Search, Handshake, Scale, FileText, Landmark, Megaphone, GaugeCircle, Gavel, ShieldCheck, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import { HomeCarousel } from '@/components/home-carousel';
 import { motion } from 'framer-motion';
@@ -119,8 +119,61 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Spotlight Section */}
+        {/* About KPPU Section */}
         <section className="py-24 lg:py-32 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Tentang KPPU</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <Card className="lg:col-span-2 p-8 md:p-12 flex flex-col justify-center bg-card shadow-lg rounded-2xl">
+                  <h3 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Pengawas Persaingan Usaha</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Komisi Pengawas Persaingan Usaha (KPPU) adalah lembaga independen yang dibentuk untuk mengawasi pelaksanaan Undang-Undang No. 5 Tahun 1999 tentang Larangan Praktek Monopoli dan Persaingan Usaha Tidak Sehat. Kami bekerja untuk memastikan setiap pelaku usaha di Indonesia bersaing secara adil dan sehat, demi terwujudnya ekonomi yang efisien dan kesejahteraan masyarakat.
+                  </p>
+                  <Button asChild variant="link" className="p-0 h-auto self-start text-primary font-bold">
+                    <Link href="/profil/visi-misi">Selengkapnya <ArrowRight className="w-4 h-4 ml-2"/></Link>
+                  </Button>
+              </Card>
+              <Card className="overflow-hidden shadow-lg rounded-2xl">
+                <div className="relative h-full min-h-[250px]">
+                  <Image src="https://placehold.co/600x400.png" alt="Gedung KPPU" layout="fill" objectFit="cover" data-ai-hint="office building modern" />
+                </div>
+              </Card>
+              <Card className="p-8 bg-card shadow-lg rounded-2xl flex items-start gap-6">
+                <div className="bg-primary/10 text-primary p-3 rounded-lg">
+                    <Gavel className="w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-2">Penegakan Hukum</h4>
+                  <p className="text-muted-foreground text-sm">Menindak pelanggaran hukum persaingan usaha melalui pemeriksaan dan putusan.</p>
+                </div>
+              </Card>
+               <Card className="p-8 bg-card shadow-lg rounded-2xl flex items-start gap-6">
+                 <div className="bg-primary/10 text-primary p-3 rounded-lg">
+                    <ShieldCheck className="w-8 h-8" />
+                 </div>
+                 <div>
+                    <h4 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-2">Advokasi Kebijakan</h4>
+                    <p className="text-muted-foreground text-sm">Memberikan saran kepada pemerintah untuk menciptakan kebijakan yang pro-persaingan.</p>
+                 </div>
+              </Card>
+               <Card className="p-8 bg-card shadow-lg rounded-2xl flex items-start gap-6">
+                 <div className="bg-primary/10 text-primary p-3 rounded-lg">
+                    <Briefcase className="w-8 h-8" />
+                 </div>
+                 <div>
+                    <h4 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-2">Pengawasan Kemitraan</h4>
+                    <p className="text-muted-foreground text-sm">Mengawasi pelaksanaan kemitraan UMKM agar terjalin secara sehat dan adil.</p>
+                 </div>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Spotlight Section */}
+        <section className="py-24 lg:py-32 bg-card">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
@@ -128,7 +181,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Main News Big Card */}
-                <Card className="lg:col-span-2 overflow-hidden bg-card shadow-lg rounded-2xl flex flex-col md:flex-row">
+                <Card className="lg:col-span-2 overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col md:flex-row">
                     <div className="md:w-1/2">
                         <div className="relative aspect-video md:aspect-auto md:h-full">
                             <Image src={mainNews.imgSrc} alt={mainNews.title} layout="fill" objectFit="cover" data-ai-hint={mainNews.imgHint} />
@@ -150,7 +203,7 @@ export default function Home() {
                 </Card>
 
                 {/* Activity News */}
-                <Card className="overflow-hidden bg-card shadow-lg rounded-2xl flex flex-col">
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col">
                     <div className="relative aspect-video">
                        <Image src={activityNews.imgSrc} alt={activityNews.title} layout="fill" objectFit="cover" data-ai-hint={activityNews.imgHint} />
                     </div>
@@ -170,7 +223,7 @@ export default function Home() {
                 </Card>
 
                 {/* Regional News */}
-                <Card className="overflow-hidden bg-card shadow-lg rounded-2xl flex flex-col">
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col">
                     <div className="relative aspect-video">
                         <Image src={regionalNews.imgSrc} alt={regionalNews.title} layout="fill" objectFit="cover" data-ai-hint={regionalNews.imgHint} />
                     </div>

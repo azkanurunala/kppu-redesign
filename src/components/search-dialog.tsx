@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { Search } from 'lucide-react';
+import { Search, FileSearch2, SearchX } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Dummy data for search results
@@ -63,10 +63,18 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                             ))}
                         </ul>
                     ) : (
-                        <div className="text-center py-10 h-full flex flex-col justify-center">
-                            <p className="text-muted-foreground">
-                                {searchQuery ? 'Tidak ada hasil ditemukan.' : 'Mulai ketik untuk mencari halaman, putusan, atau berita.'}
-                            </p>
+                        <div className="text-center py-10 h-full flex flex-col justify-center items-center">
+                             {searchQuery ? (
+                                <>
+                                    <SearchX className="w-16 h-16 text-muted-foreground/50 mb-4" />
+                                    <p className="text-muted-foreground">Tidak ada hasil ditemukan.</p>
+                                </>
+                             ) : (
+                                <>
+                                    <FileSearch2 className="w-16 h-16 text-muted-foreground/50 mb-4" />
+                                    <p className="text-muted-foreground">Mulai ketik untuk mencari halaman, putusan, atau berita.</p>
+                                </>
+                             )}
                         </div>
                     )}
                 </div>

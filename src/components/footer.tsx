@@ -85,13 +85,13 @@ export function Footer() {
   return (
     <>
       <section>
-          <div className="relative py-24 md:py-32 text-center bg-gold">
+          <div className="relative py-24 md:py-32 text-center bg-primary-dark">
               <Image src="https://placehold.co/1200x400.png" alt="Call to Action" layout="fill" objectFit="cover" className="opacity-10" data-ai-hint="discussion meeting" />
               <div className="relative z-10 container mx-auto px-4">
-                  <Handshake className="w-16 h-16 mx-auto mb-6 text-primary-dark"/>
-                  <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4 text-primary-dark">Sinergi untuk Ekonomi Maju</h2>
-                  <p className="max-w-2xl mx-auto text-lg text-primary-dark/80 mb-8">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
-                  <Button asChild size="lg" className="bg-primary-dark text-white font-bold hover:bg-black rounded-full px-10 text-base">
+                  <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
+                  <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>
+                  <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
+                  <Button asChild size="lg" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
                        <Link href="/kppu-mendengar">Laporkan Sekarang <ArrowRight className="w-5 h-5 ml-2"/></Link>
                   </Button>
               </div>
@@ -100,7 +100,6 @@ export function Footer() {
       <footer className="bg-[#181F2A] text-gray-300">
         <div className="container mx-auto px-4 pt-16 pb-8">
           
-          {/* Top Row: Logo and Search */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
             <Logo isFooter={true} />
             <div className="relative w-full md:w-auto md:max-w-xs">
@@ -109,7 +108,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Middle Row: Footer Links */}
           <div className="border-y border-gray-700/50 py-12">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                   {footerLinkColumns.map(({ title, links }) => (
@@ -129,7 +127,6 @@ export function Footer() {
               </div>
           </div>
 
-          {/* Bottom Row: Social and Copyright */}
           <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center space-x-4">
                   {socialLinks.map(({ icon: Icon, href, label }) => (

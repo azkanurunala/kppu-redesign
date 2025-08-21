@@ -2,8 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -35,6 +34,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="bg-background/80 backdrop-blur-lg p-0 max-w-3xl gap-0 shadow-2xl border-0">
+                <DialogTitle className="sr-only">Pencarian Situs</DialogTitle>
                 <div className="flex items-center gap-4 p-6 border-b">
                     <Search className="w-6 h-6 text-muted-foreground" />
                     <input
@@ -74,5 +74,3 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
         </Dialog>
     );
 }
-
-    

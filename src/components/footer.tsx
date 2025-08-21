@@ -84,26 +84,19 @@ export function Footer() {
   return (
     <footer className="bg-[#181F2A] text-gray-300">
       <div className="container mx-auto px-4 pt-16 pb-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8">
-            {/* Left Column */}
-            <div className="lg:w-1/4 space-y-6">
-                <div className="flex items-center space-x-4">
-                    {socialLinks.map(({ icon: Icon, href, label }) => (
-                      <Link href={href} key={label}>
-                        <div className="text-gray-400 hover:text-white transition-colors" aria-label={label}>
-                            <Icon className="h-5 w-5" />
-                        </div>
-                      </Link>
-                    ))}
-                </div>
-                 <div className="relative">
-                    <Input placeholder="Search..." className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 h-11 pl-10" />
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
-                </div>
-            </div>
+        
+        {/* Top Row: Logo and Search */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+          <Logo isFooter={true} />
+          <div className="relative w-full md:w-auto md:max-w-xs">
+            <Input placeholder="Search..." className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 h-11 pl-10" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+          </div>
+        </div>
 
-            {/* Right Column (Link Grid) */}
-             <div className="lg:w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        {/* Middle Row: Footer Links */}
+        <div className="border-y border-gray-700/50 py-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                 {footerLinkColumns.map(({ title, links }) => (
                     <div key={title}>
                         <h3 className="font-bold text-white tracking-wider text-sm font-poppins">{title}</h3>
@@ -120,12 +113,21 @@ export function Footer() {
                 ))}
             </div>
         </div>
-        
-        <div className="mt-16 pt-8 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center gap-6">
-          <Logo isFooter={true} />
-          <p className="text-center md:text-right text-xs text-gray-500">
-            Hak Cipta &copy; {new Date().getFullYear()} Komisi Pengawas Persaingan Usaha Republik Indonesia.
-          </p>
+
+        {/* Bottom Row: Social and Copyright */}
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="flex items-center space-x-4">
+                {socialLinks.map(({ icon: Icon, href, label }) => (
+                  <Link href={href} key={label}>
+                    <div className="text-gray-400 hover:text-white transition-colors" aria-label={label}>
+                        <Icon className="h-5 w-5" />
+                    </div>
+                  </Link>
+                ))}
+            </div>
+            <p className="text-center md:text-right text-xs text-gray-500">
+                Hak Cipta &copy; {new Date().getFullYear()} Komisi Pengawas Persaingan Usaha Republik Indonesia.
+            </p>
         </div>
       </div>
     </footer>

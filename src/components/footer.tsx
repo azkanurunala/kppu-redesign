@@ -61,13 +61,13 @@ const footerLinkColumns = [
    {
     title: "KANWIL",
     links: [
-      { label: "KANWIL I", href: "/kanwil/1" },
-      { label: "KANWIL II", href: "/kanwil/2" },
-      { label: "KANWIL III", href: "/kanwil/3" },
-      { label: "KANWIL IV", href: "/kanwil/4" },
-      { label: "KANWIL V", href: "/kanwil/5" },
-      { label: "KANWIL VI", href: "/kanwil/6" },
-      { label: "KANWIL VII", href: "/kanwil/7" },
+      { label: "KANWIL I", href: "/kanwil" },
+      { label: "KANWIL II", href: "/kanwil" },
+      { label: "KANWIL III", href: "/kanwil" },
+      { label: "KANWIL IV", href: "/kanwil" },
+      { label: "KANWIL V", href: "/kanwil" },
+      { label: "KANWIL VI", href: "/kanwil" },
+      { label: "KANWIL VII", href: "/kanwil" },
     ],
   },
 ];

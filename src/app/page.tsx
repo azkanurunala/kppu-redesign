@@ -9,7 +9,6 @@ import { Footer } from '@/components/footer';
 import { ArrowRight, Youtube, Search, Handshake, Scale, FileText, Landmark, Megaphone, GaugeCircle } from 'lucide-react';
 import Link from 'next/link';
 import { HomeCarousel } from '@/components/home-carousel';
-import { KppuPieChart } from '@/components/kppu-pie-chart';
 import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { StatCard } from '@/components/ui/stat-card';

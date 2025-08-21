@@ -15,24 +15,24 @@ import {
 
 const carouselItems = [
     {
-        imgSrc: "https://placehold.co/1300x600.png",
+        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/slider-banner-juanda-36-6-sep-2024.png",
         imgHint: "modern office building",
-        alt: "Gedung KPPU"
+        alt: "Gedung KPPU Juanda 36"
     },
     {
-        imgSrc: "https://placehold.co/1300x600.png",
-        imgHint: "meeting discussion presentation",
-        alt: "Rapat Komisi"
+        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/slider-banner-jdih-7-jun-2023.png",
+        imgHint: "legal document website",
+        alt: "JDIH KPPU"
     },
     {
-        imgSrc: "https://placehold.co/1300x600.png",
-        imgHint: "courtroom judge gavel",
-        alt: "Sidang Perkara"
+        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/sliderwebsitekppu_web-banner-perpustakaan_14092021.png",
+        imgHint: "online library books",
+        alt: "Perpustakaan KPPU"
     },
     {
-        imgSrc: "https://placehold.co/1300x600.png",
-        imgHint: "press conference media",
-        alt: "Konferensi Pers"
+        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/sliderwebsitekppu_web-banner-rev-webbanner-ppid_18082020.png",
+        imgHint: "public information service",
+        alt: "PPID KPPU"
     },
 ]
 

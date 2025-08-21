@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Mail, Phone, Twitter, Instagram, Facebook, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
 
 const regionalOffices = [
   {
@@ -95,24 +96,19 @@ export default function KanwilPage() {
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
             <main className="flex-1">
-                <section className="relative py-32 lg:py-48 text-white bg-primary-dark">
-                    <div className="absolute inset-0 bg-black">
-                        <Image src="/images/bg/map-bw.png" alt="Peta Indonesia" fill className="object-cover opacity-10" data-ai-hint="indonesia map background" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
+                <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+                    <div className="absolute inset-0">
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-[0.0375]" data-ai-hint="indonesia map background" />
                     </div>
-                    <div className="container mx-auto relative text-center">
-                        <motion.h1
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins">Kantor Wilayah</motion.h1>
-                        <motion.p 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                            Menjangkau seluruh pelosok negeri untuk memastikan persaingan usaha yang sehat.
-                        </motion.p>
+                    <div className="container mx-auto relative z-10">
+                        <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Kantor Wilayah</h1>
+                        <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+                            <a className="hover:underline" href="/">Beranda</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-4 w-4">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                            <span>Kantor Wilayah</span>
+                        </div>
                     </div>
                 </section>
 
@@ -189,3 +185,4 @@ export default function KanwilPage() {
         </div>
     );
 }
+

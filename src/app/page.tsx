@@ -315,29 +315,19 @@ export default function Home() {
         </section>
 
                 {/* About KPPU Section */}
-        <section className="py-24 lg:py-32 bg-[#421BBC] dark:bg-[#B8860B] relative overflow-hidden">
-          {/* Background Image */}
-          <div className="absolute inset-0 opacity-80">
-            <Image 
-              src="/images/bg/map-bw.png" 
-              alt="Peta Indonesia Background" 
-              fill 
-              className="object-cover" 
-              data-ai-hint="indonesia map background" 
-            />
-          </div>
-          <div className="container mx-auto relative z-10">
+        <section className="py-24 lg:py-32 bg-blue-100 dark:bg-[#B8860B]">
+          <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-white font-poppins">Tentang KPPU</h2>
-              <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Tentang KPPU</h2>
+              <p className="mt-4 text-lg text-primary-dark/80 dark:text-white/90 max-w-2xl mx-auto">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
               <div>
-                   <h3 className="text-3xl font-bold font-poppins text-white mb-4">Pengawas Persaingan Usaha</h3>
-                   <p className="text-white/90 leading-relaxed mb-6">
+                   <h3 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Pengawas Persaingan Usaha</h3>
+                   <p className="text-primary-dark/80 dark:text-white/90 leading-relaxed mb-6">
                       Komisi Pengawas Persaingan Usaha (KPPU) adalah lembaga independen yang dibentuk untuk mengawasi pelaksanaan Undang-Undang No. 5 Tahun 1999 tentang Larangan Praktek Monopoli dan Persaingan Usaha Tidak Sehat. Kami bekerja untuk memastikan setiap pelaku usaha di Indonesia bersaing secara adil dan sehat, demi terwujudnya ekonomi yang efisien dan kesejahteraan masyarakat.
                     </p>
-                   <Button asChild variant="link" className="p-0 h-auto self-start text-white font-bold">
+                   <Button asChild variant="link" className="p-0 h-auto self-start text-primary-dark dark:text-white font-bold">
                       <Link href="/profil/visi-misi">Selengkapnya <ArrowRight className="w-4 h-4 ml-2"/></Link>
                     </Button>
               </div>
@@ -356,31 +346,31 @@ export default function Home() {
             
             {/* Three Cards Row */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="p-8 bg-white/90 shadow-lg rounded-2xl flex items-start gap-6">
-                <div className="bg-[#421BBC]/20 text-[#421BBC] p-3 rounded-lg">
+              <Card className="p-8 bg-white/80 dark:bg-white/20 shadow-lg rounded-2xl flex items-start gap-6">
+                <div className="bg-primary/20 text-primary p-3 rounded-lg">
                     <Gavel className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold font-poppins text-[#421BBC] mb-2">Penegakan Hukum</h4>
-                  <p className="text-[#421BBC]/80 text-sm">Menindak pelanggaran hukum persaingan usaha melalui pemeriksaan dan putusan.</p>
+                  <h4 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-2">Penegakan Hukum</h4>
+                  <p className="text-primary-dark/80 dark:text-white/90 text-sm">Menindak pelanggaran hukum persaingan usaha melalui pemeriksaan dan putusan.</p>
                 </div>
               </Card>
-              <Card className="p-8 bg-white/90 shadow-lg rounded-2xl flex items-start gap-6">
-                 <div className="bg-[#421BBC]/20 text-[#421BBC] p-3 rounded-lg">
+              <Card className="p-8 bg-white/80 dark:bg-white/20 shadow-lg rounded-2xl flex items-start gap-6">
+                 <div className="bg-primary/20 text-primary p-3 rounded-lg">
                     <ShieldCheck className="w-8 h-8" />
                  </div>
                  <div>
-                    <h4 className="text-xl font-bold font-poppins text-[#421BBC] mb-2">Advokasi Kebijakan</h4>
-                    <p className="text-[#421BBC]/80 text-sm">Memberikan saran kepada pemerintah untuk menciptakan kebijakan yang pro-persaingan.</p>
+                    <h4 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-2">Advokasi Kebijakan</h4>
+                    <p className="text-primary-dark/80 dark:text-white/90 text-sm">Memberikan saran kepada pemerintah untuk menciptakan kebijakan yang pro-persaingan.</p>
                  </div>
               </Card>
-              <Card className="p-8 bg-white/90 shadow-lg rounded-2xl flex items-start gap-6">
-                 <div className="bg-[#421BBC]/20 text-[#421BBC] p-3 rounded-lg">
+              <Card className="p-8 bg-white/80 dark:bg-white/20 shadow-lg rounded-2xl flex items-start gap-6">
+                 <div className="bg-primary/20 text-primary p-3 rounded-lg">
                     <Briefcase className="w-8 h-8" />
                  </div>
                  <div>
-                    <h4 className="text-xl font-bold font-poppins text-[#421BBC] mb-2">Pengawasan Kemitraan</h4>
-                    <p className="text-[#421BBC]/80 text-sm">Mengawasi pelaksanaan kemitraan UMKM agar terjalin secara sehat dan adil.</p>
+                    <h4 className="text-xl font-bold font-poppins text-primary-dark dark:text-white mb-2">Pengawasan Kemitraan</h4>
+                    <p className="text-primary-dark/80 dark:text-white/90 text-sm">Mengawasi pelaksanaan kemitraan UMKM agar terjalin secara sehat dan adil.</p>
                     </div>
                 </Card>
             </div>
@@ -463,7 +453,7 @@ export default function Home() {
                     <div className="relative w-24 h-24 mx-auto mb-3">
                       <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="8" className="text-gray-600" />
-                        <circle cx="50" cy="50" r="40" fill="none" stroke="#421BBC" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${69 * 2.51} ${100 * 2.51}`} className="transition-all duration-1000 ease-out" />
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${69 * 2.51} ${100 * 2.51}`} className="transition-all duration-1000 ease-out" />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-lg font-bold text-white">69%</div>
@@ -478,7 +468,7 @@ export default function Home() {
                     <div className="relative w-24 h-24 mx-auto mb-3">
                       <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="8" className="text-gray-600" />
-                        <circle cx="50" cy="50" r="40" fill="none" stroke="#421BBC" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${94 * 2.51} ${100 * 2.51}`} className="transition-all duration-1000 ease-out" />
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${94 * 2.51} ${100 * 2.51}`} className="transition-all duration-1000 ease-out" />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-lg font-bold text-white">94%</div>
@@ -493,7 +483,7 @@ export default function Home() {
                     <div className="relative w-24 h-24 mx-auto mb-3">
                       <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" strokeWidth="8" className="text-gray-600" />
-                        <circle cx="50" cy="50" r="40" fill="none" stroke="#421BBC" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${72 * 2.51} ${100 * 2.51}`} className="transition-all duration-1000 ease-out" />
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="white" strokeWidth="8" strokeLinecap="round" strokeDasharray={`${72 * 2.51} ${100 * 2.51}`} className="transition-all duration-1000 ease-out" />
                       </svg>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-lg font-bold text-white">72%</div>

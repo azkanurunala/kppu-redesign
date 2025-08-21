@@ -5,7 +5,7 @@ import React from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { AnimatedCard } from '@/components/animated-card';
-import { Target, CheckCircle, Shield, Rocket, Lightbulb, Users, Handshake, Gem, ArrowRight } from 'lucide-react';
+import { Target, CheckCircle, Shield, Rocket, Lightbulb, Users, Handshake, Gem, ArrowRight, BarChart3 } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -51,7 +51,7 @@ export default function VisiMisiPage() {
                  <section className="relative py-32 lg:py-48 text-white">
                     <div className="absolute inset-0 bg-black">
                         <Image src={headerImage} alt="Visi Misi KPPU" fill className="opacity-40 object-cover" data-ai-hint="professional business meeting" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#421BBC] via-[#421BBC]/70 to-transparent"></div>
                     </div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -113,8 +113,10 @@ export default function VisiMisiPage() {
                                 <p className="text-lg text-muted-foreground leading-relaxed">
                                     Mewujudkan perekonomian nasional yang efisien dan berkeadilan untuk meningkatkan kesejahteraan rakyat melalui persaingan usaha yang sehat.
                                 </p>
-                                <div className="mt-8 relative h-80 w-full rounded-2xl overflow-hidden shadow-xl">
-                                     <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Tujuan KPPU" fill className="object-cover" data-ai-hint="abstract arrows target" />
+                                <div className="mt-8 flex justify-start">
+                                    <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <Target className="w-16 h-16 text-primary" />
+                                    </div>
                                 </div>
                             </motion.div>
                             <motion.div
@@ -123,8 +125,10 @@ export default function VisiMisiPage() {
                                 viewport={{ once: true, amount: 0.5 }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-xl mb-8">
-                                     <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Sasaran Strategis KPPU" fill className="object-cover" data-ai-hint="chess strategy board" />
+                                <div className="mb-8 flex justify-start">
+                                    <div className="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
+                                        <BarChart3 className="w-16 h-16 text-primary" />
+                                    </div>
                                 </div>
                                 <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">SASARAN STRATEGIS</h2>
                                 <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white mb-6 font-poppins">Target yang Terukur</p>

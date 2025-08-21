@@ -66,7 +66,7 @@ export default function PPIDPage() {
                     data-ai-hint="indonesia map background"
                     priority
                 />
-                 <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/80 to-transparent"></div>
+                 <div className="absolute inset-0 bg-gradient-to-r from-[#421BBC] via-[#421BBC]/80 to-transparent"></div>
             </div>
             <div className="container mx-auto relative">
                 <motion.div 

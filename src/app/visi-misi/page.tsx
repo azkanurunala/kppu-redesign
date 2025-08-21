@@ -42,7 +42,7 @@ export default function VisiMisiPage() {
             <main className="flex-1">
                 {/* Hero Section */}
                 <section
-                    className="relative py-32 lg:py-48 text-center bg-gradient-to-br from-primary-dark via-background to-background"
+                    className="relative py-32 lg:py-48 text-center bg-gradient-to-br from-[#421BBC] via-background to-background"
                 >
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
                     <motion.div

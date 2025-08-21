@@ -132,7 +132,7 @@ export default function KanwilPage() {
                         >
                             {regionalOffices.map((office) => (
                                 <motion.div key={office.name} variants={itemVariants}>
-                                    <Card className="h-full bg-card shadow-lg rounded-2xl flex flex-col border-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                                    <Card className="h-full bg-card shadow-lg rounded-2xl flex flex-col border-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
                                         <CardHeader className="bg-primary/5 dark:bg-primary/10">
                                             <CardTitle className="font-poppins text-primary-dark dark:text-white text-2xl">{office.name}</CardTitle>
                                             <p className="text-primary font-semibold">{office.coverage}</p>

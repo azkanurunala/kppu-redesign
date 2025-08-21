@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { ChevronRight, Download, TrendingUp, PiggyBank, BarChart2, PieChart } from 'lucide-react';
 import Link from 'next/link';
 import { BarChartComponent } from '@/components/ui/bar-chart';

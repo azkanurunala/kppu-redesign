@@ -32,7 +32,7 @@ export default function OrganisasiPage() {
             <Header />
             <main className="flex-1">
                 <section className="bg-primary-dark text-white py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Struktur Organisasi</h1>
                         <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                             <Link href="/" className="hover:underline">Beranda</Link>
@@ -43,7 +43,7 @@ export default function OrganisasiPage() {
                 </section>
 
                 <section className="py-20 lg:py-24">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Struktur Organisasi KPPU</h2>
                             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -55,7 +55,7 @@ export default function OrganisasiPage() {
                              <Card className="shadow-2xl rounded-3xl bg-card border-0">
                                  <CardContent className="p-10 md:p-16 flex flex-col md:flex-row items-center gap-12">
                                      <div className="relative h-96 w-full md:w-1/2 rounded-2xl overflow-hidden">
-                                        <Image src="https://placehold.co/800x600.png" layout="fill" objectFit="cover" alt="Bagan Organisasi KPPU" data-ai-hint="organization chart flowchart" />
+                                        <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" fill className="object-cover" alt="Bagan Organisasi KPPU" data-ai-hint="organization chart flowchart" />
                                      </div>
                                      <div className="md:w-1/2">
                                          <h3 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Bagan Organisasi</h3>

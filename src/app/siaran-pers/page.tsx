@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { CalendarDays, ChevronRight, FileText, Search, ListFilter } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
+import { usePathname } from 'next/navigation';
 
 const pressReleases = [
   { no: "25/SP-KPPU/VIII/2025", date: "14 Agustus 2025", title: "KPPU Putus Perkara Kemitraan Jasa Angkutan Semen di Sumatra" },
@@ -25,12 +27,14 @@ const pressReleases = [
 const archiveYears = ["2025", "2024", "2023", "2022", "2021"];
 
 export default function SiaranPersPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Siaran Pers</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                     <Link href="/" className="hover:underline">Beranda</Link>
@@ -41,7 +45,7 @@ export default function SiaranPersPage() {
         </section>
 
         <section className="py-20 lg:py-24">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-16">
                     
                     <div className="lg:col-span-3 space-y-8">

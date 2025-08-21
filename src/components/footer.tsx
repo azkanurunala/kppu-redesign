@@ -86,8 +86,8 @@ export function Footer() {
     <>
       <section>
           <div className="relative py-24 md:py-32 text-center bg-primary-dark">
-              <Image src="https://placehold.co/1200x400.png" alt="Call to Action" layout="fill" objectFit="cover" className="opacity-10" data-ai-hint="discussion meeting" />
-              <div className="relative z-10 container mx-auto px-4">
+              <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400" alt="Call to Action" fill className="object-cover" className="opacity-10" data-ai-hint="discussion meeting" />
+              <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>
                   <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
@@ -98,7 +98,7 @@ export function Footer() {
           </div>
       </section>
       <footer className="bg-[#181F2A] text-gray-300">
-        <div className="container mx-auto px-4 pt-16 pb-8">
+        <div className="container mx-auto pt-16 pb-8">
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
             <Logo isFooter={true} />

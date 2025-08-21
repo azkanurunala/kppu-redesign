@@ -10,6 +10,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
+import { usePathname } from 'next/navigation';
 
 const MisiItems = [
     {
@@ -38,6 +40,9 @@ const NilaiItems = [
 ];
 
 export default function VisiMisiPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
+
     return (
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
@@ -45,14 +50,14 @@ export default function VisiMisiPage() {
                 {/* Hero Section */}
                  <section className="relative py-32 lg:py-48 text-white">
                     <div className="absolute inset-0 bg-black">
-                        <Image src="https://placehold.co/1920x1080.png" alt="Visi Misi KPPU" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint="futuristic abstract building" />
+                        <Image src={headerImage} alt="Visi Misi KPPU" fill className="opacity-40 object-cover" data-ai-hint="professional business meeting" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
                     </div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="container mx-auto px-4 relative text-center">
+                        className="container mx-auto relative text-center">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins text-white">Visi & Misi</h1>
                         <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Membentuk fondasi persaingan usaha yang sehat untuk Indonesia Maju.
@@ -68,7 +73,7 @@ export default function VisiMisiPage() {
                     transition={{ duration: 0.8 }}
                     className="py-24 lg:py-32"
                 >
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center max-w-4xl mx-auto">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">VISI KPPU</h2>
                             <p className="text-4xl md:text-5xl lg:text-6xl font-semibold text-primary-dark dark:text-white leading-tight font-poppins">
@@ -80,7 +85,7 @@ export default function VisiMisiPage() {
 
                 {/* Misi Section */}
                 <section className="py-24 lg:py-32 bg-card">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">MISI KPPU</h2>
                             <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Langkah Strategis Kami</p>
@@ -95,7 +100,7 @@ export default function VisiMisiPage() {
                 
                 {/* Tujuan & Sasaran Section */}
                 <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
@@ -109,7 +114,7 @@ export default function VisiMisiPage() {
                                     Mewujudkan perekonomian nasional yang efisien dan berkeadilan untuk meningkatkan kesejahteraan rakyat melalui persaingan usaha yang sehat.
                                 </p>
                                 <div className="mt-8 relative h-80 w-full rounded-2xl overflow-hidden shadow-xl">
-                                     <Image src="https://placehold.co/600x400.png" alt="Tujuan KPPU" layout="fill" objectFit="cover" data-ai-hint="abstract arrows target" />
+                                     <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Tujuan KPPU" fill className="object-cover" data-ai-hint="abstract arrows target" />
                                 </div>
                             </motion.div>
                             <motion.div
@@ -119,7 +124,7 @@ export default function VisiMisiPage() {
                                 transition={{ duration: 0.8 }}
                             >
                                 <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-xl mb-8">
-                                     <Image src="https://placehold.co/600x400.png" alt="Sasaran Strategis KPPU" layout="fill" objectFit="cover" data-ai-hint="chess strategy board" />
+                                     <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Sasaran Strategis KPPU" fill className="object-cover" data-ai-hint="chess strategy board" />
                                 </div>
                                 <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">SASARAN STRATEGIS</h2>
                                 <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white mb-6 font-poppins">Target yang Terukur</p>
@@ -135,7 +140,7 @@ export default function VisiMisiPage() {
 
                 {/* Nilai-nilai Section */}
                 <section className="py-24 lg:py-32 bg-card">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                          <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">NILAI-NILAI KPPU (RICH TEAM)</h2>
                             <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Prinsip yang Kami Junjung Tinggi</p>

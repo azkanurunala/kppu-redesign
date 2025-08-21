@@ -17,7 +17,7 @@ const mainNews = {
     title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras",
     source: "JawaPos.com",
     href: "#",
-    imgSrc: "https://placehold.co/600x400.png",
+    imgSrc: "https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
     imgHint: "commodity rice monitoring"
 };
 
@@ -30,7 +30,7 @@ const activityNews = {
     title: "KPPU Hadiri Tasyakuran Ulang Tahun INDEF",
     source: "Infopublik.id",
     href: "#",
-    imgSrc: "https://placehold.co/600x400.png",
+    imgSrc: "https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
     imgHint: "conference presentation"
 };
 
@@ -43,7 +43,7 @@ const regionalNews = {
     title: "Perkuat Sinergi, Kantor Wilayah VI KPPU Makassar Temui Gubernur Sulawesi Barat",
     source: "Antaranews.com",
     href: "#",
-    imgSrc: "https://placehold.co/600x400.png",
+    imgSrc: "https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
     imgHint: "government meeting handshake"
 };
 
@@ -53,15 +53,15 @@ const otherRegionalNews = [
 ];
 
 const commissioners = [
-  { name: 'M. Fanshurullah Asa', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MFA-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Aru Armando', image: 'https://kppu.go.id/wp-content/uploads/2024/03/AA-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Dr. Guntur S. Saragih', image: 'https://kppu.go.id/wp-content/uploads/2024/03/BJS-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Gopprera Panggabean', image: 'https://kppu.go.id/wp-content/uploads/2024/03/GP-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Hilman Pujana', image: 'https://kppu.go.id/wp-content/uploads/2024/05/HP-1-14052024-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Mohammad Reza', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MR-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Rhido Jusmadi', image: 'https://kppu.go.id/wp-content/uploads/2024/03/RJ-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Ukay Karyadi', image: 'https://kppu.go.id/wp-content/uploads/2024/03/EM-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Yudi Hidayat', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
+  { name: 'M. Fanshurullah Asa', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Aru Armando', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Dr. Guntur S. Saragih', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Gopprera Panggabean', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Hilman Pujana', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Mohammad Reza', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Rhido Jusmadi', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Ukay Karyadi', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Yudi Hidayat', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
 ];
 
 
@@ -73,9 +73,9 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative bg-primary-dark text-white pt-24 pb-32 md:pt-32 md:pb-48 text-center overflow-hidden">
             <div className="absolute inset-0 bg-black/30">
-                 <Image src="https://placehold.co/1920x1080.png" alt="Hero Background" layout="fill" objectFit="cover" className="opacity-30" data-ai-hint="modern city skyline" />
+                 <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" alt="Hero Background" fill className="opacity-5 object-cover" data-ai-hint="modern city skyline" />
             </div>
-            <div className="container mx-auto px-4 relative">
+            <div className="container mx-auto relative">
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -114,14 +114,14 @@ export default function Home() {
         
         {/* Carousel Section */}
         <section className="py-12 md:py-16 -mt-24 md:-mt-40 relative z-10">
-          <div className="container mx-auto px-0 md:px-4">
+          <div className="container mx-auto">
             <HomeCarousel />
           </div>
         </section>
         
         {/* About KPPU Section */}
         <section className="py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-info font-poppins">Tentang KPPU</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
@@ -138,7 +138,7 @@ export default function Home() {
               </div>
               <div className="overflow-hidden shadow-lg rounded-2xl">
                 <div className="relative h-80 min-h-[250px]">
-                  <Image src="https://placehold.co/600x400.png" alt="Gedung KPPU" layout="fill" objectFit="cover" data-ai-hint="office building modern" />
+                  <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Gedung KPPU" fill className="object-cover" data-ai-hint="office building modern" />
                 </div>
               </div>
               <Card className="p-8 bg-card shadow-lg rounded-2xl flex items-start gap-6">
@@ -174,26 +174,24 @@ export default function Home() {
 
         {/* Spotlight Section */}
         <section className="py-24 lg:py-32 bg-card">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Info Terkini</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Berita terbaru, kegiatan, dan informasi dari seluruh wilayah kerja KPPU.</p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Main News Big Card */}
-                <Card className="lg:col-span-2 overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col md:flex-row">
-                    <div className="md:w-1/2">
-                        <div className="relative aspect-video md:aspect-auto md:h-full">
-                            <Image src={mainNews.imgSrc} alt={mainNews.title} layout="fill" objectFit="cover" data-ai-hint={mainNews.imgHint} />
-                        </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Main News Card */}
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col">
+                    <div className="relative aspect-video">
+                        <Image src={mainNews.imgSrc} alt={mainNews.title} fill className="object-cover" data-ai-hint={mainNews.imgHint} />
                     </div>
-                    <div className="md:w-1/2 p-8 md:p-10 flex flex-col">
-                        <h3 className="text-2xl lg:text-3xl font-bold font-poppins text-primary-dark dark:text-white leading-tight">{mainNews.title}</h3>
+                    <div className="p-8 flex flex-col flex-grow">
+                        <h3 className="text-xl lg:text-2xl font-bold font-poppins text-primary-dark dark:text-white">{mainNews.title}</h3>
                         <p className="text-sm text-muted-foreground mt-2 mb-6">{mainNews.source}</p>
                         <div className="space-y-5 pt-5 border-t border-border/50">
                           {otherMainNews.map((news, index) => (
                             <div key={index}>
-                              <h4 className="font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors"><Link href={news.href}>{news.title}</Link></h4>
+                              <h4 className="font-semibold leading-snug text-primary-dark dark:text-white hover:text-primary transition-colors text-sm"><Link href={news.href}>{news.title}</Link></h4>
                               <p className="text-xs text-muted-foreground mt-1">{news.source}</p>
                             </div>
                           ))}
@@ -205,7 +203,7 @@ export default function Home() {
                 {/* Activity News */}
                 <Card className="overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col">
                     <div className="relative aspect-video">
-                       <Image src={activityNews.imgSrc} alt={activityNews.title} layout="fill" objectFit="cover" data-ai-hint={activityNews.imgHint} />
+                       <Image src={activityNews.imgSrc} alt={activityNews.title} fill className="object-cover" data-ai-hint={activityNews.imgHint} />
                     </div>
                     <div className="p-8 flex flex-col flex-grow">
                         <h3 className="text-xl lg:text-2xl font-bold font-poppins text-primary-dark dark:text-white">{activityNews.title}</h3>
@@ -225,7 +223,7 @@ export default function Home() {
                 {/* Regional News */}
                 <Card className="overflow-hidden bg-background shadow-lg rounded-2xl flex flex-col">
                     <div className="relative aspect-video">
-                        <Image src={regionalNews.imgSrc} alt={regionalNews.title} layout="fill" objectFit="cover" data-ai-hint={regionalNews.imgHint} />
+                        <Image src={regionalNews.imgSrc} alt={regionalNews.title} fill className="object-cover" data-ai-hint={regionalNews.imgHint} />
                     </div>
                     <div className="p-8 flex flex-col flex-grow">
                         <h3 className="text-xl lg:text-2xl font-bold font-poppins text-primary-dark dark:text-white">{regionalNews.title}</h3>
@@ -246,50 +244,64 @@ export default function Home() {
         </section>
 
         {/* Statistics Section */}
-        <section 
-          className="relative py-24 lg:py-32 bg-gradient-to-b from-card to-background"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='hsl(var(--border) / 0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
-          }}
-        >
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Indonesia dalam Angka</h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Sekilas data dan statistik kunci terkait pengawasan persaingan usaha di Indonesia.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <StatCard
-                icon={<GaugeCircle className="w-8 h-8 text-primary-foreground" />}
-                value="4.92"
-                label="Skor IPU Nasional 2023"
-                description="Tingkat persaingan usaha yang 'Tinggi'."
-              />
-              <StatCard
-                icon={<FileText className="w-8 h-8 text-primary-foreground" />}
-                value="78"
-                label="Putusan Perkara"
-                description="Jumlah putusan yang dikeluarkan pada tahun 2023."
-              />
-              <StatCard
-                icon={<Landmark className="w-8 h-8 text-primary-foreground" />}
-                value="Rp 120 M"
-                label="Total Denda"
-                description="Akumulasi denda yang dikenakan sepanjang tahun 2023."
-              />
-              <StatCard
-                icon={<Megaphone className="w-8 h-8 text-primary-foreground" />}
-                value="152"
-                label="Notifikasi Merger & Akuisisi"
-                description="Jumlah notifikasi yang diterima dan dinilai pada 2023."
-                labelClassName="text-info"
-              />
+        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-card to-background overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image 
+              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" 
+              alt="Business Background Indonesia" 
+              fill 
+              className="object-cover opacity-10" 
+              data-ai-hint="business meeting indonesia map statistics"
+            />
+          </div>
+          {/* Overlay Pattern */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='hsl(var(--border) / 0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+            }}
+          />
+          {/* Content */}
+          <div className="relative z-10">
+            <div className="container mx-auto">
+              <div className="text-center mb-16 md:mb-20">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Indonesia dalam Angka</h2>
+                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Sekilas data dan statistik kunci terkait pengawasan persaingan usaha di Indonesia.</p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <StatCard
+                  icon={<GaugeCircle className="w-8 h-8 text-primary-foreground" />}
+                  value="4.92"
+                  label="Skor IPU Nasional 2023"
+                  description="Tingkat persaingan usaha yang 'Tinggi'."
+                />
+                <StatCard
+                  icon={<FileText className="w-8 h-8 text-primary-foreground" />}
+                  value="78"
+                  label="Putusan Perkara"
+                  description="Jumlah putusan yang dikeluarkan pada tahun 2023."
+                />
+                <StatCard
+                  icon={<Landmark className="w-8 h-8 text-primary-foreground" />}
+                  value="Rp 120 M"
+                  label="Total Denda"
+                  description="Akumulasi denda yang dikenakan sepanjang tahun 2023."
+                />
+                <StatCard
+                  icon={<Megaphone className="w-8 h-8 text-primary-foreground" />}
+                  value="152"
+                  label="Notifikasi Merger & Akuisisi"
+                  description="Jumlah notifikasi yang diterima dan dinilai pada 2023."
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Commissioners Section */}
         <section className="py-24 lg:py-32 bg-primary-dark text-white">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold font-poppins">Jajaran Komisioner KPPU</h2>
             </div>
@@ -308,9 +320,8 @@ export default function Home() {
                       <Image
                         src={commissioner.image}
                         alt={commissioner.name}
-                        layout="fill"
-                        objectFit="cover"
-                        className="shadow-lg transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        className="object-cover shadow-lg transition-transform duration-300 group-hover:scale-105"
                         data-ai-hint={commissioner.hint}
                       />
                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -327,7 +338,7 @@ export default function Home() {
 
         {/* Media & Publikasi Section */}
         <section className="py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Akses berbagai materi publikasi dan media dari KPPU.</p>
@@ -336,7 +347,7 @@ export default function Home() {
               <div className="lg:col-span-2">
                 <Card className="p-4 shadow-lg rounded-2xl overflow-hidden group h-full">
                   <div className="relative aspect-video h-full">
-                    <Image src="https://placehold.co/1200x600.png" layout="fill" objectFit="cover" alt="Video Company Profile KPPU" className="rounded-xl" data-ai-hint="people discussing document"/>
+                    <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600" fill className="object-cover" alt="Video Company Profile KPPU" className="rounded-xl" data-ai-hint="people discussing document"/>
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer transition-opacity opacity-0 group-hover:opacity-100">
                       <Youtube className="w-16 h-16 md:w-20 md:h-20 text-red-600 group-hover:text-red-500 transition-transform group-hover:scale-110" />
                     </div>
@@ -345,10 +356,10 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-8">
                 <Card className="p-4 shadow-lg rounded-2xl overflow-hidden">
-                   <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="JDIH KPPU" className="rounded-xl w-full" data-ai-hint="law database mobile"/>
+                   <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" width={600} height={400} alt="JDIH KPPU" className="rounded-xl w-full" data-ai-hint="law database mobile"/>
                 </Card>
                 <Card className="p-4 shadow-lg rounded-2xl overflow-hidden">
-                   <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Majalah Kompetisi" className="rounded-xl w-full" data-ai-hint="magazine covers display"/>
+                   <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" width={600} height={400} alt="Majalah Kompetisi" className="rounded-xl w-full" data-ai-hint="magazine covers display"/>
                 </Card>
               </div>
             </div>
@@ -357,7 +368,7 @@ export default function Home() {
         
         {/* Region Grid Section */}
         <section className="py-24 lg:py-32 bg-card">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="">
                 <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Kantor Wilayah</h2>
@@ -369,7 +380,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="relative h-80 md:h-96 bg-gray-200 dark:bg-gray-800/50 rounded-2xl">
-                <Image src="https://placehold.co/800x600.png" alt="Peta Kantor Wilayah KPPU" layout="fill" objectFit="cover" className="rounded-2xl opacity-20" data-ai-hint="indonesia map" />
+                <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" alt="Peta Kantor Wilayah KPPU" fill className="object-cover" className="rounded-2xl opacity-20" data-ai-hint="indonesia map" />
               </div>
             </div>
           </div>

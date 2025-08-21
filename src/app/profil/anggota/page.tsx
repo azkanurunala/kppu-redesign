@@ -12,15 +12,15 @@ import { Download, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const commissioners = [
-  { name: 'M. Fanshurullah Asa', title: 'Ketua', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MFA-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Aru Armando', title: 'Wakil Ketua', image: 'https://kppu.go.id/wp-content/uploads/2024/03/AA-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Dr. Guntur S. Saragih', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/BJS-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Gopprera Panggabean', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/GP-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Hilman Pujana', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/05/HP-1-14052024-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Mohammad Reza', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MR-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Rhido Jusmadi', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/RJ-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Ukay Karyadi', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/EM-2-BG-PUTIH.png', hint: 'portrait man suit' },
-  { name: 'Yudi Hidayat', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
+  { name: 'M. Fanshurullah Asa', title: 'Ketua', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Aru Armando', title: 'Wakil Ketua', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Dr. Guntur S. Saragih', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Gopprera Panggabean', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Hilman Pujana', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Mohammad Reza', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Rhido Jusmadi', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Ukay Karyadi', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
+  { name: 'Yudi Hidayat', title: 'Anggota', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man suit' },
 ];
 
 const pastMembers = [
@@ -67,10 +67,10 @@ export default function AnggotaPage() {
                     className="relative py-32 lg:py-48 text-white bg-primary-dark"
                 >
                     <div className="absolute inset-0 bg-black">
-                        <Image src="https://placehold.co/1920x1080.png" alt="Anggota Komisi" layout="fill" objectFit="cover" className="opacity-30" data-ai-hint="team portrait professional" />
+                        <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" alt="Anggota Komisi" fill className="object-cover" className="opacity-5" data-ai-hint="team portrait professional" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
                     </div>
-                    <div className="container mx-auto px-4 relative text-center">
+                    <div className="container mx-auto relative text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function AnggotaPage() {
                 </section>
 
                 <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Periode 2023-2028</h2>
                             <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
@@ -107,8 +107,8 @@ export default function AnggotaPage() {
                                                 <Image
                                                     src={commissioner.image}
                                                     alt={`Potret ${commissioner.name}`}
-                                                    layout="fill"
-                                                    objectFit="cover"
+                                                                            fill
+                        className="object-cover"
                                                     className="group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                                     data-ai-hint={commissioner.hint}
                                                 />
@@ -126,7 +126,7 @@ export default function AnggotaPage() {
                 </section>
                 
                 <section className="py-24 lg:py-32 bg-card">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Arsip</h2>
                             <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
@@ -170,7 +170,7 @@ export default function AnggotaPage() {
                 </section>
                 
                  <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                          <div className="text-center max-w-4xl mx-auto">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}

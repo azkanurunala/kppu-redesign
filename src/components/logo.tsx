@@ -8,7 +8,7 @@ interface LogoProps {
 export function Logo({ isFooter = false }: LogoProps) {
   return (
     <div className="flex items-center gap-3">
-      <Image src="https://kppu.go.id/wp-content/uploads/2019/09/cropped-LOGO-KPPU-1.png" alt="KPPU Logo" width={45} height={45} />
+      <Image src="/images/logo.png" alt="KPPU Logo" width={45} height={45} />
       <div>
         <span className={cn(
           "block font-bold leading-tight tracking-tighter font-poppins",

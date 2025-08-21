@@ -45,6 +45,8 @@ const sectionVariants = {
 };
 
 export default function PPIDPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
@@ -57,7 +59,7 @@ export default function PPIDPage() {
         >
             <div className="absolute inset-0 bg-black">
                 <Image
-                    src="https://placehold.co/1920x600.png"
+                    src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600"
                     alt="Informasi Publik"
                     fill
                     className="object-cover opacity-20"
@@ -66,7 +68,7 @@ export default function PPIDPage() {
                 />
                  <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/80 to-transparent"></div>
             </div>
-            <div className="container mx-auto px-4 relative">
+            <div className="container mx-auto relative">
                 <motion.div 
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -90,9 +92,19 @@ export default function PPIDPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="py-24 lg:py-32 bg-card"
+            className="py-24 lg:py-32 bg-card relative overflow-hidden"
         >
-            <div className="container mx-auto px-4">
+            {/* Background Image */}
+            <div className="absolute inset-0 opacity-10">
+                <Image 
+                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.png?auto=compress&cs=tinysrgb&w=1920&h=1080"
+                    alt="Business Network Background"
+                    fill
+                    className="object-cover"
+                    data-ai-hint="business network connections map"
+                />
+            </div>
+            <div className="container mx-auto relative z-10">
                 <div className="text-center mb-20">
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Layanan Utama PPID</h2>
                      <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg leading-relaxed">Akses cepat ke layanan utama Pejabat Pengelola Informasi dan Dokumentasi (PPID) KPPU.</p>
@@ -127,7 +139,7 @@ export default function PPIDPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="py-24 lg:py-32 bg-background"
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                  <div className="text-center mb-20">
                      <p className="text-primary font-semibold mb-2 uppercase tracking-widest">Statistik</p>
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Layanan Informasi Publik</h2>
@@ -149,7 +161,7 @@ export default function PPIDPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="py-24 lg:py-32 bg-card"
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                  <div className="text-center mb-20">
                     <p className="text-primary font-semibold mb-2 uppercase tracking-widest">Publikasi</p>
                     <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Publikasi & Dokumen</h2>
@@ -174,7 +186,7 @@ export default function PPIDPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="py-24 lg:py-32 bg-background"
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                  <div className="text-center mb-20">
                     <p className="text-primary font-semibold mb-2 uppercase tracking-widest">Inovasi</p>
                     <h2 className="text-4xl lg:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Inovasi Digital KPPU</h2>
@@ -210,24 +222,24 @@ export default function PPIDPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="py-24 lg:py-32 bg-primary-dark text-white"
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                  <div className="text-center mb-20">
                      <h2 className="text-4xl lg:text-5xl font-bold font-poppins">Galeri & Media</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
                     <div className="md:col-span-3">
                         <div className="relative aspect-video overflow-hidden shadow-lg group rounded-2xl">
-                            <Image src="https://placehold.co/600x338.png" layout="fill" objectFit="cover" alt="Video PPID" data-ai-hint="youtube thumbnail" />
+                            <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=338" fill className="object-cover" alt="Video PPID" data-ai-hint="youtube thumbnail" />
                             <div className="absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-80">
                                 <Youtube className="w-20 h-20 text-red-600 group-hover:text-red-500 cursor-pointer transition-transform group-hover:scale-110" />
                             </div>
                         </div>
                     </div>
                      <div className="md:col-span-2 grid grid-cols-2 gap-6">
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 1" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="man presenting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 2" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="woman presenting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 3" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="office meeting" />
-                         <Image src="https://placehold.co/300x200.png" width={300} height={200} alt="Media 4" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="person writing" />
+                         <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" width={300} height={200} alt="Media 1" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="man presenting" />
+                         <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" width={300} height={200} alt="Media 2" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="woman presenting" />
+                         <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" width={300} height={200} alt="Media 3" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="office meeting" />
+                         <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=300&h=200" width={300} height={200} alt="Media 4" className="object-cover w-full h-full shadow-lg rounded-2xl" data-ai-hint="person writing" />
                     </div>
                 </div>
             </div>

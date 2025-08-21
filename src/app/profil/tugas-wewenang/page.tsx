@@ -9,6 +9,7 @@ import { ChevronRight, FileText, Gavel, Newspaper, MessageSquareQuote, Info, Che
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const tugas = [
     "Melakukan penilaian terhadap perjanjian yang dapat mengakibatkan terjadinya praktek monopoli dan atau persaingan usaha tidak sehat sebagaimana diatur dalam Pasal 4 sampai dengan Pasal 16;",
@@ -50,8 +51,18 @@ export default function TugasWewenangPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-20">
-            <div className="container mx-auto px-4">
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0 opacity-10">
+                <Image 
+                    src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.png?auto=compress&cs=tinysrgb&w=1920&h=1080"
+                    alt="Business Law Background"
+                    fill
+                    className="object-cover"
+                    data-ai-hint="business law legal documents"
+                />
+            </div>
+            <div className="container mx-auto relative z-10">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Tugas & Wewenang</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                     <Link href="/" className="hover:underline">Beranda</Link>
@@ -62,7 +73,7 @@ export default function TugasWewenangPage() {
         </section>
 
         <section className="py-20 lg:py-24">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                     <div className="lg:col-span-2">
                         <motion.div 

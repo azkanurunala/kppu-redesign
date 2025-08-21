@@ -9,6 +9,8 @@ import { Footer } from '@/components/footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
+import { usePathname } from 'next/navigation';
 
 const partners = [
   { name: "Kepolisian Negara Republik Indonesia (Polri)", logo: "https://kppu.go.id/wp-content/uploads/2019/11/polri.png", hint: "police logo" },
@@ -48,6 +50,8 @@ const itemVariants = {
 };
 
 export default function MitraKerjaPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
@@ -59,7 +63,7 @@ export default function MitraKerjaPage() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="container mx-auto px-4">
+              className="container mx-auto">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Mitra Kerja</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                     <Link href="/" className="hover:underline">Beranda</Link>
@@ -70,7 +74,7 @@ export default function MitraKerjaPage() {
         </section>
 
         <section className="py-24 lg:py-32">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="max-w-4xl mx-auto mb-20">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Sinergi untuk Persaingan Usaha yang Sehat</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -96,8 +100,8 @@ export default function MitraKerjaPage() {
                              <Image
                                 src={partner.logo}
                                 alt={`Logo ${partner.name}`}
-                                layout="fill"
-                                objectFit="contain"
+                                                        fill
+                        className="object-contain"
                                 data-ai-hint={partner.hint}
                                 unoptimized
                               />

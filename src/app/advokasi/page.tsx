@@ -9,6 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Download, ChevronRight, Gavel, Newspaper, MessageSquareQuote, Info, FileText, Scale, Shield, Users, ArrowRight } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -34,13 +36,15 @@ const faqItems = [
 ];
 
 export default function AdvokasiPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
         <section className="relative py-32 lg:py-40 text-white bg-primary-dark">
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-            <div className="container mx-auto px-4 relative text-center">
+            <div className="container mx-auto relative text-center">
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -57,7 +61,7 @@ export default function AdvokasiPage() {
         </section>
 
         <section className="py-20 lg:py-24">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
                     <div className="lg:col-span-2">
                         <motion.div 
@@ -69,7 +73,7 @@ export default function AdvokasiPage() {
                         >
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                                 <div className="relative h-96 w-full rounded-2xl overflow-hidden shadow-2xl">
-                                    <Image src="https://placehold.co/600x800.png" alt="Advokasi KPPU" layout="fill" objectFit="cover" data-ai-hint="discussion meeting office" />
+                                    <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=800" alt="Advokasi KPPU" fill className="object-cover" data-ai-hint="discussion meeting office" />
                                 </div>
                                 <div >
                                     <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Peran Advokasi KPPU</h2>

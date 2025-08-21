@@ -49,7 +49,7 @@ export default function VisiMisiPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="container mx-auto px-4 relative">
+                        className="container mx-auto relative">
                         <h1 className="text-5xl md:text-7xl font-bold font-poppins text-white">Visi & Misi</h1>
                         <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Membentuk fondasi persaingan usaha yang sehat untuk Indonesia Maju.
@@ -66,7 +66,7 @@ export default function VisiMisiPage() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true, amount: 0.5 }}
                         transition={{ duration: 0.8 }}
-                        className="container mx-auto px-4">
+                        className="container mx-auto">
                         <div className="text-center max-w-4xl mx-auto">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">VISI KPPU</h2>
                             <p className="text-4xl lg:text-6xl font-semibold text-primary-dark dark:text-white leading-tight font-poppins">
@@ -78,7 +78,7 @@ export default function VisiMisiPage() {
 
                 {/* Misi Section */}
                 <section className="py-24 lg:py-32 bg-card">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">MISI KPPU</h2>
                             <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Langkah Strategis Kami</p>
@@ -93,7 +93,7 @@ export default function VisiMisiPage() {
                 
                 {/* Tujuan & Sasaran Section */}
                 <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             <motion.div
                                 initial={{ opacity: 0, x: -50 }}
@@ -107,7 +107,7 @@ export default function VisiMisiPage() {
                                     Mewujudkan perekonomian nasional yang efisien dan berkeadilan untuk meningkatkan kesejahteraan rakyat melalui persaingan usaha yang sehat.
                                 </p>
                                 <div className="mt-8 relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl">
-                                     <Image src="https://placehold.co/600x400.png" alt="Tujuan KPPU" layout="fill" objectFit="cover" data-ai-hint="abstract arrows target" />
+                                     <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Tujuan KPPU" fill className="object-cover" data-ai-hint="abstract arrows target" />
                                 </div>
                             </motion.div>
                             <motion.div
@@ -118,7 +118,7 @@ export default function VisiMisiPage() {
                                 className="lg:mt-24"
                             >
                                 <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl mb-8">
-                                     <Image src="https://placehold.co/600x400.png" alt="Sasaran Strategis KPPU" layout="fill" objectFit="cover" data-ai-hint="chess strategy board" />
+                                     <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Sasaran Strategis KPPU" fill className="object-cover" data-ai-hint="chess strategy board" />
                                 </div>
                                 <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">SASARAN STRATEGIS</h2>
                                 <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white mb-6 font-poppins">Target yang Terukur</p>
@@ -134,7 +134,7 @@ export default function VisiMisiPage() {
 
                 {/* Nilai-nilai Section */}
                 <section className="py-24 lg:py-32 bg-card">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                          <div className="text-center mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">NILAI-NILAI KPPU (RICH TEAM)</h2>
                             <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Prinsip yang Kami Junjung Tinggi</p>

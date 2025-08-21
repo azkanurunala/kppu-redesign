@@ -10,6 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Download, Search, ListFilter, ChevronRight, FileText, Calendar, Users, MessageSquareQuote, Info, Gavel, Newspaper } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 const researchData = [
@@ -56,6 +58,8 @@ const sidebarNavItems = [
 ];
 
 export default function PenelitianPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
@@ -66,7 +70,7 @@ export default function PenelitianPage() {
           transition={{ duration: 0.8 }}
           className="bg-primary-dark text-white py-20"
         >
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Penelitian KPPU</h1>
             <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
               <Link href="/" className="hover:underline">Beranda</Link>
@@ -77,7 +81,7 @@ export default function PenelitianPage() {
         </motion.section>
 
         <section className="py-20 lg:py-24">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-16">
               <div className="lg:col-span-3 space-y-10">
                 {researchData.map((item, index) => (

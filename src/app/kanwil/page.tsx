@@ -88,16 +88,18 @@ const itemVariants = {
 };
 
 export default function KanwilPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
     return (
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
             <main className="flex-1">
                 <section className="relative py-32 lg:py-48 text-white bg-primary-dark">
                     <div className="absolute inset-0 bg-black">
-                        <Image src="https://placehold.co/1920x1080.png" alt="Kantor Wilayah KPPU" layout="fill" objectFit="cover" className="opacity-30" data-ai-hint="indonesia map modern" />
+                        <Image src={headerImage} alt="Kantor Wilayah KPPU" fill className="object-cover" className="opacity-5" data-ai-hint="indonesia map modern" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
                     </div>
-                    <div className="container mx-auto px-4 relative text-center">
+                    <div className="container mx-auto relative text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -114,7 +116,7 @@ export default function KanwilPage() {
                 </section>
 
                 <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Jangkauan Nasional</h2>
                             <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Hadir Lebih Dekat</p>

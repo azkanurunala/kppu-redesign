@@ -29,7 +29,7 @@ export default function SiaranPersPage() {
       <Header />
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Siaran Pers</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                     <Link href="/" className="hover:underline">Beranda</Link>
@@ -40,7 +40,7 @@ export default function SiaranPersPage() {
         </section>
 
         <section className="py-20 lg:py-24">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-16">
                     
                     <div className="lg:col-span-3 space-y-8">

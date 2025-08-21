@@ -46,7 +46,7 @@ export default function LogoMaskotPage() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="container mx-auto px-4 relative text-center">
+                        className="container mx-auto relative text-center">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins">Logo & Maskot</h1>
                         <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Identitas visual yang merepresentasikan semangat dan nilai-nilai KPPU.
@@ -55,7 +55,7 @@ export default function LogoMaskotPage() {
                 </section>
 
                 <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function LogoMaskotPage() {
                 </section>
 
                 <section className="py-24 lg:py-32 bg-card">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16 md:mb-20">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Panduan Penggunaan</h2>
                             <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Konsistensi Visual</p>
@@ -139,7 +139,7 @@ export default function LogoMaskotPage() {
                 </section>
 
                 <section className="py-24 lg:py-32">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                          <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export default function LogoMaskotPage() {
                         >
                              <div className="bg-card p-8 rounded-3xl shadow-2xl flex items-center justify-center aspect-square order-last lg:order-first">
                                 <Image
-                                    src="https://placehold.co/500x500.png"
+                                    src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=500&h=500"
                                     alt="Maskot KPPU"
                                     width={450}
                                     height={450}

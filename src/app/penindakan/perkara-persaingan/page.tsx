@@ -30,7 +30,7 @@ export default function PutusanPage() {
       
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20 text-center">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Database Putusan KPPU</h1>
                 <p className="mt-4 text-lg text-primary-foreground/80 max-w-3xl mx-auto">
                   Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha secara transparan dan mudah diakses.
@@ -38,7 +38,7 @@ export default function PutusanPage() {
             </div>
         </section>
       
-        <div className="container mx-auto px-4 py-16 lg:py-24">
+        <div className="container mx-auto py-16 lg:py-24">
             <Card className="mb-8 p-6 bg-card border shadow-lg">
                 <div className="flex flex-col md:flex-row items-center gap-4">
                     <div className="relative flex-grow w-full">

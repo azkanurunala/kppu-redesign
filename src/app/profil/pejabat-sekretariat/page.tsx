@@ -11,12 +11,12 @@ import { ChevronRight, User } from 'lucide-react';
 import Link from 'next/link';
 
 const officials = [
-  { name: 'Ir. Charles Pandji Dewanto, M.A.P.', title: 'Sekretaris Jenderal', image: 'https://placehold.co/400x500.png', hint: 'portrait man official' },
-  { name: 'Dr. Drs. Dominicus Susanto, M.A.', title: 'Kepala Biro Perencanaan dan Keuangan', image: 'https://placehold.co/400x500.png', hint: 'portrait man official' },
-  { name: 'Ima Damayanti, S.H., M.H.', title: 'Kepala Biro Hukum, Humas, dan Kerja Sama', image: 'https://placehold.co/400x500.png', hint: 'portrait woman official' },
-  { name: 'Drs. Taufik Ariyanto, M.M.', title: 'Kepala Biro Sumber Daya Manusia, Organisasi, dan Tata Laksana', image: 'https://placehold.co/400x500.png', hint: 'portrait man official' },
-  { name: 'Tomy Su, S.E., M.S.E.', title: 'Kepala Biro Teknologi Informasi', image: 'https://placehold.co/400x500.png', hint: 'portrait man official' },
-  { name: 'Ir. Deswin Nur, M.M.', title: 'Inspektur', image: 'https://placehold.co/400x500.png', hint: 'portrait man official' },
+  { name: 'Ir. Charles Pandji Dewanto, M.A.P.', title: 'Sekretaris Jenderal', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man official' },
+  { name: 'Dr. Drs. Dominicus Susanto, M.A.', title: 'Kepala Biro Perencanaan dan Keuangan', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man official' },
+  { name: 'Ima Damayanti, S.H., M.H.', title: 'Kepala Biro Hukum, Humas, dan Kerja Sama', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait woman official' },
+  { name: 'Drs. Taufik Ariyanto, M.M.', title: 'Kepala Biro Sumber Daya Manusia, Organisasi, dan Tata Laksana', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man official' },
+  { name: 'Tomy Su, S.E., M.S.E.', title: 'Kepala Biro Teknologi Informasi', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man official' },
+  { name: 'Ir. Deswin Nur, M.M.', title: 'Inspektur', image: 'https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=400&h=500', hint: 'portrait man official' },
 ];
 
 
@@ -48,7 +48,7 @@ export default function PejabatSekretariatPage() {
             <Header />
             <main className="flex-1">
                 <section className="bg-primary-dark text-white py-20">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Pejabat Sekretariat</h1>
                          <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                             <Link href="/" className="hover:underline">Beranda</Link>
@@ -59,7 +59,7 @@ export default function PejabatSekretariatPage() {
                 </section>
 
                 <section className="py-20 lg:py-24">
-                    <div className="container mx-auto px-4">
+                    <div className="container mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-5xl font-bold font-poppins text-primary-dark dark:text-white">Pimpinan Tinggi Pratama</h2>
                             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -81,8 +81,8 @@ export default function PejabatSekretariatPage() {
                                                 <Image
                                                     src={official.image}
                                                     alt={`Potret ${official.name}`}
-                                                    layout="fill"
-                                                    objectFit="cover"
+                                                                            fill
+                        className="object-cover"
                                                     className="group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                                     data-ai-hint={official.hint}
                                                 />

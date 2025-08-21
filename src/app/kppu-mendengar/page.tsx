@@ -32,7 +32,7 @@ export default function KppuMendengarPage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="container mx-auto px-4">
+            className="container mx-auto">
             <h1 className="text-4xl lg:text-6xl font-bold font-poppins">KPPU Mendengar</h1>
              <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                 <Link href="/" className="hover:underline">Beranda</Link>
@@ -43,7 +43,7 @@ export default function KppuMendengarPage() {
         </section>
 
         <section className="py-20 lg:py-24">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
                 <div className="lg:col-span-3">
                     <motion.div

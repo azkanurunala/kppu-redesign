@@ -58,7 +58,7 @@ export default function MitraKerjaPage() {
           transition={{ duration: 0.8 }}
           className="bg-primary-dark text-white py-20"
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Mitra Kerja</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                     <Link href="/" className="hover:underline">Beranda</Link>
@@ -69,7 +69,7 @@ export default function MitraKerjaPage() {
         </motion.section>
 
         <section className="py-24 lg:py-32">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="max-w-4xl mx-auto mb-20">
               <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Sinergi untuk Persaingan Usaha yang Sehat</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -95,8 +95,8 @@ export default function MitraKerjaPage() {
                              <Image
                                 src={partner.logo}
                                 alt={`Logo ${partner.name}`}
-                                layout="fill"
-                                objectFit="contain"
+                                                        fill
+                        className="object-contain"
                                 data-ai-hint={partner.hint}
                                 unoptimized
                               />

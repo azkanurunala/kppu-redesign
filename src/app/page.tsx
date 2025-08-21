@@ -6,12 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { ArrowRight, Youtube, Search, Handshake } from 'lucide-react';
+import { ArrowRight, Youtube, Search, Handshake, Scale, FileText, Landmark, Megaphone, GaugeCircle } from 'lucide-react';
 import Link from 'next/link';
 import { HomeCarousel } from '@/components/home-carousel';
 import { KppuPieChart } from '@/components/kppu-pie-chart';
 import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
+import { StatCard } from '@/components/ui/stat-card';
 
 const mainNews = {
     title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras",
@@ -192,6 +193,42 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Statistics Section */}
+        <section className="py-24 lg:py-32 bg-gradient-to-b from-card to-background">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Indonesia dalam Angka</h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Sekilas data dan statistik kunci terkait pengawasan persaingan usaha di Indonesia.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <StatCard
+                icon={<GaugeCircle className="w-8 h-8 text-primary" />}
+                value="4.92"
+                label="Skor IPU Nasional 2023"
+                description="Tingkat persaingan usaha yang 'Tinggi'."
+              />
+              <StatCard
+                icon={<FileText className="w-8 h-8 text-primary" />}
+                value="78"
+                label="Putusan Perkara"
+                description="Jumlah putusan yang dikeluarkan pada tahun 2023."
+              />
+              <StatCard
+                icon={<Landmark className="w-8 h-8 text-primary" />}
+                value="Rp 120 M"
+                label="Total Denda"
+                description="Akumulasi denda yang dikenakan sepanjang tahun 2023."
+              />
+              <StatCard
+                icon={<Megaphone className="w-8 h-8 text-primary" />}
+                value="152"
+                label="Notifikasi Merger & Akuisisi"
+                description="Jumlah notifikasi yang diterima dan dinilai pada 2023."
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Commissioners Section */}
         <section className="py-24 lg:py-32 bg-primary-dark text-white">
           <div className="container mx-auto px-4">
@@ -204,9 +241,6 @@ export default function Home() {
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   <p>KPPU adalah lembaga independen yang bertugas mengawasi pelaksanaan UU No.5/1999 dan UU No.20/2008, terdiri dari Anggota KPPU yang diangkat oleh Presiden Republik Indonesia atas persetujuan Dewan Perwakilan Rakyat.</p>
                   <p>Anggota KPPU terpilih periode kelima melalui Keputusan Presiden Nomor 8/P Tahun 2024 memiliki masa kerja tahun 2024-2029. Kami berkomitmen untuk mensejahterakan rakyat melalui penegakan hukum persaingan usaha dan pengawasan kemitraan UMKM yang sehat di Indonesia.</p>
-                </div>
-                <div className="mt-12">
-                  <KppuPieChart />
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-4 md:gap-5">

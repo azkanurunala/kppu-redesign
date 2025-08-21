@@ -39,9 +39,10 @@ Do not answer questions outside of this scope. If a user asks something unrelate
 
 Here is the conversation history:
 {{#each history}}
-  {{#if (this.role === 'user')}}
+  {{#if (eq this.role 'user')}}
     User: {{this.content.[0].text}}
-  {{else}}
+  {{/if}}
+  {{#if (eq this.role 'model')}}
     Assistant: {{this.content.[0].text}}
   {{/if}}
 {{/each}}
@@ -49,6 +50,13 @@ Here is the conversation history:
 User's new message: {{{message}}}
 
 Assistant:`,
+  config: {
+    custom: {
+      helpers: {
+        eq: (a:any, b:any) => a === b,
+      }
+    }
+  }
 });
 
 const chatbotFlow = ai.defineFlow(

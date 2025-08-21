@@ -53,14 +53,14 @@ const otherRegionalNews = [
 ];
 
 const commissioners = [
-  { name: 'M. Fanshurullah Asa', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Aru Armando', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Dr. Guntur S. Saragih', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Gopprera Panggabean', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Hilman Pujana', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Mohammad Reza', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Rhido Jusmadi', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Ukay Karyadi', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
+  { name: 'M. Fanshurullah Asa', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MFA-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Aru Armando', image: 'https://kppu.go.id/wp-content/uploads/2024/03/AA-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Dr. Guntur S. Saragih', image: 'https://kppu.go.id/wp-content/uploads/2024/03/BJS-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Gopprera Panggabean', image: 'https://kppu.go.id/wp-content/uploads/2024/03/GP-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Hilman Pujana', image: 'https://kppu.go.id/wp-content/uploads/2024/05/HP-1-14052024-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Mohammad Reza', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MR-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Rhido Jusmadi', image: 'https://kppu.go.id/wp-content/uploads/2024/03/RJ-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Ukay Karyadi', image: 'https://kppu.go.id/wp-content/uploads/2024/03/EM-2-BG-PUTIH.png', hint: 'portrait man suit' },
   { name: 'Yudi Hidayat', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
 ];
 

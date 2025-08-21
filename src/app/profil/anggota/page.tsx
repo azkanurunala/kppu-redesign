@@ -12,14 +12,14 @@ import { Download, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const commissioners = [
-  { name: 'M. Fanshurullah Asa', title: 'Ketua', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Aru Armando', title: 'Wakil Ketua', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Dr. Guntur S. Saragih', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Gopprera Panggabean', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Hilman Pujana', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Mohammad Reza', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Rhido Jusmadi', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
-  { name: 'Ukay Karyadi', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
+  { name: 'M. Fanshurullah Asa', title: 'Ketua', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MFA-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Aru Armando', title: 'Wakil Ketua', image: 'https://kppu.go.id/wp-content/uploads/2024/03/AA-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Dr. Guntur S. Saragih', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/BJS-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Gopprera Panggabean', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/GP-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Hilman Pujana', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/05/HP-1-14052024-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Mohammad Reza', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/MR-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Rhido Jusmadi', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/RJ-2-BG-PUTIH.png', hint: 'portrait man suit' },
+  { name: 'Ukay Karyadi', title: 'Anggota', image: 'https://kppu.go.id/wp-content/uploads/2024/03/EM-2-BG-PUTIH.png', hint: 'portrait man suit' },
   { name: 'Yudi Hidayat', title: 'Anggota', image: 'https://placehold.co/400x500.png', hint: 'portrait man suit' },
 ];
 
@@ -202,5 +202,3 @@ export default function AnggotaPage() {
         </div>
     );
 }
-
-    

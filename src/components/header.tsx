@@ -108,7 +108,7 @@ export function Header() {
               <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className={cn(
                     "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
-                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-white"
+                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-gold"
                   )}>
                     {item.label} <ChevronDown className="h-4 w-4" />
                   </Button>
@@ -124,7 +124,7 @@ export function Header() {
           ) : (
              <Button variant="ghost" asChild className={cn(
                 "text-sm font-semibold w-full justify-start lg:justify-center",
-                 isMobile ? "text-gray-700 dark:text-gray-300" : "text-primary-dark dark:text-gray-300 hover:text-primary dark:hover:text-white"
+                 isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-gold"
             )}>
               <Link href={item.href}>{item.label}</Link>
             </Button>
@@ -138,7 +138,7 @@ export function Header() {
     <>
       <header className={cn(
         "sticky top-0 z-50 w-full transition-colors duration-300",
-        isScrolled ? "bg-background/80 shadow-md backdrop-blur-lg" : "bg-background"
+        isScrolled ? "bg-[#0D1D36]/95 shadow-md backdrop-blur-lg" : "bg-[#0D1D36]"
       )}>
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
@@ -151,14 +151,14 @@ export function Header() {
 
           <div className="flex items-center gap-1">
             <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
-              <Search className="h-5 w-5 text-foreground" />
+              <Search className="h-5 w-5 text-white" />
               <span className="sr-only">Cari</span>
             </Button>
             <ThemeToggle />
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild className="lg:hidden">
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6 text-foreground" />
+                  <Menu className="h-6 w-6 text-white" />
                   <span className="sr-only">Buka menu</span>
                 </Button>
               </SheetTrigger>

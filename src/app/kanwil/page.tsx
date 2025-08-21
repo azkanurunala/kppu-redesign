@@ -9,6 +9,7 @@ import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin, Mail, Phone, Twitter, Instagram, Facebook, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
 
 const regionalOffices = [
   {
@@ -96,7 +97,7 @@ export default function KanwilPage() {
             <main className="flex-1">
                 <section className="relative py-32 lg:py-48 text-white bg-primary-dark">
                     <div className="absolute inset-0 bg-black">
-                        <Image src={headerImage} alt="Kantor Wilayah KPPU" fill className="object-cover" className="opacity-5" data-ai-hint="indonesia map modern" />
+                        <Image src="/images/map.jpg" alt="Peta Indonesia" fill className="object-cover opacity-10" data-ai-hint="indonesia map globe southeast asia" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
                     </div>
                     <div className="container mx-auto relative text-center">
@@ -115,8 +116,18 @@ export default function KanwilPage() {
                     </div>
                 </section>
 
-                <section className="py-24 lg:py-32">
-                    <div className="container mx-auto">
+                <section className="py-24 lg:py-32 relative overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 opacity-5">
+                        <Image
+                            src="/images/map.jpg"
+                            alt="Peta Indonesia Background"
+                            fill
+                            className="object-cover"
+                            data-ai-hint="indonesia map background"
+                        />
+                    </div>
+                    <div className="container mx-auto relative z-10">
                         <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
                             <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Jangkauan Nasional</h2>
                             <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Hadir Lebih Dekat</p>
@@ -171,6 +182,7 @@ export default function KanwilPage() {
                             ))}
                         </motion.div>
                     </div>
+                </div>
                 </section>
             </main>
             <Footer />

@@ -17,8 +17,8 @@ const mainNews = {
     title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras",
     source: "JawaPos.com",
     href: "#",
-    imgSrc: "https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
-    imgHint: "commodity rice monitoring"
+    imgSrc: "/images/news/01.jpeg",
+    imgHint: "kppu commission hearing meeting"
 };
 
 const otherMainNews = [
@@ -30,8 +30,8 @@ const activityNews = {
     title: "KPPU Hadiri Tasyakuran Ulang Tahun INDEF",
     source: "Infopublik.id",
     href: "#",
-    imgSrc: "https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
-    imgHint: "conference presentation"
+    imgSrc: "/images/news/02.jpeg",
+    imgHint: "government meeting conference"
 };
 
 const otherActivityNews = [
@@ -43,8 +43,8 @@ const regionalNews = {
     title: "Perkuat Sinergi, Kantor Wilayah VI KPPU Makassar Temui Gubernur Sulawesi Barat",
     source: "Antaranews.com",
     href: "#",
-    imgSrc: "https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400",
-    imgHint: "government meeting handshake"
+    imgSrc: "/images/news/03.jpg",
+    imgHint: "bps statistics office meeting"
 };
 
 const otherRegionalNews = [
@@ -138,7 +138,7 @@ export default function Home() {
               </div>
               <div className="overflow-hidden shadow-lg rounded-2xl">
                 <div className="relative h-80 min-h-[250px]">
-                  <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Gedung KPPU" fill className="object-cover" data-ai-hint="office building modern" />
+                  <Image src="/images/kppu-building.jpeg" alt="Gedung KPPU" fill className="object-cover" data-ai-hint="modern office building kppu indonesia" />
                 </div>
               </div>
               <Card className="p-8 bg-card shadow-lg rounded-2xl flex items-start gap-6">
@@ -248,11 +248,11 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image 
-              src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" 
-              alt="Business Background Indonesia" 
+              src="/images/kppu-building.jpeg" 
+              alt="Gedung KPPU - Kantor Pusat" 
               fill 
               className="object-cover opacity-[0.0125]" 
-              data-ai-hint="business meeting indonesia map statistics"
+              data-ai-hint="modern office building kppu indonesia"
             />
           </div>
           {/* Overlay Pattern */}
@@ -345,12 +345,16 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
-                <Card className="p-4 shadow-lg rounded-2xl overflow-hidden group h-full">
-                  <div className="relative aspect-video h-full">
-                    <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600" fill className="object-cover rounded-xl" alt="Video Company Profile KPPU" data-ai-hint="people discussing document"/>
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer transition-opacity opacity-0 group-hover:opacity-100">
-                      <Youtube className="w-16 h-16 md:w-20 md:h-20 text-red-600 group-hover:text-red-500 transition-transform group-hover:scale-110" />
-                    </div>
+                <Card className="p-4 shadow-lg rounded-2xl overflow-hidden h-full">
+                  <div className="relative aspect-video w-full">
+                    <iframe 
+                      src="https://www.youtube.com/embed/RBcyHEk3wns?si=25s0sOSsm4CXKgIg&controls=0" 
+                      title="Video Company Profile KPPU" 
+                      className="w-full h-full rounded-xl"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                      referrerPolicy="strict-origin-when-cross-origin" 
+                      allowFullScreen
+                    />
                   </div>
                 </Card>
               </div>

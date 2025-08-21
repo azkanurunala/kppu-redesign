@@ -67,7 +67,7 @@ export default function AnggotaPage() {
                     className="relative py-32 lg:py-48 text-white bg-primary-dark"
                 >
                     <div className="absolute inset-0 bg-black">
-                        <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" alt="Anggota Komisi" fill className="object-cover" className="opacity-5" data-ai-hint="team portrait professional" />
+                        <Image src="/images/kppu-building.jpeg" alt="Gedung KPPU" fill className="object-cover opacity-5" data-ai-hint="modern office building kppu" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
                     </div>
                     <div className="container mx-auto relative text-center">

@@ -86,7 +86,7 @@ export function Footer() {
     <>
       <section>
           <div className="relative py-24 md:py-32 text-center bg-primary-dark">
-              <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400" alt="Call to Action" fill className="object-cover" className="opacity-10" data-ai-hint="discussion meeting" />
+              <Image src="/images/kppu-building.jpeg" alt="Gedung KPPU" fill className="object-cover opacity-10" data-ai-hint="modern office building kppu" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>

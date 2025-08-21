@@ -72,7 +72,7 @@ export default function AnggotaPage() {
                     className="relative py-32 lg:py-40 text-white bg-primary-dark overflow-hidden"
                 >
                     <div className="absolute inset-0">
-                        <Image src={headerImage} alt="Anggota Komisi KPPU" fill className="opacity-5 object-cover" data-ai-hint="professional team meeting" />
+                        <Image src="/images/kppu-building.jpeg" alt="Gedung KPPU" fill className="opacity-5 object-cover" data-ai-hint="modern office building kppu" />
                     </div>
                     <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
                     <div className="absolute inset-0 bg-primary-dark/60"></div>

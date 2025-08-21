@@ -1,13 +1,17 @@
 
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { ArrowRight, Youtube } from 'lucide-react';
+import { ArrowRight, Youtube, Search } from 'lucide-react';
 import Link from 'next/link';
 import { HomeCarousel } from '@/components/home-carousel';
 import { KppuPieChart } from '@/components/kppu-pie-chart';
+import { motion } from 'framer-motion';
+import { Input } from '@/components/ui/input';
 
 const mainNews = {
     title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras",
@@ -63,25 +67,49 @@ const commissioners = [
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-primary-dark text-white pt-24 pb-32 md:pt-32 md:pb-48 text-center overflow-hidden">
-          <div className="container mx-auto px-4 relative">
-            <h1 className="text-4xl md:text-6xl font-bold font-poppins leading-tight">Mewujudkan Persaingan Usaha yang Sehat</h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
-              Jelajahi database putusan, peraturan terbaru, dan jadwal sidang untuk mendukung ekosistem bisnis yang adil dan transparan di Indonesia.
-            </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild className="bg-gold text-primary-dark font-bold hover:bg-gold/90 text-base rounded-full px-8">
-                <Link href="/regulasi">Cari Regulasi</Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-white border-white/50 hover:bg-white/10 hover:text-white rounded-full px-8 text-base">
-                <Link href="/penindakan/perkara-persaingan">Lihat Putusan</Link>
-              </Button>
+            <div className="absolute inset-0 bg-black/30">
+                 <Image src="https://placehold.co/1920x1080.png" alt="Hero Background" layout="fill" objectFit="cover" className="opacity-30" data-ai-hint="modern city skyline" />
             </div>
-          </div>
+            <div className="container mx-auto px-4 relative">
+                <motion.h1 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-4xl md:text-6xl font-bold font-poppins leading-tight"
+                >
+                    Mewujudkan Persaingan Usaha yang Sehat
+                </motion.h1>
+                <motion.p 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80"
+                >
+                  Jelajahi database putusan, peraturan terbaru, dan jadwal sidang untuk mendukung ekosistem bisnis yang adil dan transparan di Indonesia.
+                </motion.p>
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="mt-10 max-w-2xl mx-auto"
+                >
+                    <div className="relative">
+                        <Input
+                            type="search"
+                            placeholder="Cari putusan, regulasi, atau berita..."
+                            className="w-full h-16 rounded-full pl-8 pr-16 text-lg bg-background/20 text-white placeholder:text-gray-300 border-2 border-white/30 focus:bg-background/30 focus:ring-gold"
+                        />
+                        <Button size="icon" className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full w-12 h-12 bg-gold hover:bg-gold/90">
+                            <Search className="w-6 h-6 text-primary-dark" />
+                        </Button>
+                    </div>
+                </motion.div>
+            </div>
         </section>
         
         {/* Carousel Section */}
@@ -255,3 +283,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

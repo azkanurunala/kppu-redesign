@@ -64,9 +64,12 @@ export default function AnggotaPage() {
             <Header />
             <main className="flex-1">
                 <section
-                    className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 text-white bg-primary-dark"
+                    className="relative py-32 lg:py-48 text-white bg-primary-dark"
                 >
-                    <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
+                    <div className="absolute inset-0 bg-black">
+                        <Image src="https://placehold.co/1920x1080.png" alt="Anggota Komisi" layout="fill" objectFit="cover" className="opacity-30" data-ai-hint="team portrait professional" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
+                    </div>
                     <div className="container mx-auto px-4 relative text-center">
                         <motion.h1
                             initial={{ opacity: 0, y: -20 }}
@@ -199,3 +202,5 @@ export default function AnggotaPage() {
         </div>
     );
 }
+
+    

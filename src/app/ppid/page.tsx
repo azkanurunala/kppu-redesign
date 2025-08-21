@@ -50,24 +50,29 @@ export default function PPIDPage() {
       <Header />
       <main className="flex-1">
         <motion.section
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           className="relative bg-primary-dark text-white py-32 md:py-40 overflow-hidden"
         >
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-black">
                 <Image
                     src="https://placehold.co/1920x600.png"
                     alt="Informasi Publik"
                     fill
-                    className="object-cover opacity-10"
+                    className="object-cover opacity-20"
                     data-ai-hint="business presentation"
                     priority
                 />
                  <div className="absolute inset-0 bg-gradient-to-r from-primary-dark via-primary-dark/80 to-transparent"></div>
             </div>
             <div className="container mx-auto px-4 relative">
-                <div className="max-w-3xl">
+                <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="max-w-3xl"
+                >
                     <p className="text-lg font-semibold text-primary-foreground/80 tracking-widest uppercase">PPID KPPU</p>
                     <h1 className="text-5xl md:text-7xl font-bold font-poppins mt-4">Keterbukaan Informasi Publik</h1>
                     <p className="mt-6 text-xl text-primary-foreground/90 max-w-2xl leading-relaxed">
@@ -76,7 +81,7 @@ export default function PPIDPage() {
                     <Button size="lg" className="mt-10 bg-gold text-primary-dark font-bold hover:bg-gold/90 text-base rounded-full px-8">
                         Mulai Jelajahi <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
-                </div>
+                </motion.div>
             </div>
         </motion.section>
 
@@ -94,14 +99,22 @@ export default function PPIDPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                     {quickAccessItems.map((item, index) => (
-                        <Card key={index} className="hover:shadow-2xl hover:-translate-y-2 transition-transform duration-300 bg-background rounded-2xl">
-                           <CardContent className="p-10 flex flex-col items-center">
-                                <div className="p-6 bg-primary/10 rounded-full mb-8">
-                                     <item.icon className="h-14 w-14 text-primary" />
-                                </div>
-                                <h3 className="text-xl font-bold font-poppins text-primary-dark dark:text-white">{item.label}</h3>
-                           </CardContent>
-                        </Card>
+                        <motion.div
+                            key={index}
+                             initial={{ opacity: 0, y: 20 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             viewport={{ once: true, amount: 0.5 }}
+                             transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                            <Card className="hover:shadow-2xl hover:-translate-y-2 transition-transform duration-300 bg-background rounded-2xl">
+                               <CardContent className="p-10 flex flex-col items-center">
+                                    <div className="p-6 bg-primary/10 rounded-full mb-8">
+                                         <item.icon className="h-14 w-14 text-primary" />
+                                    </div>
+                                    <h3 className="text-xl font-bold font-poppins text-primary-dark dark:text-white">{item.label}</h3>
+                               </CardContent>
+                            </Card>
+                        </motion.div>
                     ))}
                 </div>
             </div>
@@ -169,14 +182,22 @@ export default function PPIDPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {innovationItems.map((item, index) => (
-                        <Card key={index} className="hover:border-primary transition-colors bg-card hover:shadow-xl rounded-2xl">
-                            <CardHeader>
-                                <CardTitle className="text-primary font-poppins text-xl">{item.title}</CardTitle>
-                            </CardHeader>
-                           <CardContent>
-                                <p className="text-muted-foreground">{item.description}</p>
-                           </CardContent>
-                        </Card>
+                         <motion.div
+                            key={index}
+                             initial={{ opacity: 0, y: 20 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             viewport={{ once: true, amount: 0.5 }}
+                             transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                            <Card className="hover:border-primary transition-colors bg-card hover:shadow-xl rounded-2xl h-full">
+                                <CardHeader>
+                                    <CardTitle className="text-primary font-poppins text-xl">{item.title}</CardTitle>
+                                </CardHeader>
+                               <CardContent>
+                                    <p className="text-muted-foreground">{item.description}</p>
+                               </CardContent>
+                            </Card>
+                        </motion.div>
                     ))}
                 </div>
             </div>
@@ -216,3 +237,5 @@ export default function PPIDPage() {
     </div>
   );
 }
+
+    

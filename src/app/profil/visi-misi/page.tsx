@@ -41,20 +41,22 @@ export default function VisiMisiPage() {
             <Header />
             <main className="flex-1">
                 {/* Hero Section */}
-                <motion.section
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 text-center bg-primary-dark"
-                >
-                    <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-                    <div className="container mx-auto px-4 relative">
+                 <section className="relative py-32 lg:py-48 text-white">
+                    <div className="absolute inset-0 bg-black">
+                        <Image src="https://placehold.co/1920x1080.png" alt="Visi Misi KPPU" layout="fill" objectFit="cover" className="opacity-40" data-ai-hint="futuristic abstract building" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-transparent"></div>
+                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="container mx-auto px-4 relative text-center">
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-poppins text-white">Visi & Misi</h1>
                         <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                             Membentuk fondasi persaingan usaha yang sehat untuk Indonesia Maju.
                         </p>
-                    </div>
-                </motion.section>
+                    </motion.div>
+                </section>
 
                 {/* Visi Section */}
                 <motion.section 
@@ -159,3 +161,5 @@ export default function VisiMisiPage() {
         </div>
     );
 }
+
+    

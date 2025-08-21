@@ -12,9 +12,10 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './ui/sheet';
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from './theme-toggle';
+import { SearchDialog } from './search-dialog';
 
 const navItems = [
   {
@@ -84,6 +85,7 @@ const navItems = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -133,43 +135,52 @@ export function Header() {
   );
 
   return (
-    <header className={cn(
-      "sticky top-0 z-50 w-full transition-colors duration-300",
-      isScrolled ? "bg-background/80 shadow-md backdrop-blur-lg" : "bg-background"
-    )}>
-      <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo />
-        </Link>
-        
-        <div className="hidden lg:flex flex-1 items-center justify-end">
-          <NavMenu />
-        </div>
+    <>
+      <header className={cn(
+        "sticky top-0 z-50 w-full transition-colors duration-300",
+        isScrolled ? "bg-background/80 shadow-md backdrop-blur-lg" : "bg-background"
+      )}>
+        <div className="container mx-auto flex h-20 items-center justify-between px-4">
+          <Link href="/" className="flex items-center gap-2">
+            <Logo />
+          </Link>
+          
+          <div className="hidden lg:flex flex-1 items-center justify-end">
+            <NavMenu />
+          </div>
 
-        <div className="flex items-center gap-1">
-          <ThemeToggle />
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6 text-foreground" />
-                <span className="sr-only">Buka menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-sm bg-background">
-               <SheetHeader>
-                <SheetTitle>
-                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Logo />
-                  </Link>
-                </SheetTitle>
-              </SheetHeader>
-              <div className="mt-8">
-                <NavMenu isMobile />
-              </div>
-            </SheetContent>
-          </Sheet>
+          <div className="flex items-center gap-1">
+            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
+              <Search className="h-5 w-5 text-foreground" />
+              <span className="sr-only">Cari</span>
+            </Button>
+            <ThemeToggle />
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6 text-foreground" />
+                  <span className="sr-only">Buka menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full max-w-sm bg-background">
+                 <SheetHeader>
+                  <SheetTitle>
+                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Logo />
+                    </Link>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="mt-8">
+                  <NavMenu isMobile />
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <SearchDialog open={isSearchOpen} onOpenChange={setIsSearchOpen} />
+    </>
   );
 }
+
+    

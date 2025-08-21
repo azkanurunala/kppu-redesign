@@ -80,7 +80,7 @@ export default function Home() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-4xl md:text-6xl font-bold font-poppins leading-tight"
+                    className="text-3xl md:text-5xl font-bold font-poppins leading-tight"
                 >
                     Mewujudkan Persaingan Usaha yang Sehat
                 </motion.h1>

@@ -126,8 +126,8 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-info font-poppins">Tentang KPPU</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              <Card className="lg:col-span-2 p-8 md:p-12 flex flex-col justify-center bg-card shadow-lg rounded-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+              <div className="lg:col-span-2">
                   <h3 className="text-3xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Pengawas Persaingan Usaha</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     Komisi Pengawas Persaingan Usaha (KPPU) adalah lembaga independen yang dibentuk untuk mengawasi pelaksanaan Undang-Undang No. 5 Tahun 1999 tentang Larangan Praktek Monopoli dan Persaingan Usaha Tidak Sehat. Kami bekerja untuk memastikan setiap pelaku usaha di Indonesia bersaing secara adil dan sehat, demi terwujudnya ekonomi yang efisien dan kesejahteraan masyarakat.
@@ -135,12 +135,12 @@ export default function Home() {
                   <Button asChild variant="link" className="p-0 h-auto self-start text-primary font-bold">
                     <Link href="/profil/visi-misi">Selengkapnya <ArrowRight className="w-4 h-4 ml-2"/></Link>
                   </Button>
-              </Card>
-              <Card className="overflow-hidden shadow-lg rounded-2xl">
-                <div className="relative h-full min-h-[250px]">
+              </div>
+              <div className="overflow-hidden shadow-lg rounded-2xl">
+                <div className="relative h-80 min-h-[250px]">
                   <Image src="https://placehold.co/600x400.png" alt="Gedung KPPU" layout="fill" objectFit="cover" data-ai-hint="office building modern" />
                 </div>
-              </Card>
+              </div>
               <Card className="p-8 bg-card shadow-lg rounded-2xl flex items-start gap-6">
                 <div className="bg-primary/10 text-primary p-3 rounded-lg">
                     <Gavel className="w-8 h-8" />
@@ -371,3 +371,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

@@ -1,13 +1,14 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { MessageSquare, Send, Search, Sparkles, X, Bot, User } from 'lucide-react';
+import { Search, Sparkles, X, Bot, User, Send, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { chat, ChatInput } from '@/ai/flows/chatbot-flow';
 
 // Dummy data for search results
 const searchResults = [
@@ -17,23 +18,60 @@ const searchResults = [
     { title: 'Database Putusan KPPU', href: '/penindakan/perkara-persaingan', category: 'Putusan' },
 ];
 
+type Message = {
+    role: 'user' | 'bot';
+    text: string;
+};
+
 export function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState([
+    const [messages, setMessages] = useState<Message[]>([
         { role: 'bot', text: 'Halo! Saya asisten AI dari KPPU. Apa yang bisa saya bantu hari ini terkait persaingan usaha di Indonesia?' }
     ]);
     const [inputValue, setInputValue] = useState('');
     const [isSearching, setIsSearching] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-    const handleSendMessage = () => {
-        if (inputValue.trim()) {
-            setMessages(prev => [...prev, { role: 'user', text: inputValue.trim() }]);
-            // Simulate bot response
-            setTimeout(() => {
-                setMessages(prev => [...prev, { role: 'bot', text: `Menanggapi: "${inputValue.trim()}"... (respons AI akan muncul di sini)` }]);
-            }, 1000);
+    const scrollToBottom = () => {
+        if (scrollAreaRef.current) {
+            scrollAreaRef.current.scrollTo({ top: scrollAreaRef.current.scrollHeight, behavior: 'smooth' });
+        }
+    };
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
+    const handleSendMessage = async () => {
+        if (inputValue.trim() && !isLoading) {
+            const userMessage = inputValue.trim();
+            const newMessages: Message[] = [...messages, { role: 'user', text: userMessage }];
+            setMessages(newMessages);
             setInputValue('');
+            setIsLoading(true);
+
+            // Format history for the AI flow
+            const history = newMessages.slice(0, -1).map(msg => ({
+                role: msg.role === 'bot' ? 'model' : 'user',
+                content: [{ text: msg.text }]
+            }));
+
+            const chatInput: ChatInput = {
+                history: history,
+                message: userMessage,
+            };
+            
+            try {
+                const response = await chat(chatInput);
+                setMessages(prev => [...prev, { role: 'bot', text: response }]);
+            } catch (error) {
+                console.error("Error calling chat flow:", error);
+                setMessages(prev => [...prev, { role: 'bot', text: 'Maaf, terjadi kesalahan. Silakan coba lagi.' }]);
+            } finally {
+                setIsLoading(false);
+            }
         }
     };
 
@@ -130,8 +168,8 @@ export function Chatbot() {
                                     </div>
                                 ) : (
                                     <>
-                                        <ScrollArea className="h-[calc(100%-80px)] p-6">
-                                            <div className="space-y-6 pr-4">
+                                        <ScrollArea className="h-[calc(100%-80px)]" ref={scrollAreaRef}>
+                                            <div className="space-y-6 p-6 pr-8">
                                                 {messages.map((msg, index) => (
                                                     <motion.div
                                                         key={index}
@@ -146,6 +184,18 @@ export function Chatbot() {
                                                         {msg.role === 'user' && <div className="w-8 h-8 rounded-full bg-muted text-muted-foreground flex items-center justify-center flex-shrink-0"><User className="w-5 h-5" /></div>}
                                                     </motion.div>
                                                 ))}
+                                                {isLoading && (
+                                                     <motion.div
+                                                        initial={{ opacity: 0, y: 10 }}
+                                                        animate={{ opacity: 1, y: 0 }}
+                                                        className="flex items-start gap-3"
+                                                    >
+                                                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0"><Bot className="w-5 h-5" /></div>
+                                                        <div className="max-w-md rounded-2xl px-4 py-3 bg-muted rounded-bl-none flex items-center">
+                                                           <Loader2 className="w-5 h-5 text-muted-foreground animate-spin" />
+                                                        </div>
+                                                    </motion.div>
+                                                )}
                                             </div>
                                         </ScrollArea>
                                         <div className="p-6 border-t">
@@ -156,11 +206,13 @@ export function Chatbot() {
                                                     value={inputValue}
                                                     onChange={(e) => setInputValue(e.target.value)}
                                                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                                                    disabled={isLoading}
                                                 />
                                                 <Button
                                                     size="icon"
                                                     className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full w-9 h-9"
                                                     onClick={handleSendMessage}
+                                                    disabled={isLoading}
                                                 >
                                                     <Send className="w-4 h-4" />
                                                 </Button>

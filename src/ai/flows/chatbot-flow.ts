@@ -39,10 +39,10 @@ Do not answer questions outside of this scope. If a user asks something unrelate
 
 Here is the conversation history:
 {{#each history}}
-  {{#if (eq role 'user')}}
-    User: {{content.[0].text}}
+  {{#if (this.role === 'user')}}
+    User: {{this.content.[0].text}}
   {{else}}
-    Assistant: {{content.[0].text}}
+    Assistant: {{this.content.[0].text}}
   {{/if}}
 {{/each}}
 

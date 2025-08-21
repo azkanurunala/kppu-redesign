@@ -123,7 +123,7 @@ export default function Home() {
         <section className="py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Tentang KPPU</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-info font-poppins">Tentang KPPU</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -254,28 +254,29 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <StatCard
-                icon={<GaugeCircle className="w-8 h-8 text-primary-dark" />}
+                icon={<GaugeCircle className="w-8 h-8 text-primary-foreground" />}
                 value="4.92"
                 label="Skor IPU Nasional 2023"
                 description="Tingkat persaingan usaha yang 'Tinggi'."
               />
               <StatCard
-                icon={<FileText className="w-8 h-8 text-primary-dark" />}
+                icon={<FileText className="w-8 h-8 text-primary-foreground" />}
                 value="78"
                 label="Putusan Perkara"
                 description="Jumlah putusan yang dikeluarkan pada tahun 2023."
               />
               <StatCard
-                icon={<Landmark className="w-8 h-8 text-primary-dark" />}
+                icon={<Landmark className="w-8 h-8 text-primary-foreground" />}
                 value="Rp 120 M"
                 label="Total Denda"
                 description="Akumulasi denda yang dikenakan sepanjang tahun 2023."
               />
               <StatCard
-                icon={<Megaphone className="w-8 h-8 text-primary-dark" />}
+                icon={<Megaphone className="w-8 h-8 text-primary-foreground" />}
                 value="152"
                 label="Notifikasi Merger & Akuisisi"
                 description="Jumlah notifikasi yang diterima dan dinilai pada 2023."
+                labelClassName="text-info"
               />
             </div>
           </div>

@@ -327,21 +327,25 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Media & Publikasi</h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">Akses berbagai materi publikasi dan media dari KPPU.</p>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card className="p-4 shadow-lg rounded-2xl overflow-hidden group lg:col-span-2">
-                <div className="relative aspect-video">
-                  <Image src="https://placehold.co/1200x600.png" layout="fill" objectFit="cover" alt="Video Company Profile KPPU" className="rounded-xl" data-ai-hint="people discussing document"/>
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer transition-opacity opacity-0 group-hover:opacity-100">
-                    <Youtube className="w-16 h-16 md:w-20 md:h-20 text-red-600 group-hover:text-red-500 transition-transform group-hover:scale-110" />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <Card className="p-4 shadow-lg rounded-2xl overflow-hidden group h-full">
+                  <div className="relative aspect-video h-full">
+                    <Image src="https://placehold.co/1200x600.png" layout="fill" objectFit="cover" alt="Video Company Profile KPPU" className="rounded-xl" data-ai-hint="people discussing document"/>
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer transition-opacity opacity-0 group-hover:opacity-100">
+                      <Youtube className="w-16 h-16 md:w-20 md:h-20 text-red-600 group-hover:text-red-500 transition-transform group-hover:scale-110" />
+                    </div>
                   </div>
-                </div>
-              </Card>
-              <Card className="p-4 shadow-lg rounded-2xl overflow-hidden">
-                 <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="JDIH KPPU" className="rounded-xl w-full" data-ai-hint="law database mobile"/>
-              </Card>
-              <Card className="p-4 shadow-lg rounded-2xl overflow-hidden">
-                 <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Majalah Kompetisi" className="rounded-xl w-full" data-ai-hint="magazine covers display"/>
-              </Card>
+                </Card>
+              </div>
+              <div className="flex flex-col gap-8">
+                <Card className="p-4 shadow-lg rounded-2xl overflow-hidden">
+                   <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="JDIH KPPU" className="rounded-xl w-full" data-ai-hint="law database mobile"/>
+                </Card>
+                <Card className="p-4 shadow-lg rounded-2xl overflow-hidden">
+                   <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="Majalah Kompetisi" className="rounded-xl w-full" data-ai-hint="magazine covers display"/>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
@@ -371,5 +375,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     

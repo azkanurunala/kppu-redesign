@@ -251,7 +251,7 @@ export default function Home() {
               src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" 
               alt="Business Background Indonesia" 
               fill 
-              className="object-cover opacity-10" 
+              className="object-cover opacity-[0.0125]" 
               data-ai-hint="business meeting indonesia map statistics"
             />
           </div>
@@ -347,7 +347,7 @@ export default function Home() {
               <div className="lg:col-span-2">
                 <Card className="p-4 shadow-lg rounded-2xl overflow-hidden group h-full">
                   <div className="relative aspect-video h-full">
-                    <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600" fill className="object-cover" alt="Video Company Profile KPPU" className="rounded-xl" data-ai-hint="people discussing document"/>
+                    <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600" fill className="object-cover rounded-xl" alt="Video Company Profile KPPU" data-ai-hint="people discussing document"/>
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer transition-opacity opacity-0 group-hover:opacity-100">
                       <Youtube className="w-16 h-16 md:w-20 md:h-20 text-red-600 group-hover:text-red-500 transition-transform group-hover:scale-110" />
                     </div>
@@ -380,7 +380,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="relative h-80 md:h-96 bg-gray-200 dark:bg-gray-800/50 rounded-2xl">
-                <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" alt="Peta Kantor Wilayah KPPU" fill className="object-cover" className="rounded-2xl opacity-20" data-ai-hint="indonesia map" />
+                <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" alt="Peta Kantor Wilayah KPPU" fill className="object-cover rounded-2xl opacity-20" data-ai-hint="indonesia map" />
               </div>
             </div>
           </div>

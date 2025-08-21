@@ -15,24 +15,24 @@ import {
 
 const carouselItems = [
     {
-        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/slider-banner-juanda-36-6-sep-2024.png",
-        imgHint: "modern office building",
-        alt: "Gedung KPPU Juanda 36"
+        imgSrc: "/images/sliders/01.png",
+        imgHint: "PPID information service flow",
+        alt: "Alur Permohonan Informasi Publik di KPPU"
     },
     {
-        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/slider-banner-jdih-7-jun-2023.png",
-        imgHint: "legal document website",
-        alt: "JDIH KPPU"
+        imgSrc: "/images/sliders/02.png",
+        imgHint: "library digital books collection",
+        alt: "Perpustakaan Persaingan Usaha (PERPUS) KPPU"
     },
     {
-        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/sliderwebsitekppu_web-banner-perpustakaan_14092021.png",
-        imgHint: "online library books",
-        alt: "Perpustakaan KPPU"
+        imgSrc: "/images/sliders/03.png",
+        imgHint: "legal document database mobile",
+        alt: "Kumpulan Produk Hukum Persaingan Usaha - JDIH KPPU"
     },
     {
-        imgSrc: "https://kppu.go.id/wp-content/uploads/slider6/sliderwebsitekppu_web-banner-rev-webbanner-ppid_18082020.png",
-        imgHint: "public information service",
-        alt: "PPID KPPU"
+        imgSrc: "/images/sliders/04.png",
+        imgHint: "podcast competition business discussion",
+        alt: "Podcast Juanda 36 - Persaingan Usaha On Point"
     },
 ]
 
@@ -54,13 +54,13 @@ export function HomeCarousel() {
         {carouselItems.map((item, index) => (
           <CarouselItem key={index}>
             <div className="relative aspect-[13/6] w-full overflow-hidden md:rounded-2xl">
-              <Image
+              {/* Menggunakan HTML img standar sebagai alternatif */}
+              <img
                 src={item.imgSrc}
                 alt={item.alt}
-                fill
-                className="object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 data-ai-hint={item.imgHint}
-                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
               />
             </div>
           </CarouselItem>

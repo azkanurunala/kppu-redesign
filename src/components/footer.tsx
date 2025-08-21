@@ -101,7 +101,13 @@ export function Footer() {
         <div className="container mx-auto pt-16 pb-8">
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-            <Logo isFooter={true} />
+            <div className="flex items-center">
+              <img 
+                src="/images/logo.png" 
+                alt="KPPU Logo" 
+                className="h-6 w-auto object-contain" 
+              />
+            </div>
             <div className="relative w-full md:w-auto md:max-w-xs">
               <Input placeholder="Search..." className="bg-gray-700/50 border-gray-600 text-white placeholder:text-gray-400 h-11 pl-10" />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />

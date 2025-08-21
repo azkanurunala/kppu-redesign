@@ -9,6 +9,7 @@ import { Target, CheckCircle, Shield, Rocket, Lightbulb, Users, Handshake, Gem, 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const MisiItems = [
     {
@@ -165,8 +166,8 @@ export default function VisiMisiPage() {
                             <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
                             <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4">Mari Berkolaborasi</h2>
                             <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Bersama-sama kita ciptakan iklim usaha yang adil dan efisien. Hubungi kami untuk informasi lebih lanjut atau untuk menjadi mitra kerja.</p>
-                            <Button size="lg" variant="secondary" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
-                                 Hubungi KPPU <ArrowRight className="w-5 h-5 ml-2"/>
+                            <Button size="lg" asChild className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
+                                 <Link href="/kontak">Hubungi KPPU <ArrowRight className="w-5 h-5 ml-2"/></Link>
                             </Button>
                         </div>
                     </div>

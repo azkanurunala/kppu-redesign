@@ -91,8 +91,8 @@ export function Footer() {
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4">Sinergi untuk Ekonomi Maju</h2>
                   <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
-                  <Button size="lg" variant="secondary" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
-                       Laporkan Sekarang <ArrowRight className="w-5 h-5 ml-2"/>
+                  <Button asChild size="lg" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
+                       <Link href="/kppu-mendengar">Laporkan Sekarang <ArrowRight className="w-5 h-5 ml-2"/></Link>
                   </Button>
               </div>
           </div>

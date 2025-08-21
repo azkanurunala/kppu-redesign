@@ -246,7 +246,12 @@ export default function Home() {
         </section>
 
         {/* Statistics Section */}
-        <section className="py-24 lg:py-32 bg-gradient-to-b from-card to-background">
+        <section 
+          className="relative py-24 lg:py-32 bg-gradient-to-b from-card to-background"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke-width='2' stroke='hsl(var(--border) / 0.1)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")`,
+          }}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Indonesia dalam Angka</h2>
@@ -375,7 +380,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    

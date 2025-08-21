@@ -117,7 +117,7 @@ export default function Home() {
                             </div>
                           ))}
                         </div>
-                        <Button variant="outline" className="mt-auto self-start">Selengkapnya</Button>
+                        <Button variant="outline" className="mt-8 self-start">Selengkapnya</Button>
                     </div>
                 </Card>
 
@@ -137,7 +137,7 @@ export default function Home() {
                             </div>
                           ))}
                         </div>
-                        <Button variant="outline" className="mt-auto self-start">Selengkapnya</Button>
+                        <Button variant="outline" className="mt-8 self-start">Selengkapnya</Button>
                     </div>
                 </Card>
 
@@ -157,7 +157,7 @@ export default function Home() {
                             </div>
                           ))}
                         </div>
-                        <Button variant="outline" className="mt-auto self-start">Selengkapnya</Button>
+                        <Button variant="outline" className="mt-8 self-start">Selengkapnya</Button>
                     </div>
                 </Card>
             </div>

@@ -254,25 +254,25 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <StatCard
-                icon={<GaugeCircle className="w-8 h-8 text-primary" />}
+                icon={<GaugeCircle className="w-8 h-8 text-primary-dark" />}
                 value="4.92"
                 label="Skor IPU Nasional 2023"
                 description="Tingkat persaingan usaha yang 'Tinggi'."
               />
               <StatCard
-                icon={<FileText className="w-8 h-8 text-primary" />}
+                icon={<FileText className="w-8 h-8 text-primary-dark" />}
                 value="78"
                 label="Putusan Perkara"
                 description="Jumlah putusan yang dikeluarkan pada tahun 2023."
               />
               <StatCard
-                icon={<Landmark className="w-8 h-8 text-primary" />}
+                icon={<Landmark className="w-8 h-8 text-primary-dark" />}
                 value="Rp 120 M"
                 label="Total Denda"
                 description="Akumulasi denda yang dikenakan sepanjang tahun 2023."
               />
               <StatCard
-                icon={<Megaphone className="w-8 h-8 text-primary" />}
+                icon={<Megaphone className="w-8 h-8 text-primary-dark" />}
                 value="152"
                 label="Notifikasi Merger & Akuisisi"
                 description="Jumlah notifikasi yang diterima dan dinilai pada 2023."

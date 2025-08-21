@@ -21,7 +21,7 @@ export function StatCard({ icon, value, label, description }: StatCardProps) {
     >
       <Card className="h-full text-center p-8 bg-background/50 dark:bg-card/50 shadow-lg rounded-2xl hover:shadow-xl transition-shadow duration-300">
         <CardContent className="p-0">
-          <div className="mx-auto mb-6 flex items-center justify-center h-20 w-20 rounded-full bg-gold/10">
+          <div className="mx-auto mb-6 flex items-center justify-center h-20 w-20 rounded-full bg-gold">
             {icon}
           </div>
           <p className="text-5xl font-bold text-primary font-poppins">{value}</p>

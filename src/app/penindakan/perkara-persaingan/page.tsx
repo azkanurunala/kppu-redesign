@@ -7,7 +7,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Download, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, ChevronDown } from 'lucide-react';
+import { Search, Download, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, ChevronDown, ArrowRight, Handshake } from 'lucide-react';
+import Image from 'next/image';
 
 const decisions = [
     { no: 1, decisionNumber: "19/KPPU-M/2024", about: "DUGAAN PELANGGARAN TERKAIT KETERLAMBATAN PEMBERITAHUAN PENGAMBILALIHAN SAHAM EMERALD GRAIN PTY., LTD., (SEKARANG BERNAMA LOUIS DREYFUS COMPANY EMERALD AUSTRALIA PTY., LTD.) OLEH LOUIS DREYFUS COMPANY MELBOURNE HOLDINGS PTY., LTD.", date: "11 Agustus 2025" },
@@ -107,6 +108,22 @@ export default function PutusanPage() {
                 </div>
             </div>
         </div>
+
+        <section className="py-20 lg:py-24 bg-card">
+            <div className="container mx-auto px-4">
+                <div className="relative rounded-2xl overflow-hidden p-12 md:p-20 text-center text-white bg-primary-dark flex flex-col items-center justify-center">
+                    <Image src="https://placehold.co/1200x400.png" alt="Call to Action" layout="fill" objectFit="cover" className="opacity-20" data-ai-hint="legal justice gavel" />
+                    <div className="relative z-10">
+                        <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
+                        <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4">Laporkan Dugaan Pelanggaran</h2>
+                        <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Jika Anda memiliki informasi mengenai praktik monopoli atau persaingan usaha tidak sehat, laporkan kepada kami. Kerahasiaan Anda terjamin.</p>
+                        <Button size="lg" variant="secondary" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
+                             Buat Laporan <ArrowRight className="w-5 h-5 ml-2"/>
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </section>
       </main>
       
       <Footer />

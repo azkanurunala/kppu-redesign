@@ -5,9 +5,10 @@ import React from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { AnimatedCard } from '@/components/animated-card';
-import { Target, CheckCircle, Shield, Rocket, Lightbulb, Users, Handshake, Gem } from 'lucide-react';
+import { Target, CheckCircle, Shield, Rocket, Lightbulb, Users, Handshake, Gem, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
 
 const MisiItems = [
     {
@@ -156,10 +157,24 @@ export default function VisiMisiPage() {
                         </div>
                     </div>
                 </section>
+
+                 <section className="py-20 lg:py-24 bg-background">
+                    <div className="container mx-auto px-4">
+                        <div className="relative rounded-2xl overflow-hidden p-12 md:p-20 text-center text-white bg-primary-dark flex flex-col items-center justify-center">
+                            <Image src="https://placehold.co/1200x400.png" alt="Call to Action" layout="fill" objectFit="cover" className="opacity-20" data-ai-hint="teamwork collaboration" />
+                            <div className="relative z-10">
+                                <Handshake className="w-16 h-16 mx-auto mb-6 text-gold"/>
+                                <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4">Mari Berkolaborasi</h2>
+                                <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8">Bersama-sama kita ciptakan iklim usaha yang adil dan efisien. Hubungi kami untuk informasi lebih lanjut atau untuk menjadi mitra kerja.</p>
+                                <Button size="lg" variant="secondary" className="bg-gold text-primary-dark font-bold hover:bg-gold/90 rounded-full px-10 text-base">
+                                     Hubungi KPPU <ArrowRight className="w-5 h-5 ml-2"/>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </div>
     );
 }
-
-    

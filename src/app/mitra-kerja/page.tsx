@@ -57,7 +57,7 @@ export default function MitraKerjaPage() {
       <Header />
       <main className="flex-1">
         <section
-          className="bg-primary-dark text-white py-20"
+          className="bg-primary-dark text-white py-20 relative overflow-hidden"
         >
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -120,4 +120,5 @@ export default function MitraKerjaPage() {
     </div>
   );
 }
+
 

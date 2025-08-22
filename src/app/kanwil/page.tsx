@@ -98,7 +98,7 @@ export default function KanwilPage() {
             <main className="flex-1">
                 <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
                     <div className="absolute inset-0">
-                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-[0.0375]" data-ai-hint="indonesia map background" />
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
                     </div>
                     <div className="container mx-auto relative z-10">
                         <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Kantor Wilayah</h1>
@@ -178,7 +178,6 @@ export default function KanwilPage() {
                             ))}
                         </motion.div>
                     </div>
-                </div>
                 </section>
             </main>
             <Footer />

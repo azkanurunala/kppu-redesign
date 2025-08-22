@@ -81,11 +81,11 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-primary-dark text-white pt-24 pb-32 md:pt-32 md:pb-48 text-center overflow-hidden">
-            <div className="absolute inset-0 bg-black/30">
-                 <Image src="/images/bg/map-bw.png" alt="Hero Background" fill className="object-cover" data-ai-hint="indonesia map background" />
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+            <div className="absolute inset-0">
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
-            <div className="container mx-auto relative">
+            <div className="container mx-auto relative z-10 text-center">
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ export default function Home() {
                 >
                     <div className="relative group">
                         <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur-sm group-hover:blur-none transition-all duration-300"></div>
-                        <div className="relative bg-white/95 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden">
+                        <div className="relative bg-white/95 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden" style={{ marginBottom: '88px' }}>
                             <div className="flex items-center">
                                 <div className="pl-6 pr-4 py-5 flex-shrink-0">
                                     <Search className="w-6 h-6 text-gray-400 group-hover:text-[#421BBC] transition-colors duration-300" />
@@ -135,8 +135,8 @@ export default function Home() {
           </div>
         </section>
         
-                          {/* Main Services Section */}
-         <section className="py-4 lg:py-4 bg-[#421BBC]">
+        {/* Main Services Section */}
+        <section className="py-4 lg:py-4 bg-[#421BBC]">
            <div className="container mx-auto">
              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
                {/* Regulasi */}

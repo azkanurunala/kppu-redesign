@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import { Header } from '@/components/header';
@@ -42,23 +42,21 @@ export default function AdvokasiPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section className="relative py-32 lg:py-40 text-white bg-primary-dark">
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-            <div className="container mx-auto relative text-center">
-                <motion.h1 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-4xl md:text-5xl lg:text-7xl font-bold font-poppins">Advokasi Kebijakan</motion.h1>
-                <motion.p 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                    Mendorong kebijakan pemerintah yang pro-persaingan untuk ekonomi Indonesia yang lebih baik.
-                </motion.p>
-            </div>
-        </section>
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+                    <div className="absolute inset-0">
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                    </div>
+                    <div className="container mx-auto relative z-10">
+                        <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Advokasi Kebijakan</h1>
+                        <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+                            <a className="hover:underline" href="/">Beranda</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-4 w-4">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                            <span>Advokasi</span>
+                        </div>
+                    </div>
+                </section>
 
         <section className="py-20 lg:py-24">
             <div className="container mx-auto">
@@ -188,3 +186,4 @@ export default function AdvokasiPage() {
     </div>
   );
 }
+

@@ -52,15 +52,8 @@ export default function TugasWewenangPage() {
       <Header />
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 opacity-10">
-                <Image 
-                    src="/images/bg/map-bw.png"
-                    alt="Peta Indonesia Background"
-                    fill
-                    className="object-cover"
-                    data-ai-hint="business law legal documents"
-                />
+            <div className="absolute inset-0">
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Tugas & Wewenang</h1>
@@ -70,7 +63,7 @@ export default function TugasWewenangPage() {
                     <span>Tugas & Wewenang</span>
                 </div>
             </div>
-        </section>
+                </section>
 
         <section className="py-20 lg:py-24">
             <div className="container mx-auto">
@@ -138,4 +131,5 @@ export default function TugasWewenangPage() {
     </div>
   );
 }
+
 

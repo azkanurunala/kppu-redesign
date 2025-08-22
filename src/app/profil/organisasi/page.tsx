@@ -32,10 +32,10 @@ export default function OrganisasiPage() {
             <Header />
             <main className="flex-1">
                 <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
-            <div className="absolute inset-0">
-                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
-            </div>
-            <div className="container mx-auto relative z-10">
+                    <div className="absolute inset-0">
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                    </div>
+                    <div className="container mx-auto relative z-10">
                         <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Struktur Organisasi</h1>
                         <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
                             <Link href="/" className="hover:underline">Beranda</Link>
@@ -56,15 +56,15 @@ export default function OrganisasiPage() {
                         
                         <div className="mb-16">
                              <Card className="shadow-2xl rounded-3xl bg-card border-0">
-                                 <CardContent className="p-10 md:p-16 flex flex-col md:flex-row items-center gap-12">
-                                     <div className="relative h-96 w-full md:w-1/2 rounded-2xl overflow-hidden">
-                                        <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=800&h=600" fill className="object-cover" alt="Bagan Organisasi KPPU" data-ai-hint="organization chart flowchart" />
-                                     </div>
-                                     <div className="md:w-1/2">
-                                         <h3 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Bagan Organisasi</h3>
-                                         <p className="text-lg text-muted-foreground leading-relaxed">
-                                             Bagan ini menggambarkan hierarki dan hubungan kerja antar unit di lingkungan Komisi Pengawas Persaingan Usaha. Struktur ini memastikan alur koordinasi yang jelas dari Pimpinan Komisi hingga ke unit-unit pelaksana teknis di bawahnya, termasuk kesekretariatan jenderal dan para deputi.
+                                 <CardContent className="p-10 md:p-16">
+                                     <div className="text-center mb-8">
+                                         <h3 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Struktur Organisasi KPPU</h3>
+                                         <p className="text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+                                             Struktur organisasi KPPU yang menggambarkan hierarki dan hubungan kerja antar unit di lingkungan Komisi Pengawas Persaingan Usaha. Struktur ini memastikan alur koordinasi yang jelas dari Pimpinan Komisi hingga ke unit-unit pelaksana teknis di bawahnya, termasuk kesekretariatan jenderal dan para deputi.
                                          </p>
+                                     </div>
+                                     <div className="relative w-full rounded-2xl overflow-hidden bg-white">
+                                        <img src="/images/bg/organisasi.jpg" alt="Struktur Organisasi KPPU" className="w-full h-auto object-contain" data-ai-hint="organization chart flowchart" />
                                      </div>
                                  </CardContent>
                              </Card>

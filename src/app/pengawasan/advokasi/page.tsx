@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import { Header } from '@/components/header';
@@ -42,9 +42,13 @@ export default function AdvokasiPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section className="relative py-32 lg:py-40 text-white bg-primary-dark">
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-            <div className="container mx-auto relative text-center">
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+            <div className="absolute inset-0">
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+            </div>
+            <div className="container mx-auto relative z-10">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
+                <div className="container mx-auto relative text-center">
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -58,7 +62,8 @@ export default function AdvokasiPage() {
                     Mendorong kebijakan pemerintah yang pro-persaingan untuk ekonomi Indonesia yang lebih baik.
                 </motion.p>
             </div>
-        </section>
+                    </div>
+                </section>
 
         <section className="py-20 lg:py-24">
             <div className="container mx-auto">
@@ -188,3 +193,4 @@ export default function AdvokasiPage() {
     </div>
   );
 }
+

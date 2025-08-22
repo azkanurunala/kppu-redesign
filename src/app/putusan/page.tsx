@@ -7,7 +7,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Download, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, ChevronDown } from 'lucide-react';
+import { Search, Download, ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight, ChevronDown, ChevronRight as ChevronRightIcon } from 'lucide-react';
+import Link from 'next/link';
 
 const decisions = [
     { no: 1, decisionNumber: "19/KPPU-M/2024", about: "DUGAAN PELANGGARAN TERKAIT KETERLAMBATAN PEMBERITAHUAN PENGAMBILALIHAN SAHAM EMERALD GRAIN PTY., LTD., (SEKARANG BERNAMA LOUIS DREYFUS COMPANY EMERALD AUSTRALIA PTY., LTD.) OLEH LOUIS DREYFUS COMPANY MELBOURNE HOLDINGS PTY., LTD.", date: "11 Agustus 2025" },
@@ -23,19 +24,22 @@ const decisions = [
 ];
 
 export default function PutusanPage() {
-    const pathname = usePathname();
-    const headerImage = getHeaderImageForPage(pathname);
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-20 text-center relative overflow-hidden">
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
                 <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Database Putusan KPPU</h1>
+                <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+                    <Link href="/" className="hover:underline">Beranda</Link>
+                    <ChevronRightIcon className="h-4 w-4" />
+                    <span>Database Putusan</span>
+                </div>
                 <p className="mt-4 text-lg text-primary-foreground/80 max-w-3xl mx-auto">
                   Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha secara transparan dan mudah diakses.
                 </p>
@@ -118,4 +122,5 @@ export default function PutusanPage() {
     </div>
   );
 }
+
 

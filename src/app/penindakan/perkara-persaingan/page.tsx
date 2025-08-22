@@ -29,7 +29,11 @@ export default function PutusanPage() {
       <Header />
       
       <main className="flex-1">
-        <section className="bg-primary-dark text-white py-20 text-center relative overflow-hidden">
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden relative overflow-hidden">
+                    <div className="absolute inset-0">
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                    </div>
+                    <div className="container mx-auto relative z-10 text-center">
             <div className="absolute inset-0">
                 <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
@@ -39,7 +43,8 @@ export default function PutusanPage() {
                   Temukan semua putusan yang telah dikeluarkan oleh Komisi Pengawas Persaingan Usaha secara transparan dan mudah diakses.
                 </p>
             </div>
-        </section>
+                    </div>
+                </section>
       
         <div className="container mx-auto py-16 lg:py-24">
             <Card className="mb-8 p-6 bg-card border shadow-lg">
@@ -118,4 +123,5 @@ export default function PutusanPage() {
     </div>
   );
 }
+
 

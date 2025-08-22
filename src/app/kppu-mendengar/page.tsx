@@ -25,21 +25,18 @@ export default function KppuMendengarPage() {
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
       <Header />
       <main className="flex-1">
-        <section
-          className="bg-primary-dark text-white py-20"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="container mx-auto">
-            <h1 className="text-4xl lg:text-6xl font-bold font-poppins">KPPU Mendengar</h1>
-             <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
-                <Link href="/" className="hover:underline">Beranda</Link>
-                <ChevronRight className="h-4 w-4" />
-                <span>KPPU Mendengar</span>
+        <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+            <div className="absolute inset-0">
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
-          </motion.div>
+            <div className="container mx-auto relative z-10">
+                <h1 className="text-4xl lg:text-6xl font-bold font-poppins">KPPU Mendengar</h1>
+                <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+                    <Link href="/" className="hover:underline">Beranda</Link>
+                    <ChevronRight className="h-4 w-4" />
+                    <span>KPPU Mendengar</span>
+                </div>
+            </div>
         </section>
 
         <section className="py-20 lg:py-24">
@@ -81,7 +78,7 @@ export default function KppuMendengarPage() {
                                                     <SelectItem value="pangan">Pangan</SelectItem>
                                                     <SelectItem value="energi">Energi</SelectItem>
                                                     <SelectItem value="logistik">Logistik</SelectItem>
-                                                    <SelectItem value="konstruksi">Konstruksi</emode></SelectItem>
+                                                    <SelectItem value="konstruksi">Konstruksi</SelectItem>
                                                     <SelectItem value="lainnya">Lainnya</SelectItem>
                                                 </SelectContent>
                                              </Select>
@@ -158,5 +155,6 @@ export default function KppuMendengarPage() {
     </div>
   );
 }
+
 
 

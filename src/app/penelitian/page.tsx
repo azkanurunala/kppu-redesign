@@ -68,7 +68,7 @@ export default function PenelitianPage() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-primary-dark text-white py-20"
+          className="bg-primary-dark text-white py-20 relative overflow-hidden"
         >
           <div className="container mx-auto">
             <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Penelitian KPPU</h1>
@@ -179,4 +179,5 @@ export default function PenelitianPage() {
     </div>
   );
 }
+
 

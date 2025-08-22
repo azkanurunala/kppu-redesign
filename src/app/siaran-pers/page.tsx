@@ -1,4 +1,6 @@
 ﻿
+'use client';
+
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -45,7 +47,7 @@ export default function SiaranPersPage() {
                     <span>Siaran Pers</span>
                 </div>
             </div>
-        </section>
+                </section>
 
         <section className="py-20 lg:py-24">
             <div className="container mx-auto">
@@ -139,4 +141,5 @@ export default function SiaranPersPage() {
     </div>
   );
 }
+
 

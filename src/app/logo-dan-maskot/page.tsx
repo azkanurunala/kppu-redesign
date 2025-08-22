@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -7,8 +7,9 @@ import { motion } from 'framer-motion';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Eye, Palette, Scale } from 'lucide-react';
+import { Download, Eye, Palette, Scale, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,20 +39,18 @@ export default function LogoMaskotPage() {
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
             <Header />
             <main className="flex-1">
-                <section
-                    className="relative py-32 lg:py-40 text-white bg-primary-dark"
-                >
-                    <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-5"></div>
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="container mx-auto relative text-center">
-                        <h1 className="text-5xl md:text-7xl font-bold font-poppins">Logo & Maskot</h1>
-                        <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                            Identitas visual yang merepresentasikan semangat dan nilai-nilai KPPU.
-                        </p>
-                    </motion.div>
+                <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+                    <div className="absolute inset-0">
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                    </div>
+                    <div className="container mx-auto relative z-10">
+                        <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Logo & Maskot</h1>
+                        <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+                            <Link href="/" className="hover:underline">Beranda</Link>
+                            <ChevronRight className="h-4 w-4" />
+                            <span>Logo & Maskot</span>
+                        </div>
+                    </div>
                 </section>
 
                 <section className="py-24 lg:py-32">
@@ -166,4 +165,5 @@ export default function LogoMaskotPage() {
         </div>
     );
 }
+
 

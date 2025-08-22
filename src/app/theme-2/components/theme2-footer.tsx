@@ -84,19 +84,19 @@ export function Theme2Footer() {
   return (
     <>
       <section>
-          <div className="relative py-24 md:py-32 text-center bg-[#1B425F]">
+          <div className="relative py-24 md:py-32 text-center bg-[#006666]">
               <img src="/images/bg/map-bw-tq.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-onest mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>
                   <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8 font-onest">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
-                  <Button asChild size="lg" className="bg-white text-[#1B425F] font-bold hover:bg-white/90 rounded-full px-10 text-base font-onest">
+                  <Button asChild size="lg" className="bg-white text-[#006666] font-bold hover:bg-white/90 rounded-full px-10 text-base font-onest">
                        <Link href="/theme-2/kppu-mendengar">Laporkan Sekarang <ArrowRight className="w-5 h-5 ml-2"/></Link>
                   </Button>
               </div>
           </div>
       </section>
-      <footer className="bg-[#1B425F] text-gray-300">
+      <footer className="bg-[#006666] text-gray-300">
         <div className="container mx-auto pt-16 pb-8">
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">

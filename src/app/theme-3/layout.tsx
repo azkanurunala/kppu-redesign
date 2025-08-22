@@ -28,7 +28,7 @@ export default function Theme3Layout({
       <body className={`${inter.variable} font-inter antialiased`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >

@@ -10,7 +10,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 262 83% 58%; /* #7C3AED - Purple */
+    --primary: 262 83% 35%; /* #5B21B6 - Darker Purple */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222.2 84% 4.9%;
@@ -22,13 +22,13 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 262 83% 58%;
+    --ring: 262 83% 35%;
     --radius: 0.5rem;
-    --chart-1: 262 83% 58%;
-    --chart-2: 262 83% 65%;
-    --chart-3: 262 83% 72%;
-    --chart-4: 262 83% 79%;
-    --chart-5: 262 83% 86%;
+    --chart-1: 262 83% 35%;
+    --chart-2: 262 83% 42%;
+    --chart-3: 262 83% 49%;
+    --chart-4: 262 83% 56%;
+    --chart-5: 262 83% 63%;
   }
 
   .dark {
@@ -38,7 +38,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 262 83% 58%; /* #7C3AED - Purple */
+    --primary: 262 83% 35%; /* #5B21B6 - Darker Purple */
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -50,12 +50,12 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 262 83% 58%;
-    --chart-1: 262 83% 58%;
-    --chart-2: 262 83% 65%;
-    --chart-3: 262 83% 72%;
-    --chart-4: 262 83% 79%;
-    --chart-5: 262 83% 86%;
+    --ring: 262 83% 35%;
+    --chart-1: 262 83% 35%;
+    --chart-2: 262 83% 42%;
+    --chart-3: 262 83% 49%;
+    --chart-4: 262 83% 56%;
+    --chart-5: 262 83% 63%;
   }
 }
 
@@ -79,34 +79,43 @@
   }
 
   .bg-gradient-purple {
-    background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+    background: linear-gradient(135deg, #5B21B6 0%, #7C3AED 100%);
   }
 
   .bg-gradient-purple-light {
-    background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);
+    background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
   }
 
   .text-purple {
-    color: #7C3AED;
+    color: #5B21B6;
   }
 
   .bg-purple {
-    background-color: #7C3AED;
+    background-color: #5B21B6;
   }
 
   .border-purple {
-    border-color: #7C3AED;
+    border-color: #5B21B6;
   }
 
   .hover\:bg-purple:hover {
-    background-color: #7C3AED;
+    background-color: #5B21B6;
   }
 
   .hover\:text-purple:hover {
-    color: #7C3AED;
+    color: #5B21B6;
   }
 
   .focus\:ring-purple:focus {
-    --tw-ring-color: #7C3AED;
+    --tw-ring-color: #5B21B6;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -84,19 +84,19 @@ export function Theme3Footer() {
   return (
     <>
       <section>
-          <div className="relative py-24 md:py-32 text-center bg-[#7C3AED]">
-              <img src="/images/bg/map-bw-tq.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                     <div className="relative py-24 md:py-32 text-center bg-[#5B21B6]">
+              <img src="/images/bg/map-bw-pp.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>
                   <p className="max-w-2xl mx-auto text-lg text-gray-300 mb-8 font-inter">Punya informasi atau keluhan terkait persaingan usaha? Sampaikan kepada kami. Partisipasi Anda penting untuk ekonomi Indonesia yang lebih adil.</p>
-                  <Button asChild size="lg" className="bg-white text-[#7C3AED] font-bold hover:bg-white/90 rounded-full px-10 text-base font-inter">
+                                     <Button asChild size="lg" className="bg-white text-[#5B21B6] font-bold hover:bg-white/90 rounded-full px-10 text-base font-inter">
                        <Link href="/theme-3/kppu-mendengar">Laporkan Sekarang <ArrowRight className="w-5 h-5 ml-2"/></Link>
                   </Button>
               </div>
           </div>
       </section>
-      <footer className="bg-[#4C1D95] text-gray-300">
+             <footer className="bg-[#3C1A5F] text-gray-300">
         <div className="container mx-auto pt-16 pb-8">
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">

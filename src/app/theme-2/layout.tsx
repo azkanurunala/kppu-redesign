@@ -28,7 +28,7 @@ export default function Theme2Layout({
       <body className={`${onest.variable} font-onest antialiased`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >

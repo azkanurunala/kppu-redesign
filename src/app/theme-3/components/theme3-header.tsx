@@ -106,8 +106,8 @@ export function Theme3Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className={cn(
-                    "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
-                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#7C3AED]"
+                                         "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
+                      isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#5B21B6]"
                   )}>
                     {item.label} <ChevronDown className="h-4 w-4" />
                   </Button>
@@ -122,8 +122,8 @@ export function Theme3Header() {
             </DropdownMenu>
           ) : (
              <Button variant="ghost" asChild className={cn(
-                "text-sm font-semibold w-full justify-start lg:justify-center",
-                 isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#7C3AED]"
+                                 "text-sm font-semibold w-full justify-start lg:justify-center",
+                  isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#5B21B6]"
             )}>
               <Link href={item.href}>{item.label}</Link>
             </Button>
@@ -136,8 +136,8 @@ export function Theme3Header() {
   return (
     <>
       <header className={cn(
-        "sticky top-0 z-50 w-full transition-colors duration-300",
-        isScrolled ? "bg-[#7C3AED] shadow-md backdrop-blur-lg" : "bg-[#7C3AED]"
+                 "sticky top-0 z-50 w-full transition-colors duration-300",
+         isScrolled ? "bg-[#5B21B6] shadow-md backdrop-blur-lg" : "bg-[#5B21B6]"
       )}>
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/theme-3" className="flex items-center gap-2">

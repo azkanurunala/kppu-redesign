@@ -109,7 +109,6 @@ export default function Home() {
                     className="mt-10 max-w-2xl mx-auto"
                 >
                     <div className="relative group">
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur-sm group-hover:blur-none transition-all duration-300"></div>
                         <div className="relative bg-white/95 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden" style={{ marginBottom: '88px' }}>
                             <div className="flex items-center">
                                 <div className="pl-6 pr-4 py-5 flex-shrink-0">

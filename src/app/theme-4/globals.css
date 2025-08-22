@@ -10,7 +10,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 168 100% 33%; /* #00AA88 */
+    --primary: 240 100% 35%; /* #421BBC - Blue kombinasi Theme 1 & 2 */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222.2 84% 4.9%;
@@ -22,13 +22,13 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 168 100% 33%;
+    --ring: 240 100% 35%;
     --radius: 0.5rem;
-    --chart-1: 168 100% 33%;
-    --chart-2: 168 100% 40%;
-    --chart-3: 168 100% 47%;
-    --chart-4: 168 100% 54%;
-    --chart-5: 168 100% 61%;
+    --chart-1: 240 100% 35%;
+    --chart-2: 240 100% 42%;
+    --chart-3: 240 100% 49%;
+    --chart-4: 240 100% 56%;
+    --chart-5: 240 100% 63%;
   }
 
   .dark {
@@ -38,7 +38,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 168 100% 33%; /* #00AA88 */
+    --primary: 240 100% 35%; /* #421BBC - Blue kombinasi Theme 1 & 2 */
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -50,12 +50,12 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 168 100% 33%;
-    --chart-1: 168 100% 33%;
-    --chart-2: 168 100% 40%;
-    --chart-3: 168 100% 47%;
-    --chart-4: 168 100% 54%;
-    --chart-5: 168 100% 61%;
+    --ring: 240 100% 35%;
+    --chart-1: 240 100% 35%;
+    --chart-2: 240 100% 42%;
+    --chart-3: 240 100% 49%;
+    --chart-4: 240 100% 56%;
+    --chart-5: 240 100% 63%;
   }
 }
 
@@ -65,49 +65,61 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-onest), system-ui, sans-serif;
+    font-family: var(--font-poppins), system-ui, sans-serif;
   }
 }
 
 @layer utilities {
+  .font-poppins {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+
   .font-onest {
     font-family: var(--font-onest), system-ui, sans-serif;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
-  
-  .bg-gradient-turquoise {
-    background: linear-gradient(135deg, #00AA88 0%, #00D4AA 100%);
+
+  .bg-gradient-blue {
+    background: linear-gradient(135deg, #421BBC 0%, #6366F1 100%);
+  }
+
+  .bg-gradient-blue-light {
+    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  }
+
+  .text-blue {
+    color: #421BBC;
+  }
+
+  .bg-blue {
+    background-color: #421BBC;
+  }
+
+  .border-blue {
+    border-color: #421BBC;
+  }
+
+  .hover\:bg-blue:hover {
+    background-color: #421BBC;
+  }
+
+  .hover\:text-blue:hover {
+    color: #421BBC;
+  }
+
+  .focus\:ring-blue:focus {
+    --tw-ring-color: #421BBC;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   
-  .bg-gradient-turquoise-light {
-    background: linear-gradient(135deg, #00D4AA 0%, #00E6B8 100%);
-  }
-  
-  .text-turquoise {
-    color: #00AA88;
-  }
-  
-  .bg-turquoise {
-    background-color: #00AA88;
-  }
-  
-  .border-turquoise {
-    border-color: #00AA88;
-  }
-  
-  .hover\:bg-turquoise:hover {
-    background-color: #00AA88;
-  }
-  
-  .hover\:text-turquoise:hover {
-    color: #00AA88;
-  }
-  
-  .focus\:ring-turquoise:focus {
-    --tw-ring-color: #00AA88;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
-

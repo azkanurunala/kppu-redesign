@@ -1,0 +1,187 @@
+﻿
+'use client';
+
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MapPin, Mail, Phone, Twitter, Instagram, Facebook, Globe } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
+import { getHeaderImageForPage } from '@/lib/kppu-pexels-images';
+
+const regionalOffices = [
+  {
+    name: 'Kantor Wilayah I',
+    coverage: 'Sumatera',
+    address: 'Jl. Gatot Subroto No. 123, Medan, Sumatera Utara',
+    email: 'kanwil1@kppu.go.id',
+    phone: '(061) 123-4567',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+  {
+    name: 'Kantor Wilayah II',
+    coverage: 'Lampung, Banten, DKI Jakarta, Jawa Barat',
+    address: 'Jl. Ir. H. Juanda No. 36, Jakarta Pusat',
+    email: 'kanwil2@kppu.go.id',
+    phone: '(021) 789-1011',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+  {
+    name: 'Kantor Wilayah III',
+    coverage: 'Jawa Tengah & DI Yogyakarta',
+    address: 'Jl. Pahlawan No. 8, Semarang, Jawa Tengah',
+    email: 'kanwil3@kppu.go.id',
+    phone: '(024) 234-5678',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+    {
+    name: 'Kantor Wilayah IV',
+    coverage: 'Jawa Timur, Bali, NTB, NTT',
+    address: 'Jl. Basuki Rahmat No. 10, Surabaya, Jawa Timur',
+    email: 'kanwil4@kppu.go.id',
+    phone: '(031) 345-6789',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+    {
+    name: 'Kantor Wilayah V',
+    coverage: 'Kalimantan',
+    address: 'Jl. Jend. Sudirman No. 5, Balikpapan, Kalimantan Timur',
+    email: 'kanwil5@kppu.go.id',
+    phone: '(0542) 456-7890',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+  {
+    name: 'Kantor Wilayah VI',
+    coverage: 'Sulawesi, Maluku, Papua',
+    address: 'Jl. Urip Sumoharjo No. 45, Makassar, Sulawesi Selatan',
+    email: 'kanwil6@kppu.go.id',
+    phone: '(0411) 567-8901',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+   {
+    name: 'Kantor Wilayah VII',
+    coverage: 'TBD',
+    address: 'TBD',
+    email: 'kanwil7@kppu.go.id',
+    phone: 'TBD',
+    socials: { twitter: '#', instagram: '#', facebook: '#' },
+  },
+];
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1
+    }
+};
+
+export default function KanwilPage() {
+    const pathname = usePathname();
+    const headerImage = getHeaderImageForPage(pathname);
+    return (
+        <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+            <Header />
+            <main className="flex-1">
+                <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+                    <div className="absolute inset-0">
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                    </div>
+                    <div className="container mx-auto relative z-10">
+                        <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Kantor Wilayah</h1>
+                        <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
+                            <a className="hover:underline" href="/">Beranda</a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-4 w-4">
+                                <path d="m9 18 6-6-6-6"></path>
+                            </svg>
+                            <span>Kantor Wilayah</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="py-24 lg:py-32 relative overflow-hidden">
+                    {/* Background Image */}
+                    <div className="absolute inset-0 opacity-5">
+                        <Image
+                            src="/images/bg/map.png"
+                            alt="Peta Indonesia Background"
+                            fill
+                            className="object-cover"
+                            data-ai-hint="indonesia map background"
+                        />
+                    </div>
+                    <div className="container mx-auto relative z-10">
+                        <div className="text-center mb-16 md:mb-20 max-w-4xl mx-auto">
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Jangkauan Nasional</h2>
+                            <p className="text-4xl md:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Hadir Lebih Dekat</p>
+                             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                                Untuk meningkatkan efektivitas pengawasan, KPPU memiliki 7 Kantor Wilayah (Kanwil) yang tersebar di seluruh Indonesia. Setiap kanwil bertanggung jawab untuk melakukan pengawasan dan penegakan hukum persaingan usaha di wilayah kerjanya masing-masing.
+                            </p>
+                        </div>
+
+                        <motion.div
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.1 }}
+                        >
+                            {regionalOffices.map((office) => (
+                                <motion.div key={office.name} variants={itemVariants}>
+                                    <Card className="h-full bg-card shadow-lg rounded-2xl flex flex-col border-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                                        <CardHeader className="bg-primary/5 dark:bg-primary/10">
+                                            <CardTitle className="font-poppins text-primary-dark dark:text-white text-2xl">{office.name}</CardTitle>
+                                            <p className="text-primary font-semibold">{office.coverage}</p>
+                                        </CardHeader>
+                                        <CardContent className="p-6 flex flex-col flex-grow">
+                                            <ul className="space-y-4 text-muted-foreground flex-grow">
+                                                <li className="flex items-start gap-4">
+                                                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                                                    <span>{office.address}</span>
+                                                </li>
+                                                <li className="flex items-start gap-4">
+                                                    <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                                                    <span>{office.email}</span>
+                                                </li>
+                                                <li className="flex items-start gap-4">
+                                                    <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                                                    <span>{office.phone}</span>
+                                                </li>
+                                            </ul>
+                                            <div className="border-t border-border/50 mt-6 pt-6 flex justify-between items-center">
+                                                <div className="flex space-x-3">
+                                                    <a href={office.socials.twitter} className="text-muted-foreground hover:text-primary"><Twitter className="w-5 h-5" /></a>
+                                                    <a href={office.socials.instagram} className="text-muted-foreground hover:text-primary"><Instagram className="w-5 h-5" /></a>
+                                                    <a href={office.socials.facebook} className="text-muted-foreground hover:text-primary"><Facebook className="w-5 h-5" /></a>
+                                                </div>
+                                                <Button variant="outline" size="sm">
+                                                    <Globe className="w-4 h-4 mr-2" />
+                                                    Kunjungi Laman
+                                                </Button>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
+                </section>
+            </main>
+            <Footer />
+        </div>
+    );
+}
+

@@ -1,6 +1,6 @@
-﻿
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+
+
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download, ChevronRight, Gavel, Newspaper, MessageSquareQuote, Info, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -38,7 +38,7 @@ const sidebarNavItems = [
 export default function PeraturanKomisiPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <Header />
+
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
@@ -100,7 +100,7 @@ export default function PeraturanKomisiPage() {
             </div>
         </section>
       </main>
-      <Footer />
+
     </div>
   );
 }

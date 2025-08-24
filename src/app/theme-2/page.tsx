@@ -231,113 +231,165 @@ export default function Theme2HomePage() {
             </div>
             
             {/* News Grid Layout */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Featured News - Large Card */}
-                <div className="lg:col-span-2">
-                  <Card className="overflow-hidden bg-background shadow-xl rounded-2xl h-full">
-                    <div className="relative aspect-[16/9]">
-                      <Image 
-                        src={highlightNews.imgSrc} 
-                        alt={highlightNews.title} 
-                        fill 
-                        className="object-cover" 
-                        data-ai-hint={highlightNews.imgHint} 
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute top-4 left-4">
-                        <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">FEATURED</span>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-6">
-                        <div className="mb-2">
-                          <span className="text-xs text-white/80">{highlightNews.source} • {highlightNews.date}</span>
-                        </div>
-                        <h3 className="text-2xl lg:text-3xl font-bold font-onest text-white mb-3 leading-tight">
-                          {highlightNews.title}
-                        </h3>
-                        <p className="text-sm text-white/80 mb-4 leading-relaxed">
-                          {highlightNews.subtitle}
-                        </p>
-                        <div className="flex gap-3">
-                          <Button asChild size="default" className="bg-[#00AA88] text-white hover:bg-[#00AA88]/90">
-                            <Link href={highlightNews.href}>Baca Selengkapnya</Link>
-                          </Button>
-                          <Button variant="outline" size="default" className="text-white border-white/20 hover:bg-white/10">
-                            Bagikan
-                          </Button>
-                        </div>
-                      </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Featured News */}
+                <Card className="overflow-hidden bg-background shadow-xl rounded-2xl h-full">
+                  <div className="relative aspect-[4/3]">
+                    <Image 
+                      src={highlightNews.imgSrc} 
+                      alt={highlightNews.title} 
+                      fill 
+                      className="object-cover" 
+                      data-ai-hint={highlightNews.imgHint} 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">FEATURED</span>
                     </div>
-                  </Card>
-                </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <div className="mb-2">
+                        <span className="text-xs text-white/80">{highlightNews.source} • {highlightNews.date}</span>
+                      </div>
+                      <h3 className="text-xl font-bold font-onest text-white mb-2 leading-tight">
+                        {highlightNews.title}
+                      </h3>
+                      <p className="text-sm text-white/80 mb-3 leading-relaxed line-clamp-2">
+                        {highlightNews.subtitle}
+                      </p>
+                      <Button asChild size="sm" className="bg-[#00AA88] text-white hover:bg-[#00AA88]/90">
+                        <Link href={highlightNews.href}>Baca Selengkapnya</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
 
-                {/* News Sidebar */}
-                <div className="space-y-6">
-                    {/* Main News */}
-                    <Card className="overflow-hidden bg-background shadow-lg rounded-2xl">
-                        <div className="relative aspect-video">
-                            <Image src={mainNews.imgSrc} alt={mainNews.title} fill className="object-cover" data-ai-hint={mainNews.imgHint} />
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-bold font-onest text-white mb-2">{mainNews.title}</h3>
-                            <p className="text-sm text-white/60 mb-4">{mainNews.source}</p>
-                            <div className="space-y-3 pt-4 border-t border-white/20">
-                              {otherMainNews.map((news, index) => (
-                                <div key={index} className="group">
-                                  <h4 className="font-semibold leading-snug text-white group-hover:text-[#00AA88] transition-colors text-sm">
-                                    <Link href={news.href}>{news.title}</Link>
-                                  </h4>
-                                  <p className="text-xs text-white/60 mt-1">{news.source}</p>
-                                </div>
-                              ))}
+                {/* Main News */}
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3]">
+                        <Image src={mainNews.imgSrc} alt={mainNews.title} fill className="object-cover" data-ai-hint={mainNews.imgHint} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                            <div className="mb-2">
+                                <span className="text-xs text-white/80">{mainNews.source}</span>
                             </div>
-                            <Button variant="outline" className="mt-4 w-full text-white border-white/20 hover:bg-white/10">Selengkapnya</Button>
+                            <h3 className="text-lg font-bold font-onest text-white mb-3 leading-tight line-clamp-2">
+                                {mainNews.title}
+                            </h3>
+                            <Button asChild size="sm" className="bg-[#00AA88] text-white hover:bg-[#00AA88]/90">
+                                <Link href={mainNews.href}>Baca Selengkapnya</Link>
+                            </Button>
                         </div>
-                    </Card>
+                    </div>
+                    <div className="p-4">
+                        <div className="space-y-3">
+                          {otherMainNews.map((news, index) => (
+                            <div key={index} className="group">
+                              <h4 className="font-semibold leading-snug text-white group-hover:text-[#00AA88] transition-colors text-sm line-clamp-2">
+                                <Link href={news.href}>{news.title}</Link>
+                              </h4>
+                              <p className="text-xs text-white/60 mt-1">{news.source}</p>
+                            </div>
+                          ))}
+                        </div>
+                    </div>
+                </Card>
 
-                    {/* Activity News */}
-                    <Card className="overflow-hidden bg-background shadow-lg rounded-2xl">
-                        <div className="relative aspect-video">
-                           <Image src={activityNews.imgSrc} alt={activityNews.title} fill className="object-cover" data-ai-hint={activityNews.imgHint} />
+                {/* Activity News */}
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3]">
+                       <Image src={activityNews.imgSrc} alt={activityNews.title} fill className="object-cover" data-ai-hint={activityNews.imgHint} />
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                       <div className="absolute bottom-0 left-0 right-0 p-6">
+                           <div className="mb-2">
+                               <span className="text-xs text-white/80">{activityNews.source}</span>
+                           </div>
+                           <h3 className="text-lg font-bold font-onest text-white mb-3 leading-tight line-clamp-2">
+                               {activityNews.title}
+                           </h3>
+                           <Button asChild size="sm" className="bg-[#00AA88] text-white hover:bg-[#00AA88]/90">
+                               <Link href={activityNews.href}>Baca Selengkapnya</Link>
+                           </Button>
+                       </div>
+                    </div>
+                    <div className="p-4">
+                        <div className="space-y-3">
+                          {otherActivityNews.map((news, index) => (
+                           <div key={index} className="group">
+                             <h4 className="font-semibold leading-snug text-white group-hover:text-[#00AA88] transition-colors text-sm line-clamp-2">
+                               <Link href={news.href}>{news.title}</Link>
+                             </h4>
+                             <p className="text-xs text-white/60 mt-1">{news.source}</p>
+                           </div>
+                         ))}
                         </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-bold font-onest text-white mb-2">{activityNews.title}</h3>
-                            <p className="text-sm text-white/60 mb-4">{activityNews.source}</p>
-                             <div className="space-y-3 pt-4 border-t border-white/20">
-                               {otherActivityNews.map((news, index) => (
-                                <div key={index} className="group">
-                                  <h4 className="font-semibold leading-snug text-white group-hover:text-[#00AA88] transition-colors text-sm">
-                                    <Link href={news.href}>{news.title}</Link>
-                                  </h4>
-                                  <p className="text-xs text-white/60 mt-1">{news.source}</p>
-                                </div>
-                              ))}
-                            </div>
-                            <Button variant="outline" className="mt-4 w-full text-white border-white/20 hover:bg-white/10">Selengkapnya</Button>
-                        </div>
-                    </Card>
+                    </div>
+                </Card>
 
-                    {/* Regional News */}
-                    <Card className="overflow-hidden bg-background shadow-lg rounded-2xl">
-                        <div className="relative aspect-video">
-                            <Image src={regionalNews.imgSrc} alt={regionalNews.title} fill className="object-cover" data-ai-hint={regionalNews.imgHint} />
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-bold font-onest text-white mb-2">{regionalNews.title}</h3>
-                            <p className="text-sm text-white/60 mb-4">{regionalNews.source}</p>
-                             <div className="space-y-3 pt-4 border-t border-white/20">
-                               {otherRegionalNews.map((news, index) => (
-                                <div key={index} className="group">
-                                  <h4 className="font-semibold leading-snug text-white group-hover:text-[#00AA88] transition-colors text-sm">
-                                    <Link href={news.href}>{news.title}</Link>
-                                  </h4>
-                                  <p className="text-xs text-white/60 mt-1">{news.source}</p>
-                                </div>
-                              ))}
+                {/* Regional News */}
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3]">
+                        <Image src={regionalNews.imgSrc} alt={regionalNews.title} fill className="object-cover" data-ai-hint={regionalNews.imgHint} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                            <div className="mb-2">
+                                <span className="text-xs text-white/80">{regionalNews.source}</span>
                             </div>
-                            <Button variant="outline" className="mt-4 w-full text-white border-white/20 hover:bg-white/10">Selengkapnya</Button>
+                            <h3 className="text-lg font-bold font-onest text-white mb-3 leading-tight line-clamp-2">
+                                {regionalNews.title}
+                            </h3>
+                            <Button asChild size="sm" className="bg-[#00AA88] text-white hover:bg-[#00AA88]/90">
+                                <Link href={regionalNews.href}>Baca Selengkapnya</Link>
+                            </Button>
                         </div>
-                    </Card>
-                </div>
+                    </div>
+                    <div className="p-4">
+                        <div className="space-y-3">
+                          {otherRegionalNews.map((news, index) => (
+                           <div key={index} className="group">
+                             <h4 className="font-semibold leading-snug text-white group-hover:text-[#00AA88] transition-colors text-sm line-clamp-2">
+                               <Link href={news.href}>{news.title}</Link>
+                             </h4>
+                             <p className="text-xs text-white/60 mt-1">{news.source}</p>
+                           </div>
+                         ))}
+                        </div>
+                    </div>
+                </Card>
+
+                {/* Additional News Cards - Placeholder for more content */}
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[#00AA88]/20 to-[#00AA88]/40">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                                <FileText className="w-12 h-12 text-[#00AA88] mx-auto mb-4" />
+                                <h3 className="text-lg font-bold font-onest text-white mb-2">Berita Lainnya</h3>
+                                <p className="text-sm text-white/80">Temukan berita dan informasi terkini lainnya</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-4">
+                        <Button variant="outline" className="w-full text-white border-white/20 hover:bg-white/10">
+                            Lihat Semua Berita
+                        </Button>
+                    </div>
+                </Card>
+
+                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[#00AA88]/20 to-[#00AA88]/40">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                                <Megaphone className="w-12 h-12 text-[#00AA88] mx-auto mb-4" />
+                                <h3 className="text-lg font-bold font-onest text-white mb-2">Siaran Pers</h3>
+                                <p className="text-sm text-white/80">Pengumuman resmi dan siaran pers KPPU</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-4">
+                        <Button variant="outline" className="w-full text-white border-white/20 hover:bg-white/10">
+                            Lihat Siaran Pers
+                        </Button>
+                    </div>
+                </Card>
             </div>
           </div>
         </section>

@@ -16,7 +16,7 @@ export default function Theme4HomePage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section - Theme 1 (Full width) */}
-        <section className="bg-[#421BBC] text-white py-20 relative overflow-hidden">
+        <section className="bg-[#1e3a8a] text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
                 <img src="/images/bg/theme-4.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
@@ -47,7 +47,7 @@ export default function Theme4HomePage() {
                         <div className="relative bg-white/95 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden" style={{ marginBottom: '88px' }}>
                             <div className="flex items-center">
                                 <div className="pl-6 pr-4 py-5 flex-shrink-0">
-                                    <Search className="w-6 h-6 text-gray-400 group-hover:text-[#421BBC] transition-colors duration-300" />
+                                                                         <Search className="w-6 h-6 text-gray-400 group-hover:text-[#1e3a8a] transition-colors duration-300" />
                                 </div>
                                 <Input
                                     type="search"
@@ -55,19 +55,90 @@ export default function Theme4HomePage() {
                                     className="flex-1 h-16 border-0 bg-transparent text-gray-700 placeholder:text-gray-400 text-lg focus-visible:ring-0 focus-visible:ring-offset-0 focus:outline-none pr-6 shadow-none font-poppins"
                                 />
                             </div>
-                            <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#421BBC]/0 via-[#421BBC]/50 to-[#421BBC]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                                         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1e3a8a]/0 via-[#1e3a8a]/50 to-[#1e3a8a]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </div>
                     </div>
                 </motion.div>
             </div>
         </section>
 
-        {/* Carousel Section - Theme 2 (Vertical) */}
-        <section className="py-8 lg:py-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:bg-gradient-to-br dark:from-blue-900/20 dark:to-indigo-900/20">
+
+
+        {/* Main Services Section - Theme 1 (Grid 6 kolom) */}
+         <section className="py-4 lg:py-4 bg-white dark:bg-gray-900">
+           <div className="container mx-auto">
+             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+               {/* Regulasi */}
+               <Link href="/theme-4/regulasi" className="group text-center">
+                    <div className="p-6 rounded-xl hover:bg-[#dc2626]/10 transition-all duration-300">
+                        <div className="p-4 bg-[#dc2626]/20 dark:bg-[#dc2626]/10 rounded-full mb-4 mx-auto w-fit">
+                          <FileText className="h-8 w-8 text-[#dc2626] dark:text-white" />
+                       </div>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-white font-poppins">REGULASI</h3>
+                   </div>
+               </Link>
+
+               {/* Putusan */}
+               <Link href="/theme-4/putusan" className="group text-center">
+                    <div className="p-6 rounded-xl hover:bg-[#dc2626]/10 transition-all duration-300">
+                        <div className="p-4 bg-[#dc2626]/10 rounded-full mb-4 mx-auto w-fit">
+                          <Gavel className="h-8 w-8 text-[#dc2626] dark:text-white" />
+                       </div>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-white font-poppins">PUTUSAN</h3>
+                   </div>
+               </Link>
+
+               {/* Jadwal Sidang */}
+               <Link href="/theme-4/jadwal-sidang" className="group text-center">
+                    <div className="p-6 rounded-xl hover:bg-[#dc2626]/10 transition-all duration-300">
+                        <div className="p-4 bg-[#dc2626]/10 rounded-full mb-4 mx-auto w-fit">
+                          <Scale className="h-8 w-8 text-[#dc2626] dark:text-white" />
+                       </div>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-white font-poppins">JADWAL SIDANG</h3>
+                   </div>
+               </Link>
+
+               {/* Siaran Pers */}
+               <Link href="/theme-4/siaran-pers" className="group text-center">
+                    <div className="p-6 rounded-xl hover:bg-[#dc2626]/10 transition-all duration-300">
+                        <div className="p-4 bg-[#dc2626]/10 rounded-full mb-4 mx-auto w-fit">
+                          <Megaphone className="h-8 w-8 text-[#dc2626] dark:text-white" />
+                       </div>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-white font-poppins">SIARAN PERS</h3>
+                   </div>
+               </Link>
+
+               {/* Tanya Jawab */}
+               <Link href="/theme-4/tanya-jawab" className="group text-center">
+                    <div className="p-6 rounded-xl hover:bg-[#dc2626]/10 transition-all duration-300">
+                        <div className="p-4 bg-[#dc2626]/10 rounded-full mb-4 mx-auto w-fit">
+                          <Search className="h-8 w-8 text-[#dc2626] dark:text-white" />
+                       </div>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-white font-poppins">TANYA JAWAB</h3>
+                   </div>
+               </Link>
+
+               {/* PPID */}
+               <Link href="/theme-4/ppid" className="group text-center">
+                    <div className="p-6 rounded-xl hover:bg-[#dc2626]/10 transition-all duration-300">
+                        <div className="p-4 bg-[#dc2626]/10 rounded-full mb-4 mx-auto w-fit">
+                          <FileText className="h-8 w-8 text-[#dc2626] dark:text-white" />
+                       </div>
+                        <h3 className="text-sm font-bold text-gray-800 dark:text-white font-poppins">PPID</h3>
+                   </div>
+               </Link>
+             </div>
+           </div>
+         </section>
+
+
+
+        {/* Berita Terkini Section */}
+        <section className="py-8 lg:py-12 bg-[#dc2626]">
           <div className="container mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white font-poppins mb-4">Berita Terkini</h2>
-              <p className="text-gray-600 dark:text-gray-300 font-poppins">Informasi terbaru dari KPPU</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white font-poppins mb-4">Berita Terkini</h2>
+              <p className="text-white/80 font-poppins">Informasi terbaru dari KPPU</p>
             </div>
             
             <div className="max-w-6xl mx-auto">
@@ -93,6 +164,13 @@ export default function Theme4HomePage() {
                     date: "15 Januari 2024",
                     image: "/images/news/03.jpg",
                     hint: "bps statistics office meeting"
+                  },
+                  {
+                    title: "KPPU Gelar Rapat Koordinasi dengan Pemerintah Daerah",
+                    source: "Antaranews.com",
+                    date: "12 Januari 2024",
+                    image: "/images/news/01.jpeg",
+                    hint: "government coordination meeting"
                   }
                 ].map((news, index) => (
                   <motion.div 
@@ -100,7 +178,7 @@ export default function Theme4HomePage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-center gap-6 bg-white dark:bg-gray-800/50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 border-l-4 border-[#421BBC]"
+                    className="flex items-center gap-6 bg-white/10 backdrop-blur-sm border-white/20 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 border-l-4 border-[#1e3a8a]"
                   >
                     <div className="relative overflow-hidden rounded-xl w-24 h-24 flex-shrink-0">
                       <Image 
@@ -112,16 +190,16 @@ export default function Theme4HomePage() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-lg text-gray-800 dark:text-white font-poppins mb-2 hover:text-[#421BBC] transition-colors">
+                      <h3 className="font-bold text-lg text-white font-poppins mb-2 hover:text-[#dc2626] transition-colors">
                         {news.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center gap-4 text-sm text-white/70">
                         <span>{news.source}</span>
                         <span>•</span>
                         <span>{news.date}</span>
                       </div>
                     </div>
-                    <ChevronRight className="h-5 w-5 text-gray-400" />
+                    <ChevronRight className="h-5 w-5 text-white/70" />
                   </motion.div>
                 ))}
               </div>
@@ -129,152 +207,20 @@ export default function Theme4HomePage() {
           </div>
         </section>
 
-        {/* Main Services Section - Theme 1 (Grid 6 kolom) */}
-        <section className="py-4 lg:py-4 bg-cyan-50 dark:bg-[#006666]">
-           <div className="container mx-auto">
-             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-               {/* Regulasi */}
-               <Link href="/theme-4/regulasi" className="group text-center">
-                   <div className="p-6 rounded-xl hover:bg-[#00AA88]/10 transition-all duration-300">
-                       <div className="p-4 bg-[#00AA88]/10 rounded-full mb-4 mx-auto w-fit">
-                         <FileText className="h-8 w-8 text-white" />
-                       </div>
-                       <h3 className="text-sm font-bold text-white font-poppins">REGULASI</h3>
-                   </div>
-               </Link>
-
-               {/* Putusan */}
-               <Link href="/theme-4/putusan" className="group text-center">
-                   <div className="p-6 rounded-xl hover:bg-[#00AA88]/10 transition-all duration-300">
-                       <div className="p-4 bg-[#00AA88]/10 rounded-full mb-4 mx-auto w-fit">
-                         <Gavel className="h-8 w-8 text-white" />
-                       </div>
-                       <h3 className="text-sm font-bold text-white font-poppins">PUTUSAN</h3>
-                   </div>
-               </Link>
-
-               {/* Jadwal Sidang */}
-               <Link href="/theme-4/jadwal-sidang" className="group text-center">
-                   <div className="p-6 rounded-xl hover:bg-[#00AA88]/10 transition-all duration-300">
-                       <div className="p-4 bg-[#00AA88]/10 rounded-full mb-4 mx-auto w-fit">
-                         <Scale className="h-8 w-8 text-white" />
-                       </div>
-                       <h3 className="text-sm font-bold text-white font-poppins">JADWAL SIDANG</h3>
-                   </div>
-               </Link>
-
-               {/* Siaran Pers */}
-               <Link href="/theme-4/siaran-pers" className="group text-center">
-                   <div className="p-6 rounded-xl hover:bg-[#00AA88]/10 transition-all duration-300">
-                       <div className="p-4 bg-[#00AA88]/10 rounded-full mb-4 mx-auto w-fit">
-                         <Megaphone className="h-8 w-8 text-white" />
-                       </div>
-                       <h3 className="text-sm font-bold text-white font-poppins">SIARAN PERS</h3>
-                   </div>
-               </Link>
-
-               {/* Tanya Jawab */}
-               <Link href="/theme-4/tanya-jawab" className="group text-center">
-                   <div className="p-6 rounded-xl hover:bg-[#00AA88]/10 transition-all duration-300">
-                       <div className="p-4 bg-[#00AA88]/10 rounded-full mb-4 mx-auto w-fit">
-                         <Search className="h-8 w-8 text-white" />
-                       </div>
-                       <h3 className="text-sm font-bold text-white font-poppins">TANYA JAWAB</h3>
-                   </div>
-               </Link>
-
-               {/* PPID */}
-               <Link href="/theme-4/ppid" className="group text-center">
-                   <div className="p-6 rounded-xl hover:bg-[#00AA88]/10 transition-all duration-300">
-                       <div className="p-4 bg-[#00AA88]/10 rounded-full mb-4 mx-auto w-fit">
-                         <FileText className="h-8 w-8 text-white" />
-                       </div>
-                       <h3 className="text-sm font-bold text-white font-poppins">PPID</h3>
-                   </div>
-               </Link>
-             </div>
-           </div>
-         </section>
-
-        {/* Spotlight Section - Theme 2 (Timeline) */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
-          <div className="container mx-auto">
-            <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-poppins">Info Terkini</h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-poppins">Berita terbaru, kegiatan, dan informasi dari seluruh wilayah kerja KPPU.</p>
-            </div>
-            
-            <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                 {[
-                   {
-                     title: "KPPU Terus Melakukan Pengawasan atas Komoditas Beras",
-                     source: "JawaPos.com",
-                     date: "20 Januari 2024",
-                     image: "/images/news/01.jpeg",
-                     hint: "kppu commission hearing meeting"
-                   },
-                   {
-                     title: "Pertama dalam Sejarah: 97 Pelaku Usaha Menjadi Terlapor dalam Sidang Dugaan Kartel Pinjol",
-                     source: "Hukumonline.com",
-                     date: "18 Januari 2024",
-                     image: "/images/news/02.jpeg",
-                     hint: "government meeting conference"
-                   },
-                   {
-                     title: "Sidang Perkara terkait Dugaan Hambatan Usaha PT Laboratorium Medio Pratama Masuk ke Tahap Pemeriksaan Lanjutan",
-                     source: "Kontan.co.id",
-                     date: "15 Januari 2024",
-                     image: "/images/news/03.jpg",
-                     hint: "bps statistics office meeting"
-                   }
-                 ].map((news, index) => (
-                   <div key={index} className="group">
-                     <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-white dark:bg-gray-800/50">
-                       <div className="flex items-center gap-6">
-                         <div className="relative overflow-hidden rounded-xl w-20 h-20 flex-shrink-0">
-                           <Image 
-                             src={news.image} 
-                             alt={news.title} 
-                             fill 
-                             className="object-cover" 
-                             data-ai-hint={news.hint}
-                           />
-                         </div>
-                         <div className="flex-1">
-                           <h3 className="font-bold text-lg text-gray-800 dark:text-white font-poppins mb-2 hover:text-[#421BBC] transition-colors">
-                             {news.title}
-                           </h3>
-                           <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                             <span>{news.source}</span>
-                             <span>•</span>
-                             <span>{news.date}</span>
-                           </div>
-                         </div>
-                         <ArrowRight className="h-5 w-5 text-gray-400" />
-                       </div>
-                     </Card>
-                   </div>
-                 ))}
-               </div>
-             </div>
-           </div>
-         </section>
-
         {/* About KPPU Section - Theme 1 (2 kolom) */}
-        <section className="py-24 lg:py-32 bg-card">
+         <section className="py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
            <div className="container mx-auto">
              <div className="text-center mb-16 md:mb-20">
-               <h2 className="text-4xl md:text-5xl font-bold text-[#00AA88] dark:text-white font-poppins">Tentang KPPU</h2>
-                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto font-poppins">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
+               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-poppins">Tentang KPPU</h2>
+                <p className="mt-4 text-lg text-gray-600 dark:text-white/80 max-w-2xl mx-auto font-poppins">Lembaga independen yang mengawasi persaingan usaha di Indonesia.</p>
              </div>
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-16">
                <div>
-                 <h3 className="text-3xl font-bold font-poppins text-[#00AA88] dark:text-white mb-4">Pengawas Persaingan Usaha</h3>
-                     <p className="text-muted-foreground leading-relaxed mb-6 font-poppins">
+                 <h3 className="text-3xl font-bold font-poppins text-gray-800 dark:text-white mb-4">Pengawas Persaingan Usaha</h3>
+                     <p className="text-gray-600 dark:text-white/80 leading-relaxed mb-6 font-poppins">
                         Komisi Pengawas Persaingan Usaha (KPPU) adalah lembaga independen yang dibentuk untuk mengawasi pelaksanaan Undang-Undang No. 5 Tahun 1999 tentang Larangan Praktek Monopoli dan Persaingan Usaha Tidak Sehat. Kami bekerja untuk memastikan setiap pelaku usaha di Indonesia bersaing secara adil dan sehat, demi terwujudnya ekonomi yang efisien dan kesejahteraan masyarakat.
                       </p>
-                     <Button asChild variant="link" className="p-0 h-auto self-start text-[#00AA88] font-bold font-poppins">
+                     <Button asChild variant="link" className="p-0 h-auto self-start text-[#dc2626] dark:text-white font-bold font-poppins">
                         <Link href="/theme-4/profil/visi-misi">Selengkapnya <ArrowRight className="w-4 h-4 ml-2"/></Link>
                       </Button>
                </div>
@@ -294,7 +240,7 @@ export default function Theme4HomePage() {
          </section>
 
         {/* Statistics Section - Theme 2 (Bar charts) */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
+         <section className="py-24 lg:py-32 bg-gradient-to-br from-red-900 to-blue-900 text-white">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-white font-poppins">Indonesia dalam Angka</h2>
@@ -327,7 +273,7 @@ export default function Theme4HomePage() {
                   {/* Progress Bar */}
                   <div className="w-full bg-white/20 rounded-full h-3">
                     <div 
-                      className="bg-gradient-to-r from-blue-400 to-indigo-500 h-3 rounded-full transition-all duration-1000 ease-out"
+                                             className="bg-gradient-to-r from-red-400 to-blue-500 h-3 rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${stat.percentage}%` }}
                     ></div>
                   </div>
@@ -338,15 +284,15 @@ export default function Theme4HomePage() {
         </section>
 
         {/* Commissioners Section - Theme 1 (Grid 3x3) */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
+         <section className="py-24 lg:py-32 bg-white dark:bg-gray-900">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-poppins">Jajaran Komisioner KPPU</h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-poppins">Tim komisioner yang berdedikasi untuk mengawasi persaingan usaha di Indonesia.</p>
+               <p className="mt-4 text-lg text-gray-600 dark:text-white/80 max-w-2xl mx-auto font-poppins">Tim komisioner yang berdedikasi untuk mengawasi persaingan usaha di Indonesia.</p>
             </div>
             
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   { name: 'M. Fanshurullah Asa', image: '/images/people/mfa.png', hint: 'portrait commissioner formal suit' },
                   { name: 'Aru Armando', image: '/images/people/aa.png', hint: 'portrait commissioner formal suit' },
@@ -382,25 +328,25 @@ export default function Theme4HomePage() {
           </div>
         </section>
 
-        {/* Media & Publikasi Section - Theme 2 (Full width video) */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-indigo-50 dark:bg-gradient-to-br dark:from-blue-900/20 dark:to-indigo-900/20">
+                 {/* Media & Publikasi Section - Theme 2 (Full width video) */}
+         <section className="py-24 lg:py-32 bg-gray-100 dark:bg-gray-700">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-poppins">Media & Publikasi</h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-poppins">Akses berbagai materi publikasi dan media dari KPPU.</p>
+               <p className="mt-4 text-lg text-gray-600 dark:text-white/80 max-w-2xl mx-auto font-poppins">Akses berbagai materi publikasi dan media dari KPPU.</p>
             </div>
             
             {/* Full Width Video */}
             <div className="max-w-6xl mx-auto mb-12">
               <div className="relative aspect-video bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-[#421BBC] rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <ArrowRight className="w-10 h-10 text-white" />
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400 font-poppins">Video Company Profile KPPU</p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/RBcyHEk3wns"
+                  title="Video Company Profile KPPU"
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
             
@@ -412,7 +358,7 @@ export default function Theme4HomePage() {
                 { title: "Majalah Kompetisi", image: "/images/media/03.jpg", hint: "magazine covers competition business" },
                 { title: "Perpustakaan Persaingan Usaha (PERPUS)", image: "/images/media/04.jpg", hint: "digital library books collection" }
               ].map((item, index) => (
-                <div key={index} className="flex items-center gap-6 bg-white dark:bg-gray-800/50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                <div key={index} className="flex items-center gap-6 bg-white/10 backdrop-blur-sm border-white/20 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
                   <div className="relative overflow-hidden rounded-xl w-24 h-24 flex-shrink-0">
                     <Image 
                       src={item.image} 
@@ -423,11 +369,11 @@ export default function Theme4HomePage() {
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-lg text-gray-800 dark:text-white font-poppins mb-2 hover:text-[#421BBC] transition-colors">
+                                                              <h3 className="font-bold text-lg text-gray-800 dark:text-white font-poppins mb-2 hover:text-[#dc2626] transition-colors">
                       {item.title}
                     </h3>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-gray-400" />
+                  <ArrowRight className="h-5 w-5 text-white/70" />
                 </div>
               ))}
             </div>
@@ -435,7 +381,7 @@ export default function Theme4HomePage() {
         </section>
 
         {/* Region Grid Section - Theme 1 (2 kolom) */}
-        <section className="py-24 lg:py-32 bg-[#00AA88]">
+         <section className="py-24 lg:py-32 bg-[#dc2626]">
            <div className="container mx-auto">
              <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                <div className="">

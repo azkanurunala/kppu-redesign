@@ -132,7 +132,7 @@ export default function Theme2HomePage() {
         </section>
         
         {/* Main Services Section - Grid 2 Columns */}
-        <section className="py-8 lg:py-12 bg-cyan-50 dark:bg-[#006666]">
+        <section className="py-8 lg:py-12 bg-[#006666]">
            <div className="container mx-auto">
              <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
                {/* Regulasi */}
@@ -223,7 +223,7 @@ export default function Theme2HomePage() {
         </section>
 
         {/* Spotlight Section */}
-        <section className="py-24 lg:py-32 bg-card">
+        <section className="py-24 lg:py-32 bg-black">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-white font-onest">Info Terkini</h2>
@@ -233,7 +233,7 @@ export default function Theme2HomePage() {
             {/* News Grid Layout */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Featured News */}
-                <Card className="overflow-hidden bg-background shadow-xl rounded-2xl h-full">
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-xl rounded-2xl h-full">
                   <div className="relative aspect-[4/3]">
                     <Image 
                       src={highlightNews.imgSrc} 
@@ -264,7 +264,7 @@ export default function Theme2HomePage() {
                 </Card>
 
                 {/* Main News */}
-                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-lg rounded-2xl h-full">
                     <div className="relative aspect-[4/3]">
                         <Image src={mainNews.imgSrc} alt={mainNews.title} fill className="object-cover" data-ai-hint={mainNews.imgHint} />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -295,7 +295,7 @@ export default function Theme2HomePage() {
                 </Card>
 
                 {/* Activity News */}
-                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-lg rounded-2xl h-full">
                     <div className="relative aspect-[4/3]">
                        <Image src={activityNews.imgSrc} alt={activityNews.title} fill className="object-cover" data-ai-hint={activityNews.imgHint} />
                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -326,7 +326,7 @@ export default function Theme2HomePage() {
                 </Card>
 
                 {/* Regional News */}
-                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-lg rounded-2xl h-full">
                     <div className="relative aspect-[4/3]">
                         <Image src={regionalNews.imgSrc} alt={regionalNews.title} fill className="object-cover" data-ai-hint={regionalNews.imgHint} />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -357,35 +357,35 @@ export default function Theme2HomePage() {
                 </Card>
 
                 {/* Additional News Cards - Placeholder for more content */}
-                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
-                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[#00AA88]/20 to-[#00AA88]/40">
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3] bg-black/50">
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="text-center">
-                                <FileText className="w-12 h-12 text-[#00AA88] mx-auto mb-4" />
+                                <FileText className="w-12 h-12 text-white mx-auto mb-4" />
                                 <h3 className="text-lg font-bold font-onest text-white mb-2">Berita Lainnya</h3>
                                 <p className="text-sm text-white/80">Temukan berita dan informasi terkini lainnya</p>
                             </div>
                         </div>
                     </div>
                     <div className="p-4">
-                        <Button variant="outline" className="w-full text-white border-white/20 hover:bg-white/10">
+                        <Button className="w-full text-white border-white/20 hover:bg-white/10 bg-transparent">
                             Lihat Semua Berita
                         </Button>
                     </div>
                 </Card>
 
-                <Card className="overflow-hidden bg-background shadow-lg rounded-2xl h-full">
-                    <div className="relative aspect-[4/3] bg-gradient-to-br from-[#00AA88]/20 to-[#00AA88]/40">
+                <Card className="overflow-hidden bg-white/10 backdrop-blur-sm border-white/20 shadow-lg rounded-2xl h-full">
+                    <div className="relative aspect-[4/3] bg-black/50">
                         <div className="absolute inset-0 flex items-center justify-center">
                             <div className="text-center">
-                                <Megaphone className="w-12 h-12 text-[#00AA88] mx-auto mb-4" />
+                                <Megaphone className="w-12 h-12 text-white mx-auto mb-4" />
                                 <h3 className="text-lg font-bold font-onest text-white mb-2">Siaran Pers</h3>
                                 <p className="text-sm text-white/80">Pengumuman resmi dan siaran pers KPPU</p>
                             </div>
                         </div>
                     </div>
                     <div className="p-4">
-                        <Button variant="outline" className="w-full text-white border-white/20 hover:bg-white/10">
+                        <Button className="w-full text-white border-white/20 hover:bg-white/10 bg-transparent">
                             Lihat Siaran Pers
                         </Button>
                     </div>
@@ -395,7 +395,7 @@ export default function Theme2HomePage() {
         </section>
 
         {/* About KPPU Section - Stacked Layout */}
-        <section className="py-24 lg:py-32 bg-card">
+        <section className="py-24 lg:py-32 bg-[#006666]">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-white font-onest">Tentang KPPU</h2>
@@ -431,21 +431,21 @@ export default function Theme2HomePage() {
             {/* Three Cards Row - Horizontal */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="p-8 bg-white/10 shadow-lg rounded-2xl text-center">
-                <div className="bg-[#00AA88]/20 text-[#00AA88] p-4 rounded-full mb-6 mx-auto w-fit">
+                <div className="bg-white/20 text-white p-4 rounded-full mb-6 mx-auto w-fit">
                     <Gavel className="w-10 h-10" />
                 </div>
                 <h4 className="text-xl font-bold font-onest text-white mb-4">Penegakan Hukum</h4>
                 <p className="text-white/80 text-sm leading-relaxed">Menindak pelanggaran hukum persaingan usaha melalui pemeriksaan dan putusan yang adil dan transparan.</p>
               </Card>
               <Card className="p-8 bg-white/10 shadow-lg rounded-2xl text-center">
-                 <div className="bg-[#00AA88]/20 text-[#00AA88] p-4 rounded-full mb-6 mx-auto w-fit">
+                 <div className="bg-white/20 text-white p-4 rounded-full mb-6 mx-auto w-fit">
                     <ShieldCheck className="w-10 h-10" />
                  </div>
                  <h4 className="text-xl font-bold font-onest text-white mb-4">Advokasi Kebijakan</h4>
                  <p className="text-white/80 text-sm leading-relaxed">Memberikan saran kepada pemerintah untuk menciptakan kebijakan yang pro-persaingan dan mendukung UMKM.</p>
               </Card>
               <Card className="p-8 bg-white/10 shadow-lg rounded-2xl text-center">
-                 <div className="bg-[#00AA88]/20 text-[#00AA88] p-4 rounded-full mb-6 mx-auto w-fit">
+                 <div className="bg-white/20 text-white p-4 rounded-full mb-6 mx-auto w-fit">
                     <Briefcase className="w-10 h-10" />
                  </div>
                  <h4 className="text-xl font-bold font-onest text-white mb-4">Pengawasan Kemitraan</h4>
@@ -456,7 +456,7 @@ export default function Theme2HomePage() {
         </section>
 
         {/* Statistics Section */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-card to-background overflow-hidden">
+        <section className="relative py-24 lg:py-32 bg-[#006666] overflow-hidden">
           {/* Background Image */}
           <div className="absolute inset-0">
             <img 
@@ -661,7 +661,7 @@ export default function Theme2HomePage() {
         </section>
 
         {/* Media & Publikasi Section - Full Width Video + List */}
-        <section className="py-24 lg:py-32 bg-background">
+        <section className="py-24 lg:py-32 bg-[#006666]">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-white font-onest">Media & Publikasi</h2>
@@ -736,11 +736,11 @@ export default function Theme2HomePage() {
         </section>
         
         {/* Region Grid Section - Stacked Layout */}
-        <section className="py-24 lg:py-32 bg-card">
+        <section className="py-24 lg:py-32 bg-[#006666]">
           <div className="container mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-[#00AA88] dark:text-white font-onest">Kantor Wilayah</h2>
-              <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-onest">
+              <h2 className="text-4xl md:text-5xl font-bold text-white font-onest">Kantor Wilayah</h2>
+              <p className="mt-4 text-lg text-white/80 leading-relaxed max-w-2xl mx-auto font-onest">
                 KPPU hadir di 7 (tujuh) wilayah kerja yang tersebar di seluruh Indonesia untuk mendekatkan layanan dan pengawasan persaingan usaha kepada masyarakat dan pelaku usaha di daerah.
               </p>
             </div>

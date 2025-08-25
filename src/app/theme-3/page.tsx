@@ -147,11 +147,11 @@ export default function Theme3HomePage() {
          </section>
 
         {/* Spotlight Section - List Layout */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
+        <section className="py-24 lg:py-32 bg-black">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-inter">Info Terkini</h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-inter">Berita terbaru, kegiatan, dan informasi dari seluruh wilayah kerja KPPU.</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white font-inter">Info Terkini</h2>
+              <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto font-inter">Berita terbaru, kegiatan, dan informasi dari seluruh wilayah kerja KPPU.</p>
             </div>
             
             <div className="max-w-4xl mx-auto space-y-6">
@@ -178,7 +178,7 @@ export default function Theme3HomePage() {
                   hint: "bps statistics office meeting"
                 }
               ].map((news, index) => (
-                <div key={index} className="flex items-center gap-6 bg-white dark:bg-gray-800/50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+                <div key={index} className="flex items-center gap-6 bg-white/10 backdrop-blur-sm border-white/20 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
                   <div className="relative overflow-hidden rounded-xl w-24 h-24 flex-shrink-0">
                     <Image 
                       src={news.image} 
@@ -189,16 +189,16 @@ export default function Theme3HomePage() {
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-lg text-gray-800 dark:text-white font-inter mb-2 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                    <h3 className="font-bold text-lg text-white font-inter mb-2 hover:text-[#00AA88] transition-colors">
                       {news.title}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center gap-4 text-sm text-white/70">
                       <span>{news.source}</span>
                       <span>•</span>
                       <span>{news.date}</span>
                     </div>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-gray-400" />
+                  <ArrowRight className="h-5 w-5 text-white/70" />
                 </div>
               ))}
             </div>
@@ -240,14 +240,13 @@ export default function Theme3HomePage() {
 
         {/* Commissioners Section - Carousel */}
         <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
-          <div className="container mx-auto">
-            <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-inter">Jajaran Komisioner KPPU</h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-inter">Tim komisioner yang berdedikasi untuk mengawasi persaingan usaha di Indonesia.</p>
-            </div>
-            
-            <div className="max-w-6xl mx-auto">
-              <div className="flex overflow-x-auto gap-6 pb-8 scrollbar-hide">
+          <div className="text-center mb-16 md:mb-20 px-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-inter">Jajaran Komisioner KPPU</h2>
+            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-inter">Tim komisioner yang berdedikasi untuk mengawasi persaingan usaha di Indonesia.</p>
+          </div>
+          
+          <div className="w-full">
+            <div className="flex overflow-x-auto gap-6 pb-8 scrollbar-hide px-4">
                 {[
                   { name: 'M. Fanshurullah Asa', image: '/images/people/mfa.png', hint: 'portrait commissioner formal suit' },
                   { name: 'Aru Armando', image: '/images/people/aa.png', hint: 'portrait commissioner formal suit' },
@@ -276,7 +275,6 @@ export default function Theme3HomePage() {
                     </div>
                   </div>
                 ))}
-              </div>
             </div>
           </div>
         </section>
@@ -359,7 +357,7 @@ export default function Theme3HomePage() {
                 </div>
                 
                 <div className="text-center">
-                  <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white/20 font-inter">
+                  <Button asChild className="border-white/30 text-white hover:bg-white/20 font-inter bg-transparent">
                     <Link href="/theme-3/profil/visi-misi">Selengkapnya <ArrowRight className="w-4 h-4 ml-2"/></Link>
                   </Button>
                 </div>

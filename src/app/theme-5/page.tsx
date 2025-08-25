@@ -222,11 +222,11 @@ export default function Theme5HomePage() {
          </section>
 
         {/* Spotlight Section - Theme 1 (Highlight cards) */}
-        <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:bg-gradient-to-br dark:from-gray-900 dark:to-gray-800">
+        <section className="py-24 lg:py-32 bg-black">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white font-poppins">Info Terkini</h2>
-              <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-poppins">Berita terbaru, kegiatan, dan informasi dari seluruh wilayah kerja KPPU.</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white font-poppins">Info Terkini</h2>
+              <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto font-poppins">Berita terbaru, kegiatan, dan informasi dari seluruh wilayah kerja KPPU.</p>
             </div>
             
             {/* Highlight Card */}
@@ -259,8 +259,8 @@ export default function Theme5HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-8 bg-white dark:bg-gray-800">
-                    <h4 className="text-lg font-bold text-gray-800 dark:text-white font-poppins mb-6">Berita Lainnya</h4>
+                  <div className="p-8 bg-white/10 backdrop-blur-sm border-white/20">
+                    <h4 className="text-lg font-bold text-white font-poppins mb-6">Berita Lainnya</h4>
                     <div className="space-y-6">
                       {[
                         {
@@ -274,11 +274,11 @@ export default function Theme5HomePage() {
                           date: "15 Januari 2024"
                         }
                       ].map((news, index) => (
-                        <div key={index} className="border-b border-gray-200 dark:border-gray-700 pb-4 last:border-b-0">
-                          <h5 className="font-semibold text-gray-800 dark:text-white font-poppins mb-2 hover:text-[#7C3AED] transition-colors cursor-pointer">
+                        <div key={index} className="border-b border-white/20 pb-4 last:border-b-0">
+                          <h5 className="font-semibold text-white font-poppins mb-2 hover:text-[#00AA88] transition-colors cursor-pointer">
                             {news.title}
                           </h5>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                          <div className="flex items-center gap-4 text-sm text-white/70">
                             <span>{news.source}</span>
                             <span>•</span>
                             <span>{news.date}</span>

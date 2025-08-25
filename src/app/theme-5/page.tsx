@@ -18,7 +18,7 @@ export default function Theme5HomePage() {
         {/* Hero Section - Theme 1 (Full width) */}
         <section className="bg-[#7C3AED] text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
-                <img src="/images/bg/map-bw-pp.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                <img src="/images/bg/theme-5.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10 text-center">
                 <motion.h1

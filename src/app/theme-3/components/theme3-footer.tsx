@@ -85,7 +85,7 @@ export function Theme3Footer() {
     <>
       <section>
                      <div className="relative py-24 md:py-32 text-center bg-[#5B21B6]">
-              <img src="/images/bg/map-bw-pp.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+              <img src="/images/bg/theme-3.jpg" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-inter mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>

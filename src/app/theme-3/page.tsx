@@ -15,7 +15,7 @@ export default function Theme3HomePage() {
         {/* Hero Section - Stacked Layout */}
         <section className="bg-[#5B21B6] text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
-                <img src="/images/bg/map-bw-pp.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                <img src="/images/bg/theme-3.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10">
                 <div className="text-center max-w-4xl mx-auto">

@@ -78,7 +78,7 @@ export default function Theme2HomePage() {
         {/* Hero Section - Split Layout */}
         <section className="bg-[#00AA88] text-white pb-60 pt-40 relative overflow-hidden">
             <div className="absolute inset-0">
-                <img src="/images/bg/map-bw-tq.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                <img src="/images/bg/theme-2.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

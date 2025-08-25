@@ -85,7 +85,7 @@ export function Theme2Footer() {
     <>
       <section>
           <div className="relative py-24 md:py-32 text-center bg-[#006666]">
-              <img src="/images/bg/map-bw-tq.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                              <img src="/images/bg/theme-2.jpg" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-onest mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>

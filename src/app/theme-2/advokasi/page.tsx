@@ -44,7 +44,7 @@ export default function AdvokasiPage() {
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
                     <div className="absolute inset-0">
-                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                        <img src="/images/bg/theme-2.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
                     </div>
                     <div className="container mx-auto relative z-10">
                         <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Advokasi Kebijakan</h1>

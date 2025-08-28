@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 
@@ -61,14 +61,14 @@ export default function PenelitianPage() {
     const pathname = usePathname();
     const headerImage = getHeaderImageForPage(pathname);
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-white overflow-x-hidden">
 
       <main className="flex-1">
         <motion.section
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-primary-dark text-white py-20 relative overflow-hidden"
+          className="bg-gradient-to-br from-purple-900 to-indigo-900 text-white py-20 relative overflow-hidden"
         >
           <div className="container mx-auto">
             <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Penelitian KPPU</h1>
@@ -92,9 +92,9 @@ export default function PenelitianPage() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <Card className="transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1.5 border-l-4 border-primary bg-card">
+                    <Card className="transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1.5 border-l-4 border-[#421BBC] bg-white/10 backdrop-blur-sm">
                       <CardHeader>
-                          <div className="flex items-center text-sm text-muted-foreground gap-6 mb-3">
+                          <div className="flex items-center text-sm text-white/70 gap-6 mb-3">
                               <div className="flex items-center gap-2">
                                   <Users className="h-4 w-4" />
                                   <span>{item.authors}</span>
@@ -104,13 +104,13 @@ export default function PenelitianPage() {
                                   <span>{item.date}</span>
                               </div>
                           </div>
-                          <CardTitle className="text-2xl font-bold font-poppins text-primary-dark dark:text-white leading-snug hover:text-primary cursor-pointer transition-colors">
+                          <CardTitle className="text-2xl font-bold font-poppins text-[#421BBC]-dark dark:text-white leading-snug hover:text-[#421BBC] cursor-pointer transition-colors">
                               {item.title}
                           </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-muted-foreground leading-relaxed mb-6">{item.description}</p>
-                        <Button size="lg" variant="outline" className="rounded-full px-6 border-primary text-primary hover:bg-primary/10 hover:text-primary">
+                        <p className="text-white/70 leading-relaxed mb-6">{item.description}</p>
+                        <Button size="lg" variant="outline" className="rounded-full px-6 border-[#421BBC] text-[#421BBC] hover:bg-[#421BBC]/10 hover:text-[#421BBC]">
                           <Download className="h-4 w-4 mr-2" />
                           Unduh Laporan
                         </Button>
@@ -123,7 +123,7 @@ export default function PenelitianPage() {
               <aside className="space-y-10 lg:sticky lg:top-28 h-fit">
                 <Card className="shadow-lg">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-xl font-poppins text-primary-dark dark:text-white">
+                    <CardTitle className="flex items-center gap-3 text-xl font-poppins text-[#421BBC]-dark dark:text-white">
                       <ListFilter className="h-5 w-5" />
                       Pencarian & Filter
                     </CardTitle>
@@ -154,16 +154,16 @@ export default function PenelitianPage() {
                 </Card>
                  <Card className="shadow-lg">
                     <CardHeader>
-                        <CardTitle className="text-xl font-poppins text-primary-dark dark:text-white">Navigasi Cepat</CardTitle>
+                        <CardTitle className="text-xl font-poppins text-[#421BBC]-dark dark:text-white">Navigasi Cepat</CardTitle>
                     </CardHeader>
                     <CardContent className="p-0">
                         <nav className="flex flex-col">
                         {sidebarNavItems.map((item, index) => (
                             <Link key={index} href={item.href}>
-                              <div className={`flex items-center p-5 cursor-pointer hover:bg-primary/10 transition-colors text-foreground/80 font-semibold ${index !== sidebarNavItems.length - 1 ? 'border-b border-border/50' : ''}`}>
-                                  <item.icon className="h-5 w-5 text-primary mr-4" />
+                              <div className={`flex items-center p-5 cursor-pointer hover:bg-[#421BBC]/10 transition-colors text-white/80 font-semibold ${index !== sidebarNavItems.length - 1 ? 'border-b border-border/50' : ''}`}>
+                                  <item.icon className="h-5 w-5 text-[#421BBC] mr-4" />
                                   <span>{item.label}</span>
-                                  <ChevronRight className="h-5 w-5 ml-auto text-muted-foreground" />
+                                  <ChevronRight className="h-5 w-5 ml-auto text-white/70" />
                               </div>
                             </Link>
                         ))}
@@ -179,5 +179,6 @@ export default function PenelitianPage() {
     </div>
   );
 }
+
 
 

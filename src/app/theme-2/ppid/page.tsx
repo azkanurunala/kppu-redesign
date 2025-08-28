@@ -1,10 +1,10 @@
-
+﻿
 'use client';
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
-
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BarChartComponent } from '@/components/ui/bar-chart';
@@ -48,16 +48,16 @@ const sectionVariants = {
 export default function PPIDPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
-
+      <Header />
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
-                <img src="/images/bg/theme-2.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Keterbukaan Informasi Publik</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
-                    <Link href="/" className="hover:underline">Beranda</Link>
+                    <Link href="/theme-2/" className="hover:underline">Beranda</Link>
                     <ChevronRight className="h-4 w-4" />
                     <span>PPID</span>
                 </div>
@@ -225,10 +225,12 @@ export default function PPIDPage() {
             </div>
         </motion.section>
       </main>
-
+      <Footer />
     </div>
   );
 }
 
     
+
+
 

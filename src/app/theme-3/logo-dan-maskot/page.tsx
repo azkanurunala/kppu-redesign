@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -36,10 +36,10 @@ const itemVariants = {
 
 export default function LogoMaskotPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+        <div className="flex flex-col min-h-screen bg-background text-white overflow-x-hidden">
       
             <main className="flex-1">
-                <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+                <section className="bg-gradient-to-br from-purple-900 to-indigo-900 text-white py-20 relative overflow-hidden">
                     <div className="absolute inset-0">
                         <img src="/images/bg/theme-3.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
                     </div>
@@ -63,9 +63,9 @@ export default function LogoMaskotPage() {
                             className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
                         >
                             <div className="lg:pr-12">
-                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Filosofi Logo</h2>
-                                <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-8">Makna di Balik Identitas</p>
-                                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-[#421BBC] mb-4 font-poppins">Filosofi Logo</h2>
+                                <p className="text-4xl lg:text-5xl font-bold text-[#421BBC]-dark dark:text-white font-poppins mb-8">Makna di Balik Identitas</p>
+                                <div className="space-y-6 text-lg text-white/70 leading-relaxed">
                                     <p>Logo KPPU dirancang untuk mencerminkan visi, misi, dan nilai-nilai yang dipegang teguh oleh lembaga. Setiap elemen dalam logo memiliki makna mendalam yang saling terkait.</p>
                                     <p>Bentuk perisai melambangkan fungsi perlindungan terhadap persaingan usaha yang sehat. Timbangan di tengah merepresentasikan keadilan dan keseimbangan dalam penegakan hukum. Warna biru memberikan kesan profesionalisme dan kepercayaan, sementara warna emas melambangkan kemakmuran yang menjadi tujuan akhir.</p>
                                 </div>
@@ -74,7 +74,7 @@ export default function LogoMaskotPage() {
                                     Unduh Panduan Logo
                                 </Button>
                             </div>
-                            <div className="bg-card p-8 rounded-3xl shadow-2xl flex items-center justify-center aspect-square">
+                            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl flex items-center justify-center aspect-square">
                                 <Image
                                     src="https://kppu.go.id/wp-content/uploads/2019/09/cropped-LOGO-KPPU-1.png"
                                     alt="Logo KPPU"
@@ -87,11 +87,11 @@ export default function LogoMaskotPage() {
                     </div>
                 </section>
 
-                <section className="py-24 lg:py-32 bg-card">
+                <section className="py-24 lg:py-32 bg-white/10 backdrop-blur-sm">
                     <div className="container mx-auto">
                         <div className="text-center mb-20">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Panduan Penggunaan</h2>
-                            <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Konsistensi Visual</p>
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#421BBC] mb-4 font-poppins">Panduan Penggunaan</h2>
+                            <p className="text-4xl lg:text-5xl font-bold text-[#421BBC]-dark dark:text-white font-poppins">Konsistensi Visual</p>
                         </div>
                         <motion.div
                             className="grid grid-cols-1 md:grid-cols-3 gap-10"
@@ -103,27 +103,27 @@ export default function LogoMaskotPage() {
                             <motion.div variants={itemVariants}>
                                 <Card className="text-center p-8 bg-background shadow-lg rounded-2xl h-full">
                                     <CardContent className="p-0">
-                                        <Eye className="h-12 w-12 text-primary mx-auto mb-6" />
-                                        <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Ruang Kosong</h3>
-                                        <p className="text-muted-foreground">Pastikan ada ruang kosong yang cukup di sekitar logo untuk menjaga visibilitas dan integritasnya.</p>
+                                        <Eye className="h-12 w-12 text-[#421BBC] mx-auto mb-6" />
+                                        <h3 className="text-2xl font-bold font-poppins text-[#421BBC]-dark dark:text-white mb-4">Ruang Kosong</h3>
+                                        <p className="text-white/70">Pastikan ada ruang kosong yang cukup di sekitar logo untuk menjaga visibilitas dan integritasnya.</p>
                                     </CardContent>
                                 </Card>
                             </motion.div>
                              <motion.div variants={itemVariants}>
                                 <Card className="text-center p-8 bg-background shadow-lg rounded-2xl h-full">
                                     <CardContent className="p-0">
-                                        <Scale className="h-12 w-12 text-primary mx-auto mb-6" />
-                                        <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Ukuran Minimum</h3>
-                                        <p className="text-muted-foreground">Jangan gunakan logo dalam ukuran yang terlalu kecil sehingga sulit dikenali atau dibaca.</p>
+                                        <Scale className="h-12 w-12 text-[#421BBC] mx-auto mb-6" />
+                                        <h3 className="text-2xl font-bold font-poppins text-[#421BBC]-dark dark:text-white mb-4">Ukuran Minimum</h3>
+                                        <p className="text-white/70">Jangan gunakan logo dalam ukuran yang terlalu kecil sehingga sulit dikenali atau dibaca.</p>
                                     </CardContent>
                                 </Card>
                             </motion.div>
                              <motion.div variants={itemVariants}>
                                 <Card className="text-center p-8 bg-background shadow-lg rounded-2xl h-full">
                                     <CardContent className="p-0">
-                                        <Palette className="h-12 w-12 text-primary mx-auto mb-6" />
-                                        <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-4">Warna</h3>
-                                        <p className="text-muted-foreground">Gunakan varian warna logo yang telah disediakan. Jangan mengubah atau memodifikasi warna standar logo.</p>
+                                        <Palette className="h-12 w-12 text-[#421BBC] mx-auto mb-6" />
+                                        <h3 className="text-2xl font-bold font-poppins text-[#421BBC]-dark dark:text-white mb-4">Warna</h3>
+                                        <p className="text-white/70">Gunakan varian warna logo yang telah disediakan. Jangan mengubah atau memodifikasi warna standar logo.</p>
                                     </CardContent>
                                 </Card>
                             </motion.div>
@@ -140,7 +140,7 @@ export default function LogoMaskotPage() {
                             transition={{ duration: 0.8 }}
                             className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
                         >
-                             <div className="bg-card p-8 rounded-3xl shadow-2xl flex items-center justify-center aspect-square order-last lg:order-first">
+                             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl shadow-2xl flex items-center justify-center aspect-square order-last lg:order-first">
                                 <Image
                                     src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=500&h=500"
                                     alt="Maskot KPPU"
@@ -150,9 +150,9 @@ export default function LogoMaskotPage() {
                                 />
                             </div>
                             <div className="lg:pl-12">
-                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Maskot KPPU</h2>
-                                <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-8">"Cakra" Sang Penjaga Keadilan</p>
-                                <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-[#421BBC] mb-4 font-poppins">Maskot KPPU</h2>
+                                <p className="text-4xl lg:text-5xl font-bold text-[#421BBC]-dark dark:text-white font-poppins mb-8">"Cakra" Sang Penjaga Keadilan</p>
+                                <div className="space-y-6 text-lg text-white/70 leading-relaxed">
                                     <p>Perkenalkan "Cakra", maskot resmi KPPU. Cakra adalah personifikasi dari burung elang yang tajam penglihatannya dan kuat, melambangkan peran KPPU dalam mengawasi persaingan usaha dengan cermat dan tegas.</p>
                                     <p>Nama "Cakra" diambil dari bahasa Sansekerta yang berarti roda atau lingkaran, merepresentasikan siklus ekonomi yang terus berputar secara adil dan sehat. Dengan semangat Cakra, KPPU berkomitmen untuk terus menjaga iklim persaingan usaha di Indonesia.</p>
                                 </div>
@@ -165,5 +165,6 @@ export default function LogoMaskotPage() {
         </div>
     );
 }
+
 
 

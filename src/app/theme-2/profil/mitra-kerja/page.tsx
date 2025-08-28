@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -49,14 +49,14 @@ const itemVariants = {
 
 export default function MitraKerjaPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-background text-white overflow-x-hidden">
 
       <main className="flex-1">
         <motion.section
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-primary-dark text-white py-20 relative overflow-hidden"
+          className="bg-[#006666] text-white py-20 relative overflow-hidden"
         >
             <div className="container mx-auto">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Mitra Kerja</h1>
@@ -71,11 +71,11 @@ export default function MitraKerjaPage() {
         <section className="py-24 lg:py-32">
           <div className="container mx-auto">
             <div className="max-w-4xl mx-auto mb-20">
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Sinergi untuk Persaingan Usaha yang Sehat</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#006666]-dark dark:text-white font-poppins mb-6">Sinergi untuk Persaingan Usaha yang Sehat</h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
                 Informasi mengenai mitra kerja KPPU dapat diakses melalui Sistem Informasi Pengelolaan Kerja Sama (SIKERMA), yang merupakan sistem internal untuk mendokumentasikan, memantau, dan menjadi pusat informasi publik terkait kerja sama yang dimiliki KPPU.
               </p>
-               <p className="text-lg text-muted-foreground leading-relaxed mt-4">
+               <p className="text-lg text-gray-300 leading-relaxed mt-4">
                 Berikut adalah beberapa mitra kerja yang berkaitan dengan pelaksanaan tugas dan fungsi KPPU:
               </p>
             </div>
@@ -89,7 +89,7 @@ export default function MitraKerjaPage() {
             >
               {partners.map((partner) => (
                 <motion.div key={partner.name} variants={itemVariants}>
-                  <Card className="h-full flex flex-col items-center justify-center p-6 text-center bg-card hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out border-border/50 rounded-xl">
+                  <Card className="h-full flex flex-col items-center justify-center p-6 text-center bg-[#1a1a1a] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out border-border/50 rounded-xl">
                     <CardContent className="p-0 flex flex-col items-center justify-center">
                         <div className="relative h-20 w-20 mb-4">
                              <Image
@@ -101,7 +101,7 @@ export default function MitraKerjaPage() {
                                 unoptimized
                               />
                         </div>
-                      <p className="font-semibold text-sm text-foreground leading-snug">{partner.name}</p>
+                      <p className="font-semibold text-sm text-white leading-snug">{partner.name}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -115,5 +115,6 @@ export default function MitraKerjaPage() {
     </div>
   );
 }
+
 
 

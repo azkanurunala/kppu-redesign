@@ -1,5 +1,5 @@
-
-
+﻿import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -26,16 +26,16 @@ const archiveYears = ["2025", "2024", "2023", "2022", "2021"];
 export default function SiaranPersPage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-
+      <Header />
       <main className="flex-1">
         <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0">
-                <img src="/images/bg/theme-3.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
             </div>
             <div className="container mx-auto relative z-10">
                 <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Siaran Pers</h1>
                 <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
-                    <Link href="/" className="hover:underline">Beranda</Link>
+                    <Link href="/theme-3/" className="hover:underline">Beranda</Link>
                     <ChevronRight className="h-4 w-4" />
                     <span>Siaran Pers</span>
                 </div>
@@ -130,9 +130,11 @@ export default function SiaranPersPage() {
             </div>
         </section>
       </main>
-
+      <Footer />
     </div>
   );
 }
+
+
 
 

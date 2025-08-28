@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -65,10 +65,10 @@ export default function AnggotaPage() {
     const headerImage = getHeaderImageForPage(pathname);
 
     return (
-        <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+        <div className="flex flex-col min-h-screen bg-background text-white overflow-x-hidden">
       
             <main className="flex-1">
-                <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
+                <section className="bg-[#006666] text-white py-20 relative overflow-hidden">
                     <div className="absolute inset-0">
                         <img src="/images/bg/theme-2.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
                     </div>
@@ -87,8 +87,8 @@ export default function AnggotaPage() {
                 <section className="py-24 lg:py-32">
                     <div className="container mx-auto">
                         <div className="text-center mb-20">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Periode 2023-2028</h2>
-                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">Periode 2023-2028</h2>
+                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white font-poppins">Pimpinan dan Anggota Komisi</p>
                         </div>
                         <motion.div 
                             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10"
@@ -123,22 +123,22 @@ export default function AnggotaPage() {
                     </div>
                 </section>
                 
-                <section className="py-24 lg:py-32 bg-card">
+                <section className="py-24 lg:py-32 bg-[#1a1a1a]">
                     <div className="container mx-auto">
                         <div className="text-center mb-20">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Arsip</h2>
-                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">Arsip</h2>
+                            <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white font-poppins">Sejarah Keanggotaan KPPU</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                             <div>
-                                <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Anggota Komisi dari Masa ke Masa</h3>
+                                <h3 className="text-2xl font-bold font-poppins text-[#006666]-dark dark:text-white mb-8">Anggota Komisi dari Masa ke Masa</h3>
                                 <Accordion type="single" collapsible className="w-full space-y-4">
                                     {pastMembers.map((item, index) => (
                                         <AccordionItem key={index} value={`item-${index}`} className="bg-background rounded-lg shadow-md px-2">
-                                            <AccordionTrigger className="p-4 text-left font-bold text-lg hover:no-underline text-primary-dark dark:text-white">
+                                            <AccordionTrigger className="p-4 text-left font-bold text-lg hover:no-underline text-[#006666]-dark dark:text-white">
                                                 Periode {item.period}
                                             </AccordionTrigger>
-                                            <AccordionContent className="p-4 pt-0 text-muted-foreground">
+                                            <AccordionContent className="p-4 pt-0 text-gray-300">
                                                 <ul className="list-disc list-inside space-y-2">
                                                    {item.members.map(member => <li key={member}>{member}</li>)}
                                                 </ul>
@@ -148,15 +148,15 @@ export default function AnggotaPage() {
                                 </Accordion>
                             </div>
                             <div>
-                                 <h3 className="text-2xl font-bold font-poppins text-primary-dark dark:text-white mb-8">Ketua & Wakil Ketua dari Masa ke Masa</h3>
+                                 <h3 className="text-2xl font-bold font-poppins text-[#006666]-dark dark:text-white mb-8">Ketua & Wakil Ketua dari Masa ke Masa</h3>
                                  <Card className="bg-background shadow-md">
                                      <CardContent className="p-6">
                                          <ul className="space-y-6">
                                             {pastLeaders.map((item, index) => (
                                                 <li key={index} className={index !== pastLeaders.length -1 ? "border-b border-border pb-6" : ""}>
-                                                    <p className="font-bold text-lg text-primary-dark dark:text-white">Periode {item.period}</p>
-                                                    <p className="text-muted-foreground mt-1"><span className="font-semibold">Ketua:</span> {item.chair}</p>
-                                                    <p className="text-muted-foreground"><span className="font-semibold">Wakil Ketua:</span> {item.vice}</p>
+                                                    <p className="font-bold text-lg text-[#006666]-dark dark:text-white">Periode {item.period}</p>
+                                                    <p className="text-gray-300 mt-1"><span className="font-semibold">Ketua:</span> {item.chair}</p>
+                                                    <p className="text-gray-300"><span className="font-semibold">Wakil Ketua:</span> {item.vice}</p>
                                                 </li>
                                             ))}
                                          </ul>
@@ -176,10 +176,10 @@ export default function AnggotaPage() {
                                 viewport={{ once: true, amount: 0.5 }}
                                 transition={{ duration: 0.6 }}
                             >
-                                <Users className="h-16 w-16 text-primary mx-auto mb-6" />
-                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">Integritas dan Profesionalisme</h2>
-                                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins mb-6">Kode Etik Komisi</p>
-                                <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+                                <Users className="h-16 w-16 text-[#006666] mx-auto mb-6" />
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">Integritas dan Profesionalisme</h2>
+                                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white font-poppins mb-6">Kode Etik Komisi</p>
+                                <p className="text-lg text-gray-300 leading-relaxed mb-10">
                                     Sebagai landasan dalam menjalankan tugas, setiap anggota Komisi berpegang teguh pada Kode Etik Perilaku Komisioner yang menjunjung tinggi nilai-nilai integritas, objektivitas, dan profesionalisme.
                                 </p>
                                 <Button size="lg" className="rounded-full px-8 text-base">
@@ -196,4 +196,5 @@ export default function AnggotaPage() {
         </div>
     );
 }
+
 

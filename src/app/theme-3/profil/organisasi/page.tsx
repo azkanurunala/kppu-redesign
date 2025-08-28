@@ -1,11 +1,11 @@
-
+﻿
 'use client';
 
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-
-
+import { Header } from '@/components/header';
+import { Footer } from '@/components/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRight, Briefcase, Users, Building } from 'lucide-react';
 import Link from 'next/link';
@@ -29,16 +29,16 @@ const directorates = [
 export default function OrganisasiPage() {
     return (
         <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
-      
+            <Header />
             <main className="flex-1">
                 <section className="bg-primary-dark text-white py-20 relative overflow-hidden">
                     <div className="absolute inset-0">
-                        <img src="/images/bg/theme-3.jpg" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                        <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
                     </div>
                     <div className="container mx-auto relative z-10">
                         <h1 className="text-4xl lg:text-6xl font-bold font-poppins">Struktur Organisasi</h1>
                         <div className="text-sm mt-4 flex items-center space-x-2 text-gray-300">
-                            <Link href="/" className="hover:underline">Beranda</Link>
+                            <Link href="/theme-3/" className="hover:underline">Beranda</Link>
                             <ChevronRight className="h-4 w-4" />
                             <span>Struktur Organisasi</span>
                         </div>
@@ -107,8 +107,10 @@ export default function OrganisasiPage() {
                     </div>
                 </section>
             </main>
-      
+            <Footer />
         </div>
     );
 }
+
+
 

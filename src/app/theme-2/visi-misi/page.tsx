@@ -1,4 +1,4 @@
-
+﻿
 'use client';
 
 import React from 'react';
@@ -28,16 +28,16 @@ const MisiItems = [
 ];
 
 const NilaiItems = [
-  { icon: <Handshake className="w-8 h-8 mx-auto mb-4 text-primary" />, title: "Rasa (Responsibility)", description: "Bertanggung jawab penuh atas setiap tugas dan kewajiban yang diemban." },
-  { icon: <Gem className="w-8 h-8 mx-auto mb-4 text-primary" />, title: "Integritas (Integrity)", description: "Jujur, konsisten, dan bertindak sesuai dengan nilai dan etika organisasi." },
-  { icon: <Rocket className="w-8 h-8 mx-auto mb-4 text-primary" />, title: "Kepercayaan (Confidence)", description: "Percaya pada kemampuan diri sendiri untuk menyelesaikan setiap tantangan." },
-  { icon: <Lightbulb className="w-8 h-8 mx-auto mb-4 text-primary" />, title: "Kerja Keras (Hardwork)", description: "Bekerja keras dan pantang menyerah untuk mencapai tujuan organisasi." },
-  { icon: <Users className="w-8 h-8 mx-auto mb-4 text-primary" />, title: "Kerja Tim (Teamwork)", description: "Bekerja sama secara harmonis, saling membantu, dan berkoordinasi efektif." },
+  { icon: <Handshake className="w-8 h-8 mx-auto mb-4 text-[#006666]" />, title: "Rasa (Responsibility)", description: "Bertanggung jawab penuh atas setiap tugas dan kewajiban yang diemban." },
+  { icon: <Gem className="w-8 h-8 mx-auto mb-4 text-[#006666]" />, title: "Integritas (Integrity)", description: "Jujur, konsisten, dan bertindak sesuai dengan nilai dan etika organisasi." },
+  { icon: <Rocket className="w-8 h-8 mx-auto mb-4 text-[#006666]" />, title: "Kepercayaan (Confidence)", description: "Percaya pada kemampuan diri sendiri untuk menyelesaikan setiap tantangan." },
+  { icon: <Lightbulb className="w-8 h-8 mx-auto mb-4 text-[#006666]" />, title: "Kerja Keras (Hardwork)", description: "Bekerja keras dan pantang menyerah untuk mencapai tujuan organisasi." },
+  { icon: <Users className="w-8 h-8 mx-auto mb-4 text-[#006666]" />, title: "Kerja Tim (Teamwork)", description: "Bekerja sama secara harmonis, saling membantu, dan berkoordinasi efektif." },
 ];
 
 export default function VisiMisiPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+        <div className="flex flex-col min-h-screen bg-background text-white overflow-x-hidden">
       
             <main className="flex-1">
                 {/* Hero Section */}
@@ -68,20 +68,20 @@ export default function VisiMisiPage() {
                         transition={{ duration: 0.8 }}
                         className="container mx-auto">
                         <div className="text-center max-w-4xl mx-auto">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">VISI KPPU</h2>
-                            <p className="text-4xl lg:text-6xl font-semibold text-primary-dark dark:text-white leading-tight font-poppins">
-                                "Terwujudnya <span className="text-primary">persaingan usaha yang sehat</span> untuk kesejahteraan rakyat"
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">VISI KPPU</h2>
+                            <p className="text-4xl lg:text-6xl font-semibold text-[#006666]-dark dark:text-white leading-tight font-poppins">
+                                "Terwujudnya <span className="text-[#006666]">persaingan usaha yang sehat</span> untuk kesejahteraan rakyat"
                             </p>
                         </div>
                     </motion.div>
                 </section>
 
                 {/* Misi Section */}
-                <section className="py-24 lg:py-32 bg-card">
+                <section className="py-24 lg:py-32 bg-[#1a1a1a]">
                     <div className="container mx-auto">
                         <div className="text-center mb-20">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">MISI KPPU</h2>
-                            <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Langkah Strategis Kami</p>
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">MISI KPPU</h2>
+                            <p className="text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white font-poppins">Langkah Strategis Kami</p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                             {MisiItems.map((item, index) => (
@@ -101,9 +101,9 @@ export default function VisiMisiPage() {
                                 viewport={{ once: true, amount: 0.5 }}
                                 transition={{ duration: 0.8 }}
                             >
-                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">TUJUAN</h2>
-                                <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white mb-6 font-poppins">Arah dan Fokus Utama</p>
-                                <p className="text-lg text-muted-foreground leading-relaxed">
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">TUJUAN</h2>
+                                <p className="text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white mb-6 font-poppins">Arah dan Fokus Utama</p>
+                                <p className="text-lg text-gray-300 leading-relaxed">
                                     Mewujudkan perekonomian nasional yang efisien dan berkeadilan untuk meningkatkan kesejahteraan rakyat melalui persaingan usaha yang sehat.
                                 </p>
                                 <div className="mt-8 relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl">
@@ -120,12 +120,12 @@ export default function VisiMisiPage() {
                                 <div className="relative h-80 w-full rounded-2xl overflow-hidden shadow-2xl mb-8">
                                      <Image src="https://images.pexels.com/photos/3184150/pexels-photo-3184150.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Sasaran Strategis KPPU" fill className="object-cover" data-ai-hint="chess strategy board" />
                                 </div>
-                                <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">SASARAN STRATEGIS</h2>
-                                <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white mb-6 font-poppins">Target yang Terukur</p>
-                                <ul className="space-y-4 text-lg text-muted-foreground list-inside">
-                                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" /><span>Terwujudnya kepastian hukum persaingan usaha.</span></li>
-                                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" /><span>Optimalnya pencegahan pelanggaran hukum persaingan usaha.</span></li>
-                                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" /><span>Meningkatnya kualitas tata kelola kelembagaan.</span></li>
+                                <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">SASARAN STRATEGIS</h2>
+                                <p className="text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white mb-6 font-poppins">Target yang Terukur</p>
+                                <ul className="space-y-4 text-lg text-gray-300 list-inside">
+                                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#006666] mr-3 mt-1 flex-shrink-0" /><span>Terwujudnya kepastian hukum persaingan usaha.</span></li>
+                                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#006666] mr-3 mt-1 flex-shrink-0" /><span>Optimalnya pencegahan pelanggaran hukum persaingan usaha.</span></li>
+                                    <li className="flex items-start"><CheckCircle className="w-6 h-6 text-[#006666] mr-3 mt-1 flex-shrink-0" /><span>Meningkatnya kualitas tata kelola kelembagaan.</span></li>
                                 </ul>
                             </motion.div>
                         </div>
@@ -133,11 +133,11 @@ export default function VisiMisiPage() {
                 </section>
 
                 {/* Nilai-nilai Section */}
-                <section className="py-24 lg:py-32 bg-card">
+                <section className="py-24 lg:py-32 bg-[#1a1a1a]">
                     <div className="container mx-auto">
                          <div className="text-center mb-20">
-                            <h2 className="text-sm font-bold uppercase tracking-widest text-primary mb-4 font-poppins">NILAI-NILAI KPPU (RICH TEAM)</h2>
-                            <p className="text-4xl lg:text-5xl font-bold text-primary-dark dark:text-white font-poppins">Prinsip yang Kami Junjung Tinggi</p>
+                            <h2 className="text-sm font-bold uppercase tracking-widest text-[#006666] mb-4 font-poppins">NILAI-NILAI KPPU (RICH TEAM)</h2>
+                            <p className="text-4xl lg:text-5xl font-bold text-[#006666]-dark dark:text-white font-poppins">Prinsip yang Kami Junjung Tinggi</p>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                             {NilaiItems.map((item, index) => (
@@ -150,8 +150,8 @@ export default function VisiMisiPage() {
                                     className="text-center p-8 bg-background rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
                                 >
                                     {item.icon}
-                                    <h3 className="font-bold text-xl mb-2 font-poppins text-primary-dark dark:text-white">{item.title}</h3>
-                                    <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                                    <h3 className="font-bold text-xl mb-2 font-poppins text-[#006666]-dark dark:text-white">{item.title}</h3>
+                                    <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -162,3 +162,4 @@ export default function VisiMisiPage() {
         </div>
     );
 }
+

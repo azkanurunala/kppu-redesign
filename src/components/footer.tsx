@@ -1,4 +1,4 @@
-
+﻿
 import { Logo } from './logo';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -18,7 +18,7 @@ const footerLinkColumns = [
         { label: "KINERJA KEUANGAN", href: "/profil/kinerja-keuangan" },
         { label: "MITRA KERJA", href: "/profil/mitra-kerja" },
         { label: "PPID", href: "/ppid" },
-        { label: "LOGO DAN MASKOT", href: "/profil/logo-maskot" },
+        { label: "LOGO DAN MASKOT", href: "/profil/logo-dan-maskot" },
     ],
   },
   {
@@ -86,7 +86,7 @@ export function Footer() {
     <>
       <section>
           <div className="relative py-24 md:py-32 text-center bg-[#421BBC]">
-              <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
+                              <img src="/images/bg/map-bw.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
                   <h2 className="text-4xl lg:text-5xl font-bold font-poppins mb-4 text-white">Sinergi untuk Ekonomi Maju</h2>
@@ -152,3 +152,4 @@ export function Footer() {
     </>
   );
 }
+

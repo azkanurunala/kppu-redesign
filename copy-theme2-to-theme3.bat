@@ -30,7 +30,7 @@ mkdir src\app\theme-3\pengawasan\kajian-kebijakan 2>nul
 mkdir src\app\theme-3\pengawasan\penelitian 2>nul
 mkdir src\app\theme-3\profil\anggota 2>nul
 mkdir src\app\theme-3\profil\kinerja-keuangan 2>nul
-mkdir src\app\theme-3\profil\logo-maskot 2>nul
+mkdir src\app\theme-3\profil\logo-dan-maskot 2>nul
 mkdir src\app\theme-3\profil\mitra-kerja 2>nul
 mkdir src\app\theme-3\profil\organisasi 2>nul
 mkdir src\app\theme-3\profil\pejabat-sekretariat 2>nul
@@ -65,7 +65,7 @@ copy "src\app\theme-2\pengawasan\kajian-kebijakan\page.tsx" "src\app\theme-3\pen
 copy "src\app\theme-2\pengawasan\penelitian\page.tsx" "src\app\theme-3\pengawasan\penelitian\page.tsx"
 copy "src\app\theme-2\profil\anggota\page.tsx" "src\app\theme-3\profil\anggota\page.tsx"
 copy "src\app\theme-2\profil\kinerja-keuangan\page.tsx" "src\app\theme-3\profil\kinerja-keuangan\page.tsx"
-copy "src\app\theme-2\profil\logo-maskot\page.tsx" "src\app\theme-3\profil\logo-maskot\page.tsx"
+copy "src\app\theme-2\profil\logo-dan-maskot\page.tsx" "src\app\theme-3\profil\logo-dan-maskot\page.tsx"
 copy "src\app\theme-2\profil\mitra-kerja\page.tsx" "src\app\theme-3\profil\mitra-kerja\page.tsx"
 copy "src\app\theme-2\profil\organisasi\page.tsx" "src\app\theme-3\profil\organisasi\page.tsx"
 copy "src\app\theme-2\profil\pejabat-sekretariat\page.tsx" "src\app\theme-3\profil\pejabat-sekretariat\page.tsx"

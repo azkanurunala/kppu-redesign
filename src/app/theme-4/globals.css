@@ -10,7 +10,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 240 100% 35%; /* #421BBC - Blue kombinasi Theme 1 & 2 */
+    --primary: 240 100% 25%; /* #1e3a8a - Dark Blue untuk Theme 4 */
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222.2 84% 4.9%;
@@ -22,13 +22,13 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 240 100% 35%;
+    --ring: 240 100% 25%;
     --radius: 0.5rem;
-    --chart-1: 240 100% 35%;
-    --chart-2: 240 100% 42%;
-    --chart-3: 240 100% 49%;
-    --chart-4: 240 100% 56%;
-    --chart-5: 240 100% 63%;
+    --chart-1: 240 100% 25%;
+    --chart-2: 240 100% 30%;
+    --chart-3: 240 100% 35%;
+    --chart-4: 240 100% 40%;
+    --chart-5: 240 100% 45%;
   }
 
   .dark {
@@ -38,7 +38,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 240 100% 35%; /* #421BBC - Blue kombinasi Theme 1 & 2 */
+    --primary: 240 100% 25%; /* #1e3a8a - Dark Blue untuk Theme 4 */
     --primary-foreground: 210 40% 98%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -50,12 +50,12 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 240 100% 35%;
-    --chart-1: 240 100% 35%;
-    --chart-2: 240 100% 42%;
-    --chart-3: 240 100% 49%;
-    --chart-4: 240 100% 56%;
-    --chart-5: 240 100% 63%;
+    --ring: 240 100% 25%;
+    --chart-1: 240 100% 25%;
+    --chart-2: 240 100% 30%;
+    --chart-3: 240 100% 35%;
+    --chart-4: 240 100% 40%;
+    --chart-5: 240 100% 45%;
   }
 }
 
@@ -83,35 +83,35 @@
   }
 
   .bg-gradient-blue {
-    background: linear-gradient(135deg, #421BBC 0%, #6366F1 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   }
 
   .bg-gradient-blue-light {
-    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
   }
 
   .text-blue {
-    color: #421BBC;
+    color: #1e3a8a;
   }
 
   .bg-blue {
-    background-color: #421BBC;
+    background-color: #1e3a8a;
   }
 
   .border-blue {
-    border-color: #421BBC;
+    border-color: #1e3a8a;
   }
 
   .hover\:bg-blue:hover {
-    background-color: #421BBC;
+    background-color: #1e3a8a;
   }
 
   .hover\:text-blue:hover {
-    color: #421BBC;
+    color: #1e3a8a;
   }
 
   .focus\:ring-blue:focus {
-    --tw-ring-color: #421BBC;
+    --tw-ring-color: #1e3a8a;
   }
 
   .scrollbar-hide {

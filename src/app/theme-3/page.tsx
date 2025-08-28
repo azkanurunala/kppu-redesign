@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import { Button } from '../../components/ui/button';
@@ -10,7 +10,7 @@ import { Input } from '../../components/ui/input';
 
 export default function Theme3HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-white overflow-x-hidden">
       <main className="flex-1">
         {/* Hero Section - Stacked Layout */}
         <section className="bg-[#5B21B6] text-white py-20 relative overflow-hidden">
@@ -420,3 +420,4 @@ export default function Theme3HomePage() {
      </div>
    );
  }
+

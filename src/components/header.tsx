@@ -30,7 +30,7 @@ const navItems = [
       { label: 'KINERJA KEUANGAN', href: '/profil/kinerja-keuangan' },
       { label: 'MITRA KERJA', href: '/profil/mitra-kerja' },
       { label: 'PPID', href: '/ppid' },
-      { label: 'LOGO DAN MASKOT', href: '/profil/logo-maskot' },
+      { label: 'LOGO DAN MASKOT', href: '/profil/logo-dan-maskot' },
     ],
   },
   {

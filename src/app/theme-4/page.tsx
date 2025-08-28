@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import { Button } from '../../components/ui/button';
@@ -8,11 +8,11 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Input } from '../../components/ui/input';
 import { Header } from '../../components/header';
-import { Footer } from '../../components/footer';
+import { Theme4Footer } from './components/theme4-footer';
 
 export default function Theme4HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-gray-800 dark:text-white overflow-x-hidden">
       <Header />
       <main className="flex-1">
         {/* Hero Section - Theme 1 (Full width) */}
@@ -201,11 +201,11 @@ export default function Theme4HomePage() {
                     </div>
                     <ChevronRight className="h-5 w-5 text-white/70" />
                   </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+                 ))}
+               </div>
+             </div>
+           </div>
+         </section>
 
         {/* About KPPU Section - Theme 1 (2 kolom) */}
          <section className="py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
@@ -328,7 +328,7 @@ export default function Theme4HomePage() {
           </div>
         </section>
 
-                 {/* Media & Publikasi Section - Theme 2 (Full width video) */}
+        {/* Media & Publikasi Section - Theme 2 (Full width video) */}
          <section className="py-24 lg:py-32 bg-gray-100 dark:bg-gray-700">
           <div className="container mx-auto">
             <div className="text-center mb-16 md:mb-20">
@@ -401,7 +401,8 @@ export default function Theme4HomePage() {
         </section>
 
       </main>
-      <Footer />
+      <Theme4Footer />
     </div>
   );
 }
+

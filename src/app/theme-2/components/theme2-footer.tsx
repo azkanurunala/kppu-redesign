@@ -17,7 +17,7 @@ const footerLinkColumns = [
         { label: "KINERJA KEUANGAN", href: "/theme-2/profil/kinerja-keuangan" },
         { label: "MITRA KERJA", href: "/theme-2/profil/mitra-kerja" },
         { label: "PPID", href: "/theme-2/ppid" },
-        { label: "LOGO DAN MASKOT", href: "/theme-2/profil/logo-maskot" },
+        { label: "LOGO DAN MASKOT", href: "/theme-2/profil/logo-dan-maskot" },
     ],
   },
   {

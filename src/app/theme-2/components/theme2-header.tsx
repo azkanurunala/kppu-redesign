@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -29,7 +29,7 @@ const navItems = [
       { label: 'KINERJA KEUANGAN', href: '/theme-2/profil/kinerja-keuangan' },
       { label: 'MITRA KERJA', href: '/theme-2/profil/mitra-kerja' },
       { label: 'PPID', href: '/theme-2/ppid' },
-      { label: 'LOGO DAN MASKOT', href: '/theme-2/profil/logo-maskot' },
+      { label: 'LOGO DAN MASKOT', href: '/theme-2/profil/logo-dan-maskot' },
     ],
   },
   {
@@ -115,7 +115,7 @@ export function Theme2Header() {
               <DropdownMenuContent className="bg-background border-border">
                 {item.subItems.map((subItem) => (
                   <DropdownMenuItem key={subItem.label} asChild>
-                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/10">{subItem.label}</Link>
+                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-[#006666]/10">{subItem.label}</Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -181,4 +181,5 @@ export function Theme2Header() {
     </>
   );
 }
+
 

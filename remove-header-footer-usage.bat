@@ -86,8 +86,8 @@ powershell -Command "(Get-Content 'src\app\theme-2\profil\anggota\page.tsx') -re
 powershell -Command "(Get-Content 'src\app\theme-2\profil\kinerja-keuangan\page.tsx') -replace '      <Header />', '' | Set-Content 'src\app\theme-2\profil\kinerja-keuangan\page.tsx'"
 powershell -Command "(Get-Content 'src\app\theme-2\profil\kinerja-keuangan\page.tsx') -replace '      <Footer />', '' | Set-Content 'src\app\theme-2\profil\kinerja-keuangan\page.tsx'"
 
-powershell -Command "(Get-Content 'src\app\theme-2\profil\logo-maskot\page.tsx') -replace '      <Header />', '' | Set-Content 'src\app\theme-2\profil\logo-maskot\page.tsx'"
-powershell -Command "(Get-Content 'src\app\theme-2\profil\logo-maskot\page.tsx') -replace '      <Footer />', '' | Set-Content 'src\app\theme-2\profil\logo-maskot\page.tsx'"
+powershell -Command "(Get-Content 'src\app\theme-2\profil\logo-dan-maskot\page.tsx') -replace '      <Header />', '' | Set-Content 'src\app\theme-2\profil\logo-dan-maskot\page.tsx'"
+powershell -Command "(Get-Content 'src\app\theme-2\profil\logo-dan-maskot\page.tsx') -replace '      <Footer />', '' | Set-Content 'src\app\theme-2\profil\logo-dan-maskot\page.tsx'"
 
 powershell -Command "(Get-Content 'src\app\theme-2\profil\mitra-kerja\page.tsx') -replace '      <Header />', '' | Set-Content 'src\app\theme-2\profil\mitra-kerja\page.tsx'"
 powershell -Command "(Get-Content 'src\app\theme-2\profil\mitra-kerja\page.tsx') -replace '      <Footer />', '' | Set-Content 'src\app\theme-2\profil\mitra-kerja\page.tsx'"

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import { Button } from '../../components/ui/button';
@@ -73,7 +73,7 @@ const commissioners = [
 
 export default function Theme2HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-white overflow-x-hidden">
       <main className="flex-1">
         {/* Hero Section - Split Layout */}
         <section className="bg-[#00AA88] text-white pb-60 pt-40 relative overflow-hidden">
@@ -785,4 +785,5 @@ export default function Theme2HomePage() {
     </div>
   );
 }
+
 

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import { Button } from '../../components/ui/button';
@@ -12,7 +12,7 @@ import { Footer } from '../../components/footer';
 
 export default function Theme5HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-x-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-white overflow-x-hidden">
       <Header />
       <main className="flex-1">
         {/* Hero Section - Theme 1 (Full width) */}
@@ -524,3 +524,4 @@ export default function Theme5HomePage() {
     </div>
   );
 }
+

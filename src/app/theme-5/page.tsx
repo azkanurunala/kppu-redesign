@@ -7,13 +7,9 @@ import { ArrowRight, Search, FileText, Gavel, Scale, Megaphone, TrendingUp, User
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Input } from '../../components/ui/input';
-import { Header } from '../../components/header';
-import { Footer } from '../../components/footer';
-
 export default function Theme5HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-white overflow-x-hidden">
-      <Header />
       <main className="flex-1">
         {/* Hero Section - Theme 1 (Full width) */}
         <section className="bg-[#7C3AED] text-white py-20 relative overflow-hidden">
@@ -520,7 +516,6 @@ export default function Theme5HomePage() {
         </section>
 
       </main>
-      <Footer />
     </div>
   );
 }

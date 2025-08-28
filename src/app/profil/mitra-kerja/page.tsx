@@ -7,22 +7,22 @@ import { motion } from 'framer-motion';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Shield, Scale, Building2, TrendingUp, DollarSign, Users, Radio, BarChart3, Leaf, Heart, Gavel } from 'lucide-react';
 import Link from 'next/link';
 
 const partners = [
-  { name: "Kepolisian Negara Republik Indonesia (Polri)", logo: "https://kppu.go.id/wp-content/uploads/2019/11/polri.png", hint: "police logo" },
-  { name: "Kejaksaan Agung Republik Indonesia", logo: "https://kppu.go.id/wp-content/uploads/2019/11/jamdatun.png", hint: "attorney office logo" },
-  { name: "Kementerian Hukum dan Hak Asasi Manusia", logo: "https://kppu.go.id/wp-content/uploads/2019/11/kemenkumham.png", hint: "government ministry logo" },
-  { name: "Pusat Pelaporan dan Analisis Transaksi Keuangan (PPATK)", logo: "https://kppu.go.id/wp-content/uploads/2019/11/ppatk.png", hint: "financial intelligence logo" },
-  { name: "Direktorat Jenderal Pajak", logo: "https://kppu.go.id/wp-content/uploads/2019/11/pajak.png", hint: "tax office logo" },
-  { name: "Otoritas Jasa Keuangan (OJK)", logo: "https://kppu.go.id/wp-content/uploads/2019/11/ojk.png", hint: "financial authority logo" },
-  { name: "Kementerian Dalam Negeri Republik Indonesia", logo: "https://kppu.go.id/wp-content/uploads/2019/11/kemendagri.png", hint: "internal affairs ministry logo" },
-  { name: "Kementerian Komunikasi dan Informatika", logo: "https://kppu.go.id/wp-content/uploads/2019/11/kominfo.png", hint: "communication ministry logo" },
-  { name: "Badan Pusat Statistik (BPS)", logo: "https://kppu.go.id/wp-content/uploads/2019/11/bps.png", hint: "statistics bureau logo" },
-  { name: "Kementerian Pertanian Republik Indonesia", logo: "https://kppu.go.id/wp-content/uploads/2019/11/kementan.png", hint: "agriculture ministry logo" },
-  { name: "Kementerian Kesehatan Republik Indonesia", logo: "https://kppu.go.id/wp-content/uploads/2019/11/kemenkes.png", hint: "health ministry logo" },
-  { name: "Mahkamah Agung Republik Indonesia", logo: "https://kppu.go.id/wp-content/uploads/2019/11/ma.png", hint: "supreme court logo" },
+  { name: "Kepolisian Negara Republik Indonesia (Polri)", icon: Shield, color: "text-blue-600" },
+  { name: "Kejaksaan Agung Republik Indonesia", icon: Scale, color: "text-red-600" },
+  { name: "Kementerian Hukum dan Hak Asasi Manusia", icon: Building2, color: "text-green-600" },
+  { name: "Pusat Pelaporan dan Analisis Transaksi Keuangan (PPATK)", icon: TrendingUp, color: "text-purple-600" },
+  { name: "Direktorat Jenderal Pajak", icon: DollarSign, color: "text-yellow-600" },
+  { name: "Otoritas Jasa Keuangan (OJK)", icon: Users, color: "text-indigo-600" },
+  { name: "Kementerian Dalam Negeri Republik Indonesia", icon: Building2, color: "text-orange-600" },
+  { name: "Kementerian Komunikasi dan Informatika", icon: Radio, color: "text-pink-600" },
+  { name: "Badan Pusat Statistik (BPS)", icon: BarChart3, color: "text-teal-600" },
+  { name: "Kementerian Pertanian Republik Indonesia", icon: Leaf, color: "text-emerald-600" },
+  { name: "Kementerian Kesehatan Republik Indonesia", icon: Heart, color: "text-rose-600" },
+  { name: "Mahkamah Agung Republik Indonesia", icon: Gavel, color: "text-amber-600" },
 ];
 
 const containerVariants = {
@@ -80,33 +80,31 @@ export default function MitraKerjaPage() {
               </p>
             </div>
 
-            <motion.div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              {partners.map((partner) => (
-                <motion.div key={partner.name} variants={itemVariants}>
-                  <Card className="h-full flex flex-col items-center justify-center p-6 text-center bg-card hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out border-border/50 rounded-xl">
-                    <CardContent className="p-0 flex flex-col items-center justify-center">
-                        <div className="relative h-20 w-20 mb-4">
-                             <Image
-                                src={partner.logo}
-                                alt={`Logo ${partner.name}`}
-                                                        fill
-                        className="object-contain"
-                                data-ai-hint={partner.hint}
-                                unoptimized
-                              />
-                        </div>
-                      <p className="font-semibold text-sm text-foreground leading-snug">{partner.name}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
+                         <motion.div
+               className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+               variants={containerVariants}
+               initial="hidden"
+               whileInView="visible"
+               viewport={{ once: true, amount: 0.2 }}
+             >
+               {partners.map((partner) => {
+                 const IconComponent = partner.icon;
+                 return (
+                   <motion.div key={partner.name} variants={itemVariants}>
+                     <Card className="h-full flex flex-col items-center p-6 text-center bg-card hover:shadow-xl hover:-translate-y-2 transition-all duration-300 ease-in-out border-border/50 rounded-xl">
+                       <CardContent className="p-0 flex flex-col items-center">
+                                                      <div className="flex items-center justify-center h-20 w-20 mb-4">
+                                 <div className="flex items-center justify-center h-16 w-16 rounded-full bg-white/90 shadow-lg">
+                                     <IconComponent className={`h-8 w-8 ${partner.color}`} />
+                                 </div>
+                            </div>
+                         <p className="font-semibold text-sm text-foreground leading-snug">{partner.name}</p>
+                       </CardContent>
+                     </Card>
+                   </motion.div>
+                 );
+               })}
+             </motion.div>
           </div>
         </section>
 

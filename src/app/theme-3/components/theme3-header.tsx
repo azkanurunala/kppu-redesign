@@ -1,20 +1,21 @@
-﻿"use client";
+
+"use client";
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { LogoImage } from '../../../components/logo';
-import { Button } from '../../../components/ui/button';
+import { LogoImage } from '@/components/logo';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../../../components/ui/dropdown-menu';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../../../components/ui/sheet';
-import { Menu, ChevronDown, Search } from 'lucide-react';
-import { cn } from '../../../lib/utils';
-import { ThemeToggle } from '../../../components/theme-toggle';
-import { SearchDialog } from '../../../components/search-dialog';
+} from '@/components/ui/dropdown-menu';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Menu, ChevronDown, Search, Palette } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+import { SearchDialog } from '@/components/search-dialog';
 
 const navItems = [
   {
@@ -81,10 +82,29 @@ const navItems = [
   { label: 'KONTAK', href: '/theme-3/contact' },
 ];
 
+// Data tema yang tersedia
+const themes = [
+  { label: 'TEMA UTAMA', value: '', color: '#0D1D36' },
+  { label: 'TEMA 2', value: 'theme-2', color: '#006666' },
+  { label: 'TEMA 3', value: 'theme-3', color: '#421BBC' },
+  { label: 'TEMA 4', value: 'theme-4', color: '#dc2626' },
+  { label: 'TEMA 5', value: 'theme-5', color: '#FF6B35' },
+];
+
 export function Theme3Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const handleThemeSwitch = (themeValue: string) => {
+    if (themeValue === '') {
+      // Kembali ke tema utama
+      window.location.href = '/';
+    } else {
+      // Switch ke tema tertentu
+      window.location.href = `/${themeValue}`;
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,8 +126,8 @@ export function Theme3Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className={cn(
-                                         "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
-                      isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#5B21B6]"
+                    "text-sm font-semibold flex items-center gap-1 w-full justify-start lg:justify-center",
+                     isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#B8860B]"
                   )}>
                     {item.label} <ChevronDown className="h-4 w-4" />
                   </Button>
@@ -115,15 +135,15 @@ export function Theme3Header() {
               <DropdownMenuContent className="bg-background border-border">
                 {item.subItems.map((subItem) => (
                   <DropdownMenuItem key={subItem.label} asChild>
-                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-[#421BBC]/10">{subItem.label}</Link>
+                    <Link href={subItem.href} className="text-sm font-semibold hover:!bg-primary/10">{subItem.label}</Link>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
              <Button variant="ghost" asChild className={cn(
-                                 "text-sm font-semibold w-full justify-start lg:justify-center",
-                  isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-[#5B21B6]"
+                "text-sm font-semibold w-full justify-start lg:justify-center",
+                 isMobile ? "text-gray-700 dark:text-gray-300" : "text-white hover:text-gold"
             )}>
               <Link href={item.href}>{item.label}</Link>
             </Button>
@@ -136,14 +156,14 @@ export function Theme3Header() {
   return (
     <>
       <header className={cn(
-                 "sticky top-0 z-50 w-full transition-colors duration-300",
-         isScrolled ? "bg-[#5B21B6] shadow-md backdrop-blur-lg" : "bg-[#5B21B6]"
+        "sticky top-0 z-50 w-full transition-colors duration-300",
+        isScrolled ? "bg-gradient-to-br from-purple-950 to-indigo-950 shadow-md backdrop-blur-lg" : "bg-gradient-to-br from-purple-950 to-indigo-950"
       )}>
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/theme-3" className="flex items-center gap-2">
             <LogoImage />
           </Link>
-
+          
           <div className="hidden lg:flex flex-1 items-center justify-end">
             <NavMenu />
           </div>
@@ -153,7 +173,36 @@ export function Theme3Header() {
               <Search className="h-5 w-5 text-white" />
               <span className="sr-only">Cari</span>
             </Button>
-            <ThemeToggle />
+            
+            {/* Theme Switch Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Palette className="h-5 w-5 text-white" />
+                  <span className="sr-only">Switch Tema</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border-border min-w-[200px]">
+                <div className="p-2">
+                  <h4 className="text-sm font-semibold mb-2 text-foreground">Pilih Tema</h4>
+                  {themes.map((theme) => (
+                    <DropdownMenuItem 
+                      key={theme.value} 
+                      onClick={() => handleThemeSwitch(theme.value)}
+                      className="flex items-center gap-3 cursor-pointer hover:!bg-primary/10"
+                    >
+                      <div 
+                        className="w-4 h-4 rounded-full border-2 border-border"
+                        style={{ backgroundColor: theme.color }}
+                      />
+                      <span className="text-sm font-medium">{theme.label}</span>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild className="lg:hidden">
                 <Button variant="ghost" size="icon">
@@ -171,6 +220,30 @@ export function Theme3Header() {
                 </SheetHeader>
                 <div className="mt-8">
                   <NavMenu isMobile />
+                  
+                  {/* Theme Switch untuk Mobile */}
+                  <div className="mt-6 pt-6 border-t border-border">
+                    <h4 className="text-sm font-semibold mb-3 text-foreground">Pilih Tema</h4>
+                    <div className="space-y-2">
+                      {themes.map((theme) => (
+                        <Button
+                          key={theme.value}
+                          variant="ghost"
+                          onClick={() => {
+                            handleThemeSwitch(theme.value);
+                            setIsMobileMenuOpen(false);
+                          }}
+                          className="w-full justify-start gap-3 text-gray-700 dark:text-gray-300"
+                        >
+                          <div 
+                            className="w-4 h-4 rounded-full border-2 border-border"
+                            style={{ backgroundColor: theme.color }}
+                          />
+                          <span className="text-sm font-medium">{theme.label}</span>
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -181,4 +254,3 @@ export function Theme3Header() {
     </>
   );
 }
-

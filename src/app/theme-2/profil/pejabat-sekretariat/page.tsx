@@ -10,43 +10,55 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, User, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
-// Data Pejabat Sekretariat (6 orang)
+// Data Pejabat Sekretariat (8 orang)
 const secretariatOfficials = [
   {
     name: 'Lukman Sungkar, S.E., M.M.',
     title: 'Plt. Sekretaris Jenderal',
-    image: '/images/people/lukman-sungkar.jpg',
+    image: '/images/pejabat-sekretariat/lukmansungkar.jpeg',
     hint: 'portrait man official black suit black tie peci'
   },
   {
     name: 'Taufik Ariyanto Arsad, S.E., M.E.',
     title: 'Deputi Bidang Kajian dan Advokasi',
-    image: '/images/people/taufik-ariyanto.jpg',
+    image: '/images/pejabat-sekretariat/taufikariyantoarsad.png',
     hint: 'portrait man official gray hair black suit blue tie'
   },
   {
     name: 'Setyabudi Yulianto, S.H.',
     title: 'Deputi Bidang Penegakan Hukum',
-    image: '/images/people/setyabudi-yulianto.jpg',
+    image: '/images/pejabat-sekretariat/setyabudiyulianto.jpg',
     hint: 'portrait man official black suit blue tie'
   },
   {
     name: 'Daniel Agustino, S.E., M.P.P.',
     title: 'Staf Ahli Unsur Pembantu Komisi Bidang Ekonomi',
-    image: '/images/people/daniel-agustino.jpg',
+    image: '/images/pejabat-sekretariat/danielagustino.png',
     hint: 'portrait man official glasses black suit blue tie'
   },
   {
     name: 'Andi Zubaida Assaf, S.T.P., M.Si.',
     title: 'Kepala Biro Perencanaan dan Keuangan',
-    image: '/images/people/andi-zubaida.jpg',
+    image: '/images/pejabat-sekretariat/andizubaidaassaf.png',
     hint: 'portrait woman official pink hijab dark top smiling'
   },
   {
     name: 'Manaek SM Pasaribu, S.H., LL.M.',
     title: 'Kepala Biro Hukum',
-    image: '/images/people/manaek-pasaribu.jpg',
+    image: '/images/pejabat-sekretariat/manaekpasaribu.jpg',
     hint: 'portrait man official black peci black suit red tie'
+  },
+  {
+    name: 'Mulyawan Rana Manggala, S.E., M.M.',
+    title: 'Kepala Biro Umum',
+    image: '/images/pejabat-sekretariat/mulyawanranamanggala.jpeg',
+    hint: 'portrait man official black suit blue tie'
+  },
+  {
+    name: 'Ima Damayanti, S.E., M.M.',
+    title: 'Kepala Biro Pengawasan',
+    image: '/images/pejabat-sekretariat/imadamayanti2.png',
+    hint: 'portrait woman official black hijab white blazer'
   }
 ];
 

@@ -78,7 +78,7 @@ export function Theme4Footer() {
   return (
     <>
       <section>
-          <div className="relative py-24 md:py-32 text-center bg-[#1e3a8a]">
+          <div className="relative py-24 md:py-32 text-center bg-[#030510]">
               <img src="/images/bg/map-bw-bl.png" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
@@ -90,7 +90,7 @@ export function Theme4Footer() {
               </div>
           </div>
       </section>
-      <footer className="bg-[#0D1D36] text-gray-300">
+      <footer className="bg-black text-gray-300">
         <div className="container mx-auto pt-16 pb-8">
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">

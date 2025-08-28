@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ChevronRight, Download, TrendingUp, PiggyBank, BarChart2, PieChart, Search, FileText, Calendar, FileDown } from 'lucide-react';
 import Link from 'next/link';
 import { BarChartComponent } from '@/components/ui/bar-chart';
+import { PieChartComponent } from '@/components/ui/pie-chart';
 
 const financialHighlights = [
   {
@@ -31,6 +32,40 @@ const financialHighlights = [
     title: "Laporan Keuangan",
     value: "WTP",
     description: "Opini Wajar Tanpa Pengecualian dari BPK selama 5 tahun berturut-turut."
+  }
+];
+
+// Data alokasi anggaran untuk pie chart
+const budgetAllocation = [
+  {
+    label: "Belanja Pegawai",
+    value: 85,
+    color: "#3B82F6"
+  },
+  {
+    label: "Belanja Barang",
+    value: 45,
+    color: "#10B981"
+  },
+  {
+    label: "Belanja Modal",
+    value: 35,
+    color: "#F59E0B"
+  },
+  {
+    label: "Belanja Lainnya",
+    value: 25,
+    color: "#EF4444"
+  },
+  {
+    label: "Transfer",
+    value: 20,
+    color: "#8B5CF6"
+  },
+  {
+    label: "Bantuan Sosial",
+    value: 15,
+    color: "#06B6D4"
   }
 ];
 
@@ -228,7 +263,7 @@ export default function KinerjaKeuanganPage() {
                                 </CardHeader>
                                 <CardContent>
                                      <div className="h-[350px] flex items-center justify-center">
-                                       <p className="text-muted-foreground">Placeholder untuk Pie Chart Alokasi Anggaran</p>
+                                       <PieChartComponent data={budgetAllocation} width={320} height={320} />
                                     </div>
                                 </CardContent>
                             </Card>

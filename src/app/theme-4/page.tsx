@@ -7,13 +7,9 @@ import { ArrowRight, Search, FileText, Gavel, Scale, Megaphone, TrendingUp, User
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Input } from '../../components/ui/input';
-import { Header } from '../../components/header';
-import { Theme4Footer } from './components/theme4-footer';
-
 export default function Theme4HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-gray-800 dark:text-white overflow-x-hidden">
-      <Header />
       <main className="flex-1">
         {/* Hero Section - Theme 1 (Full width) */}
         <section className="bg-[#1e3a8a] text-white py-20 relative overflow-hidden">
@@ -401,7 +397,6 @@ export default function Theme4HomePage() {
         </section>
 
       </main>
-      <Theme4Footer />
     </div>
   );
 }

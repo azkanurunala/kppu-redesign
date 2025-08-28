@@ -10,43 +10,55 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ChevronRight, User, MapPin } from 'lucide-react';
 import Link from 'next/link';
 
-// Data Pejabat Sekretariat (6 orang)
+// Data Pejabat Sekretariat (8 orang)
 const secretariatOfficials = [
   {
     name: 'Lukman Sungkar, S.E., M.M.',
     title: 'Plt. Sekretaris Jenderal',
-    image: '/images/people/lukman-sungkar.jpg',
-    hint: 'portrait man official black suit black tie peci'
+    image: '/images/pejabat-sekretariat/lukmansungkar.jpg',
+    hint: 'portrait man official black suit blue tie'
   },
   {
     name: 'Taufik Ariyanto Arsad, S.E., M.E.',
     title: 'Deputi Bidang Kajian dan Advokasi',
-    image: '/images/people/taufik-ariyanto.jpg',
+    image: '/images/pejabat-sekretariat/taufikariyantoarsad.png',
     hint: 'portrait man official gray hair black suit blue tie'
   },
   {
     name: 'Setyabudi Yulianto, S.H.',
     title: 'Deputi Bidang Penegakan Hukum',
-    image: '/images/people/setyabudi-yulianto.jpg',
+    image: '/images/pejabat-sekretariat/setyabudiyulianto.jpg',
     hint: 'portrait man official black suit blue tie'
   },
   {
     name: 'Daniel Agustino, S.E., M.P.P.',
     title: 'Staf Ahli Unsur Pembantu Komisi Bidang Ekonomi',
-    image: '/images/people/daniel-agustino.jpg',
+    image: '/images/pejabat-sekretariat/danielagustino.png',
     hint: 'portrait man official glasses black suit blue tie'
   },
   {
     name: 'Andi Zubaida Assaf, S.T.P., M.Si.',
     title: 'Kepala Biro Perencanaan dan Keuangan',
-    image: '/images/people/andi-zubaida.jpg',
+    image: '/images/pejabat-sekretariat/andizubaidaassaf.png',
     hint: 'portrait woman official pink hijab dark top smiling'
   },
   {
     name: 'Manaek SM Pasaribu, S.H., LL.M.',
     title: 'Kepala Biro Hukum',
-    image: '/images/people/manaek-pasaribu.jpg',
+    image: '/images/pejabat-sekretariat/manaekpasaribu.jpg',
     hint: 'portrait man official black peci black suit red tie'
+  },
+  {
+    name: 'Mulyawan Rana Manggala, S.E., M.M.',
+    title: 'Kepala Biro Umum',
+    image: '/images/pejabat-sekretariat/mulyawanranamanggala.jpeg',
+    hint: 'portrait man official black suit blue tie'
+  },
+  {
+    name: 'Ima Damayanti, S.E., M.M.',
+    title: 'Kepala Biro Pengawasan',
+    image: '/images/pejabat-sekretariat/imadamayanti2.png',
+    hint: 'portrait woman official black hijab white blazer'
   }
 ];
 
@@ -56,50 +68,50 @@ const regionalOfficials = [
     name: 'Ridho Pamungkas, S.I.P.',
     title: 'Kepala Kantor Wilayah I',
     location: 'Medan',
-    image: '/images/people/ridho-pamungkas.jpg',
-    hint: 'portrait man official gray suit blue tie'
+    image: '/images/pejabat-sekretariat/taufikariyantoarsad.png',
+    hint: 'portrait man official gray hair black suit blue tie'
   },
   {
     name: 'Wahyu Bekti Anggoro, S.H., M.H.',
     title: 'Kepala Kantor Wilayah II',
     location: 'Lampung',
-    image: '/images/people/wahyu-bekti.jpg',
-    hint: 'portrait man official glasses black suit white shirt smiling'
+    image: '/images/pejabat-sekretariat/setyabudiyulianto.jpg',
+    hint: 'portrait man official black suit blue tie'
   },
   {
     name: 'Lina Rosmiati, S.P., M.E.',
     title: 'Kepala Kantor Wilayah III',
     location: 'Bandung',
-    image: '/images/people/lina-rosmiati.jpg',
-    hint: 'portrait woman official bright pink hijab glasses black blazer'
+    image: '/images/pejabat-sekretariat/andizubaidaassaf.png',
+    hint: 'portrait woman official pink hijab dark top smiling'
   },
   {
     name: 'Dyah Paramita, S.I.Kom., M.Si',
     title: 'Plt. Kepala Kantor Wilayah IV',
     location: 'Surabaya',
-    image: '/images/people/dyah-paramita.jpg',
-    hint: 'portrait woman official black hijab white ciput white top black blazer'
+    image: '/images/pejabat-sekretariat/imadamayanti2.png',
+    hint: 'portrait woman official black hijab white blazer'
   },
   {
     name: 'FY Andriyanto, S.E., M.Si.',
     title: 'Kepala Kantor Wilayah V',
     location: 'Samarinda',
-    image: '/images/people/fy-andriyanto.jpg',
-    hint: 'portrait man official dark skin black suit black peci'
+    image: '/images/pejabat-sekretariat/manaekpasaribu.jpg',
+    hint: 'portrait man official black peci black suit red tie'
   },
   {
     name: 'Charisma Desta Ardiansyah, S.Sos.',
     title: 'Plt. Kepala Kantor Wilayah VI',
     location: 'Makassar',
-    image: '/images/people/charisma-desta.jpg',
-    hint: 'portrait man official white shirt red patterned tie'
+    image: '/images/pejabat-sekretariat/mulyawanranamanggala.jpeg',
+    hint: 'portrait man official black suit blue tie'
   },
   {
     name: 'M. Hendry Setyawan, S.E., S.Si., M.S.M.',
     title: 'Kepala Kantor Wilayah VII',
     location: 'Yogyakarta',
-    image: '/images/people/hendry-setyawan.jpg',
-    hint: 'portrait man official glasses black suit blue tie black peci'
+    image: '/images/pejabat-sekretariat/danielagustino.png',
+    hint: 'portrait man official glasses black suit blue tie'
   }
 ];
 

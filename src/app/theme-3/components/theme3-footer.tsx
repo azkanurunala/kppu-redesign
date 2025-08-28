@@ -84,7 +84,7 @@ export function Theme3Footer() {
   return (
     <>
       <section>
-                     <div className="relative py-24 md:py-32 text-center bg-[#5B21B6]">
+                     <div className="relative py-24 md:py-32 text-center bg-[#1a0f2a]">
               <img src="/images/bg/theme-3.jpg" alt="Peta Indonesia" className="absolute inset-0 w-full h-full object-cover opacity-80" data-ai-hint="indonesia map background" />
               <div className="relative z-10 container mx-auto">
                   <Handshake className="w-16 h-16 mx-auto mb-6 text-white"/>
@@ -96,7 +96,7 @@ export function Theme3Footer() {
               </div>
           </div>
       </section>
-             <footer className="bg-[#3C1A5F] text-gray-300">
+             <footer className="bg-[#1a0f2a] text-gray-300">
         <div className="container mx-auto pt-16 pb-8">
           
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
